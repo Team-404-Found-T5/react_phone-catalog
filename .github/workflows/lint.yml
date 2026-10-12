@@ -20,11 +20,8 @@ jobs:
         with:
           node-version: '20' # Adjust Node.js version as needed
 
-      # Install dependencies
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm ci
 
-      # Run Linter and Prettier
-      - name: Run fix-style
-        run: npm run fix-style
+      - name: Run lint
+        run: npm run lint
