@@ -28,7 +28,7 @@
     padding-inline: 24px;
   }
 
-  @include desktop() {
+  @include desktop {
     padding-inline: 32px;
   }
 }

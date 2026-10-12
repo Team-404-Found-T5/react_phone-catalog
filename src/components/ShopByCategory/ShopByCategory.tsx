@@ -3,7 +3,7 @@ import styles from './ShopByCategory.module.scss';
 
 export const ShopByCategory: React.FC = () => {
   return (
-    <div className={styles.categories}>
+    <div>
       <h2 className={styles.title}>Shop by category</h2>
     </div>
   );

@@ -7,7 +7,7 @@ type Props = {
 
 export const ProductsSlider: React.FC<Props> = ({ title }) => {
   return (
-    <div className={styles.slider}>
+    <div>
       <h2 className={styles.title}>{title}</h2>
     </div>
   );

@@ -8,6 +8,7 @@
   main {
     @include container;
     @include section-gap(padding-bottom);
+
     flex: 1;
   }
 }
