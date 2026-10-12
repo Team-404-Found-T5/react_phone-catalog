@@ -6,14 +6,14 @@ import styles from './ProductDetailsPage.module.scss';
 
 
 
-import homeIcon from '../../svgs/Home.svg';
-import arrowLeft from '../../svgs/ArrowLeft.svg';
-import arrowRight from '../../svgs/ArrowRight.svg';
-import Like from '../../svgs/Like.svg';
+import homeIcon from '../../public/img/Home.svg';
+import arrowLeft from '../../public/img/ArrowLeft.svg';
+import arrowRight from '../../public/img/ArrowRight.svg';
+import Like from '../../public/img/Like.svg';
 
 export const ProductDetailsPage: React.FC = () => {
   const { productId } = useParams();
-  const [product, setProduct] = useState<Product>();
+
 
   useEffect(() => {
     if (!productId) {
@@ -50,23 +50,23 @@ export const ProductDetailsPage: React.FC = () => {
         <div className={styles.gallery}>
           <div className={styles.thumbnails}>
             <button className={`${styles.thumbBtn} ${styles.active}`}>
-              <img src="/img/thumb1.png" alt="ФОТКА 1" />
+              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 1" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="/img/thumb2.png" alt="ФОТКА 2" />
+              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 2" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="/img/thumb3.png" alt="ФОТКА 3" />
+              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 3" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="/img/thumb4.png" alt="ФОТКА 4" />
+              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 4" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="/img/thumb5.png" alt="ФОТКА 5" />
+              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 5" />
             </button>
           </div>
           <div className={styles.mainImageWrapper}>
-            <img src="/img/main-phone.png" alt="ВЕЛИКАФОТКА" className={styles.mainImage} />
+            <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ВЕЛИКАФОТКА" className={styles.mainImage} />
           </div>
         </div>
 
