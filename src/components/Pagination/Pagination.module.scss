@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.page,
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #bdbdbd;
+  color: #313237;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.page:disabled,
+.arrow:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.page:hover:not(:disabled),
+.arrow:hover:not(:disabled) {
+  border-color: #313237;
+}
+
+.active {
+  border-color: #313237;
+  color: #fff;
+  background-color: #313237;
+}
