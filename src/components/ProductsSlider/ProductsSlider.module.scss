@@ -1,3 +1,9 @@
-.container {
+@use '../../styles/mixins' as *;
+
+.slider {
   // Styles will be added here.
+}
+
+.title {
+  @include section-title;
 }
