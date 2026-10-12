@@ -1,0 +1,394 @@
+@use '../../styles/variables' as *;
+
+$secondary-color: #89939a;
+$border-color: #e2e6e9;
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 32px 100px;
+  font-family: $font-family;
+  color: $color-text;
+  box-sizing: border-box;
+
+  @media (min-width: 1440px) {
+    padding: 24px 64px 120px;
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: $secondary-color;
+  margin-bottom: 24px;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .current {
+    color: $color-primary;
+  }
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: $secondary-color;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 80px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.gallery {
+  display: flex;
+  gap: 16px;
+
+  .thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .thumbBtn {
+      width: 80px;
+      height: 80px;
+      border: 1px solid $border-color;
+      background: #fff;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      &.active {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  .mainImageWrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    .mainImage {
+      max-width: 100%;
+      max-height: 460px;
+      object-fit: contain;
+    }
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+
+  .headerMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .label {
+    font-size: 12px;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+
+  .productId {
+    font-size: 12px;
+    color: $secondary-color;
+  }
+
+  .colorSelector {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 24px;
+
+    .colorCircle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      outline: 1px solid $border-color;
+      cursor: pointer;
+      padding: 0;
+
+      &.active {
+        outline-color: $color-primary;
+      }
+    }
+  }
+
+  .capacitySection {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 32px;
+
+    .capacityList {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+
+      .capacityBtn {
+        padding: 8px 12px;
+        border: 1px solid $border-color;
+        background: #fff;
+        font-size: 14px;
+        cursor: pointer;
+
+        &.active {
+          background: $color-primary;
+          color: #fff;
+          border-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .priceRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    .currentPrice {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .oldPrice {
+      font-size: 22px;
+      color: $secondary-color;
+      text-decoration: line-through;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+
+    .addToCartBtn {
+      flex: 1;
+      height: 48px;
+      background: $color-primary;
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .favoriteBtn {
+      width: 48px;
+      height: 48px;
+      border: 1px solid $border-color;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: $color-primary;
+    }
+  }
+
+  .shortSpecs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .specRow {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+
+      .specLabel {
+        color: $secondary-color;
+      }
+
+      .specValue {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: $border-color;
+    margin-bottom: 32px;
+  }
+
+  .aboutSection {
+    .aboutBlock {
+      margin-bottom: 32px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $secondary-color;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .specsSection {
+    .fullSpecsList {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .fullSpecRow {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+
+        .specLabel {
+          color: $secondary-color;
+        }
+
+        .specValue {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.youMayAlsoLike {
+  margin-top: 80px;
+
+  .ymalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: $color-primary;
+      margin: 0;
+    }
+
+    .ymalArrows {
+      display: flex;
+      gap: 8px;
+
+      .arrowBtn {
+        width: 32px;
+        height: 32px;
+        border: 1px solid $border-color;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        color: $color-primary;
+
+        &:hover {
+          border-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .ymalGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .productCardPlaceholder {
+      min-height: 440px;
+      background-color: #e3f2fd;
+      border: 1px solid #b3e5fc;
+      border-radius: 4px;
+
+      @media (max-width: 639px) {
+        min-height: 380px;
+      }
+    }
+  }
+}
