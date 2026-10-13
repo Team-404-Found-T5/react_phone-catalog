@@ -50,10 +50,63 @@ const demoProducts: Product[] = [
   },
 ];
 
+const hotPricesProducts: Product[] = [
+  {
+    id: '5',
+    itemId: 'apple-iphone-11-pro-max-512gb-midnight-green',
+    category: 'phones',
+    name: 'Apple iPhone 11 Pro Max 512GB Midnight Green (iMT9G2FS/A)',
+    price: 849,
+    oldPrice: 1199,
+    image: `${import.meta.env.BASE_URL}img/iphone-11-pro-max-midnight-green.png`,
+    screen: '6.5 OLED',
+    capacity: '512 GB',
+    ram: '4 GB',
+  },
+
+  {
+    id: '6',
+    itemId: 'apple-iphone-11-pro-max-64gb-gold',
+    category: 'phones',
+    name: 'Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)',
+    price: 799,
+    oldPrice: 999,
+    image: `${import.meta.env.BASE_URL}img/iphone-11-pro-max-gold.png`,
+    screen: '6.5 OLED',
+    capacity: '64 GB',
+    ram: '4 GB',
+  },
+  {
+    id: '7',
+    itemId: 'apple-iphone-11-256gb-purple',
+    category: 'phones',
+    name: 'Apple iPhone 11 256GB Purple (iMT9G2FS/A)',
+    price: 729,
+    oldPrice: 859,
+    image: `${import.meta.env.BASE_URL}img/iphone-11-purple.png`,
+    screen: '6.2 OLED',
+    capacity: '256 GB',
+    ram: '4 GB',
+  },
+  {
+    id: '8',
+    itemId: 'apple-iphone-11-128gb-product-red',
+    category: 'phones',
+    name: 'Apple iPhone 11 128GB (Product) Red (iMT9G2FS/A)',
+    price: 699,
+    oldPrice: 899,
+    image: `${import.meta.env.BASE_URL}img/iphone-11-product-red.png`,
+    screen: '6.2 IPS',
+    capacity: '128 GB',
+    ram: '4 GB',
+  },
+];
+
 export const HomePage = () => {
   return (
     <div className={styles.container}>
       <ProductsSlider title="Brand new models" products={demoProducts} />
+      <ProductsSlider title="Hot prices" products={hotPricesProducts} />
     </div>
   );
 };

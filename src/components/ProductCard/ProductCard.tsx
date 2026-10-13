@@ -11,7 +11,12 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     <div className={styles.container}>
       <img src={product.image} alt={product.name} className={styles.image} />
       <p className={styles.name}>{product.name}</p>
-      <p className={styles.price}>${product.price}</p>
+      <div className={styles.prices}>
+        <p className={styles.price}>${product.price}</p>
+        {product.oldPrice !== undefined && (
+          <p className={styles.oldPrice}>${product.oldPrice}</p>
+        )}
+      </div>
 
       <div className={styles.divider}></div>
 

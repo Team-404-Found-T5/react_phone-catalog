@@ -8,6 +8,7 @@ export interface Product {
   screen: string;
   capacity: string;
   ram: string;
+  oldPrice?: number;
 }
 
 export type ProductCategory = 'phones' | 'tablets' | 'accessories';
