@@ -1,72 +1,144 @@
 import React, { useEffect, useState } from 'react';
-import { getProductByItemId } from '../../api/products';
-import { Product } from '../../types/product';
 import { useParams } from 'react-router-dom';
+import { getProductDetailsById } from '../../api/products';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
+import { useCart } from '../../context/CartContext';
+import { useFavorites } from '../../context/FavoritesContext';
+import type {
+  Product,
+  ProductCategory,
+  ProductDetails,
+} from '../../types/product';
 import styles from './ProductDetailsPage.module.scss';
 
+const arrowLeft = 'img/ArrowLeft-disabled.svg';
+const arrowRight = 'img/ArrowRight-disabled.svg';
+const productImage = 'img/phones/apple-iphone-7/black/00.webp';
 
+const isProductCategory = (
+  category: string | undefined,
+): category is ProductCategory =>
+  category === 'phones' || category === 'tablets' || category === 'accessories';
 
-import homeIcon from '../../public/img/Home.svg';
-import arrowLeft from '../../public/img/ArrowLeft.svg';
-import arrowRight from '../../public/img/ArrowRight.svg';
-import Like from '../../public/img/Like.svg';
+const getCategoryTitle = (category: ProductCategory) =>
+  category.charAt(0).toUpperCase() + category.slice(1);
 
 export const ProductDetailsPage: React.FC = () => {
-  const { productId } = useParams();
-
+  const { category: categoryParam, productId } = useParams();
+  const { items: cartItems, add, remove } = useCart();
+  const { items: favoriteItems, toggle } = useFavorites();
+  const [product, setProduct] = useState<ProductDetails>();
+  const [loadError, setLoadError] = useState('');
+  const category = isProductCategory(categoryParam) ? categoryParam : null;
+  const actionProduct: Product | undefined = product
+    ? {
+        id: product.id,
+        itemId: product.id,
+        category: product.category,
+        name: product.name,
+        price: product.priceDiscount,
+        oldPrice: product.priceRegular,
+        image: product.images[0] ?? '',
+        screen: product.screen ?? '',
+        capacity: product.capacity,
+        ram: product.ram ?? '',
+      }
+    : undefined;
+  const isInCart = Boolean(
+    actionProduct &&
+    cartItems.some(item => item.product.itemId === actionProduct.itemId),
+  );
+  const isFavorite = Boolean(
+    actionProduct &&
+    favoriteItems.some(item => item.itemId === actionProduct.itemId),
+  );
 
   useEffect(() => {
-    if (!productId) {
+    if (!category || !productId) {
+      setLoadError('Product not found');
       return;
     }
 
-    getProductByItemId(productId).then(setProduct);
-  }, [productId]);
+    let isActive = true;
+
+    setProduct(undefined);
+    setLoadError('');
+
+    getProductDetailsById(category, productId)
+      .then(result => {
+        if (!isActive) {
+          return;
+        }
+
+        if (!result) {
+          setLoadError('Product not found');
+          return;
+        }
+
+        setProduct(result);
+      })
+      .catch((error: unknown) => {
+        if (isActive) {
+          setLoadError(
+            error instanceof Error ? error.message : 'Failed to load product',
+          );
+        }
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [category, productId]);
 
   return (
     <div className={styles.container}>
+      {category && (
+        <Breadcrumbs
+          items={[
+            { label: getCategoryTitle(category), to: `/${category}` },
+            { label: product?.name ?? productId ?? 'Loading product...' },
+          ]}
+        />
+      )}
 
-      <nav className={styles.breadcrumbs}>
+      {loadError && (
+        <p className={styles.loadError} role="alert">
+          {loadError}
+        </p>
+      )}
 
-        <a href="/" className={styles.homeIcon}>
-          <img src={homeIcon} alt="Home" />
-        </a>
-
-        <span className={styles.arrow}><img src={arrowRight} alt="prev" /></span>
-        <a href="/phones">Phones</a>
-        <span className={styles.arrow}><img src={arrowRight} alt="prev" /></span>
-        <span className={styles.current}>Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)</span>
-      </nav>
-
-      <button className={styles.backButton}>
-        <img src={arrowLeft} alt="prev" /> Back
-      </button>
-
-      <h1 className={styles.title}>Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)</h1>
+      <h1 className={styles.title}>
+        {product?.name ??
+          (loadError ? 'Product not found' : 'Loading product...')}
+      </h1>
 
       {/* верхній блок */}
       <div className={styles.mainGrid}>
-        {/* фртки */}
+        {/* фотки */}
         <div className={styles.gallery}>
           <div className={styles.thumbnails}>
             <button className={`${styles.thumbBtn} ${styles.active}`}>
-              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 1" />
+              <img src={productImage} alt="ФОТКА 1" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 2" />
+              <img src={productImage} alt="ФОТКА 2" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 3" />
+              <img src={productImage} alt="ФОТКА 3" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 4" />
+              <img src={productImage} alt="ФОТКА 4" />
             </button>
             <button className={styles.thumbBtn}>
-              <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ФОТКА 5" />
+              <img src={productImage} alt="ФОТКА 5" />
             </button>
           </div>
           <div className={styles.mainImageWrapper}>
-            <img src="../../../public/img/phones/apple-iphone-7/black/00.webp" alt="ВЕЛИКАФОТКА" className={styles.mainImage} />
+            <img
+              src={productImage}
+              alt="ВЕЛИКАФОТКА"
+              className={styles.mainImage}
+            />
           </div>
         </div>
 
@@ -78,16 +150,30 @@ export const ProductDetailsPage: React.FC = () => {
           </div>
 
           <div className={styles.colorSelector}>
-            <button className={`${styles.colorCircle} ${styles.active}`} style={{ backgroundColor: '#F0E2D0' }} />
-            <button className={styles.colorCircle} style={{ backgroundColor: '#53605B' }} />
-            <button className={styles.colorCircle} style={{ backgroundColor: '#4C4C4D' }} />
-            <button className={styles.colorCircle} style={{ backgroundColor: '#F5F5F0' }} />
+            <button
+              className={`${styles.colorCircle} ${styles.active}`}
+              style={{ backgroundColor: '#F0E2D0' }}
+            />
+            <button
+              className={styles.colorCircle}
+              style={{ backgroundColor: '#53605B' }}
+            />
+            <button
+              className={styles.colorCircle}
+              style={{ backgroundColor: '#4C4C4D' }}
+            />
+            <button
+              className={styles.colorCircle}
+              style={{ backgroundColor: '#F5F5F0' }}
+            />
           </div>
 
           <div className={styles.capacitySection}>
             <span className={styles.label}>Select capacity</span>
             <div className={styles.capacityList}>
-              <button className={`${styles.capacityBtn} ${styles.active}`}>64 GB</button>
+              <button className={`${styles.capacityBtn} ${styles.active}`}>
+                64 GB
+              </button>
               <button className={styles.capacityBtn}>256 GB</button>
               <button className={styles.capacityBtn}>512 GB</button>
             </div>
@@ -99,16 +185,62 @@ export const ProductDetailsPage: React.FC = () => {
           </div>
 
           <div className={styles.actions}>
-            <button className={styles.addToCartBtn}>Add to cart</button>
-            <button className={styles.favoriteBtn} aria-label="Add to favorites">
-              <img src={Like} alt="favorite" />
+            <div className={styles.cartActions}>
+              <button
+                className={`${styles.addToCartBtn} ${
+                  isInCart ? styles.cartButtonAdded : ''
+                }`}
+                type="button"
+                disabled={!actionProduct || isInCart}
+                onClick={() => {
+                  if (actionProduct) {
+                    add({ product: actionProduct, quantity: 1 });
+                  }
+                }}
+              >
+                {isInCart ? 'Added to cart' : 'Add to cart'}
+              </button>
+              {isInCart && actionProduct && (
+                <button
+                  className={styles.removeFromCartBtn}
+                  type="button"
+                  aria-label={`Remove ${actionProduct.name} from cart`}
+                  onClick={() => remove(actionProduct.itemId)}
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}img/Close.svg`}
+                    alt=""
+                  />
+                </button>
+              )}
+            </div>
+            <button
+              className={styles.favoriteBtn}
+              type="button"
+              disabled={!actionProduct}
+              aria-label={
+                isFavorite ? 'Remove from favorites' : 'Add to favorites'
+              }
+              aria-pressed={isFavorite}
+              onClick={() => {
+                if (actionProduct) {
+                  toggle(actionProduct);
+                }
+              }}
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}img/${
+                  isFavorite ? 'Like-active.svg' : 'Like.svg'
+                }`}
+                alt=""
+              />
             </button>
           </div>
 
           <div className={styles.shortSpecs}>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Screen</span>
-              <span className={styles.specValue}>6.5" OLED</span>
+              <span className={styles.specValue}>6.5&quot; OLED</span>
             </div>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Resolution</span>
@@ -134,18 +266,43 @@ export const ProductDetailsPage: React.FC = () => {
 
           <article className={styles.aboutBlock}>
             <h3>And then there was Pro</h3>
-            <p>A transformative triple-camera system that adds tons of capability without complexity.</p>
-            <p>An unprecedented leap in battery life. And a mind-blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro.</p>
+            <p>
+              A transformative triple-camera system that adds tons of capability
+              without complexity.
+            </p>
+            <p>
+              An unprecedented leap in battery life. And a mind-blowing chip
+              that doubles down on machine learning and pushes the boundaries of
+              what a smartphone can do. Welcome to the first iPhone powerful
+              enough to be called Pro.
+            </p>
           </article>
 
           <article className={styles.aboutBlock}>
             <h3>Camera</h3>
-            <p>Meet the first triple-camera system to combine cutting-edge technology with the legendary simplicity of iPhone. Capture up to four times more scene. Get beautiful images in drastically lower light. Shoot the highest-quality video in a smartphone — then edit with the same tools you love for photos. You've never shot with anything like it.</p>
+            <p>
+              Meet the first triple-camera system to combine cutting-edge
+              technology with the legendary simplicity of iPhone. Capture up to
+              four times more scene. Get beautiful images in drastically lower
+              light. Shoot the highest-quality video in a smartphone — then edit
+              with the same tools you love for photos. You&apos;ve never shot
+              with anything like it.
+            </p>
           </article>
 
           <article className={styles.aboutBlock}>
-            <h3>Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it. Love it.</h3>
-            <p>iPhone 11 Pro lets you capture videos that are beautifully true to life, with greater detail and smoother motion. Epic processing power means it can shoot 4K video with extended dynamic range and cinematic video stabilization — all at 60 fps. You get more creative control, too, with four times more scene and powerful new editing tools to play with.</p>
+            <h3>
+              Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it.
+              Love it.
+            </h3>
+            <p>
+              iPhone 11 Pro lets you capture videos that are beautifully true to
+              life, with greater detail and smoother motion. Epic processing
+              power means it can shoot 4K video with extended dynamic range and
+              cinematic video stabilization — all at 60 fps. You get more
+              creative control, too, with four times more scene and powerful new
+              editing tools to play with.
+            </p>
           </article>
         </section>
 
@@ -156,7 +313,7 @@ export const ProductDetailsPage: React.FC = () => {
           <div className={styles.fullSpecsList}>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Screen</span>
-              <span className={styles.specValue}>6.5" OLED</span>
+              <span className={styles.specValue}>6.5&quot; OLED</span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Resolution</span>
@@ -176,7 +333,9 @@ export const ProductDetailsPage: React.FC = () => {
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Camera</span>
-              <span className={styles.specValue}>12 Mp + 12 Mp + 12 Mp (Triple)</span>
+              <span className={styles.specValue}>
+                12 Mp + 12 Mp + 12 Mp (Triple)
+              </span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Zoom</span>
@@ -189,16 +348,16 @@ export const ProductDetailsPage: React.FC = () => {
           </div>
         </section>
       </div>
-{/*о You may also like */}
+      {/*о You may also like */}
       <section className={styles.youMayAlsoLike}>
         <div className={styles.ymalHeader}>
           <h2>You may also like</h2>
           <div className={styles.ymalArrows}>
-            <button className={styles.arrowBtn} aria-label="Previous">
-              <img src={arrowLeft} alt="prev" />
+            <button className={styles.arrowBtn} aria-label="Previous" disabled>
+              <img src={arrowLeft} alt="" />
             </button>
-            <button className={styles.arrowBtn} aria-label="Next">
-              <img src={arrowRight} alt="prev" />
+            <button className={styles.arrowBtn} aria-label="Next" disabled>
+              <img src={arrowRight} alt="" />
             </button>
           </div>
         </div>

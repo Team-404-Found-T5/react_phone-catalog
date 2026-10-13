@@ -5,6 +5,7 @@ import {
   getProducts,
   getProductsPage,
 } from '../../api/products';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { Pagination } from '../../components/Pagination';
 import { Product } from '../../types/product';
 import styles from './TestPage.module.scss';
@@ -58,6 +59,7 @@ export const TestPage: React.FC = () => {
 
   return (
     <section className={styles.container}>
+      <Breadcrumbs items={[{ label: 'Test' }]} />
       <h1>TestPage</h1>
       <h2>1. Visible products and cache</h2>
       <p>

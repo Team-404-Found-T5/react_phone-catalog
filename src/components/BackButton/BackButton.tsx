@@ -11,7 +11,7 @@ export const BackButton: React.FC = () => {
       className={styles.button}
       onClick={() => navigate(-1)}
     >
-      <img src="img/ArrowLeft.svg" alt=""/>
+      <img src="img/ArrowLeft-active.svg" alt="" />
       Back
     </button>
   );

@@ -38,10 +38,14 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
           </button>
         </div>
       </div>
+
       <div className={styles.productsList}>
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      
+    </div>
+  );
+};
+
 export default ProductsSlider;

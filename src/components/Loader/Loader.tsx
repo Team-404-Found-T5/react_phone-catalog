@@ -3,8 +3,8 @@ import styles from './Loader.module.scss';
 
 export const Loader: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <h1>Loader</h1>
+    <div className={styles.container} role="status" aria-label="Loading">
+      <span className={styles.spinner} aria-hidden="true" />
     </div>
   );
 };

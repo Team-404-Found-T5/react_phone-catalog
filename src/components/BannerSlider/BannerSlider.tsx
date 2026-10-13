@@ -42,7 +42,7 @@ export const BannerSlider: React.FC = () => {
           className={`${styles.arrow} ${styles.prev}`}
           aria-label="Previous banner"
         >
-          <img src="img/ArrowLeft.svg" alt="" />
+          <img src="img/ArrowLeft-active.svg" alt="" />
         </button>
 
         <Swiper
@@ -81,7 +81,7 @@ export const BannerSlider: React.FC = () => {
           className={`${styles.arrow} ${styles.next}`}
           aria-label="Next banner"
         >
-          <img src="img/ArrowRight.svg" alt="" />
+          <img src="img/ArrowRight-active.svg" alt="" />
         </button>
       </div>
 

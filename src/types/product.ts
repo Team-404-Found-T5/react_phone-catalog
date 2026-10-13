@@ -9,6 +9,8 @@ export interface Product {
   capacity: string;
   ram: string;
   oldPrice?: number;
+  fullPrice?: number;
+  year?: number;
 }
 
 export type ProductCategory = 'phones' | 'tablets' | 'accessories';
