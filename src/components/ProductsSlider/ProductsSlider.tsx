@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './ProductsSlider.module.scss';
 
-export const ProductsSlider: React.FC = () => {
+type Props = {
+  title: string;
+};
+
+export const ProductsSlider: React.FC<Props> = ({ title }) => {
   return (
-    <div className={styles.container}>
-      <h1>ProductsSlider</h1>
+    <div>
+      <h2 className={styles.title}>{title}</h2>
     </div>
   );
 };
