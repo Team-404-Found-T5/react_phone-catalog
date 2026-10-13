@@ -2,6 +2,15 @@
 
 .title {
   @include section-title;
+
+  margin : 0;
+
+  font-family : inherit;
+  font-size : 32px;
+  font-weight : 800;
+  line-height : 41px;
+  color : #313237;
+  letter-spacing : 0;
 }
 
 .container {
@@ -48,20 +57,17 @@
   height : 16px;
 }
 
-.title {
-  margin : 0;
-
-  font-family : inherit;
-  font-size : 32px;
-  font-weight : 800;
-  line-height : 41px;
-  color : #313237;
-  letter-spacing : 0;
-}
-
 .productsList {
+  scroll-behavior : smooth;
+  scrollbar-width : none;
+
+  overflow-x : auto;
   display : flex;
   gap : 16px;
+
+  &::-webkit-scrollbar {
+    display : none;
+  }
 
   > * {
     flex-shrink : 0;

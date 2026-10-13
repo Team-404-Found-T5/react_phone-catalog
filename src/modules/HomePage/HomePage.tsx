@@ -1,129 +1,150 @@
-import type { Product } from '../../types/product';
+import React, { useEffect, useMemo, useState } from 'react';
+import { getProducts } from '../../api/products';
+import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
+import { Loader } from '../../components/Loader';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
-import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
-
+import type { Product } from '../../types/product';
 import styles from './HomePage.module.scss';
 
-const demoProducts: Product[] = [
-  {
-    id: '1',
-    itemId: 'apple-iphone-14-pro-128gb-silver',
-    category: 'phones',
-    name: 'Apple iPhone 14 Pro 128GB Silver (MQ023)',
-    price: 999,
-    image: `${import.meta.env.BASE_URL}img/iphone-14-pro-silver.png`,
-    screen: '6.1 OLED',
-    capacity: '128 GB',
-    ram: '6 GB',
-  },
+const FEATURED_PRODUCTS_COUNT = 4;
 
-  {
-    id: '2',
-    itemId: 'apple-iphone-14-pro-128gb-deep-purple',
-    category: 'phones',
-    name: 'Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)',
-    price: 999,
-    image: `${import.meta.env.BASE_URL}img/iphone-14-pro-deep-purple.png`,
-    screen: '6.1 OLED',
-    capacity: '128 GB',
-    ram: '6 GB',
-  },
-  {
-    id: '3',
-    itemId: 'apple-iphone-14-pro-128gb-gold',
-    category: 'phones',
-    name: 'Apple iPhone 14 Pro 128GB Gold (MQ083)',
-    price: 999,
-    image: `${import.meta.env.BASE_URL}img/iphone-14-pro-gold.png`,
-    screen: '6.1 OLED',
-    capacity: '128 GB',
-    ram: '6 GB',
-  },
-  {
-    id: '4',
-    itemId: 'apple-iphone-14-plus-128gb-product-red',
-    category: 'phones',
-    name: 'Apple iPhone 14 Plus 128GB PRODUCT Red(MQ513)',
-    price: 859,
-    image: `${import.meta.env.BASE_URL}img/iphone-14-plus-product-red.png`,
-    screen: '6.7 OLED',
-    capacity: '128 GB',
-    ram: '6 GB',
-  },
-];
+const getModelKey = (product: Product): string => {
+  const variantStart = product.itemId.search(/-(?:\d+(?:gb|tb)|\d+mm)-/i);
+  const modelId =
+    variantStart === -1
+      ? product.itemId
+      : product.itemId.slice(0, variantStart);
 
-const hotPricesProducts: Product[] = [
-  {
-    id: '5',
-    itemId: 'apple-iphone-11-pro-max-512gb-midnight-green',
-    category: 'phones',
-    name: 'Apple iPhone 11 Pro Max 512GB Midnight Green (iMT9G2FS/A)',
-    price: 849,
-    oldPrice: 1199,
-    image: `${import.meta.env.BASE_URL}img/iphone-11-pro-max-midnight-green.png`,
-    screen: '6.5 OLED',
-    capacity: '512 GB',
-    ram: '4 GB',
-  },
+  return `${product.category}:${modelId}`;
+};
 
-  {
-    id: '6',
-    itemId: 'apple-iphone-11-pro-max-64gb-gold',
-    category: 'phones',
-    name: 'Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)',
-    price: 799,
-    oldPrice: 999,
-    image: `${import.meta.env.BASE_URL}img/iphone-11-pro-max-gold.png`,
-    screen: '6.5 OLED',
-    capacity: '64 GB',
-    ram: '4 GB',
-  },
-  {
-    id: '7',
-    itemId: 'apple-iphone-11-256gb-purple',
-    category: 'phones',
-    name: 'Apple iPhone 11 256GB Purple (iMT9G2FS/A)',
-    price: 729,
-    oldPrice: 859,
-    image: `${import.meta.env.BASE_URL}img/iphone-11-purple.png`,
-    screen: '6.2 OLED',
-    capacity: '256 GB',
-    ram: '4 GB',
-  },
-  {
-    id: '8',
-    itemId: 'apple-iphone-11-128gb-product-red',
-    category: 'phones',
-    name: 'Apple iPhone 11 128GB (Product) Red (iMT9G2FS/A)',
-    price: 699,
-    oldPrice: 899,
-    image: `${import.meta.env.BASE_URL}img/iphone-11-product-red.png`,
-    screen: '6.2 IPS',
-    capacity: '128 GB',
-    ram: '4 GB',
-  },
-];    
+const getUniqueModels = (sortedProducts: Product[]): Product[] => {
+  const seenModels = new Set<string>();
+
+  return sortedProducts.filter(product => {
+    const modelKey = getModelKey(product);
+
+    if (seenModels.has(modelKey)) {
+      return false;
+    }
+
+    seenModels.add(modelKey);
+
+    return true;
+  });
+};
+
+const getIphoneGeneration = (product: Product): number =>
+  Number(product.itemId.match(/iphone-(\d+)/)?.[1] ?? 0);
+
+const getModelPriority = (product: Product): number => {
+  if (product.itemId.includes('-pro-max-')) {
+    return 3;
+  }
+
+  if (product.itemId.includes('-pro-')) {
+    return 2;
+  }
+
+  if (product.itemId.includes('-plus-')) {
+    return 1;
+  }
+
+  return 0;
+};
 
 export const HomePage: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let isActive = true;
+
+    getProducts()
+      .then(loadedProducts => {
+        if (isActive) {
+          setProducts(loadedProducts);
+        }
+      })
+      .catch((loadError: unknown) => {
+        if (isActive) {
+          setError(
+            loadError instanceof Error
+              ? loadError.message
+              : 'Failed to load products',
+          );
+        }
+      })
+      .finally(() => {
+        if (isActive) {
+          setIsLoading(false);
+        }
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  const brandNewProducts = useMemo(
+    () =>
+      getUniqueModels(
+        products
+          .filter(product => product.category === 'phones')
+          .sort(
+            (first, second) =>
+              (second.year ?? 0) - (first.year ?? 0) ||
+              getIphoneGeneration(second) - getIphoneGeneration(first) ||
+              getModelPriority(second) - getModelPriority(first),
+          ),
+      )
+        .slice(0, FEATURED_PRODUCTS_COUNT),
+    [products],
+  );
+  const hotPricesProducts = useMemo(
+    () =>
+      getUniqueModels(
+        [...products].sort(
+          (first, second) =>
+            (second.fullPrice ?? second.price) -
+            second.price -
+            ((first.fullPrice ?? first.price) - first.price),
+        ),
+      )
+        .slice(0, FEATURED_PRODUCTS_COUNT),
+    [products],
+  );
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
 
       <BannerSlider />
 
-      <section className={styles.section}>
-        <ProductsSlider title="Brand new models" products={demoProducts} />
-      </section>
+      {isLoading && <Loader />}
+
+      {error && (
+        <p role="alert">Failed to load home page products: {error}</p>
+      )}
+
+      {!isLoading && !error && (
+        <section className={styles.section}>
+          <ProductsSlider title="Brand new models" products={brandNewProducts} />
+        </section>
+      )}
 
       <section className={styles.section}>
         <ShopByCategory />
       </section>
 
-      <section className={styles.section}>
-         <ProductsSlider title="Hot prices" products={hotPricesProducts} />
-      </section>
-   </div>
+      {!isLoading && !error && (
+        <section className={styles.section}>
+          <ProductsSlider title="Hot prices" products={hotPricesProducts} />
+        </section>
+      )}
+    </div>
   );
 };
 
