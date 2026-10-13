@@ -1,3 +1,5 @@
+@use '../../styles/mixins' as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,4 +8,24 @@
   max-width: 1136px;
   margin: 0 auto;
   padding: 32px 0;
+
+.title {
+  margin: 24px 0;
+  font-size: 32px;
+  line-height: 41px;
+  font-weight: 800;
+
+  @include tablet {
+    margin: 32px 0;
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @include desktop {
+    margin: 56px 0;
+  }
+}
+
+.section {
+  @include section-gap;
 }

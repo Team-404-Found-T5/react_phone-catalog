@@ -1,3 +1,9 @@
+@use '../../styles/mixins' as *;
+
+.title {
+  @include section-title;
+}
+
 .container {
   display : flex;
   flex-direction : column;

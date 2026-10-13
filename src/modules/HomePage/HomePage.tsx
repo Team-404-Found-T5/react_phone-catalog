@@ -1,5 +1,8 @@
 import type { Product } from '../../types/product';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
+import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
+import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
+
 import styles from './HomePage.module.scss';
 
 const demoProducts: Product[] = [
@@ -100,14 +103,27 @@ const hotPricesProducts: Product[] = [
     capacity: '128 GB',
     ram: '4 GB',
   },
-];
+];    
 
-export const HomePage = () => {
+export const HomePage: React.FC = () => {
   return (
     <div className={styles.container}>
-      <ProductsSlider title="Brand new models" products={demoProducts} />
-      <ProductsSlider title="Hot prices" products={hotPricesProducts} />
-    </div>
+      <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
+
+      <BannerSlider />
+
+      <section className={styles.section}>
+        <ProductsSlider title="Brand new models" products={demoProducts} />
+      </section>
+
+      <section className={styles.section}>
+        <ShopByCategory />
+      </section>
+
+      <section className={styles.section}>
+         <ProductsSlider title="Hot prices" products={hotPricesProducts} />
+      </section>
+   </div>
   );
 };
 
