@@ -1,5 +1,67 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
 .title {
   @include section-title;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px 16px;
+  margin-top: 24px;
+
+  @include tablet {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: block;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 8px;
+}
+
+.image {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 100%;
+  height: auto;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.name {
+  margin-top: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 31px;
+}
+
+.count {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $color-secondary;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .card:hover .image {
+    transform: none;
+  }
 }
