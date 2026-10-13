@@ -1,3 +1,141 @@
 .container {
-  // Styles will be added here.
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 272px;
+  height: 506px;
+  padding: 32px;
+  border: 1px solid #E2E6E9;
+}
+
+.image {
+  width: 100%;
+  height: 196px;
+  object-fit: contain;
+}
+
+.name {
+  padding-top: 16px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 21px;
+  color: #313237;
+  letter-spacing: 0;
+}
+
+.price {
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 140%;
+  color: #313237;
+  letter-spacing: 0;
+}
+
+.prices {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.oldPrice {
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 100%;
+  color: #89939A;
+  text-decoration-line: line-through;
+  letter-spacing: 0;
+}
+
+.divider {
+  width: 100%;
+  border-top: 1px solid #E2E6E9;
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  padding: 8px 0;
+}
+
+.screen,
+.capacity,
+.ram {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specLabel {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 100%;
+  color: #89939A;
+  letter-spacing: 0;
+}
+
+.specValue {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 100%;
+  color: #313237;
+  letter-spacing: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cartButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 160px;
+  height: 40px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 21px;
+  color: #fff;
+  letter-spacing: 0;
+
+  background-color: #313237;
+}
+
+.favoriteButton {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border: 1px solid #E2E6E9;
+
+  background-color: #fff;
+}
+
+.favoriteIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
