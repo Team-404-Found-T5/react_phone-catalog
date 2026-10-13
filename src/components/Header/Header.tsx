@@ -18,13 +18,13 @@ export const Header: React.FC = () => {
         <HeaderAction
           to="/cart"
           label="Cart"
-          icon={<img src="/img/Cart.svg" alt="" />}
+          icon={<img src="img/Cart.svg" alt="" />}
           count={cartCount}
         />
         <HeaderAction
           to="/favorites"
           label="Favorites"
-          icon={<img src="/img/Favorites.svg" alt="" />}
+          icon={<img src="img/Favorites.svg" alt="" />}
           count={favoritesCount}
         />
       </div>

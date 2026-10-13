@@ -1,7 +1,7 @@
 import { Product } from '../types/product';
 import { ProductCategory, ProductDetails } from '../types/product';
 
-const BASE_URL = '/api';
+const BASE_URL = 'api';
 
 export type ProductsPage = {
   products: Product[];

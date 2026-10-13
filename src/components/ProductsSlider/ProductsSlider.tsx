@@ -7,6 +7,7 @@ type Props = {
   title: string;
   products: Product[];
 };
+
 export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
   return (
     <div className={styles.container}>
@@ -42,8 +43,5 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </div>
-  );
-};
-
+      
 export default ProductsSlider;
