@@ -5,6 +5,9 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  screen: string;
+  capacity: string;
+  ram: string;
 }
 
 export type ProductCategory = 'phones' | 'tablets' | 'accessories';
