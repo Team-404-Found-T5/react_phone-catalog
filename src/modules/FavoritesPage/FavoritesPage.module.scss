@@ -1,0 +1,33 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 24px 0 80px;
+
+  @include tablet {
+    padding-top: 32px;
+  }
+}
+
+.title {
+  margin-top: 24px;
+  font-size: 32px;
+  line-height: 41px;
+  font-weight: 800;
+}
+
+.count {
+  margin: 8px 0 24px;
+  color: #89939a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.empty {
+  margin-top: 24px;
+}

@@ -1,0 +1,17 @@
+@use '../../styles/variables' as *;
+
+.button {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $color-secondary;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

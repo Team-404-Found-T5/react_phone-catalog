@@ -1,0 +1,7 @@
+@use './reset';
+@use './variables' as *;
+
+body {
+  font-family: $font-family;
+  color: $color-text;
+}
