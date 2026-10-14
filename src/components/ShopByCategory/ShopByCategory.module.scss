@@ -31,9 +31,11 @@
   position: absolute;
   top: 20%;
   left: 20%;
+  transform-origin: bottom right;
+
   width: 100%;
   height: auto;
-  transform-origin: bottom right;
+
   transition: transform 0.3s ease;
 }
 
@@ -50,6 +52,7 @@
 
 .count {
   margin-top: 4px;
+
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;

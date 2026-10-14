@@ -13,6 +13,7 @@
   text-decoration: none;
 
   outline: 1px $color-elements solid;
+
   transition: all, .3s;
 
   &:hover {
@@ -73,21 +74,21 @@
   top: 10px;
   right: 10px;
 
-  @include tablet {
-    top: 17px;
-    right: 17px;
-
-  }
-
   min-width: 14px;
   height: 14px;
   border-radius: 10px;
 
   font-size: 9px;
-  line-height: 14px;
   font-weight: 700;
+  line-height: 14px;
   color: #fff;
   text-align: center;
 
   background-color: #eb5757;
+
+  @include tablet {
+    top: 17px;
+    right: 17px;
+
+  }
 }
