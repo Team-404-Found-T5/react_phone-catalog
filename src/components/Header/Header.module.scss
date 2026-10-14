@@ -1,10 +1,81 @@
-.header {
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.headerHeader {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  background-color: #fff;
+  outline: 1px $color-elements solid;
+}
+
+.container {
+
+  @include container;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 48px;
+
+  @include desktop {
+    height: 64px;
+
+  }
 }
 
-.right-section {
+.firstpartHeader {
   display: flex;
+  gap: 24px;
   align-items: center;
+
+  @include tablet {
+    gap: 48px;
+  }
+
+  @include desktop {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+  }
+}
+
+.navWrapper {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.rightSection {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  transform: translateX(-100%);
+
+  width: 100%;
+  height: calc(100vh - 64px);
+  padding: 24px;
+
+  background-color: #fff;
+
+  transition: transform 0.3s ease-in-out;
+
+  &.isOpen {
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    display: none;
+  }
 }
