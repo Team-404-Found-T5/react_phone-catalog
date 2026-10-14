@@ -1,19 +1,51 @@
+@use '../../styles/_mixins' as *;
 @use '../../styles/variables' as *;
+
+.FooterFooter {
+  outline: 1px solid $color-elements;
+}
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1136px;
-  margin: 0 auto;
-  height: 96px;
+  gap: 32px;
+  flex-direction: column;
+  height: 257px;
+  @include container;
+
+  @include desktop {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 96px;
+
+  }
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+  }
 }
 
 .footerListLinks {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 378px;
+  flex-direction: column;
+  gap: 5px;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 33%;
+    gap: 0;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 33%;
+    gap: 0;
+  }
 }
 
 .footerLinks {
@@ -31,6 +63,7 @@
 }
 
 .fromFooterToTop {
+  margin: 0 auto;
   display: flex;
   gap: 16px;
   align-items: center;
@@ -41,6 +74,18 @@
 
   &:hover {
     color: $color-text;
+
+    .arrowBorder {
+      outline: 1px $color-text solid;
+    }
+  }
+
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    margin: 0;
   }
 }
 
@@ -52,5 +97,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
 
 }

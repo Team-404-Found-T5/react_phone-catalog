@@ -1,18 +1,76 @@
-.header {
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.headerHeader {
+  outline: 1px $color-elements solid;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.container {
+  @include container;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
-  margin-left: 24px;
+
+  @include desktop {
+    height: 64px;
+
+  }
 }
 
 .firstpartHeader {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 24px;
+
+  @include tablet {
+    gap: 48px;
+  }
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+  }
 }
 
-.right-section {
+.navWrapper {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.rightSection {
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-color: #fff;
+  padding: 24px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+
+  &.isOpen {
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    display: none;
+  }
 }

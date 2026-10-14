@@ -14,9 +14,9 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer>
+    <footer className={styles.FooterFooter}>
       <div className={styles.container}>
-        <Logo logoWidth={89} />
+        <Logo variant='footer'/>
         <ul className={styles.footerListLinks}>
           <li>
             <a
@@ -27,7 +27,6 @@ export const Footer: React.FC = () => {
             >
               Github
             </a>
-            {/* <a href="http://" target="_blank" rel="noopener noreferrer"></a> */}
           </li>
           <li>
             <NavLink className={styles.footerLinks} to={'/contacts'}>
