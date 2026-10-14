@@ -7,23 +7,35 @@
   top: 0;
   left: 0;
 
+  padding-left: 16px;
+
+  @include desktop {
+    padding-left: 24px;
+  }
+
+
   background-color: #fff;
   outline: 1px $color-elements solid;
 }
 
 .container {
-
-  @include container;
+  // @include container;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 48px;
 
+  @include tablet {
+  height: 48px;
+
+  }
+
   @include desktop {
     height: 64px;
 
   }
+
 }
 
 .firstpartHeader {
