@@ -1,0 +1,93 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.item {
+  display: grid;
+  grid-template-areas:
+    'remove image name'
+    'quantity quantity price';
+  grid-template-columns: 16px 80px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid $color-elements;
+
+  @include tablet {
+    grid-template-areas: 'remove image name quantity price';
+    grid-template-columns: 16px 96px 1fr 96px 96px;
+    padding: 24px;
+  }
+}
+
+.remove {
+  display: flex;
+  grid-area: remove;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.imageLink {
+  grid-area: image;
+  justify-self: center;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.name {
+  grid-area: name;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.quantity {
+  display: flex;
+  grid-area: quantity;
+  align-items: center;
+}
+
+.counterButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b4bdc3;
+  color: $color-primary;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover:not(:disabled) {
+    border-color: $color-primary;
+  }
+
+  &:disabled {
+    border-color: $color-elements;
+    cursor: default;
+    opacity: 0.4;
+  }
+}
+
+.count {
+  width: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: center;
+}
+
+.price {
+  grid-area: price;
+  justify-self: end;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 31px;
+}

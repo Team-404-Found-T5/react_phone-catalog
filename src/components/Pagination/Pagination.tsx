@@ -19,7 +19,7 @@ const getPageItems = (currentPage: number, totalPages: number): PageItem[] => {
     return [1, 2, 3, 4, 5, 'ellipsis', totalPages - 1, totalPages];
   }
 
-  if (currentPage >= totalPages - 2) {
+  if (currentPage >= totalPages - 3) {
     return [
       1,
       2,

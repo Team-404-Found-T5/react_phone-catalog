@@ -1,7 +1,7 @@
 import { Product } from '../types/product';
 import { ProductCategory, ProductDetails } from '../types/product';
 
-const BASE_URL = '/api';
+const BASE_URL = `${import.meta.env.BASE_URL}api`;
 
 export type ProductsPage = {
   products: Product[];
@@ -32,7 +32,12 @@ function fetchData<T>(url: string): Promise<T> {
 }
 
 export const getProducts = (): Promise<Product[]> =>
-  fetchData<Product[]>(`${BASE_URL}/products.json`);
+  fetchData<Product[]>(`${BASE_URL}/products.json`).then(products =>
+    products.map(product => ({
+      ...product,
+      oldPrice: product.fullPrice,
+    })),
+  );
 
 export const cacheVisibleProducts = (products: Product[]): void => {
   products.forEach(product => {

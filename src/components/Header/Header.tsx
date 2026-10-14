@@ -14,26 +14,21 @@ export const Header: React.FC = () => {
   const favoritesCount = favoriteItems.length;
 
   return (
-    <header id='header'>
-      <div className={styles.header}>
-        <div className={styles.firstpartHeader}>
-          <Logo logoWidth={80}/>
-          <Navigation />
-        </div>
-        <div className={styles['right-section']}>
-          <HeaderAction
-            to="/cart"
-            label="Cart"
-            icon={<img src="/img/Cart.svg" alt="" />}
-            count={cartCount}
-          />
-          <HeaderAction
-            to="/favorites"
-            label="Favorites"
-            icon={<img src="/img/Favorites.svg" alt="" />}
-            count={favoritesCount}
-          />
-        </div>
+    <div className={styles.header}>
+      <h1>Header</h1>
+      <div className={styles['right-section']}>
+        <HeaderAction
+          to="/cart"
+          label="Cart"
+          icon={<img src="img/Cart.svg" alt="" />}
+          count={cartCount}
+        />
+        <HeaderAction
+          to="/favorites"
+          label="Favorites"
+          icon={<img src="img/Favorites.svg" alt="" />}
+          count={favoritesCount}
+        />
       </div>
     </header>
   );

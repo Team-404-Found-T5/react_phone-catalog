@@ -5,6 +5,12 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  screen: string;
+  capacity: string;
+  ram: string;
+  oldPrice?: number;
+  fullPrice?: number;
+  year?: number;
 }
 
 export type ProductCategory = 'phones' | 'tablets' | 'accessories';
