@@ -14,6 +14,12 @@ type Banner = {
 
 const banners: Banner[] = [
   {
+    id: 'halloween',
+    image: 'img/banner-halloween.png',
+    alt: 'Halloween sale',
+    to: '/phones',
+  },
+  {
     id: 'phones',
     image: 'img/banner-phones.png',
     alt: 'Phones',
