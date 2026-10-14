@@ -1,3 +1,25 @@
 .container {
   // Styles will be added here.
+  // margin-left: 24px;
+}
+
+.logoGroup {
+  width: var(--logo-width);
+  height: 28px;
+  position: relative;
+}
+
+.logoText {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+}
+
+.logoOk {
+  position: absolute;
+  top: 0;
+  right: 29px;
+  width: 11px;
+  height: 15px;
 }

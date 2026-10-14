@@ -3,6 +3,8 @@ import styles from './Header.module.scss';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import { HeaderAction } from '../HeaderAction';
+import { Logo } from '../Logo';
+import { Navigation } from '../Navigation';
 
 export const Header: React.FC = () => {
   const { items: cartItems } = useCart();
@@ -12,23 +14,28 @@ export const Header: React.FC = () => {
   const favoritesCount = favoriteItems.length;
 
   return (
-    <div className={styles.header}>
-      <h1>Header</h1>
-      <div className={styles['right-section']}>
-        <HeaderAction
-          to="/cart"
-          label="Cart"
-          icon={<img src="/img/Cart.svg" alt="" />}
-          count={cartCount}
-        />
-        <HeaderAction
-          to="/favorites"
-          label="Favorites"
-          icon={<img src="/img/Favorites.svg" alt="" />}
-          count={favoritesCount}
-        />
+    <header id='header'>
+      <div className={styles.header}>
+        <div className={styles.firstpartHeader}>
+          <Logo logoWidth={80}/>
+          <Navigation />
+        </div>
+        <div className={styles['right-section']}>
+          <HeaderAction
+            to="/cart"
+            label="Cart"
+            icon={<img src="/img/Cart.svg" alt="" />}
+            count={cartCount}
+          />
+          <HeaderAction
+            to="/favorites"
+            label="Favorites"
+            icon={<img src="/img/Favorites.svg" alt="" />}
+            count={favoritesCount}
+          />
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 
