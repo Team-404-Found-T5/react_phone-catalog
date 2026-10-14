@@ -1,0 +1,162 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+
+@keyframes check-pop {
+  from {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+}
+
+.dialog {
+  width: calc(100% - 32px);
+  max-width: 420px;
+  padding: 0;
+  border: 0;
+  background: #fff;
+  color: $color-primary;
+
+  &[open] {
+    animation: pop-in 0.25s ease-out;
+  }
+
+  &::backdrop {
+    background: rgba(49, 50, 55, 0.5);
+    animation: fade-in 0.25s ease-out;
+  }
+}
+
+.window {
+  position: relative;
+  padding: 32px 16px 24px;
+
+  @include tablet {
+    padding: 40px 32px 32px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-secondary;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.primary,
+.secondary {
+  min-width: 120px;
+  height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.1s;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.primary {
+  background: $color-primary;
+  color: #fff;
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.2);
+  }
+}
+
+.secondary {
+  border: 1px solid #b4bdc3;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #27ae60;
+  font-size: 28px;
+  color: #fff;
+  animation: check-pop 0.4s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open],
+  .dialog::backdrop,
+  .check {
+    animation-duration: 0.01ms;
+  }
+}
