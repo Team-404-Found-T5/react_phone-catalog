@@ -65,14 +65,14 @@
   cursor: pointer;
   transition: border-color 0.2s;
 
-  &:hover:not(:disabled) {
-    border-color: $color-primary;
-  }
-
   &:disabled {
     border-color: $color-elements;
     cursor: default;
     opacity: 0.4;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-primary;
   }
 }
 
