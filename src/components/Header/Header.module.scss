@@ -6,6 +6,7 @@
   z-index: 100;
   top: 0;
   left: 0;
+
   padding-left: 16px;
 
   @include desktop {
@@ -18,7 +19,6 @@
 }
 
 .container {
-
   // @include container;
 
   display: flex;
@@ -30,6 +30,7 @@
   height: 48px;
 
   }
+
   @include desktop {
     height: 64px;
 
