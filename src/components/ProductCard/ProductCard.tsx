@@ -4,6 +4,7 @@ import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
+import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
 
 type Props = {
   product: Product;
@@ -77,7 +78,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           type="button"
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           aria-pressed={isFavorite}
-          onClick={() => toggle(product)}
+          onClick={(e) => {
+            PixelHearts(e);
+            toggle(product)}}
         >
           <img
             src={`${import.meta.env.BASE_URL}img/${
