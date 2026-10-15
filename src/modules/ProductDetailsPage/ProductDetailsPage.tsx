@@ -19,6 +19,7 @@ import type {
 } from '../../types/product';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import styles from './ProductDetailsPage.module.scss';
+import { PixelHearts } from '../PixelHearts/PixelHearts';
 
 const colorMap: Record<string, string> = {
   black: '#313237',
@@ -300,7 +301,8 @@ export const ProductDetailsPage: React.FC = () => {
                 isFavorite ? 'Remove from favorites' : 'Add to favorites'
               }
               aria-pressed={isFavorite}
-              onClick={() => {
+              onClick={(e) => {
+                PixelHearts(e)
                 if (actionProduct) {
                   toggle(actionProduct);
                 }
