@@ -7,6 +7,7 @@ import {
   findProductVariant,
   getAvailableCapacities,
   getProductByItemId,
+  getSuggestedProducts,
 } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { useCart } from '../../context/CartContext';
@@ -16,10 +17,9 @@ import type {
   ProductCategory,
   ProductDetails,
 } from '../../types/product';
+import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import styles from './ProductDetailsPage.module.scss';
 
-const arrowLeft = 'img/ArrowLeft-disabled.svg';
-const arrowRight = 'img/ArrowRight-disabled.svg';
 const colorMap: Record<string, string> = {
   black: '#313237',
   white: '#FFFFFF',
@@ -64,6 +64,7 @@ export const ProductDetailsPage: React.FC = () => {
   const [variants, setVariants] = useState<ProductDetails[]>([]);
   const [loadError, setLoadError] = useState('');
   const [displayId, setDisplayId] = useState('');
+  const [suggestedProducts, setSuggestedProducts] = useState<Product[]>([]);
   const category = isProductCategory(categoryParam) ? categoryParam : null;
   const actionProduct: Product | undefined = product
     ? {
@@ -103,6 +104,7 @@ export const ProductDetailsPage: React.FC = () => {
     setDisplayId('');
     setSelectedImageIndex(0);
     setVariants([]);
+    setSuggestedProducts([]);
     setLoadError('');
 
     getProductDetailsById(category, productId)
@@ -121,10 +123,12 @@ export const ProductDetailsPage: React.FC = () => {
         return Promise.all([
           getRelatedProducts(result),
           getProductByItemId(result.id),
-        ]).then(([relatedVariants, CatalogProduct]) => {
+          getSuggestedProducts(result.id).catch(() => []),
+        ]).then(([relatedVariants, catalogProduct, suggestions]) => {
           if (isActive) {
             setVariants(relatedVariants);
-            setDisplayId(CatalogProduct ? String(CatalogProduct.id) : '');
+            setDisplayId(catalogProduct ? String(catalogProduct.id) : '');
+            setSuggestedProducts(suggestions);
           }
         });
       })
@@ -389,27 +393,14 @@ export const ProductDetailsPage: React.FC = () => {
         </section>
       </div>
       {/*о You may also like */}
-      <section className={styles.youMayAlsoLike}>
-        <div className={styles.ymalHeader}>
-          <h2>You may also like</h2>
-          <div className={styles.ymalArrows}>
-            <button className={styles.arrowBtn} aria-label="Previous" disabled>
-              <img src={arrowLeft} alt="" />
-            </button>
-            <button className={styles.arrowBtn} aria-label="Next" disabled>
-              <img src={arrowRight} alt="" />
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.ymalGrid}>
-          {/* голубі квадрати замість card компонента*/}
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-        </div>
-      </section>
+      {suggestedProducts.length > 0 && (
+        <section className={styles.youMayAlsoLike}>
+          <ProductsSlider
+            title="You may also like"
+            products={suggestedProducts}
+          />
+        </section>
+      )}
     </div>
   );
 };

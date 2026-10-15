@@ -8,13 +8,13 @@ $border-color: #e2e6e9;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 32px 100px;
+  padding: 24px 0 100px;
 
   font-family: $font-family;
   color: $color-text;
 
   @media (min-width: 1440px) {
-    padding: 24px 64px 120px;
+    padding: 24px 0 120px;
   }
 }
 
