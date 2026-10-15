@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Footer.module.scss';
 import { Logo } from '../Logo';
 import { NavLink } from 'react-router-dom';
+import ContactsModal from '../ContactsModal/ContactsModal';
 
 export const Footer: React.FC = () => {
+  const [isContactsOpen, setIsContactsOpen] = useState(false);
+
   const toTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
@@ -29,9 +32,13 @@ export const Footer: React.FC = () => {
             </a>
           </li>
           <li>
-            <NavLink className={styles.footerLinks} to={'/contacts'}>
+            <button
+              type='button'
+              className={styles.footerLinks}
+              onClick={() => setIsContactsOpen(true)}
+            >
               Contacts
-            </NavLink>
+            </button>
           </li>
           <li>
             <NavLink className={styles.footerLinks} to={'/right'}>
@@ -46,6 +53,11 @@ export const Footer: React.FC = () => {
           </div>
         </a>
       </div>
+
+      <ContactsModal
+        isOpen={isContactsOpen}
+        onClose={() => setIsContactsOpen(false)}
+      />
     </footer>
   );
 };

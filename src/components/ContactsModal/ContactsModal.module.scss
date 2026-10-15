@@ -1,0 +1,182 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: translateY(16px) scale(0.97);
+    opacity: 0;
+  }
+}
+
+.dialog {
+  width: calc(100% - 32px);
+  max-width: 720px;
+  max-height: calc(100% - 32px);
+  padding: 0;
+  border: 0;
+
+  color: $color-primary;
+
+  background: #fff;
+
+  &::backdrop {
+    background: rgba(49, 50, 55, 0.5);
+    animation: fade-in 0.25s ease-out;
+  }
+
+  &[open] {
+    animation: pop-in 0.25s ease-out;
+  }
+}
+
+.window {
+  position: relative;
+  padding: 32px 16px 24px;
+
+  @include tablet {
+    padding: 40px 32px 32px;
+  }
+}
+
+.close {
+  cursor: pointer;
+
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+
+  padding: 4px;
+
+  opacity: 0.7;
+
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+  text-align: center;
+}
+
+.list {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+
+  max-height: 60vh;
+  padding: 0;
+
+  list-style: none;
+
+  @include tablet {
+    overflow-y: visible;
+    max-height: none;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  text-align: center;
+
+  @include tablet {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+.photo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.role {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-secondary;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+}
+
+.link {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b4bdc3;
+  border-radius: 50%;
+
+  color: $color-primary;
+
+  transition:
+    border-color 0.2s,
+    transform 0.1s;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open],
+  .dialog::backdrop {
+    animation-duration: 0.01ms;
+  }
+}
