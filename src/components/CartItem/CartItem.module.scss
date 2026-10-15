@@ -9,6 +9,7 @@
   grid-template-columns: 16px 80px 1fr;
   gap: 16px;
   align-items: center;
+
   padding: 16px;
   border: 1px solid $color-elements;
 
@@ -20,10 +21,13 @@
 }
 
 .remove {
+  cursor: pointer;
+
   display: flex;
   grid-area: remove;
-  cursor: pointer;
+
   opacity: 0.7;
+
   transition: opacity 0.2s;
 
   &:hover {
@@ -55,19 +59,23 @@
 }
 
 .counterButton {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 32px;
   height: 32px;
   border: 1px solid #b4bdc3;
+
   color: $color-primary;
-  cursor: pointer;
+
   transition: border-color 0.2s;
 
   &:disabled {
-    border-color: $color-elements;
     cursor: default;
+    border-color: $color-elements;
     opacity: 0.4;
   }
 
@@ -78,6 +86,7 @@
 
 .count {
   width: 32px;
+
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
@@ -87,6 +96,7 @@
 .price {
   grid-area: price;
   justify-self: end;
+
   font-size: 22px;
   font-weight: 700;
   line-height: 31px;

@@ -7,19 +7,23 @@
 
 .page,
 .arrow {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   min-width: 32px;
   height: 32px;
   padding: 0 8px;
   border: 1px solid #bdbdbd;
-  color: #313237;
-  background-color: #fff;
-  cursor: pointer;
+
   font-family: inherit;
   font-size: 14px;
   line-height: 1;
+  color: #313237;
+
+  background-color: #fff;
 }
 
 .page:disabled,

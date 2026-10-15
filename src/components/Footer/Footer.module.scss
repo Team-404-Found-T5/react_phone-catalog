@@ -1,3 +1,113 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.FooterFooter {
+  outline: 1px solid $color-elements;
+}
+
 .container {
-  // Styles will be added here.
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  height: 257px;
+  padding-top: 32px;
+
+  @include container;
+
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+
+  }
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+  }
+}
+
+.footerListLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    width: 33%;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    width: 33%;
+  }
+}
+
+.footerLinks {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 92%;
+  color: $color-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.arrowBorder {
+  transform: rotate(-90deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  outline: 1px $color-secondary solid;
+
+  transition: all 0.3s;
+
+}
+
+.fromFooterToTop {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  margin: 0 auto;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: $color-secondary;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: $color-text;
+
+    .arrowBorder {
+      outline: 1px $color-text solid;
+    }
+  }
+
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    margin: 0;
+  }
 }

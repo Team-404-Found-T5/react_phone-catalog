@@ -24,8 +24,8 @@
   font-style: normal;
   line-height: 21px;
   color: #313237;
-  letter-spacing: 0;
   text-decoration: none;
+  letter-spacing: 0;
 
   &:hover {
     color: #89939a;
@@ -114,12 +114,13 @@
 }
 
 .cartButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 
+  display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+
   height: 40px;
 
   font-family: inherit;
@@ -146,22 +147,25 @@
 }
 
 .removeFromCart {
+  pointer-events: none;
+  cursor: pointer;
+
+  transform: translateX(-8px);
+
+  overflow: hidden;
   display: flex;
   flex: 0 0 0;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  overflow: hidden;
 
   width: 0;
   height: 24px;
   padding: 0;
   border: 0;
 
-  background-color: #fff;
   opacity: 0;
-  pointer-events: none;
-  transform: translateX(-8px);
+  background-color: #fff;
+
   transition:
     flex-basis 200ms ease,
     width 200ms ease,
@@ -171,35 +175,44 @@
 
   .cartActions:hover &,
   .cartActions:focus-within & {
-    flex-basis: 24px;
-    width: 24px;
-    border: 1px solid #e2e6e9;
-    opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
-  }
 
-  @media (max-width: 639px) {
+    transform: translateX(0);
+
     flex-basis: 24px;
+
     width: 24px;
     border: 1px solid #e2e6e9;
+
     opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
   }
 
   img {
     width: 12px;
     height: 12px;
   }
+
+  @media (max-width: 639px) {
+    pointer-events: auto;
+
+    transform: translateX(0);
+
+    flex-basis: 24px;
+
+    width: 24px;
+    border: 1px solid #e2e6e9;
+
+    opacity: 1;
+  }
 }
 
 .favoriteButton {
+  cursor: pointer;
+
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 
   width: 40px;
   height: 40px;
