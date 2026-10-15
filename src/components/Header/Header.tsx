@@ -6,6 +6,7 @@ import { HeaderAction } from '../HeaderAction';
 import { Logo } from '../Logo';
 import { Navigation } from '../Navigation';
 import { BurgerButton } from '../BurgerButton';
+import { playBoxOpenSound } from '../../modules/PixelHearts/sounds';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,12 +32,16 @@ export const Header: React.FC = () => {
 
         <div className={styles.rightSection}>
           <HeaderAction
+            onClick={() => {
+              playBoxOpenSound()
+            }}
             to="/cart"
             label="Cart"
             icon={<img src="/img/Cart.svg" alt="" />}
             count={cartCount}
           />
           <HeaderAction
+
             to="/favorites"
             label="Favorites"
             icon={<img src="/img/Favorites.svg" alt="" />}

@@ -11,6 +11,7 @@ import type {
 } from '../../types/product';
 import styles from './ProductDetailsPage.module.scss';
 import { PixelHearts } from '../PixelHearts/PixelHearts';
+import { playCartAddSound, playCartRemoveSound } from '../PixelHearts/sounds';
 
 const arrowLeft = 'img/ArrowLeft-disabled.svg';
 const arrowRight = 'img/ArrowRight-disabled.svg';
@@ -194,6 +195,7 @@ export const ProductDetailsPage: React.FC = () => {
                 type="button"
                 disabled={!actionProduct || isInCart}
                 onClick={() => {
+                  playCartAddSound()
                   if (actionProduct) {
                     add({ product: actionProduct, quantity: 1 });
                   }
@@ -206,7 +208,9 @@ export const ProductDetailsPage: React.FC = () => {
                   className={styles.removeFromCartBtn}
                   type="button"
                   aria-label={`Remove ${actionProduct.name} from cart`}
-                  onClick={() => remove(actionProduct.itemId)}
+                  onClick={() => {
+                    playCartRemoveSound();
+                    remove(actionProduct.itemId)}}
                 >
                   <img
                     src={`${import.meta.env.BASE_URL}img/Close.svg`}

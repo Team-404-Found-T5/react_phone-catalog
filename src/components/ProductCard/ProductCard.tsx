@@ -5,6 +5,7 @@ import { useFavorites } from '../../context/FavoritesContext';
 import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
 import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
+import { playCartAddSound, playCartRemoveSound } from '../../modules/PixelHearts/sounds';
 
 type Props = {
   product: Product;
@@ -58,7 +59,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             }`}
             type="button"
             disabled={isInCart}
-            onClick={() => add({ product, quantity: 1 })}
+            onClick={() => {
+              playCartAddSound()
+              add({ product, quantity: 1 })}}
           >
             {isInCart ? 'Added to cart' : 'Add to cart'}
           </button>
@@ -67,7 +70,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               className={styles.removeFromCart}
               type="button"
               aria-label={`Remove ${product.name} from cart`}
-              onClick={() => remove(product.itemId)}
+              onClick={() => {
+                playCartRemoveSound()
+                remove(product.itemId)}}
             >
               <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
             </button>

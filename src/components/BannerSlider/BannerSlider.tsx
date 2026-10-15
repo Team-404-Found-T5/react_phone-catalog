@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import styles from './BannerSlider.module.scss';
+import { playFshuhSound } from '../../modules/PixelHearts/sounds';
 
 type Banner = {
   id: string;
@@ -83,6 +84,7 @@ export const BannerSlider: React.FC = () => {
         </Swiper>
 
         <button
+        onClick={playFshuhSound}
           type="button"
           className={`${styles.arrow} ${styles.next}`}
           aria-label="Next banner"

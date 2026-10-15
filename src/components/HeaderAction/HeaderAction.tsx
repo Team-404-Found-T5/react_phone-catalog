@@ -8,6 +8,7 @@ interface HeaderActionProps {
   label: string;
   icon: ReactNode;
   count: number;
+  onClick?: () => void;
 }
 
 export const HeaderAction: React.FC<HeaderActionProps> = ({
@@ -15,9 +16,11 @@ export const HeaderAction: React.FC<HeaderActionProps> = ({
   label,
   icon,
   count,
+  onClick,
 }) => {
   return (
     <NavLink
+      onClick={onClick}
       to={to}
       aria-label={label}
       className={({ isActive }) =>
