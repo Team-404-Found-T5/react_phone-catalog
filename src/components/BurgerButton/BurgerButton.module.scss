@@ -1,3 +1,58 @@
-.container {
-  // Styles will be added here.
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.burgerLine {
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+
+  background-color: $color-text;
+
+  transition: all 0.3s;
+}
+
+.burgerButton {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: start;
+  justify-content: center;
+
+  padding: 16px;
+
+  outline: 1px $color-elements solid;
+
+  transition: all 0.3s;
+
+  @include tablet {
+    display: none;
+  }
+
+  &:hover {
+    outline: 1px $color-text solid;
+
+    .firstLine {
+      width: 10px;
+    }
+
+    .thirdLine {
+      width: 10px;
+    }
+  }
+
+  &.isOpen {
+    .burgerLine:nth-child(1) {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .burgerLine:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burgerLine:nth-child(3) {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+  }
 }
