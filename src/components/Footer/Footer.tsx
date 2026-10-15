@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
         <a className={styles.fromFooterToTop} href='#header' onClick={toTop}>
           Back to top
           <div className={styles.arrowBorder}>
-            <img src="public/img/ArrowRight.svg" alt="link To top" />
+            <img src="img/ArrowRight-active.svg" alt="link To top" />
           </div>
         </a>
       </div>
