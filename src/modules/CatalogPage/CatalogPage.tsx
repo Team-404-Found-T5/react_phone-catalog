@@ -83,7 +83,9 @@ export const CatalogPage: React.FC = () => {
     <section className={styles.container}>
       <Breadcrumbs items={[{ label: title }]} />
 
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>
+        {category === 'phones' ? 'Mobile phones' : title}
+      </h1>
       <p className={styles.count}>
         {isLoading ? 'Loading products...' : `${totalProducts} ${plural}`}
       </p>
