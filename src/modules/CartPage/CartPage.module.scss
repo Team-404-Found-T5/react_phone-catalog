@@ -94,6 +94,10 @@
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.2);
   }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 .empty {
@@ -117,4 +121,8 @@
   line-height: 21px;
   color: $color-secondary;
   text-decoration: underline;
+
+  &:hover {
+    color: $color-primary;
+  }
 }

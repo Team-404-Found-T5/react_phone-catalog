@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem/CartItem';
+import { CheckoutModal } from '../../components/CheckoutModal/CheckoutModal';
 import { useCart } from '../../context/CartContext';
 import styles from './CartPage.module.scss';
 
 export const CartPage: React.FC = () => {
-  const { items } = useCart();
+  const { items, remove } = useCart();
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0,
   );
   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  const handleClearCart = () => {
+    items.forEach(item => remove(item.product.itemId));
+  };
 
   return (
     <>
@@ -52,12 +58,21 @@ export const CartPage: React.FC = () => {
             <button
               type="button"
               className={styles.checkout}
+              onClick={() => setIsCheckoutOpen(true)}
             >
               Checkout
             </button>
           </section>
         </div>
       )}
+
+      <CheckoutModal
+        isOpen={isCheckoutOpen}
+        totalPrice={totalPrice}
+        totalCount={totalCount}
+        onClose={() => setIsCheckoutOpen(false)}
+        onConfirm={handleClearCart}
+      />
     </>
   );
 };

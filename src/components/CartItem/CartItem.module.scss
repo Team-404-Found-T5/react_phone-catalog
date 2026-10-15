@@ -73,14 +73,12 @@
 
   transition: border-color 0.2s;
 
-  // Сначала идет простое состояние disabled (оно выше по специфичности)
   &:disabled {
     cursor: default;
     border-color: $color-elements;
     opacity: 0.4;
   }
 
-  // Затем составной ховер
   &:hover:not(:disabled) {
     border-color: $color-primary;
   }
