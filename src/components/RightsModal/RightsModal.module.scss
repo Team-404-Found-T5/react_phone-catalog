@@ -9,8 +9,8 @@
 
 @keyframes pop-in {
   0% {
-    opacity: 0;
     transform: translateY(16px) scale(0.97);
+    opacity: 0;
   }
 }
 
@@ -20,16 +20,18 @@
   max-height: calc(100% - 32px);
   padding: 0;
   border: 0;
-  background: #fff;
+
   color: $color-primary;
 
-  &[open] {
-    animation: pop-in 0.25s ease-out;
-  }
+  background: #fff;
 
   &::backdrop {
     background: rgba(49, 50, 55, 0.5);
     animation: fade-in 0.25s ease-out;
+  }
+
+  &[open] {
+    animation: pop-in 0.25s ease-out;
   }
 }
 
@@ -43,13 +45,18 @@
 }
 
 .close {
+  cursor: pointer;
+
   position: absolute;
   top: 16px;
   right: 16px;
+
   display: flex;
+
   padding: 4px;
-  cursor: pointer;
+
   opacity: 0.7;
+
   transition: opacity 0.2s, transform 0.2s;
 
   &:hover {
@@ -67,6 +74,7 @@
 
 .title {
   margin-bottom: 24px;
+
   font-size: 22px;
   font-weight: 800;
   line-height: 31px;
@@ -88,6 +96,7 @@
 .copyright {
   padding-top: 16px;
   border-top: 1px solid $color-elements;
+
   font-size: 12px;
   font-weight: 700;
   line-height: 18px;

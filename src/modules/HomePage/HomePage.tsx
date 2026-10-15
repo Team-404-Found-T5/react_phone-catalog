@@ -99,8 +99,7 @@ export const HomePage: React.FC = () => {
               getIphoneGeneration(second) - getIphoneGeneration(first) ||
               getModelPriority(second) - getModelPriority(first),
           ),
-      )
-        .slice(0, FEATURED_PRODUCTS_COUNT),
+      ).slice(0, FEATURED_PRODUCTS_COUNT),
     [products],
   );
   const hotPricesProducts = useMemo(
@@ -112,39 +111,36 @@ export const HomePage: React.FC = () => {
             second.price -
             ((first.fullPrice ?? first.price) - first.price),
         ),
-      )
-        .slice(0, FEATURED_PRODUCTS_COUNT),
+      ).slice(0, FEATURED_PRODUCTS_COUNT),
     [products],
   );
 
   return (
-    <div className={styles.container}>
+    <>
       <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
+      <div className={styles.container}>
+        <BannerSlider />
 
-      <BannerSlider />
+        {isLoading && <Loader />}
 
-      {isLoading && <Loader />}
+        {error && (
+          <p role="alert">Failed to load home page products: {error}</p>
+        )}
 
-      {error && (
-        <p role="alert">Failed to load home page products: {error}</p>
-      )}
+        {!isLoading && !error && (
+          <ProductsSlider
+            title="Brand new models"
+            products={brandNewProducts}
+          />
+        )}
 
-      {!isLoading && !error && (
-        <section className={styles.section}>
-          <ProductsSlider title="Brand new models" products={brandNewProducts} />
-        </section>
-      )}
-
-      <section className={styles.section}>
         <ShopByCategory />
-      </section>
 
-      {!isLoading && !error && (
-        <section className={styles.section}>
+        {!isLoading && !error && (
           <ProductsSlider title="Hot prices" products={hotPricesProducts} />
-        </section>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
