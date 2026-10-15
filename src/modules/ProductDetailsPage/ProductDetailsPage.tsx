@@ -10,6 +10,7 @@ import type {
   ProductDetails,
 } from '../../types/product';
 import styles from './ProductDetailsPage.module.scss';
+import { PixelHearts } from '../PixelHearts/PixelHearts';
 
 const arrowLeft = 'img/ArrowLeft-disabled.svg';
 const arrowRight = 'img/ArrowRight-disabled.svg';
@@ -222,7 +223,8 @@ export const ProductDetailsPage: React.FC = () => {
                 isFavorite ? 'Remove from favorites' : 'Add to favorites'
               }
               aria-pressed={isFavorite}
-              onClick={() => {
+              onClick={(e) => {
+                PixelHearts(e)
                 if (actionProduct) {
                   toggle(actionProduct);
                 }
