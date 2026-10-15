@@ -6,6 +6,7 @@ import { HeaderAction } from '../HeaderAction';
 import { Logo } from '../Logo';
 import { Navigation } from '../Navigation';
 import { BurgerButton } from '../BurgerButton';
+import { MobileMenu } from '../MobileMenu';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +20,10 @@ export const Header: React.FC = () => {
     setIsMenuOpen(prev => !prev);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={styles.headerHeader}>
       <div className={styles.container}>
@@ -29,25 +34,25 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.rightSection}>
-          <HeaderAction
-            to="/cart"
-            label="Cart"
-            icon={<img src="/img/Cart.svg" alt="" />}
-            count={cartCount}
-          />
-          <HeaderAction
-            to="/favorites"
-            label="Favorites"
-            icon={<img src="/img/Favorites.svg" alt="" />}
-            count={favoritesCount}
-          />
+        <div>
+          <div className={styles.rightSectionCartAndFav}>
+            <HeaderAction
+              to="/cart"
+              label="Cart"
+              icon={<img src="img/Cart.svg" alt="cartSvg" />}
+              count={cartCount}
+            />
+            <HeaderAction
+              to="/favorites"
+              label="Favorites"
+              icon={<img src="img/Favorites.svg" alt="FavoritedSvg" />}
+              count={favoritesCount}
+            />
+          </div>
           <BurgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
-        {/* <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.isOpen : ''}`}>
-          <Navigation />
-        </div> */}
+        <MobileMenu show={isMenuOpen} closeModal={closeMenu} />
       </div>
     </header>
   );
