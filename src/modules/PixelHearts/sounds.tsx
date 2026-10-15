@@ -9,7 +9,8 @@ import plus from './Plus.mp3'
 import minus from './Minus.mp3'
 import cancel from './CANCEL.mp3'
 import victory from './VICTORY.wav'
-import fshuh from './FSHUH.wav'
+import fshuh from './FSHUH.mp3'
+import portal from './PORTAL.mp3'
 
 
 
@@ -133,6 +134,17 @@ export const playVictorySound = () => {
 export const playFshuhSound = () => {
   try {
     const audio = new Audio(fshuh);
+    audio.volume = 0.4;
+    audio.play().catch((e) => {
+      console.warn('Audio play blocked or failed!!!!!', e);
+    });
+  } catch (e) {
+    console.error('Audio error!!!!!', e);
+  }
+};
+export const playPortalSound = () => {
+  try {
+    const audio = new Audio(portal);
     audio.volume = 0.4;
     audio.play().catch((e) => {
       console.warn('Audio play blocked or failed!!!!!', e);

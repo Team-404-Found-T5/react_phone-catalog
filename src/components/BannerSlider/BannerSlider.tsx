@@ -45,6 +45,10 @@ export const BannerSlider: React.FC = () => {
     <section className={styles.banner}>
       <div className={styles.main}>
         <button
+          onClick={(e) => {
+            e.stopPropagation();
+            playFshuhSound();
+          }}
           type="button"
           className={`${styles.arrow} ${styles.prev}`}
           aria-label="Previous banner"
@@ -84,7 +88,10 @@ export const BannerSlider: React.FC = () => {
         </Swiper>
 
         <button
-        onClick={playFshuhSound}
+          onClick={(e) => {
+            e.stopPropagation();
+            playFshuhSound();
+          }}
           type="button"
           className={`${styles.arrow} ${styles.next}`}
           aria-label="Next banner"
