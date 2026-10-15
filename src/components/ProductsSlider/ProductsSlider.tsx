@@ -20,7 +20,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             aria-label="Previous products"
           >
             <img
-              src={`${import.meta.env.BASE_URL}img/ArrowLeft.svg`}
+              src="img/ArrowLeft-active.svg"
               alt=""
               className={styles.arrowIcon}
             />
@@ -31,7 +31,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             aria-label="Next products"
           >
             <img
-              src={`${import.meta.env.BASE_URL}img/ArrowRight.svg`}
+              src="img/ArrowRight-active.svg"
               alt=""
               className={styles.arrowIcon}
             />
