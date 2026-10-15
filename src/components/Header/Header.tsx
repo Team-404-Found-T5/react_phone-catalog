@@ -24,11 +24,20 @@ export const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const toTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  };
+
   return (
     <header className={styles.headerHeader}>
       <div className={styles.container}>
         <div className={styles.firstpartHeader}>
-          <Logo variant='header' />
+          <a href='#header' onClick={toTop}><Logo variant='header' /></a>
           <div className={styles.navWrapper}>
             <Navigation />
           </div>
