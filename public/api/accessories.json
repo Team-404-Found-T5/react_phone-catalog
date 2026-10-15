@@ -4,18 +4,11 @@
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 38mm Space Gray",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "38mm",
     "priceRegular": 209,
     "priceDiscount": 175,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-series-3/space-gray/00.webp",
@@ -24,21 +17,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -46,29 +42,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-3-42mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 42mm Space Gray",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "42mm",
     "priceRegular": 260,
     "priceDiscount": 225,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-series-3/space-gray/00.webp",
@@ -77,21 +62,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -99,29 +87,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-3-38mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 38mm Gold",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "38mm",
     "priceRegular": 199,
     "priceDiscount": 169,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-3/gold/00.webp",
@@ -130,21 +107,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -152,29 +132,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-3-42mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 42mm Gold",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "42mm",
     "priceRegular": 250,
     "priceDiscount": 219,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-3/gold/00.webp",
@@ -183,21 +152,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -205,29 +177,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-3-38mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 38mm Silver",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "38mm",
     "priceRegular": 206,
     "priceDiscount": 172,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-3/silver/00.webp",
@@ -236,21 +197,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -258,29 +222,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-3-42mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-3",
     "name": "Apple Watch Series 3 42mm Silver",
-    "capacityAvailable": [
-      "38mm",
-      "42mm"
-    ],
+    "capacityAvailable": ["38mm", "42mm"],
     "capacity": "42mm",
     "priceRegular": 257,
     "priceDiscount": 222,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-3/silver/00.webp",
@@ -289,21 +242,24 @@
     ],
     "description": [
       {
-        "title": "Monitor your health",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 3 is equipped with sensors to track your heart rate, calories burned, and other fitness metrics throughout the day. It can even track your workouts and suggest personalized fitness goals."
+          "Apple Watch Series 3 has a Retina OLED display with brightness up to 1000 nits.",
+          "The watch uses the S3 chip with a dual-core processor and the Apple W2 wireless chip."
         ]
       },
       {
-        "title": "Stay connected on the go",
+        "title": "Activity and sensors",
         "text": [
-          "With cellular connectivity, you can make calls and send texts from your wrist even without your iPhone nearby. And with Siri, you can get directions, send messages, and set reminders hands-free."
+          "An optical heart sensor supports heart-rate monitoring. An accelerometer and gyroscope provide motion data for activity tracking.",
+          "Built-in GPS supports location tracking, while the altimeter measures elevation."
         ]
       },
       {
-        "title": "Stream your favorite music",
+        "title": "Connectivity and charging",
         "text": [
-          "With Apple Music and Siri, you can stream over 75 million songs on your Apple Watch Series 3. Or listen to your favorite podcasts, audiobooks, and radio stations."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 4.2 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -311,31 +267,18 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-40mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 40mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 419,
     "priceDiscount": 341,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-series-6/space-gray/00.webp",
@@ -344,21 +287,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -366,31 +312,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-44mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 44mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 449,
     "priceDiscount": 371,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-series-6/space-gray/00.webp",
@@ -399,21 +332,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -421,31 +357,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-40mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 40mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 416,
     "priceDiscount": 338,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-6/silver/00.webp",
@@ -454,21 +377,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -476,31 +402,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-44mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 44mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 446,
     "priceDiscount": 368,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-6/silver/00.webp",
@@ -509,21 +422,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -531,31 +447,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-40mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 40mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 406,
     "priceDiscount": 332,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-6/gold/00.webp",
@@ -564,21 +467,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -586,31 +492,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-44mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 44mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 436,
     "priceDiscount": 362,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-6/gold/00.webp",
@@ -619,21 +512,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -641,31 +537,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-40mm-blue",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 40mm Blue",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 399,
     "priceDiscount": 329,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "blue",
     "images": [
       "img/accessories/apple-watch-series-6/blue/00.webp",
@@ -674,21 +557,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -696,31 +582,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-44mm-blue",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 44mm Blue",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 429,
     "priceDiscount": 359,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "blue",
     "images": [
       "img/accessories/apple-watch-series-6/blue/00.webp",
@@ -729,21 +602,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -751,31 +627,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-40mm-red",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 40mm Red",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 409,
     "priceDiscount": 335,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "red",
     "images": [
       "img/accessories/apple-watch-series-6/red/00.webp",
@@ -784,21 +647,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -806,31 +672,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-6-44mm-red",
     "category": "accessories",
     "namespaceId": "apple-watch-series-6",
     "name": "Apple Watch Series 6 44mm Red",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 439,
     "priceDiscount": 365,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold",
-      "blue",
-      "red"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold", "blue", "red"],
     "color": "red",
     "images": [
       "img/accessories/apple-watch-series-6/red/00.webp",
@@ -839,21 +692,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 6 features an Always-On Retina display that is 2.5 times brighter outdoors when your wrist is down. So you can see all the information on your watch face at a glance."
+          "Apple Watch Series 6 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S6 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Blood oxygen sensor",
+        "title": "Activity and sensors",
         "text": [
-          "The Blood Oxygen app measures your blood oxygen levels with a revolutionary new sensor and app. You can also take an ECG from your wrist anytime, anywhere."
+          "Hardware includes optical and electrical heart sensors, a blood oxygen sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 6 tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports both 2.4GHz and 5GHz Wi-Fi, along with Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -861,29 +717,18 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-40mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 40mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 406,
     "priceDiscount": 302,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-5/silver/00.webp",
@@ -892,21 +737,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "With the Always-On Retina display, you can easily see the time and important information without raising your wrist. The display is also 30% larger than the Series 3, making it easier to read and interact with."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "The ECG app can detect irregular heart rhythms and alert you if something seems amiss. You can also take an ECG anytime, anywhere, right from your wrist."
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Activity tracking",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your daily activity, including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -914,29 +762,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-44mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 44mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 436,
     "priceDiscount": 402,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-5/silver/00.webp",
@@ -945,21 +782,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 5 features an Always-On Retina display that allows you to glance at your watch without raising your wrist."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram from your wrist anytime, anywhere. "
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your workouts",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your workouts including running, walking, cycling, and swimming. It also has a built-in GPS to track your location and route."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -967,29 +807,18 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-40mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 40mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 399,
     "priceDiscount": 299,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-5/gold/00.webp",
@@ -998,21 +827,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "With the Always-On Retina display, you can easily see the time and important information without raising your wrist. The display is also 30% larger than the Series 3, making it easier to read and interact with."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "The ECG app can detect irregular heart rhythms and alert you if something seems amiss. You can also take an ECG anytime, anywhere, right from your wrist."
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Activity tracking",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your daily activity, including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1020,29 +852,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-44mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 44mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 429,
     "priceDiscount": 399,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-5/gold/00.webp",
@@ -1051,21 +872,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 5 features an Always-On Retina display that allows you to glance at your watch without raising your wrist."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram from your wrist anytime, anywhere. "
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your workouts",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your workouts including running, walking, cycling, and swimming. It also has a built-in GPS to track your location and route."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1073,29 +897,18 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-40mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 40mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 409,
     "priceDiscount": 305,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "space-gray",
     "images": [
       "img/accessories/apple-watch-series-5/space-gray/00.webp",
@@ -1104,21 +917,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "With the Always-On Retina display, you can easily see the time and important information without raising your wrist. The display is also 30% larger than the Series 3, making it easier to read and interact with."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "The ECG app can detect irregular heart rhythms and alert you if something seems amiss. You can also take an ECG anytime, anywhere, right from your wrist."
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Activity tracking",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your daily activity, including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1126,29 +942,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-5-44mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-5",
     "name": "Apple Watch Series 5 44mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 439,
     "priceDiscount": 405,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "space-gray",
     "images": [
       "img/accessories/apple-watch-series-5/space-gray/00.webp",
@@ -1157,21 +962,24 @@
     ],
     "description": [
       {
-        "title": "Always-On Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 5 features an Always-On Retina display that allows you to glance at your watch without raising your wrist."
+          "Apple Watch Series 5 has an Always-On Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram from your wrist anytime, anywhere. "
+          "Hardware includes a second-generation optical heart sensor, an electrical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and a barometric altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Track your workouts",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 5 tracks your workouts including running, walking, cycling, and swimming. It also has a built-in GPS to track your location and route."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1179,29 +987,18 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-40mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 40mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 406,
     "priceDiscount": 352,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-4/silver/00.webp",
@@ -1210,21 +1007,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1232,29 +1032,18 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-44mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 44mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 436,
     "priceDiscount": 382,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-series-4/silver/00.webp",
@@ -1263,21 +1052,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1285,29 +1077,18 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-40mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 40mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 399,
     "priceDiscount": 349,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-4/gold/00.webp",
@@ -1316,21 +1097,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1338,29 +1122,18 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-44mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 44mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 429,
     "priceDiscount": 379,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-series-4/gold/00.webp",
@@ -1369,21 +1142,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1391,29 +1167,18 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-40mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 40mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 409,
     "priceDiscount": 355,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "space-gray",
     "images": [
       "img/accessories/apple-watch-series-4/space-gray/00.webp",
@@ -1422,21 +1187,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1444,29 +1212,18 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-series-4-44mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-series-4",
     "name": "Apple Watch Series 4 44mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 439,
     "priceDiscount": 385,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "space-gray",
     "images": [
       "img/accessories/apple-watch-series-4/space-gray/00.webp",
@@ -1475,21 +1232,24 @@
     ],
     "description": [
       {
-        "title": "Larger display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch Series 4 has a larger display that lets you see more information at a glance. The display is over 30% larger than the Series 3 and is edge-to-edge with curved corners."
+          "Apple Watch Series 4 has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S4 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "ECG app",
+        "title": "Activity and sensors",
         "text": [
-          "With the ECG app, you can take an electrocardiogram right from your wrist. This feature is only available in certain countries and regions."
+          "Hardware includes optical and electrical heart sensors, an accelerometer and a gyroscope.",
+          "Built-in GPS supports location tracking, while a barometric altimeter measures elevation."
         ]
       },
       {
-        "title": "Fall detection",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch Series 4 can detect when you fall and can send an alert to emergency services if you don't respond within a minute. This feature is only available for users over 65 years old."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1497,29 +1257,18 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-40mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 40mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 286,
     "priceDiscount": 252,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-se/silver/00.webp",
@@ -1528,21 +1277,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a Retina display that provides clear and vibrant visuals for easy readability."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Family Setup",
+        "title": "Activity and sensors",
         "text": [
-          "With Family Setup, you can pair your Apple Watch SE with a family member's iPhone, so you can stay connected even without owning an iPhone yourself."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Fitness tracking",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch SE offers comprehensive fitness tracking features, including activity tracking, heart rate monitoring, and built-in GPS for tracking your outdoor workouts."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1550,29 +1302,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-44mm-silver",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 44mm Silver",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 316,
     "priceDiscount": 282,
-    "colorsAvailable": [
-      "silver",
-      "gold",
-      "space gray"
-    ],
+    "colorsAvailable": ["silver", "gold", "space gray"],
     "color": "silver",
     "images": [
       "img/accessories/apple-watch-se/silver/00.webp",
@@ -1581,21 +1322,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a Retina display that provides clear and vibrant visuals for easy readability."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Family Setup",
+        "title": "Activity and sensors",
         "text": [
-          "With Family Setup, you can pair your Apple Watch SE with a family member's iPhone, so you can stay connected even without owning an iPhone yourself."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Fitness tracking",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch SE offers comprehensive fitness tracking features, including activity tracking, heart rate monitoring, and built-in GPS for tracking your outdoor workouts."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1603,29 +1347,18 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-40mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 40mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 279,
     "priceDiscount": 259,
-    "colorsAvailable": [
-      "silver",
-      "space gray",
-      "gold"
-    ],
+    "colorsAvailable": ["silver", "space gray", "gold"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-se/gold/00.webp",
@@ -1634,21 +1367,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a stunning Retina display that is always on, so you can easily see the time and important information without having to raise your wrist."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Health and fitness tracking",
+        "title": "Activity and sensors",
         "text": [
-          "The Apple Watch SE has all the features you need to stay healthy and active, including heart rate monitoring, activity tracking, and sleep tracking. It also has built-in GPS so you can track your workouts and outdoor activities."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Stay connected",
+        "title": "Connectivity and charging",
         "text": [
-          "With cellular and Wi-Fi connectivity, you can stay connected wherever you go. You can make and receive calls, send texts, and stream music directly from your wrist."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1656,29 +1392,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-44mm-gold",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 44mm Gold",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 309,
     "priceDiscount": 289,
-    "colorsAvailable": [
-      "space gray",
-      "silver",
-      "gold"
-    ],
+    "colorsAvailable": ["space gray", "silver", "gold"],
     "color": "gold",
     "images": [
       "img/accessories/apple-watch-se/gold/00.webp",
@@ -1687,21 +1412,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a stunning Retina display that is always on, so you can easily see the time and important information without lifting your wrist."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Track your daily activity",
+        "title": "Activity and sensors",
         "text": [
-          "The Apple Watch SE tracks your daily activity including workouts, steps taken, and calories burned. It also has a built-in GPS to track your runs, walks, and hikes."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Stay connected",
+        "title": "Connectivity and charging",
         "text": [
-          "The Apple Watch SE keeps you connected with the people and information you care about most. With cellular service, you can make and receive calls and texts, stream music, and use Siri, all without your iPhone."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1709,29 +1437,18 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-40mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 40mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "40mm",
     "priceRegular": 289,
     "priceDiscount": 265,
-    "colorsAvailable": [
-      "silver",
-      "space gray",
-      "gold"
-    ],
+    "colorsAvailable": ["silver", "space gray", "gold"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-se/space-gray/00.webp",
@@ -1740,21 +1457,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a stunning Retina display that is always on, providing clear and vibrant visuals for easy readability."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Fitness and health tracking",
+        "title": "Activity and sensors",
         "text": [
-          "The Apple Watch SE helps you stay active and monitors your health with features like heart rate monitoring, activity tracking, and built-in GPS for tracking your outdoor workouts."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Stay connected",
+        "title": "Connectivity and charging",
         "text": [
-          "With cellular and Wi-Fi connectivity, you can stay connected on the go. Make and receive calls, send messages, stream music, and access Siri right from your wrist."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1762,29 +1482,18 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   },
   {
     "id": "apple-watch-se-44mm-space-gray",
     "category": "accessories",
     "namespaceId": "apple-watch-se",
     "name": "Apple Watch SE 44mm Space Gray",
-    "capacityAvailable": [
-      "40mm",
-      "44mm"
-    ],
+    "capacityAvailable": ["40mm", "44mm"],
     "capacity": "44mm",
     "priceRegular": 319,
     "priceDiscount": 295,
-    "colorsAvailable": [
-      "silver",
-      "space gray",
-      "gold"
-    ],
+    "colorsAvailable": ["silver", "space gray", "gold"],
     "color": "space gray",
     "images": [
       "img/accessories/apple-watch-se/space-gray/00.webp",
@@ -1793,21 +1502,24 @@
     ],
     "description": [
       {
-        "title": "Retina display",
+        "title": "Display and performance",
         "text": [
-          "The Apple Watch SE features a stunning Retina display that is always on, providing clear and vibrant visuals for easy readability."
+          "Apple Watch SE (1st generation) has a Retina LTPO OLED display with brightness up to 1000 nits.",
+          "The watch uses the S5 chip with a 64-bit dual-core processor and the Apple W3 wireless chip."
         ]
       },
       {
-        "title": "Fitness and health tracking",
+        "title": "Activity and sensors",
         "text": [
-          "The Apple Watch SE helps you stay active and monitors your health with features like heart rate monitoring, activity tracking, and built-in GPS for tracking your outdoor workouts."
+          "Hardware includes a second-generation optical heart sensor, an accelerometer and a gyroscope.",
+          "Built-in GPS, a compass and an always-on altimeter support outdoor activity tracking."
         ]
       },
       {
-        "title": "Stay connected",
+        "title": "Connectivity and charging",
         "text": [
-          "With cellular and Wi-Fi connectivity, you can stay connected on the go. Make and receive calls, send messages, stream music, and access Siri right from your wrist."
+          "The watch supports 2.4GHz Wi-Fi and Bluetooth 5.0 for wireless connectivity.",
+          "A built-in rechargeable lithium-ion battery powers the watch. Charging uses a magnetic charging cable."
         ]
       }
     ],
@@ -1815,10 +1527,6 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": [
-      "Wi-Fi",
-      "Bluetooth",
-      "LTE"
-    ]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
   }
 ]

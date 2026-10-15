@@ -82,6 +82,10 @@ $border-color: #e2e6e9;
         object-fit: contain;
       }
 
+      &:hover {
+        border-color: $color-primary;
+      }
+
       &.active {
         border-color: $color-primary;
       }
@@ -141,6 +145,10 @@ $border-color: #e2e6e9;
       cursor: pointer;
       padding: 0;
 
+      &:hover {
+        outline-color: $color-primary;
+      }
+
       &.active {
         outline-color: $color-primary;
       }
@@ -163,6 +171,10 @@ $border-color: #e2e6e9;
         background: #fff;
         font-size: 14px;
         cursor: pointer;
+
+        &:hover {
+          border-color: $color-primary;
+        }
 
         &.active {
           background: $color-primary;
@@ -213,6 +225,10 @@ $border-color: #e2e6e9;
 
       &:disabled {
         cursor: default;
+      }
+
+      &:hover:not(:disabled) {
+        background: #45464b;
       }
     }
 
@@ -278,9 +294,14 @@ $border-color: #e2e6e9;
       justify-content: center;
       cursor: pointer;
       color: $color-primary;
+      transition: border-color 200ms ease;
 
       &:disabled {
         cursor: default;
+      }
+
+      &:hover:not(:disabled) {
+        border-color: $color-primary;
       }
 
       img {
