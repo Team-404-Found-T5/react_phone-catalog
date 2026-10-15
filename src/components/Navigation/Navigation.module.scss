@@ -17,6 +17,23 @@
   }
 }
 
+.navList-modal {
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  // justify-content: start;
+  // justify-content: start;
+  margin-top: 24px;
+
+  .item {
+    width: fit-content;
+    a {
+      height: 40px;
+    }
+  }
+}
+
 .links {
   display: flex;
   align-items: center;
@@ -26,7 +43,8 @@
   font-size: 12px;
   font-weight: 800;
   line-height: 92%;
-  color: $color-text;
+
+  // color: $color-text;
   color: $color-secondary;
   text-transform: uppercase;
   letter-spacing: 0.04em;
