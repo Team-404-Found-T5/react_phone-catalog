@@ -13,7 +13,7 @@
   font-size: 32px;
   font-weight: 800;
   line-height: 41px;
-  color: $color-primary;
+  color: var(--color-text);
   letter-spacing: -0.01em;
 
   @include tablet {

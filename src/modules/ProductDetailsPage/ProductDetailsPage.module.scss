@@ -65,9 +65,9 @@
   width: 56px;
   height: 56px;
   padding: 4px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
-  background: #fff;
+  background: var(--color-surface);
 
   transition: border-color 0.2s;
 
@@ -84,11 +84,11 @@
   }
 
   &:hover {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 }
@@ -179,20 +179,21 @@
   cursor: pointer;
 
   padding: 8px 12px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
   font-size: 14px;
+  color: var(--color-text);
 
-  background: #fff;
+  background: var(--color-surface);
 
   transition: border-color 0.2s;
 
   &:hover {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 }
@@ -327,11 +328,11 @@
 
   width: 48px;
   height: 48px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
-  color: $color-primary;
+  color: var(--color-text);
 
-  background: #fff;
+  background: var(--color-surface);
 
   transition: border-color 0.2s;
 
@@ -341,7 +342,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 
@@ -350,7 +351,11 @@
   }
 
   &:hover:not(:disabled) {
-    border-color: $color-primary;
+    border-color: var(--color-text);
+  }
+
+  &[aria-pressed='false'] img {
+    filter: var(--icon-filter);
   }
 }
 
