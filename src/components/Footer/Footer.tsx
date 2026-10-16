@@ -3,6 +3,7 @@ import styles from './Footer.module.scss';
 import { Logo } from '../Logo';
 import ContactsModal from '../ContactsModal/ContactsModal';
 import { RightsModal } from '../RightsModal';
+import { playClick2Sound, playClickSound } from '../../modules/PixelHearts/sounds';
 
 export const Footer: React.FC = () => {
   const [isContactsOpen, setIsContactsOpen] = useState(false);
@@ -38,7 +39,9 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               className={styles.footerLinks}
-              onClick={() => setIsContactsOpen(true)}
+              onClick={() => {
+                playClickSound()
+                setIsContactsOpen(true)}}
             >
               Contacts
             </button>
@@ -47,13 +50,17 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               className={styles.footerLinks}
-              onClick={() => setIsRightsOpen(true)}
+              onClick={() => {
+                playClickSound()
+                setIsRightsOpen(true)}}
             >
               rights
             </button>
           </li>
         </ul>
-        <a className={styles.fromFooterToTop} href="#header" onClick={toTop}>
+        <a className={styles.fromFooterToTop} href="#header" onClick={(event) => {
+          playClick2Sound()
+          toTop(event)}}>
           Back to top
           <div className={styles.arrowBorder}>
             <img src="img/ArrowRight-active.svg" alt="link To top" />

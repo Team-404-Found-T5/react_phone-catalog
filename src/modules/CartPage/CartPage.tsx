@@ -5,6 +5,7 @@ import { CartItem } from '../../components/CartItem/CartItem';
 import { CheckoutModal } from '../../components/CheckoutModal/CheckoutModal';
 import { useCart } from '../../context/CartContext';
 import styles from './CartPage.module.scss';
+import { playClick2Sound } from '../PixelHearts/sounds';
 
 export const CartPage: React.FC = () => {
   const { items, remove } = useCart();
@@ -54,17 +55,18 @@ export const CartPage: React.FC = () => {
 
               <hr className={styles.divider} />
 
-              <button
-                type="button"
-                className={styles.checkout}
-                onClick={() => setIsCheckoutOpen(true)}
-              >
-                Checkout
-              </button>
-            </section>
-          </div>
-        )}
-      </div>
+            <button
+              type="button"
+              className={styles.checkout}
+              onClick={() => {
+                playClick2Sound()
+                setIsCheckoutOpen(true)}}
+            >
+              Checkout
+            </button>
+          </section>
+        </div>
+      )}
 
       <CheckoutModal
         isOpen={isCheckoutOpen}

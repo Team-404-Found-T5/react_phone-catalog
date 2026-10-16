@@ -8,8 +8,12 @@ interface HeaderActionProps {
   label: string;
   icon: ReactNode;
   count: number;
+<<<<<<< HEAD
+  onClick?: () => void;
+=======
   variant?: 'modal';
   closeModal?: () => void;
+>>>>>>> upstream/develop
 }
 
 export const HeaderAction: React.FC<HeaderActionProps> = ({
@@ -17,11 +21,16 @@ export const HeaderAction: React.FC<HeaderActionProps> = ({
   label,
   icon,
   count,
+<<<<<<< HEAD
+  onClick,
+=======
   variant,
   closeModal,
+>>>>>>> upstream/develop
 }) => {
   return (
     <NavLink
+      onClick={onClick}
       to={to}
       onClick={closeModal}
       aria-label={label}

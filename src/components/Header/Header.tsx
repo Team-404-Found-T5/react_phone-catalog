@@ -7,8 +7,12 @@ import { HeaderAction } from '../HeaderAction';
 import { Logo } from '../Logo';
 import { Navigation } from '../Navigation';
 import { BurgerButton } from '../BurgerButton';
+<<<<<<< HEAD
+import { playBoxOpenSound } from '../../modules/PixelHearts/sounds';
+=======
 import { MobileMenu } from '../MobileMenu';
 import { useLocation, useSearchParams } from 'react-router-dom';
+>>>>>>> upstream/develop
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,6 +84,24 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
+        <div className={styles.rightSection}>
+          <HeaderAction
+            onClick={() => {
+              playBoxOpenSound()
+            }}
+            to="/cart"
+            label="Cart"
+            icon={<img src="/img/Cart.svg" alt="" />}
+            count={cartCount}
+          />
+          <HeaderAction
+
+            to="/favorites"
+            label="Favorites"
+            icon={<img src="/img/Favorites.svg" alt="" />}
+            count={favoritesCount}
+=======
         {!isHomePage && (
           <input
             onChange={event => setSearchBy(event.target.value)}
@@ -87,6 +109,7 @@ export const Header: React.FC = () => {
             placeholder="search..."
             className={styles.headeSearchInp}
             type="text"
+>>>>>>> upstream/develop
           />
         )}
 

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { getProducts } from '../../api/products';
 import { Product, ProductCategory } from '../../types/product';
 import styles from './ShopByCategory.module.scss';
+import { playPortalSound } from '../../modules/PixelHearts/sounds';
 
 type Category = {
   id: ProductCategory;
@@ -55,7 +56,7 @@ export const ShopByCategory: React.FC = () => {
       <ul className={styles.list}>
         {categories.map(category => (
           <li key={category.id}>
-            <NavLink to={category.to} className={styles.card}>
+            <NavLink onClick={() => playPortalSound()}to={category.to} className={styles.card}>
               <div
                 className={styles.imageWrapper}
                 style={{ backgroundColor: category.background }}
