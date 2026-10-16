@@ -145,7 +145,7 @@
 }
 
 .secondary {
-  border: 1px solid #b4bdc3;
+  border: 1px solid $color-icons;
 
   &:hover {
     border-color: $color-primary;
@@ -173,7 +173,7 @@
   font-size: 28px;
   color: #fff;
 
-  background: #27ae60;
+  background: $color-green;
 
   animation: check-pop 0.4s ease-out;
 }

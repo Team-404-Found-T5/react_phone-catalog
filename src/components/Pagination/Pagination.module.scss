@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .container {
   display: flex;
   gap: 8px;
@@ -16,12 +18,12 @@
   min-width: 32px;
   height: 32px;
   padding: 0 8px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid $color-icons;
 
   font-family: inherit;
   font-size: 14px;
   line-height: 1;
-  color: #313237;
+  color: $color-text;
 
   background-color: #fff;
 }
@@ -34,11 +36,11 @@
 
 .page:hover:not(:disabled),
 .arrow:hover:not(:disabled) {
-  border-color: #313237;
+  border-color: $color-primary;
 }
 
 .active {
-  border-color: #313237;
+  border-color: $color-primary;
   color: #fff;
-  background-color: #313237;
+  background-color: $color-primary;
 }
