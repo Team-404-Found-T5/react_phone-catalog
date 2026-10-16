@@ -1,3 +1,4 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
 .title {
@@ -47,7 +48,7 @@
 
   width : 32px;
   height : 32px;
-  border : 1px solid #b4bdc4;
+  border : 1px solid $color-icons;
 
   background-color : #fff;
 }
@@ -75,5 +76,5 @@
 }
 
 .prevButton {
-  border-color : #E2E6E9;
+  border-color : $color-elements;
 }
