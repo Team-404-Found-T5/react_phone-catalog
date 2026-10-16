@@ -9,10 +9,11 @@
 
 .title {
   margin-top: 24px;
-  color: $color-primary;
+
   font-size: 32px;
   font-weight: 800;
   line-height: 41px;
+  color: $color-primary;
   letter-spacing: -0.01em;
 
   @include tablet {
@@ -35,8 +36,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  column-gap: 16px;
-  row-gap: 40px;
+  gap: 40px 16px;
   margin-bottom: 40px;
 }
 
