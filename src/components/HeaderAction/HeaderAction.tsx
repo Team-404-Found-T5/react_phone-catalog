@@ -10,6 +10,7 @@ interface HeaderActionProps {
   count: number;
   variant?: 'modal';
   closeModal?: () => void;
+  onClick?: () => void;
 }
 
 export const HeaderAction: React.FC<HeaderActionProps> = ({
@@ -19,11 +20,15 @@ export const HeaderAction: React.FC<HeaderActionProps> = ({
   count,
   variant,
   closeModal,
+  onClick,
 }) => {
   return (
     <NavLink
+      onClick={() => {
+        onClick?.();
+        closeModal?.();
+      }}
       to={to}
-      onClick={closeModal}
       aria-label={label}
       className={({ isActive }) =>
         classNames(styles.link, { [styles.active]: isActive }, styles[`item-${variant}`])

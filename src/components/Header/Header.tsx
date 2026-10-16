@@ -8,6 +8,7 @@ import { Navigation } from '../Navigation';
 import { BurgerButton } from '../BurgerButton';
 import { MobileMenu } from '../MobileMenu';
 import { useLocation, useSearchParams } from 'react-router-dom';
+import { playBoxOpenSound } from '../../modules/PixelHearts/sounds';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,6 +91,9 @@ export const Header: React.FC = () => {
         <div>
           <div className={styles.rightSectionCartAndFav}>
             <HeaderAction
+              onClick={() => {
+                playBoxOpenSound();
+              }}
               to="/cart"
               label="Cart"
               icon={<img src="img/Cart.svg" alt="cartSvg" />}

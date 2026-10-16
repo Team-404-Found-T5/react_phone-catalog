@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
+import { playClickSound } from '../../modules/PixelHearts/sounds';
 
 interface Prop {
   varinant?: 'modal';
@@ -8,12 +9,17 @@ interface Prop {
 }
 
 export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
+  const handleClick = () => {
+    playClickSound();
+    handleCloseModal?.();
+  };
+
   return (
     <nav className={styles.nav}>
       <ul className={`${styles.navLinks} ${styles[`navList-${varinant}`]}`}>
         <li className={styles.item}>
           <NavLink
-            onClick={handleCloseModal}
+            onClick={handleClick}
             to="/"
             className={({ isActive }) => isActive ? `${styles.links} ${styles.active}` : styles.links}
           >
@@ -22,7 +28,7 @@ export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
         </li>
         <li className={styles.item}>
           <NavLink
-            onClick={handleCloseModal}
+            onClick={handleClick}
             to="/phones"
             className={({ isActive }) => isActive ? `${styles.links} ${styles.active}` : styles.links}
           >
@@ -31,7 +37,7 @@ export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
         </li>
         <li className={styles.item}>
           <NavLink
-            onClick={handleCloseModal}
+            onClick={handleClick}
             to="/tablets"
             className={({ isActive }) => isActive ? `${styles.links} ${styles.active}` : styles.links}
           >
@@ -40,7 +46,7 @@ export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
         </li>
         <li className={styles.item}>
           <NavLink
-            onClick={handleCloseModal}
+            onClick={handleClick}
             to="/accessories"
             className={({ isActive }) => isActive ? `${styles.links} ${styles.active}` : styles.links}
           >
