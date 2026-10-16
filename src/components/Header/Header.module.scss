@@ -27,7 +27,7 @@
   height: 48px;
 
   @include tablet {
-  height: 48px;
+    height: 48px;
 
   }
 
@@ -89,5 +89,25 @@
 
   @include tablet {
     display: none;
+  }
+}
+
+.headerearchInp {
+  height: 40px;
+  width: 380px;
+  border-radius: 20px;
+  border: none;
+  outline: 1px $color-secondary solid;
+  padding-left: 20px;
+  transition: all, 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgb(182, 182, 255);
+  }
+
+  &:focus {
+    outline: 1px $color-text solid;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgb(91, 91, 165);
   }
 }
