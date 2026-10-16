@@ -82,7 +82,7 @@ export const Header: React.FC = () => {
             onChange={(event) => setSearchBy(event.target.value)}
             value={searchBy}
             placeholder='search...'
-            className={styles.headerearchInp}
+            className={styles.headeSearchInp}
             type="text"
           />
         )}
