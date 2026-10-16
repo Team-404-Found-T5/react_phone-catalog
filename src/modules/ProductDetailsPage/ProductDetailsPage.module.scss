@@ -8,13 +8,13 @@ $border-color: #e2e6e9;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 32px 100px;
+  padding: 24px 0 100px;
 
   font-family: $font-family;
   color: $color-text;
 
   @media (min-width: 1440px) {
-    padding: 24px 64px 120px;
+    padding: 24px 0 120px;
   }
 }
 
@@ -90,6 +90,10 @@ $border-color: #e2e6e9;
         object-fit: contain;
       }
 
+      &:hover {
+        border-color: $color-primary;
+      }
+
       &.active {
         border-color: $color-primary;
       }
@@ -153,6 +157,10 @@ $border-color: #e2e6e9;
 
       outline: 1px solid $border-color;
 
+      &:hover {
+        outline-color: $color-primary;
+      }
+
       &.active {
         outline-color: $color-primary;
       }
@@ -178,6 +186,10 @@ $border-color: #e2e6e9;
         font-size: 14px;
 
         background: #fff;
+
+        &:hover {
+          border-color: $color-primary;
+        }
 
         &.active {
           border-color: $color-primary;
@@ -232,6 +244,10 @@ $border-color: #e2e6e9;
 
       &:disabled {
         cursor: default;
+      }
+
+      &:hover:not(:disabled) {
+        background: #45464b;
       }
     }
 
@@ -314,8 +330,14 @@ $border-color: #e2e6e9;
 
       background: #fff;
 
+      transition: border-color 200ms ease;
+
       &:disabled {
         cursor: default;
+      }
+
+      &:hover:not(:disabled) {
+        border-color: $color-primary;
       }
 
       img {
