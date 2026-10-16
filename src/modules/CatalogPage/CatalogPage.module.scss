@@ -1,22 +1,15 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-
-  max-width: 1136px;
-  margin: 0 auto;
-  padding: 24px 0 80px;
-
-  @include tablet {
-    padding-top: 32px;
-  }
+  padding-top: 24px;
 }
 
 .title {
   margin-top: 24px;
-  color: #313237;
+  color: $color-primary;
   font-size: 32px;
   font-weight: 800;
   line-height: 41px;
@@ -29,15 +22,22 @@
 }
 
 .count {
-  margin-bottom: 24px;
-  color: #89939a;
+  margin: 8px 0 24px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-secondary;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 16px;
-  margin: 16px 0 40px;
+  column-gap: 16px;
+  row-gap: 40px;
+  margin-bottom: 40px;
 }
 
 .error,
@@ -46,5 +46,5 @@
 }
 
 .error {
-  color: #eb5757;
+  color: $color-red;
 }
