@@ -1,7 +1,24 @@
 @use './reset';
 @use './variables' as *;
 
+:root {
+  --color-background: #fff;
+  --color-surface: #fff;
+  --color-text: #313237;
+  --color-secondary: #89939a;
+  --color-border: #e2e6e9;
+}
+
+:root[data-theme='dark'] {
+  --color-background: #191a1e;
+  --color-surface: #202328;
+  --color-text: #f1f2f4;
+  --color-secondary: #89939a;
+  --color-border: #3b3e45;
+}
+
 body {
   font-family: $font-family;
-  color: $color-text;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
