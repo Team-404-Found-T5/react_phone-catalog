@@ -4,14 +4,15 @@
   height: 40px;
 }
 
-
 .headeSearchInp {
+  width: 405px;
   height: 40px;
-  width: 380px;
-  border-radius: 20px;
-  border: none;
-  outline: 1px $color-secondary solid;
   padding-left: 20px;
+  border: none;
+  border-radius: 20px;
+
+  outline: 1px $color-secondary solid;
+
   transition: all, 0.2s;
 
   &:hover {
@@ -19,36 +20,38 @@
   }
 
   &:focus {
-    outline: 1px $color-text solid;
     border-radius: 0;
+    outline: 1px $color-text solid;
     box-shadow: 0 0 10px rgb(91, 91, 165);
-
   }
 }
 
 .listOfSearches {
-  margin-top: 13px;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+
   height: 0;
-  overflow-y: scroll;
-  transition: all .2s;
+  margin-top: 13px;
+
+  transition: all 0.2s;
 }
 
 .listShow {
   height: 400px;
+
   // overflow-y: scroll;
 }
 
 .searchedItem {
-  width: 350px;
-
   flex-shrink: 0;
 
-  background-color: #ffffff;
-  outline: 1px solid $color-elements;
+  width: 350px;
   height: 60px;
   padding-inline: 20px;
+
+  background-color: #fff;
+  outline: 1px solid $color-elements;
 
   &:hover {
     background-color: $color-elements;
@@ -57,10 +60,11 @@
 
 .linkToProduct {
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: start;
+
   height: 100%;
-  gap: 20px;
 }
 
 .SearchedProductImage {

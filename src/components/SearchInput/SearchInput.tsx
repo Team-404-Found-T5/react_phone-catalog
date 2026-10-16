@@ -4,9 +4,7 @@ import { Product } from '../../types/product';
 import { NavLink, useLocation } from 'react-router-dom';
 import { getProducts } from '../../api/products';
 
-
 export const SearchInput: React.FC = () => {
-
   const inpsearch = useRef<HTMLInputElement>(null);
   const [searchBy, setSearchBy] = useState('');
   const [isFocused, setisFocused] = useState(false);
@@ -79,20 +77,22 @@ export const SearchInput: React.FC = () => {
         onFocus={() => setisFocused(true)}
         onBlur={() => setisFocused(false)}
       />
-      <ul className={`${styles.listOfSearches} ${isFocused ? styles.listShow : ''}`} >
+      <ul
+        className={`${styles.listOfSearches} ${isFocused ? styles.listShow : ''}`}
+      >
         {dataSearched.map(product => (
-          <li
-            className={styles.searchedItem}
-            key={product.id}
-          >
-            <NavLink className={styles.linkToProduct} to={`/${product.category}/${product.itemId}`} onMouseDown={e => e.preventDefault()}>
+          <li className={styles.searchedItem} key={product.id}>
+            <NavLink
+              className={styles.linkToProduct}
+              to={`/${product.category}/${product.itemId}`}
+              onMouseDown={e => e.preventDefault()}
+            >
               <img
                 className={styles.SearchedProductImage}
                 src={product.image}
                 alt={product.name || ''}
               />
               <p>{product.name}</p>
-
             </NavLink>
           </li>
         ))}

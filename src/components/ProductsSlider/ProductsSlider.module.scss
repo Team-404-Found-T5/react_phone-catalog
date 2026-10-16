@@ -1,3 +1,4 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
 .title {
@@ -9,7 +10,7 @@
   font-size : 32px;
   font-weight : 800;
   line-height : 41px;
-  color : #313237;
+  color: var(--color-text);
   letter-spacing : 0;
 }
 
@@ -47,14 +48,15 @@
 
   width : 32px;
   height : 32px;
-  border : 1px solid #b4bdc4;
+  border: 1px solid var(--color-border);
 
-  background-color : #fff;
+  background-color: var(--color-surface);
 }
 
 .arrowIcon {
   width : 16px;
   height : 16px;
+  filter: var(--icon-filter);
 }
 
 .productsList {
@@ -75,5 +77,5 @@
 }
 
 .prevButton {
-  border-color : #E2E6E9;
+  border-color: var(--color-border);
 }

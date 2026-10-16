@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CheckoutModal.module.scss';
+import { playCancelSound, playClick2Sound, playVictorySound } from '../../modules/PixelHearts/sounds';
 
 type Props = {
   isOpen: boolean;
@@ -40,6 +41,26 @@ export const CheckoutModal: React.FC<Props> = ({
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+
+    if (!dialog) {
+      return;
+    }
+
+    const handleMouseDown = (event: MouseEvent) => {
+      if (event.target === dialog) {
+        onClose();
+      }
+    };
+
+    dialog.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      dialog.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [onClose]);
+
   const handleConfirm = () => {
     setOrder({ price: totalPrice, count: totalCount });
     setIsDone(true);
@@ -62,7 +83,9 @@ export const CheckoutModal: React.FC<Props> = ({
         <button
           type="button"
           className={styles.close}
-          onClick={onClose}
+          onClick={() => {
+            playClick2Sound()
+            onClose()}}
           aria-label="Close"
         >
           <img src="public/img/Close.svg" alt="" />
@@ -106,7 +129,9 @@ export const CheckoutModal: React.FC<Props> = ({
               <button
                 type="button"
                 className={styles.secondary}
-                onClick={onClose}
+                onClick={() => {
+                  playCancelSound()
+                  onClose()}}
               >
                 Cancel
               </button>
@@ -114,7 +139,9 @@ export const CheckoutModal: React.FC<Props> = ({
               <button
                 type="button"
                 className={styles.primary}
-                onClick={handleConfirm}
+                onClick={() => {
+                  playVictorySound()
+                  handleConfirm()}}
               >
                 Confirm
               </button>

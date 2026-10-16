@@ -26,8 +26,12 @@
   transition: color 0.2s;
 
   &:hover {
-    color: $color-primary;
+    color: var(--color-text);
   }
+}
+
+.link img {
+  filter: var(--icon-filter);
 }
 
 .current {

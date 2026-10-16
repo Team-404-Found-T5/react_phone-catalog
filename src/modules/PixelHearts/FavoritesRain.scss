@@ -1,0 +1,47 @@
+.favorites-rain-container {
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.floating-pixel-heart {
+  position: absolute;
+  bottom: -40px;
+
+  width: 32px;
+  height: 28px;
+
+  image-rendering: pixelated;
+
+  animation: float-up-and-sway linear forwards;
+}
+
+@keyframes float-up-and-sway {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(-20vh) translateX(15px) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-60vh) translateX(-20px) scale(1);
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(10px) scale(0.9);
+    opacity: 0;
+  }
+}

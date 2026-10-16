@@ -13,14 +13,11 @@
     padding-left: 24px;
   }
 
-
-  background-color: #fff;
-  outline: 1px $color-elements solid;
+  background-color: var(--color-surface);
+  outline: 1px solid var(--color-border);
 }
 
 .container {
-  // @include container;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,14 +25,11 @@
 
   @include tablet {
     height: 48px;
-
   }
 
   @include desktop {
     height: 64px;
-
   }
-
 }
 
 .firstpartHeader {
@@ -51,7 +45,6 @@
     display: flex;
     gap: 48px;
     align-items: center;
-
   }
 }
 
@@ -91,77 +84,3 @@
     display: none;
   }
 }
-
-
-// .searchGroup {
-//   height: 40px;
-// }
-
-// .listOfSearches  {
-//   margin-top: 13px;
-//   display: flex;
-//   // align-items: center;
-//   // justify-content: center;
-//   flex-direction: column;
-//   height: 0;
-//   overflow-y: scroll;
-//   transition: all .2s;
-// }
-
-// .listShow {
-//   height: 400px;
-// }
-
-.searchedItem {
-  width: 350px;
-
-  flex-shrink: 0;
-  // margin-top: 13px;
-
-  background-color: #ffffff;
-  outline: 1px solid $color-elements;
-  height: 60px;
-  padding-inline: 20px;
-
-  &:hover {
-    background-color: $color-elements;
-  }
-}
-
-.SearchedProductImage {
-  width: 20px;
-}
-
-// .linkToProduct {
-//   display: flex;
-//   align-items: center;
-//   justify-content: start;
-//   height: 100%;
-//   gap: 20px;
-// }
-
-
-// .listOfSearches {
-//   display: none;
-// }
-
-// .headeSearchInp {
-//   height: 40px;
-//   width: 380px;
-//   border-radius: 20px;
-//   border: none;
-//   outline: 1px $color-secondary solid;
-//   padding-left: 20px;
-//   transition: all, 0.2s;
-
-//   &:hover {
-//     box-shadow: 0 0 10px rgb(219, 219, 255);
-//   }
-
-//   &:focus {
-//     outline: 1px $color-text solid;
-//     border-radius: 0;
-//     box-shadow: 0 0 10px rgb(91, 91, 165);
-
-//   }
-// }
