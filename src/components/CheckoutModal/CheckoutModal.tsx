@@ -41,6 +41,26 @@ export const CheckoutModal: React.FC<Props> = ({
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+
+    if (!dialog) {
+      return;
+    }
+
+    const handleMouseDown = (event: MouseEvent) => {
+      if (event.target === dialog) {
+        onClose();
+      }
+    };
+
+    dialog.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      dialog.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [onClose]);
+
   const handleConfirm = () => {
     setOrder({ price: totalPrice, count: totalCount });
     setIsDone(true);

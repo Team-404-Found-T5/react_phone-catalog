@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './Header.module.scss';
+import { SwitchBgButtons } from '../SwitchBgButtons/SwitchBgButtons';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import { HeaderAction } from '../HeaderAction';
@@ -75,7 +76,9 @@ export const Header: React.FC = () => {
     <header className={styles.headerHeader}>
       <div className={styles.container}>
         <div className={styles.firstpartHeader}>
-          <a href='#header' onClick={toTop}><Logo variant='header' /></a>
+          <a href="#header" onClick={toTop}>
+            <Logo variant="header" />
+          </a>
           <div className={styles.navWrapper}>
             <Navigation />
           </div>
@@ -101,9 +104,9 @@ export const Header: React.FC = () => {
 =======
         {!isHomePage && (
           <input
-            onChange={(event) => setSearchBy(event.target.value)}
+            onChange={event => setSearchBy(event.target.value)}
             value={searchBy}
-            placeholder='search...'
+            placeholder="search..."
             className={styles.headeSearchInp}
             type="text"
 >>>>>>> upstream/develop
@@ -112,6 +115,7 @@ export const Header: React.FC = () => {
 
         <div>
           <div className={styles.rightSectionCartAndFav}>
+            <SwitchBgButtons />
             <HeaderAction
               to="/cart"
               label="Cart"

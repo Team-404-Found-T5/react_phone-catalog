@@ -11,7 +11,7 @@
   align-items: center;
 
   padding: 16px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
   @include tablet {
     grid-template-areas: 'remove image name quantity price';
@@ -33,6 +33,11 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.remove img,
+.counterButton img {
+  filter: var(--icon-filter);
 }
 
 .imageLink {
@@ -67,20 +72,22 @@
 
   width: 32px;
   height: 32px;
-  border: 1px solid #b4bdc3;
+  border: 1px solid var(--color-border);
 
-  color: $color-primary;
+  color: var(--color-text);
+
+  background-color: var(--color-surface);
 
   transition: border-color 0.2s;
 
   &:disabled {
     cursor: default;
-    border-color: $color-elements;
+    border-color: var(--color-border);
     opacity: 0.4;
   }
 
   &:hover:not(:disabled) {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 }
 

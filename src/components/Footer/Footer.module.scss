@@ -2,7 +2,7 @@
 @use '../../styles/variables' as *;
 
 .FooterFooter {
-  outline: 1px solid $color-elements;
+  outline: 1px solid var(--color-border);
 }
 
 .container {
@@ -49,14 +49,14 @@
   font-size: 12px;
   font-weight: 800;
   line-height: 92%;
-  color: $color-secondary;
+  color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
   transition: all 0.3s;
 
   &:hover {
-    color: $color-text;
+    color: var(--color-text);
   }
 }
 
@@ -70,10 +70,14 @@
   width: 32px;
   height: 32px;
 
-  outline: 1px $color-secondary solid;
+  outline: 1px solid var(--color-border);
 
   transition: all 0.3s;
 
+}
+
+.arrowBorder img {
+  filter: var(--icon-filter);
 }
 
 .fromFooterToTop {
@@ -85,15 +89,15 @@
 
   font-size: 12px;
   font-weight: 700;
-  color: $color-secondary;
+  color: var(--color-secondary);
 
   transition: all 0.3s;
 
   &:hover {
-    color: $color-text;
+    color: var(--color-text);
 
     .arrowBorder {
-      outline: 1px $color-text solid;
+      outline: 1px solid var(--color-text);
     }
   }
 

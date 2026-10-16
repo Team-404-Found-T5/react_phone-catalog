@@ -11,6 +11,7 @@ type Banner = {
   image: string;
   alt: string;
   to: string;
+  showUntil?: Date;
 };
 
 const banners: Banner[] = [
@@ -19,6 +20,7 @@ const banners: Banner[] = [
     image: 'img/banner-halloween.png',
     alt: 'Halloween sale',
     to: '/phones',
+    showUntil: new Date(2026, 9, 31, 23, 59, 59),
   },
   {
     id: 'phones',
@@ -41,6 +43,11 @@ const banners: Banner[] = [
 ];
 
 export const BannerSlider: React.FC = () => {
+  const currentDate = new Date();
+  const activeBanners = banners.filter(
+    banner => !banner.showUntil || banner.showUntil >= currentDate,
+  );
+
   return (
     <section className={styles.banner}>
       <div className={styles.main}>
@@ -74,7 +81,7 @@ export const BannerSlider: React.FC = () => {
             bulletActiveClass: styles.dashActive,
           }}
         >
-          {banners.map(banner => (
+          {activeBanners.map(banner => (
             <SwiperSlide key={banner.id}>
               <NavLink to={banner.to} className={styles.link}>
                 <img

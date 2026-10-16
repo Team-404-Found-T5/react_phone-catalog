@@ -25,6 +25,26 @@ export const RightsModal: React.FC<Props> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+
+    if (!dialog) {
+      return;
+    }
+
+    const handleMouseDown = (event: MouseEvent) => {
+      if (event.target === dialog) {
+        onClose();
+      }
+    };
+
+    dialog.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      dialog.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [onClose]);
+
   return (
     <dialog
       ref={dialogRef}
@@ -48,14 +68,14 @@ export const RightsModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
         <div className={styles.content}>
           <p className={styles.text}>
-            Nice Gadgets is an educational project created by Team 404 Found
-            as part of the Mate academy course. It is not a real store: no
-            orders are processed and no payments are accepted.
+            Nice Gadgets is an educational project created by Team 404 Found as
+            part of the Mate academy course. It is not a real store: no orders
+            are processed and no payments are accepted.
           </p>
 
           <p className={styles.text}>
-            All brand names, logos and product images belong to their
-            respective owners and are used for demonstration purposes only.
+            All brand names, logos and product images belong to their respective
+            owners and are used for demonstration purposes only.
           </p>
 
           <p className={styles.text}>

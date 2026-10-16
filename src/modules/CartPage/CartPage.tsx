@@ -23,38 +23,37 @@ export const CartPage: React.FC = () => {
 
   return (
     <>
-      <div className={styles.back}>
+      <div className={styles.container}>
         <BackButton />
-      </div>
 
-      <h1 className={styles.title}>Cart</h1>
+        <h1 className={styles.title}>Cart</h1>
 
-      {items.length === 0 ? (
-        <div className={styles.empty}>
-          <p className={styles.emptyText}>Your cart is empty</p>
+        {items.length === 0 ? (
+          <div className={styles.empty}>
+            <p className={styles.emptyText}>Your cart is empty</p>
 
-          <NavLink to="/phones" className={styles.emptyLink}>
-            Go shopping
-          </NavLink>
-        </div>
-      ) : (
-        <div className={styles.content}>
-          <ul className={styles.items}>
-            {items.map(item => (
-              <li key={item.product.itemId}>
-                <CartItem item={item} />
-              </li>
-            ))}
-          </ul>
+            <NavLink to="/phones" className={styles.emptyLink}>
+              Go shopping
+            </NavLink>
+          </div>
+        ) : (
+          <div className={styles.content}>
+            <ul className={styles.items}>
+              {items.map(item => (
+                <li key={item.product.itemId}>
+                  <CartItem item={item} />
+                </li>
+              ))}
+            </ul>
 
-          <section className={styles.summary}>
-            <p className={styles.total}>${totalPrice}</p>
+            <section className={styles.summary}>
+              <p className={styles.total}>${totalPrice}</p>
 
-            <p className={styles.totalCount}>
-              Total for {totalCount} {totalCount === 1 ? 'item' : 'items'}
-            </p>
+              <p className={styles.totalCount}>
+                Total for {totalCount} {totalCount === 1 ? 'item' : 'items'}
+              </p>
 
-            <hr className={styles.divider} />
+              <hr className={styles.divider} />
 
             <button
               type="button"

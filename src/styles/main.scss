@@ -1,7 +1,32 @@
 @use './reset';
 @use './variables' as *;
 
+:root {
+  --color-background: #fff;
+  --color-surface: #fff;
+  --color-text: #313237;
+  --color-secondary: #89939a;
+  --color-border: #e2e6e9;
+  --color-button-background: #313237;
+  --color-button-text: #fff;
+  --color-button-hover: #4a4d58;
+  --icon-filter: none;
+}
+
+:root[data-theme='dark'] {
+  --color-background: #191a1e;
+  --color-surface: #202328;
+  --color-text: #f1f2f4;
+  --color-secondary: #89939a;
+  --color-border: #3b3e45;
+  --color-button-background: #f1f2f4;
+  --color-button-text: #313237;
+  --color-button-hover: #d9dade;
+  --icon-filter: invert(1);
+}
+
 body {
   font-family: $font-family;
-  color: $color-text;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
