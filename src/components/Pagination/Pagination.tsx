@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Pagination.module.scss';
+import { playClickSound } from '../../modules/PixelHearts/sounds';
 
 type PageItem = number | 'ellipsis';
 
@@ -64,7 +65,9 @@ export const Pagination: React.FC<Props> = ({
         className={styles.arrow}
         aria-label="Previous page"
         disabled={disabled || safeCurrentPage === 1}
-        onClick={() => onPageChange(safeCurrentPage - 1)}
+        onClick={() => {
+          playClickSound()
+          onPageChange(safeCurrentPage - 1)}}
       >
         ‹
       </button>
@@ -89,7 +92,9 @@ export const Pagination: React.FC<Props> = ({
             key={item}
             aria-current={item === safeCurrentPage ? 'page' : undefined}
             disabled={disabled}
-            onClick={() => onPageChange(item)}
+            onClick={() => {
+              playClickSound()
+              onPageChange(item)}}
           >
             {item}
           </button>
@@ -101,7 +106,9 @@ export const Pagination: React.FC<Props> = ({
         className={styles.arrow}
         aria-label="Next page"
         disabled={disabled || safeCurrentPage === totalPages}
-        onClick={() => onPageChange(safeCurrentPage + 1)}
+        onClick={() => {
+          playClickSound()
+          onPageChange(safeCurrentPage + 1)}}
       >
         ›
       </button>
