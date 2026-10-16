@@ -67,7 +67,7 @@
   color: #fff;
   text-align: center;
 
-  background-color: #eb5757;
+  background-color: $color-red;
 }
 
 .counter {
@@ -85,7 +85,7 @@
   color: #fff;
   text-align: center;
 
-  background-color: #eb5757;
+  background-color: $color-red;
 
   @include tablet {
     top: 10px;
