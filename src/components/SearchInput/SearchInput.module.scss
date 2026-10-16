@@ -26,7 +26,7 @@
   }
 }
 
-.listOfSearches  {
+.listOfSearches {
   margin-top: 13px;
   display: flex;
   flex-direction: column;
@@ -37,6 +37,7 @@
 
 .listShow {
   height: 400px;
+  // overflow-y: scroll;
 }
 
 .searchedItem {
