@@ -80,7 +80,6 @@ export const SearchInput: React.FC = () => {
         onBlur={() => setisFocused(false)}
       />
       <ul className={`${styles.listOfSearches} ${isFocused ? styles.listShow : ''}`} >
-        {console.log(dataSearched)}
         {dataSearched.map(product => (
           <li
             className={styles.searchedItem}

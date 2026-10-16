@@ -121,6 +121,7 @@ import { Navigation } from '../Navigation';
 import { BurgerButton } from '../BurgerButton';
 import { MobileMenu } from '../MobileMenu';
 import { SearchInput } from '../SearchInput';
+import { NavLink } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,30 +138,30 @@ export const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const toTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  // const toTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  //   event.preventDefault();
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
   return (
     <header className={styles.headerHeader}>
       <div className={styles.container}>
         <div className={styles.firstpartHeader}>
-          <a href="#header" onClick={toTop}>
+          <NavLink to="/home">
             <Logo variant="header" />
-          </a>
+          </NavLink>
 
           <div className={styles.navWrapper}>
             <Navigation />
           </div>
         </div>
-        
+
         <SearchInput />
-        
+
         <div>
           <div className={styles.rightSectionCartAndFav}>
             <HeaderAction
