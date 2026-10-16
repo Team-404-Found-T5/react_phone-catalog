@@ -8,7 +8,9 @@
   width: 272px;
   height: 506px;
   padding: 32px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-surface);
 }
 
 .image {
@@ -25,12 +27,13 @@
   font-weight: 600;
   font-style: normal;
   line-height: 21px;
-  color: $color-text;
+  color: var(--color-text);
   text-decoration: none;
   letter-spacing: 0;
 
+
   &:hover {
-    color: $color-secondary;
+    color: var(--color-secondary);
   }
 }
 
@@ -40,7 +43,7 @@
   font-weight: 800;
   font-style: normal;
   line-height: 140%;
-  color: $color-text;
+  color: var(--color-text);
   letter-spacing: 0;
 }
 
@@ -56,14 +59,14 @@
   font-weight: 600;
   font-style: normal;
   line-height: 100%;
-  color: $color-secondary;
+  color: var(--color-secondary);
   text-decoration-line: line-through;
   letter-spacing: 0;
 }
 
 .divider {
   width: 100%;
-  border-top: 1px solid $color-elements;
+  border-top: 1px solid var(--color-border);
 }
 
 .specs {
@@ -88,7 +91,7 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  color: $color-secondary;
+  color: var(--color-secondary);
   letter-spacing: 0;
 }
 
@@ -98,7 +101,7 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  color: $color-text;
+  color: var(--color-text);
   letter-spacing: 0;
 }
 
@@ -130,17 +133,17 @@
   font-weight: 700;
   font-style: normal;
   line-height: 21px;
-  color: #fff;
+  color: var(--color-button-text);
   letter-spacing: 0;
 
-  background-color: $color-primary;
-
-  &:hover {
-    background-color: $color-secondary;
-  }
+  background-color: var(--color-button-background);
 
   &:disabled {
     cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+  background-color: var(--color-button-hover);
   }
 }
 
@@ -166,7 +169,7 @@
   border: 0;
 
   opacity: 0;
-  background-color: #fff;
+  background-color: var(--color-surface);
 
   transition:
     flex-basis 200ms ease,
@@ -184,7 +187,7 @@
     flex-basis: 24px;
 
     width: 24px;
-    border: 1px solid $color-elements;
+    border: 1px solid var(--color-border);
 
     opacity: 1;
   }
@@ -202,7 +205,7 @@
     flex-basis: 24px;
 
     width: 24px;
-    border: 1px solid $color-elements;
+    border: 1px solid var(--color-border);
 
     opacity: 1;
   }
@@ -218,12 +221,12 @@
 
   width: 40px;
   height: 40px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
-  background-color: #fff;
+  background-color: var(--color-surface);
 
   &:hover {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 }
 
@@ -231,4 +234,10 @@
   width: 16px;
   height: 16px;
   object-fit: contain;
+}
+
+.favoriteButton[aria-pressed='false']
+.favoriteIcon,
+.removeFromCart img {
+  filter: var(--icon-filter);
 }

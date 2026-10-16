@@ -1,30 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './SwitchBgButtons.module.scss';
 
 export const SwitchBgButtons: React.FC = () => {
+  {
+    /*перемикання теми*/
+  }
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
 
-  {/*
+    if (savedTheme === 'dark') {
+      return 'dark';
+    }
 
-    якщо хочеш можеш спробувати зробити це через інпут тайп радіо що
-    б було обрано щонайменше один параметр, за замовченням це буде
-    біла тема і відповідно у нього є той самий атрибут чекед
-    + можеш додати якесь пояснення що тут можна поміняти тему
+    return 'light';
+  });
 
-    так само можеш спробувати через звичайні кнопки, дивись що тобі ближче)
-
-*/}
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
-    <div className={styles.bgButtonsGroup}>
-      <label htmlFor="#">
-        Light Theme
-        <input type="radio" name="bg" value="light" checked />
-      </label>
-      <label htmlFor="#">
-        Dark theme
-        <input type="radio" name="bg" value="dark" />
-      </label>
-    </div>
+    <label className={styles.themeSwitch}>
+      <input
+        className={styles.input}
+        type="checkbox"
+        role="switch"
+        aria-label="Dark theme"
+        checked={theme === 'dark'}
+        onChange={event => setTheme(event.target.checked ? 'dark' : 'light')}
+      />
+
+      <span className={styles.track} aria-hidden="true">
+        <span className={styles.thumb}>{theme === 'dark' ? '🌙' : '☀️'}</span>
+      </span>
+    </label>
   );
 };
 

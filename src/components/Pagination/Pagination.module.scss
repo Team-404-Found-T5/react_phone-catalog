@@ -18,14 +18,14 @@
   min-width: 32px;
   height: 32px;
   padding: 0 8px;
-  border: 1px solid $color-icons;
+  border: 1px solid var(--color-border);
 
   font-family: inherit;
   font-size: 14px;
   line-height: 1;
-  color: $color-text;
+  color: var(--color-text);
 
-  background-color: #fff;
+  background-color: var(--color-surface);
 }
 
 .page:disabled,
@@ -36,11 +36,11 @@
 
 .page:hover:not(:disabled),
 .arrow:hover:not(:disabled) {
-  border-color: $color-primary;
+  border-color: var(--color-text);
 }
 
 .active {
-  border-color: $color-primary;
-  color: #fff;
-  background-color: $color-primary;
+  border-color: var(--color-button-background);
+  color: var(--color-button-text);
+  background-color: var(--color-button-background);
 }
