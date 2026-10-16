@@ -55,26 +55,28 @@ export const CartPage: React.FC = () => {
 
               <hr className={styles.divider} />
 
-            <button
-              type="button"
-              className={styles.checkout}
-              onClick={() => {
-                playClick2Sound()
-                setIsCheckoutOpen(true)}}
-            >
-              Checkout
-            </button>
-          </section>
-        </div>
-      )}
+              <button
+                type="button"
+                className={styles.checkout}
+                onClick={() => {
+                  playClick2Sound();
+                  setIsCheckoutOpen(true);
+                }}
+              >
+                Checkout
+              </button>
+            </section>
+          </div>
+        )}
 
-      <CheckoutModal
-        isOpen={isCheckoutOpen}
-        totalPrice={totalPrice}
-        totalCount={totalCount}
-        onClose={() => setIsCheckoutOpen(false)}
-        onConfirm={handleClearCart}
-      />
+        <CheckoutModal
+          isOpen={isCheckoutOpen}
+          totalPrice={totalPrice}
+          totalCount={totalCount}
+          onClose={() => setIsCheckoutOpen(false)}
+          onConfirm={handleClearCart}
+        />
+      </div>
     </>
   );
 };

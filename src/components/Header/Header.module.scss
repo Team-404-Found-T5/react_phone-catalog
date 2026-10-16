@@ -13,14 +13,11 @@
     padding-left: 24px;
   }
 
-
-background-color: var(--color-surface);
-outline: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  outline: 1px solid var(--color-border);
 }
 
 .container {
-  // @include container;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,14 +25,11 @@ outline: 1px solid var(--color-border);
 
   @include tablet {
     height: 48px;
-
   }
 
   @include desktop {
     height: 64px;
-
   }
-
 }
 
 .firstpartHeader {
@@ -51,7 +45,6 @@ outline: 1px solid var(--color-border);
     display: flex;
     gap: 48px;
     align-items: center;
-
   }
 }
 
@@ -89,27 +82,5 @@ outline: 1px solid var(--color-border);
 
   @include tablet {
     display: none;
-  }
-}
-
-.headeSearchInp {
-  width: 380px;
-  height: 40px;
-  padding-left: 20px;
-  border: none;
-  border-radius: 20px;
-
-  outline: 1px $color-secondary solid;
-
-  transition: all, 0.2s;
-
-  &:hover {
-    box-shadow: 0 0 10px rgb(219, 219, 255);
-  }
-
-  &:focus {
-    border-radius: 0;
-    outline: 1px $color-text solid;
-    box-shadow: 0 0 10px rgb(91, 91, 165);
   }
 }

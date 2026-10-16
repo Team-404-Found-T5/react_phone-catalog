@@ -8,12 +8,9 @@ interface HeaderActionProps {
   label: string;
   icon: ReactNode;
   count: number;
-<<<<<<< HEAD
-  onClick?: () => void;
-=======
   variant?: 'modal';
   closeModal?: () => void;
->>>>>>> upstream/develop
+  playBoxOpenSound?: () => void;
 }
 
 export const HeaderAction: React.FC<HeaderActionProps> = ({
@@ -21,21 +18,24 @@ export const HeaderAction: React.FC<HeaderActionProps> = ({
   label,
   icon,
   count,
-<<<<<<< HEAD
-  onClick,
-=======
   variant,
   closeModal,
->>>>>>> upstream/develop
+  playBoxOpenSound,
 }) => {
   return (
     <NavLink
-      onClick={onClick}
       to={to}
-      onClick={closeModal}
+      onClick={() => {
+        closeModal?.();
+        playBoxOpenSound?.();
+      }}
       aria-label={label}
       className={({ isActive }) =>
-        classNames(styles.link, { [styles.active]: isActive }, styles[`item-${variant}`])
+        classNames(
+          styles.link,
+          { [styles.active]: isActive },
+          styles[`item-${variant}`],
+        )
       }
     >
       {icon}

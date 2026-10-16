@@ -1,9 +1,12 @@
 .pixel-heart-particle {
+  pointer-events: none;
+
   position: fixed;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+
   width: 32px;
   height: 28px;
-  pointer-events: none;
-  z-index: 99999;
+
   image-rendering: pixelated;
-  transform: translate(-50%, -50%);
 }

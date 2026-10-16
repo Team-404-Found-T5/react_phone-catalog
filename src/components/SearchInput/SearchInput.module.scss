@@ -1,3 +1,72 @@
-.container {
-  // Styles will be added here.
+@use '../../styles/variables' as *;
+
+.searchGroup {
+  height: 40px;
+}
+
+.headeSearchInp {
+  width: 405px;
+  height: 40px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 20px;
+
+  outline: 1px $color-secondary solid;
+
+  transition: all, 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgb(219, 219, 255);
+  }
+
+  &:focus {
+    border-radius: 0;
+    outline: 1px $color-text solid;
+    box-shadow: 0 0 10px rgb(91, 91, 165);
+  }
+}
+
+.listOfSearches {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+
+  height: 0;
+  margin-top: 13px;
+
+  transition: all 0.2s;
+}
+
+.listShow {
+  height: 400px;
+
+  // overflow-y: scroll;
+}
+
+.searchedItem {
+  flex-shrink: 0;
+
+  width: 350px;
+  height: 60px;
+  padding-inline: 20px;
+
+  background-color: #fff;
+  outline: 1px solid $color-elements;
+
+  &:hover {
+    background-color: $color-elements;
+  }
+}
+
+.linkToProduct {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: start;
+
+  height: 100%;
+}
+
+.SearchedProductImage {
+  width: 20px;
 }

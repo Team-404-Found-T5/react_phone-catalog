@@ -14,7 +14,7 @@
 
   outline: 1px solid var(--color-border);
 
-  transition: all, .3s;
+  transition: all, 0.3s;
 
   &:hover {
     outline: 1px solid var(--color-text);
@@ -90,13 +90,11 @@
   @include tablet {
     top: 10px;
     right: 10px;
-
   }
 
   @include desktop {
     top: 17px;
     right: 17px;
-
   }
 }
 

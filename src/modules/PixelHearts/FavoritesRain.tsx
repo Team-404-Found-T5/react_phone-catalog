@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
 import './FavoritesRain.scss';
 import heartSvg from './Heart.svg';
 import soundFile from './8bitMAGIC.mp3';
-
 
 // тут  функція яка запускає звук
 const playFavoritesIntroSound = () => {
   try {
     const audio = new Audio(soundFile);
     audio.volume = 0.4;
-    audio.play().catch((e) => {
+    audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
   } catch (e) {
