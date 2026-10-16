@@ -1,3 +1,31 @@
+@use '../../styles/variables' as *;
+
 .container {
-  // Styles will be added here.
+  position: fixed;
+  z-index: 100;
+  top: 48px;
+  left: -101%;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgb(255, 255, 255);
+  outline: solid $color-elements 1px;
+
+  transition: left 0.4s ease;
+}
+
+.show {
+  left: 0;
+}
+
+.ordersgroup {
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
 }

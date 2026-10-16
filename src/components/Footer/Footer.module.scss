@@ -15,19 +15,13 @@
 
   @include container;
 
-  @include desktop {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 96px;
-
-  }
-
   @include tablet {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
     height: 96px;
+    padding-top: 0;
   }
 }
 
