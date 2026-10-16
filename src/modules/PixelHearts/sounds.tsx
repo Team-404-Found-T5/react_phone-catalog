@@ -9,7 +9,7 @@ import plus from './Plus.mp3'
 import minus from './Minus.mp3'
 import cancel from './CANCEL.mp3'
 import victory from './VICTORY.wav'
-import fshuh from './FSHUH.wav'
+import fshuh from './FSHUH.mp3'
 
 
 
