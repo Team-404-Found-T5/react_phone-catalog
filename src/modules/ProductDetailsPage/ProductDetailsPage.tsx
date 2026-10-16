@@ -10,6 +10,7 @@ import {
   getSuggestedProducts,
 } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
+import { Loader } from '../../components/Loader';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import type {
@@ -65,6 +66,7 @@ export const ProductDetailsPage: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [variants, setVariants] = useState<ProductDetails[]>([]);
   const [loadError, setLoadError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const [displayId, setDisplayId] = useState('');
   const [suggestedProducts, setSuggestedProducts] = useState<Product[]>([]);
   const category = isProductCategory(categoryParam) ? categoryParam : null;
@@ -97,11 +99,13 @@ export const ProductDetailsPage: React.FC = () => {
   useEffect(() => {
     if (!category || !productId) {
       setLoadError('Product not found');
+      setIsLoading(false);
       return;
     }
 
     let isActive = true;
 
+    setIsLoading(true);
     setProduct(undefined);
     setDisplayId('');
     setSelectedImageIndex(0);
@@ -140,12 +144,21 @@ export const ProductDetailsPage: React.FC = () => {
             error instanceof Error ? error.message : 'Failed to load product',
           );
         }
+      })
+      .finally(() => {
+        if (isActive) {
+          setIsLoading(false);
+        }
       });
 
     return () => {
       isActive = false;
     };
   }, [category, productId]);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.container}>
@@ -273,7 +286,7 @@ export const ProductDetailsPage: React.FC = () => {
                 type="button"
                 disabled={!actionProduct || isInCart}
                 onClick={() => {
-                  playCartAddSound()
+                  playCartAddSound();
                   if (actionProduct) {
                     add({ product: actionProduct, quantity: 1 });
                   }
@@ -288,7 +301,8 @@ export const ProductDetailsPage: React.FC = () => {
                   aria-label={`Remove ${actionProduct.name} from cart`}
                   onClick={() => {
                     playCartRemoveSound();
-                    remove(actionProduct.itemId)}}
+                    remove(actionProduct.itemId);
+                  }}
                 >
                   <img
                     src={`${import.meta.env.BASE_URL}img/Close.svg`}
@@ -305,8 +319,8 @@ export const ProductDetailsPage: React.FC = () => {
                 isFavorite ? 'Remove from favorites' : 'Add to favorites'
               }
               aria-pressed={isFavorite}
-              onClick={(e) => {
-                PixelHearts(e)
+              onClick={e => {
+                PixelHearts(e);
                 if (actionProduct) {
                   toggle(actionProduct);
                 }

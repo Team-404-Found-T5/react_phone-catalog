@@ -1,7 +1,12 @@
-import { Product } from '../types/product';
-import { ProductCategory, ProductDetails } from '../types/product';
+import type {
+  Product,
+  ProductCategory,
+  ProductDetails,
+} from '../types/product';
 
-const BASE_URL = `${import.meta.env.BASE_URL}api`;
+const API_URL = `${import.meta.env.BASE_URL}api`;
+const RESPONSE_DELAY_MS = 500;
+const CATEGORIES: ProductCategory[] = ['phones', 'tablets', 'accessories'];
 
 export type ProductsPage = {
   products: Product[];
@@ -9,39 +14,102 @@ export type ProductsPage = {
   totalPages: number;
 };
 
-const visibleProductsCache = new Map<string, Product>();
-const productsPagesCache = new Map<string, ProductsPage>();
-const productsPagesRequests = new Map<string, Promise<ProductsPage>>();
-const detailsCache = new Map<ProductCategory, ProductDetails[]>();
-const detailsRequests = new Map<ProductCategory, Promise<ProductDetails[]>>();
+export type VariantChange = {
+  color?: string;
+  capacity?: string;
+};
 
-function delay(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const visibleProducts = new Map<string, Product>();
+const productDetails = new Map<ProductCategory, Promise<ProductDetails[]>>();
+const suggestedProducts = new Map<string, Promise<Product[]>>();
+let productsPromise: Promise<Product[]> | undefined;
 
-function fetchData<T>(url: string): Promise<T> {
-  return delay(500)
-    .then(() => fetch(url))
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch: ${url}, status: ${response.status}`);
-      }
+const fetchJson = <T>(url: string): Promise<T> => {
+  const response = fetch(url);
+  const responseDelay = new Promise<void>(resolve => {
+    setTimeout(resolve, RESPONSE_DELAY_MS);
+  });
 
-      return response.json() as Promise<T>;
-    });
-}
+  return Promise.all([response, responseDelay]).then(([result]) => {
+    if (!result.ok) {
+      throw new Error(`Failed to fetch ${url}: ${result.status}`);
+    }
 
-export const getProducts = (): Promise<Product[]> =>
-  fetchData<Product[]>(`${BASE_URL}/products.json`).then(products =>
-    products.map(product => ({
-      ...product,
-      oldPrice: product.fullPrice,
-    })),
+    return result.json() as Promise<T>;
+  });
+};
+
+const mixCategories = (products: Product[]): Product[] => {
+  const productsByCategory = CATEGORIES.map(category =>
+    products.filter(product => product.category === category),
   );
+  const mixedProducts: Product[] = [];
+  const longestList = Math.max(
+    ...productsByCategory.map(categoryProducts => categoryProducts.length),
+  );
+
+  for (let index = 0; index < longestList; index++) {
+    productsByCategory.forEach(categoryProducts => {
+      const product = categoryProducts[index];
+
+      if (product) {
+        mixedProducts.push(product);
+      }
+    });
+  }
+
+  return mixedProducts;
+};
+
+export const getProducts = (): Promise<Product[]> => {
+  if (!productsPromise) {
+    productsPromise = fetchJson<Product[]>(`${API_URL}/products.json`)
+      .then(products =>
+        products.map(product => ({
+          ...product,
+          oldPrice: product.fullPrice,
+        })),
+      )
+      .catch(error => {
+        productsPromise = undefined;
+        throw error;
+      });
+  }
+
+  return productsPromise;
+};
+
+export const searchProducts = (
+  query: string,
+  limit = Number.POSITIVE_INFINITY,
+): Promise<Product[]> => {
+  const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+
+  if (words.length === 0) {
+    return Promise.resolve([]);
+  }
+
+  return getProducts().then(products =>
+    products
+      .filter(product => {
+        const productText =
+          `${product.name} ${product.itemId} ${product.category} ${product.id}`.toLowerCase();
+
+        return words.every(word => productText.includes(word));
+      })
+      .slice(0, limit),
+  );
+};
+
+export const preloadProductData = (): Promise<void> =>
+  Promise.all([
+    getProducts(),
+    ...CATEGORIES.map(category => getProductDetails(category)),
+  ]).then(() => undefined);
 
 export const cacheVisibleProducts = (products: Product[]): void => {
   products.forEach(product => {
-    visibleProductsCache.set(product.itemId, product);
+    visibleProducts.set(product.itemId, product);
   });
 };
 
@@ -49,6 +117,7 @@ export const getProductsPage = (
   category: string,
   page: number,
   perPage = 8,
+  searchTerm = '',
 ): Promise<ProductsPage> => {
   if (!category) {
     return Promise.reject(new Error('Category is required'));
@@ -64,57 +133,32 @@ export const getProductsPage = (
     );
   }
 
-  const cacheKey = `${category}:${page}:${perPage}`;
-  const cachedPage = productsPagesCache.get(cacheKey);
+  const productsPromise = searchTerm.trim()
+    ? searchProducts(searchTerm)
+    : getProducts();
 
-  if (cachedPage) {
-    return Promise.resolve(cachedPage);
-  }
+  return productsPromise.then(products => {
+    const filteredProducts =
+      category === 'all'
+        ? mixCategories(products)
+        : products.filter(product => product.category === category);
+    const start = (page - 1) * perPage;
+    const pageProducts = filteredProducts.slice(start, start + perPage);
 
-  const pendingRequest = productsPagesRequests.get(cacheKey);
+    cacheVisibleProducts(pageProducts);
 
-  if (pendingRequest) {
-    return pendingRequest;
-  }
-
-  const startIndex = (page - 1) * perPage;
-  const request = getProducts()
-    .then(products => {
-      const categoryProducts = products.filter(
-        product => product.category === category,
-      );
-      const total = categoryProducts.length;
-      const totalPages = Math.ceil(total / perPage);
-      const pageProducts = categoryProducts.slice(
-        startIndex,
-        startIndex + perPage,
-      );
-
-      cacheVisibleProducts(pageProducts);
-      const productsPage = {
-        products: pageProducts,
-        total,
-        totalPages,
-      };
-
-      productsPagesCache.set(cacheKey, productsPage);
-
-      return productsPage;
-    })
-    .catch(error => {
-      productsPagesRequests.delete(cacheKey);
-      throw error;
-    });
-
-  productsPagesRequests.set(cacheKey, request);
-
-  return request;
+    return {
+      products: pageProducts,
+      total: filteredProducts.length,
+      totalPages: Math.ceil(filteredProducts.length / perPage),
+    };
+  });
 };
 
 export const getProductByItemId = (
   itemId: string,
 ): Promise<Product | undefined> => {
-  const cachedProduct = visibleProductsCache.get(itemId);
+  const cachedProduct = visibleProducts.get(itemId);
 
   if (cachedProduct) {
     return Promise.resolve(cachedProduct);
@@ -125,39 +169,23 @@ export const getProductByItemId = (
   );
 };
 
-const categoryEndpoints: Record<ProductCategory, string> = {
-  phones: `${BASE_URL}/phones.json`,
-  tablets: `${BASE_URL}/tablets.json`,
-  accessories: `${BASE_URL}/accessories.json`,
-};
-
-export const getProductDetails = (
+const getProductDetails = (
   category: ProductCategory,
 ): Promise<ProductDetails[]> => {
-  const cachedProducts = detailsCache.get(category);
+  const cachedRequest = productDetails.get(category);
 
-  if (cachedProducts) {
-    return Promise.resolve(cachedProducts);
+  if (cachedRequest) {
+    return cachedRequest;
   }
 
-  const pendingRequest = detailsRequests.get(category);
+  const request = fetchJson<ProductDetails[]>(
+    `${API_URL}/${category}.json`,
+  ).catch(error => {
+    productDetails.delete(category);
+    throw error;
+  });
 
-  if (pendingRequest) {
-    return pendingRequest;
-  }
-
-  const request = fetchData<ProductDetails[]>(categoryEndpoints[category])
-    .then(products => {
-      detailsCache.set(category, products);
-
-      return products;
-    })
-    .catch(error => {
-      detailsRequests.delete(category);
-      throw error;
-    });
-
-  detailsRequests.set(category, request);
+  productDetails.set(category, request);
 
   return request;
 };
@@ -186,11 +214,6 @@ export const getRelatedProducts = (
     products.filter(item => item.namespaceId === product.namespaceId),
   );
 
-export type VariantChange = {
-  color?: string;
-  capacity?: string;
-};
-
 export const getAvailableColors = (products: ProductDetails[]): string[] =>
   Array.from(new Set(products.map(product => product.color)));
 
@@ -202,12 +225,11 @@ export const findProductVariant = (
   currentProduct: ProductDetails,
   change: VariantChange,
 ): ProductDetails | undefined => {
-  const targetColor = change.color ?? currentProduct.color;
-  const targetCapacity = change.capacity ?? currentProduct.capacity;
+  const color = change.color ?? currentProduct.color;
+  const capacity = change.capacity ?? currentProduct.capacity;
 
   const exactMatch = products.find(
-    product =>
-      product.color === targetColor && product.capacity === targetCapacity,
+    product => product.color === color && product.capacity === capacity,
   );
 
   if (exactMatch) {
@@ -215,24 +237,35 @@ export const findProductVariant = (
   }
 
   if (change.color) {
-    return products.find(product => product.color === targetColor);
+    return products.find(product => product.color === color);
   }
 
   if (change.capacity) {
-    return products.find(product => product.capacity === targetCapacity);
+    return products.find(product => product.capacity === capacity);
   }
 
   return undefined;
 };
 
-export const getSuggestedProducts = (currentId: string): Promise<Product[]> =>
-  delay(300).then(() =>
-    getProducts()
-      // рандомні 4, крім поточного
-      .then(all =>
-        all
-          .filter(p => p.itemId !== currentId)
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 4),
-      ),
-  );
+export const getSuggestedProducts = (currentId: string): Promise<Product[]> => {
+  const cachedRequest = suggestedProducts.get(currentId);
+
+  if (cachedRequest) {
+    return cachedRequest;
+  }
+
+  const request = getProducts()
+    .then(products =>
+      products
+        .filter(product => product.itemId !== currentId)
+        .sort(() => Math.random() - 0.5),
+    )
+    .catch(error => {
+      suggestedProducts.delete(currentId);
+      throw error;
+    });
+
+  suggestedProducts.set(currentId, request);
+
+  return request;
+};

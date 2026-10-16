@@ -7,8 +7,6 @@ import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
 import styles from './HomePage.module.scss';
 
-const FEATURED_PRODUCTS_COUNT = 4;
-
 const getModelKey = (product: Product): string => {
   const variantStart = product.itemId.search(/-(?:\d+(?:gb|tb)|\d+mm)-/i);
   const modelId =
@@ -99,7 +97,7 @@ export const HomePage: React.FC = () => {
               getIphoneGeneration(second) - getIphoneGeneration(first) ||
               getModelPriority(second) - getModelPriority(first),
           ),
-      ).slice(0, FEATURED_PRODUCTS_COUNT),
+      ),
     [products],
   );
   const hotPricesProducts = useMemo(
@@ -111,7 +109,7 @@ export const HomePage: React.FC = () => {
             second.price -
             ((first.fullPrice ?? first.price) - first.price),
         ),
-      ).slice(0, FEATURED_PRODUCTS_COUNT),
+      ),
     [products],
   );
 

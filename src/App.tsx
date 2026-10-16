@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import './App.scss';
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { preloadProductData } from './api/products';
 import { MainLayout } from './modules/shared/MainLayout';
 import { CartPage } from './modules/CartPage';
 import { CatalogPage } from './modules/CatalogPage';
@@ -10,6 +12,12 @@ import { ProductDetailsPage } from './modules/ProductDetailsPage';
 import { TestPage } from './modules/TestPage';
 
 export const App = () => {
+  useEffect(() => {
+    preloadProductData().catch((error: unknown) => {
+      console.error('Failed to preload product data:', error);
+    });
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>

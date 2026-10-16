@@ -88,7 +88,7 @@ export const CheckoutModal: React.FC<Props> = ({
             onClose()}}
           aria-label="Close"
         >
-          <img src="public/img/Close.svg" alt="" />
+          <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
         </button>
 
         {isDone ? (

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './FavoritesRain.scss';
 import heartSvg from './Heart.svg';
 import soundFile from './8bitMAGIC.mp3';

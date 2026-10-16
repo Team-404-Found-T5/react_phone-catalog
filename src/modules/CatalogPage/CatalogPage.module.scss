@@ -2,9 +2,26 @@
 @use '../../styles/mixins' as *;
 
 .container {
+  overflow-anchor: none;
+
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
   padding-top: 24px;
+}
+
+.loadingOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-background);
 }
 
 .title {

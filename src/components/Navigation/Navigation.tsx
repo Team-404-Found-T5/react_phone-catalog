@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
@@ -9,10 +8,7 @@ interface Prop {
   handleCloseModal?: () => void;
 }
 
-export const Navigation: React.FC<Prop> = ({
-  varinant,
-  handleCloseModal,
-}) => {
+export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
   const handleClick = () => {
     playClickSound();
     handleCloseModal?.();
@@ -32,38 +28,57 @@ export const Navigation: React.FC<Prop> = ({
             Home
           </NavLink>
         </li>
-        <li className={styles.item}>
+        <li className={`${styles.item} ${styles.catalogItem}`}>
           <NavLink
             onClick={handleClick}
-            to="/phones"
+            to="/catalog"
             className={({ isActive }) =>
               isActive ? `${styles.links} ${styles.active}` : styles.links
             }
           >
-            Phones
+            Catalog
           </NavLink>
-        </li>
-        <li className={styles.item}>
-          <NavLink
-            onClick={handleClick}
-            to="/tablets"
-            className={({ isActive }) =>
-              isActive ? `${styles.links} ${styles.active}` : styles.links
-            }
-          >
-            tablets
-          </NavLink>
-        </li>
-        <li className={styles.item}>
-          <NavLink
-            onClick={handleClick}
-            to="/accessories"
-            className={({ isActive }) =>
-              isActive ? `${styles.links} ${styles.active}` : styles.links
-            }
-          >
-            accessories
-          </NavLink>
+          <ul className={styles.submenu}>
+            <li>
+              <NavLink
+                onClick={handleClick}
+                to="/phones"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.submenuLink} ${styles.submenuActive}`
+                    : styles.submenuLink
+                }
+              >
+                Phones
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={handleClick}
+                to="/tablets"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.submenuLink} ${styles.submenuActive}`
+                    : styles.submenuLink
+                }
+              >
+                Tablets
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={handleClick}
+                to="/accessories"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.submenuLink} ${styles.submenuActive}`
+                    : styles.submenuLink
+                }
+              >
+                Accessories
+              </NavLink>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

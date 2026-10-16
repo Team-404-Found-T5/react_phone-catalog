@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './ProductsSlider.module.scss';
 import type { Product } from '../../types/product';
 import { ProductCard } from '../ProductCard/ProductCard';
+
+const PRODUCTS_PER_SLIDE = 4;
 
 type Props = {
   title: string;
@@ -9,6 +11,78 @@ type Props = {
 };
 
 export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
+  const productsListRef = useRef<HTMLDivElement>(null);
+  const pendingScrolls = useRef(0);
+  const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_SLIDE);
+  const [canScrollBack, setCanScrollBack] = useState(false);
+
+  useEffect(() => {
+    setVisibleCount(PRODUCTS_PER_SLIDE);
+    pendingScrolls.current = 0;
+
+    if (productsListRef.current) {
+      productsListRef.current.scrollLeft = 0;
+    }
+  }, [products]);
+
+  useEffect(() => {
+    const list = productsListRef.current;
+    const scrolls = pendingScrolls.current;
+
+    if (!list || scrolls === 0) {
+      return;
+    }
+
+    pendingScrolls.current = 0;
+
+    const firstCard = list.firstElementChild;
+    const cardWidth = firstCard?.getBoundingClientRect().width ?? 0;
+    const styles = window.getComputedStyle(list);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+
+    list.scrollBy({
+      left: scrolls * PRODUCTS_PER_SLIDE * (cardWidth + gap),
+      behavior: 'smooth',
+    });
+  }, [visibleCount]);
+
+  const updateScrollState = () => {
+    const list = productsListRef.current;
+
+    if (list) {
+      setCanScrollBack(list.scrollLeft > 0);
+    }
+  };
+
+  const showNextProducts = () => {
+    if (visibleCount >= products.length) {
+      return;
+    }
+
+    pendingScrolls.current += 1;
+    setVisibleCount(current =>
+      Math.min(current + PRODUCTS_PER_SLIDE, products.length),
+    );
+  };
+
+  const showPreviousProducts = () => {
+    const list = productsListRef.current;
+
+    if (!list) {
+      return;
+    }
+
+    const firstCard = list.firstElementChild;
+    const cardWidth = firstCard?.getBoundingClientRect().width ?? 0;
+    const styles = window.getComputedStyle(list);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+
+    list.scrollBy({
+      left: -PRODUCTS_PER_SLIDE * (cardWidth + gap),
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -18,6 +92,8 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             className={styles.prevButton}
             type="button"
             aria-label="Previous products"
+            disabled={!canScrollBack}
+            onClick={showPreviousProducts}
           >
             <img
               src="img/ArrowLeft-active.svg"
@@ -29,6 +105,8 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             className={styles.nextButton}
             type="button"
             aria-label="Next products"
+            disabled={visibleCount >= products.length}
+            onClick={showNextProducts}
           >
             <img
               src="img/ArrowRight-active.svg"
@@ -39,8 +117,12 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
         </div>
       </div>
 
-      <div className={styles.productsList}>
-        {products.map(product => (
+      <div
+        className={styles.productsList}
+        ref={productsListRef}
+        onScroll={updateScrollState}
+      >
+        {products.slice(0, visibleCount).map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

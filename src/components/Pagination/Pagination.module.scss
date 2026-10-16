@@ -3,8 +3,22 @@
 .container {
   display: flex;
   gap: 8px;
+  align-items: center;
   justify-content: center;
+
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 100%;
   margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pages {
+  display: flex;
+  flex: 0 0 352px;
+  gap: 8px;
+  justify-content: center;
 }
 
 .page,
@@ -43,4 +57,56 @@
   border-color: var(--color-button-background);
   color: var(--color-button-text);
   background-color: var(--color-button-background);
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 4px;
+    width: 100%;
+    margin-top: 32px;
+  }
+
+  .pages {
+    flex: 1 1 230px;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .page,
+  .arrow {
+    min-width: 0;
+    height: 30px;
+    padding: 0 3px;
+    font-size: 12px;
+  }
+
+  .page {
+    flex: 1 1 22px;
+  }
+
+  .arrow {
+    width: 28px;
+    min-width: 28px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    gap: 2px;
+  }
+
+  .pages {
+    gap: 2px;
+  }
+
+  .page {
+    padding: 0 1px;
+    font-size: 11px;
+  }
+
+  .arrow {
+    width: 24px;
+    min-width: 24px;
+  }
 }
