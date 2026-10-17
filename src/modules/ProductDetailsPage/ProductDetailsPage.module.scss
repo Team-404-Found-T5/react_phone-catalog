@@ -216,9 +216,9 @@
   }
 
   &[aria-pressed='true'] {
+    border-color: var(--color-text);
     color: var(--color-surface);
     background: var(--color-text);
-    border-color: var(--color-text);
   }
 }
 

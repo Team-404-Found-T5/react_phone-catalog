@@ -162,8 +162,8 @@ body:has(dialog[open]) {
 }
 
 .secondary {
-  color: var(--color-text);
   border: 1px solid var(--color-border);
+  color: var(--color-text);
 
   &:hover {
     border-color: var(--color-text);
