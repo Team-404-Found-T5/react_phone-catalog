@@ -5988,5 +5988,1883 @@
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
     "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-256gb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 256GB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-512gb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 512GB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-1tb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 1TB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1900,
+    "priceDiscount": 1750,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-256gb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 256GB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-512gb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 512GB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-1tb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 1TB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1900,
+    "priceDiscount": 1750,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-256gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 256GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/silver/00.png",
+      "img/phones/apple-iphone-17-pro-max/silver/01.png",
+      "img/phones/apple-iphone-17-pro-max/silver/02.png",
+      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-512gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 512GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/silver/00.png",
+      "img/phones/apple-iphone-17-pro-max/silver/01.png",
+      "img/phones/apple-iphone-17-pro-max/silver/02.png",
+      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-max-1tb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro-max",
+    "name": "Apple iPhone 17 Pro Max 1TB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1900,
+    "priceDiscount": 1750,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro-max/silver/00.png",
+      "img/phones/apple-iphone-17-pro-max/silver/01.png",
+      "img/phones/apple-iphone-17-pro-max/silver/02.png",
+      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-256gb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 256GB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1600,
+    "priceDiscount": 1450,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-512gb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 512GB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-1tb-cosmic-orange",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 1TB Cosmic Orange",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "cosmic-orange",
+    "images": [
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-256gb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 256GB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1600,
+    "priceDiscount": 1450,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-512gb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 512GB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-1tb-deep-blue",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 1TB Deep Blue",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "deep-blue",
+    "images": [
+      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-256gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 256GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 1600,
+    "priceDiscount": 1450,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro/silver/00.png",
+      "img/phones/apple-iphone-17-pro/silver/01.png",
+      "img/phones/apple-iphone-17-pro/silver/02.png",
+      "img/phones/apple-iphone-17-pro/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-512gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 512GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 1700,
+    "priceDiscount": 1550,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro/silver/00.png",
+      "img/phones/apple-iphone-17-pro/silver/01.png",
+      "img/phones/apple-iphone-17-pro/silver/02.png",
+      "img/phones/apple-iphone-17-pro/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-17-pro-1tb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-17-pro",
+    "name": "Apple iPhone 17 Pro 1TB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 1800,
+    "priceDiscount": 1650,
+    "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-17-pro/silver/00.png",
+      "img/phones/apple-iphone-17-pro/silver/01.png",
+      "img/phones/apple-iphone-17-pro/silver/02.png",
+      "img/phones/apple-iphone-17-pro/silver/03.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch Super Retina XDR OLED display supports ProMotion with adaptive refresh rates up to 120Hz.",
+          "The A19 Pro chip combines a six-core CPU, a six-core GPU and a sixteen-core Neural Engine."
+        ]
+      },
+      {
+        "title": "Triple-camera photography",
+        "text": [
+          "Three 48MP rear cameras provide Main, Ultra Wide and Telephoto views. The telephoto camera offers 4x optical zoom and an 8x optical-quality option."
+        ]
+      },
+      {
+        "title": "Video and selfies",
+        "text": [
+          "The main camera records 4K Dolby Vision video at up to 120 frames per second.",
+          "The 18MP Center Stage front camera supports selfies and video calls."
+        ]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A19 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-256gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 256GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-512gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 512GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-1tb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 1TB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-256gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 256GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro/silver/00.png",
+      "img/phones/apple-iphone-18-pro/silver/01.png",
+      "img/phones/apple-iphone-18-pro/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-512gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 512GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro/silver/00.png",
+      "img/phones/apple-iphone-18-pro/silver/01.png",
+      "img/phones/apple-iphone-18-pro/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-1tb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 1TB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro/silver/00.png",
+      "img/phones/apple-iphone-18-pro/silver/01.png",
+      "img/phones/apple-iphone-18-pro/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-256gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 256GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-512gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 512GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-1tb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 1TB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-256gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 256GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-512gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 512GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-1tb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro",
+    "name": "Apple iPhone 18 Pro 1TB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.3-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.3\" OLED",
+    "resolution": "2622x1206",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
   }
 ]
