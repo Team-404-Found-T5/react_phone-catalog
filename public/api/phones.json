@@ -6834,5 +6834,521 @@
     "camera": "48MP + 48MP + 48MP",
     "zoom": "4x optical, 8x optical-quality",
     "cell": ["GSM", "EDGE", "UMTS", "HSPA+", "LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-black",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Black",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "black",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-silver",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Silver",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "silver",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/silver/00.png",
+      "img/phones/apple-iphone-18-pro-max/silver/01.png",
+      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-glacier",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Glacier",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "glacier",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-256gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 256GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "256GB",
+    "priceRegular": 2200,
+    "priceDiscount": 2050,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-512gb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 512GB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "512GB",
+    "priceRegular": 2300,
+    "priceDiscount": 2150,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
+  },
+  {
+    "id": "apple-iphone-18-pro-max-1tb-burgundy",
+    "category": "phones",
+    "namespaceId": "apple-iphone-18-pro-max",
+    "name": "Apple iPhone 18 Pro Max 1TB Burgundy",
+    "capacityAvailable": ["256GB", "512GB", "1TB"],
+    "capacity": "1TB",
+    "priceRegular": 2400,
+    "priceDiscount": 2250,
+    "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
+    "color": "burgundy",
+    "images": [
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+    ],
+    "description": [
+      {
+        "title": "Display and performance",
+        "text": [
+          "The 6.9-inch OLED display supports ProMotion up to 120Hz.",
+          "A20 Pro powers everyday tasks."
+        ]
+      },
+      {
+        "title": "Variable-aperture camera",
+        "text": [
+          "The 48MP Main camera offers variable aperture for exposure and depth-of-field control."
+        ]
+      },
+      {
+        "title": "Cooling",
+        "text": ["A redesigned vapor chamber helps dissipate heat."]
+      }
+    ],
+    "screen": "6.9\" OLED",
+    "resolution": "2868x1320",
+    "processor": "Apple A20 Pro",
+    "ram": "12GB",
+    "camera": "48MP + 48MP + 48MP",
+    "zoom": "4x optical, 8x optical-quality",
+    "cell": ["LTE", "5G"]
   }
 ]

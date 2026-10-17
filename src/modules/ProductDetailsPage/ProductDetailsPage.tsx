@@ -50,6 +50,8 @@ const colorMap: Record<string, string> = {
   starlight: '#F4E8CE',
   'cosmic-orange': '#EF7B35',
   'deep-blue': '#30405A',
+  glacier: '#C9DDE5',
+  burgundy: '#6B2438',
 };
 
 const isProductCategory = (
