@@ -47,6 +47,8 @@ const colorMap: Record<string, string> = {
   'space gray': '#4C4C4D',
   'sky blue': '#B8C9DC',
   starlight: '#F4E8CE',
+  'cosmic-orange': '#EF7B35',
+  'deep-blue': '#30405A',
 };
 
 const isProductCategory = (
