@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CheckoutModal.module.scss';
-import { playCancelSound, playClick2Sound, playVictorySound } from '../../modules/PixelHearts/sounds';
+import {
+  playCancelSound,
+  playClick2Sound,
+  playVictorySound,
+} from '../../modules/PixelHearts/sounds';
 
 type Props = {
   isOpen: boolean;
@@ -84,8 +88,9 @@ export const CheckoutModal: React.FC<Props> = ({
           type="button"
           className={styles.close}
           onClick={() => {
-            playClick2Sound()
-            onClose()}}
+            playClick2Sound();
+            onClose();
+          }}
           aria-label="Close"
         >
           <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
@@ -130,8 +135,9 @@ export const CheckoutModal: React.FC<Props> = ({
                 type="button"
                 className={styles.secondary}
                 onClick={() => {
-                  playCancelSound()
-                  onClose()}}
+                  playCancelSound();
+                  onClose();
+                }}
               >
                 Cancel
               </button>
@@ -140,8 +146,9 @@ export const CheckoutModal: React.FC<Props> = ({
                 type="button"
                 className={styles.primary}
                 onClick={() => {
-                  playVictorySound()
-                  handleConfirm()}}
+                  playVictorySound();
+                  handleConfirm();
+                }}
               >
                 Confirm
               </button>

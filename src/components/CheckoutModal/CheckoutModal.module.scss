@@ -38,9 +38,9 @@ body:has(dialog[open]) {
   padding: 0;
   border: 0;
 
-  color: $color-primary;
+  color: var(--color-text);
 
-  background: #fff;
+  background: var(--color-surface);
 
   &::backdrop {
     background: rgba(49, 50, 55, 0.5);
@@ -74,7 +74,9 @@ body:has(dialog[open]) {
 
   opacity: 0.7;
 
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
 
   &:hover {
     opacity: 1;
@@ -85,8 +87,12 @@ body:has(dialog[open]) {
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
   }
+}
+
+.close img {
+  filter: var(--icon-filter);
 }
 
 .content {
@@ -131,12 +137,15 @@ body:has(dialog[open]) {
   font-weight: 700;
   line-height: 21px;
 
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.1s;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s,
+    transform 0.1s;
 }
 
 .primary {
-  color: #fff;
-  background: $color-primary;
+  color: var(--color-surface);
+  background: var(--color-text);
 
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.2);
@@ -147,16 +156,17 @@ body:has(dialog[open]) {
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 }
 
 .secondary {
-  border: 1px solid $color-icons;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 
   &:hover {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 
   &:active {
@@ -164,7 +174,7 @@ body:has(dialog[open]) {
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 }
