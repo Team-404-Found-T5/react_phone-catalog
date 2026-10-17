@@ -22,6 +22,7 @@ import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import styles from './ProductDetailsPage.module.scss';
 import { PixelHearts } from '../PixelHearts/PixelHearts';
 import { playCartAddSound, playCartRemoveSound } from '../PixelHearts/sounds';
+import { BackButton } from '../../components/BackButton';
 
 const colorMap: Record<string, string> = {
   black: '#313237',
@@ -56,6 +57,9 @@ const isProductCategory = (
 
 const getCategoryTitle = (category: ProductCategory) =>
   category.charAt(0).toUpperCase() + category.slice(1);
+
+const getCapacityValue = (capacity: string) =>
+  parseInt(capacity) * (capacity.toUpperCase().includes('TB') ? 1024 : 1);
 
 export const ProductDetailsPage: React.FC = () => {
   const { category: categoryParam, productId } = useParams();
@@ -94,7 +98,11 @@ export const ProductDetailsPage: React.FC = () => {
   );
 
   const availableColors = getAvailableColors(variants);
-  const availableCapacities = getAvailableCapacities(variants);
+  const availableCapacities = [
+    ...getAvailableCapacities(variants).sort(
+      (a, b) => getCapacityValue(a) - getCapacityValue(b),
+    ),
+  ];
 
   useEffect(() => {
     if (!category || !productId) {
@@ -162,25 +170,29 @@ export const ProductDetailsPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      {category && (
-        <Breadcrumbs
-          items={[
-            { label: getCategoryTitle(category), to: `/${category}` },
-            { label: product?.name ?? productId ?? 'Loading product...' },
-          ]}
-        />
-      )}
+      <div className={styles.header}>
+        {category && (
+          <Breadcrumbs
+            items={[
+              { label: getCategoryTitle(category), to: `/${category}` },
+              { label: product?.name ?? productId ?? 'Loading product...' },
+            ]}
+          />
+        )}
 
-      {loadError && (
-        <p className={styles.loadError} role="alert">
-          {loadError}
-        </p>
-      )}
+        <BackButton />
 
-      <h1 className={styles.title}>
-        {product?.name ??
-          (loadError ? 'Product not found' : 'Loading product...')}
-      </h1>
+        {loadError && (
+          <p className={styles.loadError} role="alert">
+            {loadError}
+          </p>
+        )}
+
+        <h1 className={styles.title}>
+          {product?.name ??
+            (loadError ? 'Product not found' : 'Loading product...')}
+        </h1>
+      </div>
 
       {/* верхній блок */}
       <div className={styles.mainGrid}>
@@ -190,10 +202,13 @@ export const ProductDetailsPage: React.FC = () => {
               return (
                 <button
                   key={image}
+                  type="button"
                   className={styles.thumbBtn}
+                  aria-label={`Show image ${index + 1}`}
+                  aria-pressed={index === selectedImageIndex}
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                  <img src={image} alt={product?.name}></img>
+                  <img src={image} alt=""></img>
                 </button>
               );
             })}
@@ -219,8 +234,10 @@ export const ProductDetailsPage: React.FC = () => {
               return (
                 <button
                   key={color}
+                  type="button"
                   className={styles.colorCircle}
                   aria-label={color}
+                  aria-pressed={product?.color === color}
                   style={{ backgroundColor: colorMap[color] }}
                   onClick={() => {
                     if (!product) {
@@ -245,8 +262,10 @@ export const ProductDetailsPage: React.FC = () => {
                 return (
                   <button
                     key={capacity}
+                    type="button"
                     className={styles.capacityBtn}
                     aria-label={capacity}
+                    aria-pressed={product?.capacity === capacity}
                     onClick={() => {
                       if (!product) {
                         return;
@@ -397,18 +416,26 @@ export const ProductDetailsPage: React.FC = () => {
               <span className={styles.specLabel}>Built in memory</span>
               <span className={styles.specValue}>{product?.capacity}</span>
             </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Camera</span>
-              <span className={styles.specValue}>{product?.camera}</span>
-            </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Zoom</span>
-              <span className={styles.specValue}>{product?.zoom}</span>
-            </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Cell</span>
-              <span className={styles.specValue}>{product?.cell}</span>
-            </div>
+            {product?.camera && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Camera</span>
+                <span className={styles.specValue}>{product?.camera}</span>
+              </div>
+            )}
+            {product?.zoom && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Zoom</span>
+                <span className={styles.specValue}>{product?.zoom}</span>
+              </div>
+            )}
+            {product?.cell && product.cell.length > 0 && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Cell</span>
+                <span className={styles.specValue}>
+                  {product?.cell?.join(', ')}
+                </span>
+              </div>
+            )}
           </div>
         </section>
       </div>

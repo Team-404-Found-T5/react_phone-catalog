@@ -5,6 +5,19 @@
   padding-top: 24px;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+
+  margin-bottom: 24px;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
+
 .loadError {
   margin: 16px 0;
   color: $color-red;
@@ -12,12 +25,6 @@
 
 .title {
   @include section-title;
-
-  margin-bottom: 24px;
-
-  @include desktop {
-    margin-bottom: 40px;
-  }
 }
 
 .mainGrid {
@@ -91,6 +98,10 @@
     outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
+
+  &[aria-pressed='true'] {
+    border-color: var(--color-text);
+  }
 }
 
 .mainImageWrapper {
@@ -146,20 +157,24 @@
   width: 32px;
   height: 32px;
   padding: 0;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-surface);
   border-radius: 50%;
 
-  outline: 1px solid $color-elements;
+  outline: 1px solid var(--color-border);
 
   transition: outline-color 0.2s;
 
   &:hover {
-    outline-color: $color-primary;
+    outline-color: var(--color-text);
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
+  }
+
+  &[aria-pressed='true'] {
+    outline-color: var(--color-text);
   }
 }
 
@@ -186,7 +201,10 @@
 
   background: var(--color-surface);
 
-  transition: border-color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background-color 0.2s;
 
   &:hover {
     border-color: var(--color-text);
@@ -195,6 +213,12 @@
   &:focus-visible {
     outline: 2px solid var(--color-text);
     outline-offset: 2px;
+  }
+
+  &[aria-pressed='true'] {
+    border-color: var(--color-text);
+    color: var(--color-surface);
+    background: var(--color-text);
   }
 }
 
@@ -276,7 +300,7 @@
   padding: 0;
   border: 1px solid $color-elements;
 
-  background: #fff;
+  background: var(--color-surface);
 
   img {
     width: 14px;
