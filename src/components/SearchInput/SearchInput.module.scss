@@ -26,6 +26,7 @@
   box-sizing: border-box;
   border: 1px solid $color-secondary;
   border-radius: 20px;
+  color: var(--color-text);
 
   background-color: var(--color-surface);
   outline: none;
@@ -40,9 +41,14 @@
   }
 
   &:focus {
-    border-color: $color-text;
+    border-color: var(--color-text);
     border-radius: 0;
     box-shadow: 0 0 10px rgb(91 91 165 / 45%);
+  }
+
+  &::placeholder {
+    color: var(--color-secondary);
+    opacity: 1;
   }
 }
 
