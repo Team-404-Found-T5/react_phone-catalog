@@ -18,8 +18,14 @@ const banners: Banner[] = [
     id: 'halloween',
     image: 'img/banner-halloween.png',
     alt: 'Halloween sale',
-    to: '/phones',
+    to: '/catalog',
     showUntil: new Date(2026, 9, 31, 23, 59, 59),
+  },
+  {
+    id: 'iphone18pro',
+    image: 'img/banner-iphone18pro.png',
+    alt: 'iPhone 18 Pro',
+    to: '/phones/apple-iphone-18-pro-256gb-burgundy',
   },
   {
     id: 'phones',
