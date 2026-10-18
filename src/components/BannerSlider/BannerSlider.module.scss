@@ -26,7 +26,11 @@
 
 .link {
   display: block;
-  aspect-ratio: 1040 / 400;
+  aspect-ratio: 1 / 1;
+
+  @include tablet {
+    aspect-ratio: 1040 / 400;
+  }
 }
 
 .image {
