@@ -6,44 +6,27 @@
 }
 
 .logoGroup {
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .logo-header {
-  width: 64px;
-  height: 22px;
+  width: 77px;
+  height: 26px;
 
   @include tablet {
-    width: 80px;
-    height: 28px;
+    width: 130px;
+    height: 45px;
   }
 }
 
 .logo-footer {
-  width: 89px;
-  height: 32px;
+  width: 120px;
+  height: 45px;
 }
 
 .logoText {
-  position: absolute;
-  top: 2px;
-  left: 0;
+  display: block;
   width: 100%;
-  color: red;
-}
-
-.logoOk {
-  position: absolute;
-  top:1px;
-  right: 23px;
-
-  width: 9px;
-  height: 11px;
-
-  @include tablet {
-    top: 0;
-    right: 29px;
-    width: 11px;
-    height: 15px;
-  }
+  height: auto;
 }
