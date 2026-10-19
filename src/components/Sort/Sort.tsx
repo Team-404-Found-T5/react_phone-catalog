@@ -142,7 +142,6 @@ export const Sort: React.FC<SortProps> = ({ disabled = false }) => {
     });
   };
 
-  // Чернетковий стейт для всіх опцій фільтрації та сортування
   const [draftSort, setDraftSort] = useState<SortType>(
     (searchParams.get('sort') as SortType) || 'age',
   );
