@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import {
   getProductDetailsById,
   getRelatedProducts,
@@ -170,6 +170,35 @@ export const ProductDetailsPage: React.FC = () => {
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (!product) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <BackButton />
+        </div>
+
+        <div className={styles.notFound}>
+          <p className={styles.notFoundText}>
+            {loadError || 'Product not found'}
+          </p>
+
+          <NavLink
+            to={category ? `/${category}` : '/catalog'}
+            className={styles.notFoundLink}
+          >
+            Back to catalog
+          </NavLink>
+
+          <img
+            className={styles.notFoundImage}
+            src="img/product-not-found.png"
+            alt=""
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
