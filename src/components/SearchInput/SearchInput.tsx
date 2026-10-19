@@ -140,6 +140,7 @@ export const SearchInput: React.FC = () => {
                     className={styles.SearchedProductImage}
                     src={product.image}
                     alt=""
+                    loading="lazy"
                   />
                   <span>{product.name}</span>
                 </NavLink>

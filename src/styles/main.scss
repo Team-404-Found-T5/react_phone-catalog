@@ -1,6 +1,30 @@
 @use './reset';
 @use './variables' as *;
 
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Mont-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Mont-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Mont-Bold.otf') format('opentype');
+}
+
 :root {
   --color-background: #fff;
   --color-surface: #fff;
@@ -11,6 +35,28 @@
   --color-button-text: #fff;
   --color-button-hover: #4a4d58;
   --icon-filter: none;
+  --scrollbar-track: #f1f2f4;
+  --scrollbar-thumb: #b4bdc3;
+  --scrollbar-thumb-hover: #89939a;
+  --scrollbar-thumb-gradient: linear-gradient(
+    180deg,
+    #7046c8 0%,
+    #4852bd 50%,
+    #207f93 100%
+  );
+  --scrollbar-thumb-hover-gradient: linear-gradient(
+    180deg,
+    #5b35b3 0%,
+    #3844a8 50%,
+    #176c80 100%
+  );
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  :root {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
+  }
 }
 
 :root[data-theme='dark'] {
@@ -23,6 +69,49 @@
   --color-button-text: #313237;
   --color-button-hover: #d9dade;
   --icon-filter: invert(1);
+  --scrollbar-track: #292c32;
+  --scrollbar-thumb: #555b65;
+  --scrollbar-thumb-hover: #747c88;
+  --scrollbar-thumb-gradient: linear-gradient(
+    180deg,
+    #7051b4 0%,
+    #4b51ab 50%,
+    #297582 100%
+  );
+  --scrollbar-thumb-hover-gradient: linear-gradient(
+    180deg,
+    #7955c6 0%,
+    #5058bf 50%,
+    #2c8da0 100%
+  );
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+
+  background: var(--scrollbar-thumb-gradient);
+  background-clip: padding-box;
+
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-gradient);
 }
 
 body {
@@ -30,6 +119,6 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   transition:
-  background-color 0.3ms ease,
-  color 0.3ms ease;
+    background-color 0.3ms ease,
+    color 0.3ms ease;
 }

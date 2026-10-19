@@ -19,7 +19,7 @@ export const Logo: React.FC<Prop> = ({ variant }) => {
         </svg>
         <img
           className={styles.logoOk}
-          src={`${import.meta.env.BASE_URL}img/okSymbol.png`}
+          src={`${import.meta.env.BASE_URL}img/okSymbol.webp`}
           alt="ok Symbol"
         />
       </div>

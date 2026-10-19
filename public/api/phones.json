@@ -2562,9 +2562,7 @@
     "images": [
       "img/phones/apple-iphone-xr/coral/00.webp",
       "img/phones/apple-iphone-xr/coral/01.webp",
-      "img/phones/apple-iphone-xr/coral/02.webp",
-      "img/phones/apple-iphone-xr/coral/03.webp",
-      "img/phones/apple-iphone-xr/coral/04.webp"
+      "img/phones/apple-iphone-xr/coral/02.webp"
     ],
     "description": [
       {
@@ -2661,8 +2659,7 @@
       "img/phones/apple-iphone-xr/white/00.webp",
       "img/phones/apple-iphone-xr/white/01.webp",
       "img/phones/apple-iphone-xr/white/02.webp",
-      "img/phones/apple-iphone-xr/white/03.webp",
-      "img/phones/apple-iphone-xr/white/04.webp"
+      "img/phones/apple-iphone-xr/white/03.webp"
     ],
     "description": [
       {
@@ -2855,8 +2852,7 @@
       "img/phones/apple-iphone-xr/white/00.webp",
       "img/phones/apple-iphone-xr/white/01.webp",
       "img/phones/apple-iphone-xr/white/02.webp",
-      "img/phones/apple-iphone-xr/white/03.webp",
-      "img/phones/apple-iphone-xr/white/04.webp"
+      "img/phones/apple-iphone-xr/white/03.webp"
     ],
     "description": [
       {
@@ -4511,7 +4507,6 @@
     "images": [
       "img/phones/apple-iphone-12/white/00.webp",
       "img/phones/apple-iphone-12/white/01.webp",
-      "img/phones/apple-iphone-12/white/02.webp",
       "img/phones/apple-iphone-12/white/03.webp"
     ],
     "description": [
@@ -4559,7 +4554,6 @@
     "images": [
       "img/phones/apple-iphone-12/white/00.webp",
       "img/phones/apple-iphone-12/white/01.webp",
-      "img/phones/apple-iphone-12/white/02.webp",
       "img/phones/apple-iphone-12/white/03.webp"
     ],
     "description": [
@@ -4607,7 +4601,6 @@
     "images": [
       "img/phones/apple-iphone-12/white/00.webp",
       "img/phones/apple-iphone-12/white/01.webp",
-      "img/phones/apple-iphone-12/white/02.webp",
       "img/phones/apple-iphone-12/white/03.webp"
     ],
     "description": [
@@ -6001,10 +5994,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6048,10 +6041,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6095,10 +6088,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro-max/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6142,10 +6135,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6189,10 +6182,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6236,10 +6229,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro-max/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro-max/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro-max/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6283,10 +6276,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/silver/00.png",
-      "img/phones/apple-iphone-17-pro-max/silver/01.png",
-      "img/phones/apple-iphone-17-pro-max/silver/02.png",
-      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+      "img/phones/apple-iphone-17-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/02.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/03.webp"
     ],
     "description": [
       {
@@ -6330,10 +6323,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/silver/00.png",
-      "img/phones/apple-iphone-17-pro-max/silver/01.png",
-      "img/phones/apple-iphone-17-pro-max/silver/02.png",
-      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+      "img/phones/apple-iphone-17-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/02.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/03.webp"
     ],
     "description": [
       {
@@ -6377,10 +6370,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro-max/silver/00.png",
-      "img/phones/apple-iphone-17-pro-max/silver/01.png",
-      "img/phones/apple-iphone-17-pro-max/silver/02.png",
-      "img/phones/apple-iphone-17-pro-max/silver/03.png"
+      "img/phones/apple-iphone-17-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/02.webp",
+      "img/phones/apple-iphone-17-pro-max/silver/03.webp"
     ],
     "description": [
       {
@@ -6424,10 +6417,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6471,10 +6464,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6518,10 +6511,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "cosmic-orange",
     "images": [
-      "img/phones/apple-iphone-17-pro/cosmic-orange/00.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/01.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/02.png",
-      "img/phones/apple-iphone-17-pro/cosmic-orange/03.png"
+      "img/phones/apple-iphone-17-pro/cosmic-orange/00.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/01.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/02.webp",
+      "img/phones/apple-iphone-17-pro/cosmic-orange/03.webp"
     ],
     "description": [
       {
@@ -6565,10 +6558,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6612,10 +6605,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6659,10 +6652,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "deep-blue",
     "images": [
-      "img/phones/apple-iphone-17-pro/deep-blue/00.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/01.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/02.png",
-      "img/phones/apple-iphone-17-pro/deep-blue/03.png"
+      "img/phones/apple-iphone-17-pro/deep-blue/00.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/01.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/02.webp",
+      "img/phones/apple-iphone-17-pro/deep-blue/03.webp"
     ],
     "description": [
       {
@@ -6706,10 +6699,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro/silver/00.png",
-      "img/phones/apple-iphone-17-pro/silver/01.png",
-      "img/phones/apple-iphone-17-pro/silver/02.png",
-      "img/phones/apple-iphone-17-pro/silver/03.png"
+      "img/phones/apple-iphone-17-pro/silver/00.webp",
+      "img/phones/apple-iphone-17-pro/silver/01.webp",
+      "img/phones/apple-iphone-17-pro/silver/02.webp",
+      "img/phones/apple-iphone-17-pro/silver/03.webp"
     ],
     "description": [
       {
@@ -6753,10 +6746,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro/silver/00.png",
-      "img/phones/apple-iphone-17-pro/silver/01.png",
-      "img/phones/apple-iphone-17-pro/silver/02.png",
-      "img/phones/apple-iphone-17-pro/silver/03.png"
+      "img/phones/apple-iphone-17-pro/silver/00.webp",
+      "img/phones/apple-iphone-17-pro/silver/01.webp",
+      "img/phones/apple-iphone-17-pro/silver/02.webp",
+      "img/phones/apple-iphone-17-pro/silver/03.webp"
     ],
     "description": [
       {
@@ -6800,10 +6793,10 @@
     "colorsAvailable": ["cosmic-orange", "deep-blue", "silver"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-17-pro/silver/00.png",
-      "img/phones/apple-iphone-17-pro/silver/01.png",
-      "img/phones/apple-iphone-17-pro/silver/02.png",
-      "img/phones/apple-iphone-17-pro/silver/03.png"
+      "img/phones/apple-iphone-17-pro/silver/00.webp",
+      "img/phones/apple-iphone-17-pro/silver/01.webp",
+      "img/phones/apple-iphone-17-pro/silver/02.webp",
+      "img/phones/apple-iphone-17-pro/silver/03.webp"
     ],
     "description": [
       {
@@ -6847,9 +6840,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.webp"
     ],
     "description": [
       {
@@ -6890,9 +6883,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.webp"
     ],
     "description": [
       {
@@ -6933,9 +6926,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro-max/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro-max/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro-max/deep-black/02.webp"
     ],
     "description": [
       {
@@ -6976,9 +6969,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/silver/00.png",
-      "img/phones/apple-iphone-18-pro-max/silver/01.png",
-      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+      "img/phones/apple-iphone-18-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/02.webp"
     ],
     "description": [
       {
@@ -7019,9 +7012,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/silver/00.png",
-      "img/phones/apple-iphone-18-pro-max/silver/01.png",
-      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+      "img/phones/apple-iphone-18-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/02.webp"
     ],
     "description": [
       {
@@ -7062,9 +7055,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/silver/00.png",
-      "img/phones/apple-iphone-18-pro-max/silver/01.png",
-      "img/phones/apple-iphone-18-pro-max/silver/02.png"
+      "img/phones/apple-iphone-18-pro-max/silver/00.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/01.webp",
+      "img/phones/apple-iphone-18-pro-max/silver/02.webp"
     ],
     "description": [
       {
@@ -7105,9 +7098,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7148,9 +7141,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7191,9 +7184,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro-max/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7234,9 +7227,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.webp"
     ],
     "description": [
       {
@@ -7277,9 +7270,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.webp"
     ],
     "description": [
       {
@@ -7320,9 +7313,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro-max/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro-max/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro-max/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro-max/burgundy/02.webp"
     ],
     "description": [
       {
@@ -7363,9 +7356,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/02.webp"
     ],
     "description": [
       {
@@ -7406,9 +7399,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/02.webp"
     ],
     "description": [
       {
@@ -7449,9 +7442,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "black",
     "images": [
-      "img/phones/apple-iphone-18-pro/deep-black/00.png",
-      "img/phones/apple-iphone-18-pro/deep-black/01.png",
-      "img/phones/apple-iphone-18-pro/deep-black/02.png"
+      "img/phones/apple-iphone-18-pro/deep-black/00.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/01.webp",
+      "img/phones/apple-iphone-18-pro/deep-black/02.webp"
     ],
     "description": [
       {
@@ -7492,9 +7485,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro/silver/00.png",
-      "img/phones/apple-iphone-18-pro/silver/01.png",
-      "img/phones/apple-iphone-18-pro/silver/02.png"
+      "img/phones/apple-iphone-18-pro/silver/00.webp",
+      "img/phones/apple-iphone-18-pro/silver/01.webp",
+      "img/phones/apple-iphone-18-pro/silver/02.webp"
     ],
     "description": [
       {
@@ -7535,9 +7528,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro/silver/00.png",
-      "img/phones/apple-iphone-18-pro/silver/01.png",
-      "img/phones/apple-iphone-18-pro/silver/02.png"
+      "img/phones/apple-iphone-18-pro/silver/00.webp",
+      "img/phones/apple-iphone-18-pro/silver/01.webp",
+      "img/phones/apple-iphone-18-pro/silver/02.webp"
     ],
     "description": [
       {
@@ -7578,9 +7571,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "silver",
     "images": [
-      "img/phones/apple-iphone-18-pro/silver/00.png",
-      "img/phones/apple-iphone-18-pro/silver/01.png",
-      "img/phones/apple-iphone-18-pro/silver/02.png"
+      "img/phones/apple-iphone-18-pro/silver/00.webp",
+      "img/phones/apple-iphone-18-pro/silver/01.webp",
+      "img/phones/apple-iphone-18-pro/silver/02.webp"
     ],
     "description": [
       {
@@ -7621,9 +7614,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7664,9 +7657,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7707,9 +7700,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "glacier",
     "images": [
-      "img/phones/apple-iphone-18-pro/glasier-blue/00.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/01.png",
-      "img/phones/apple-iphone-18-pro/glasier-blue/02.png"
+      "img/phones/apple-iphone-18-pro/glasier-blue/00.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/01.webp",
+      "img/phones/apple-iphone-18-pro/glasier-blue/02.webp"
     ],
     "description": [
       {
@@ -7750,9 +7743,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/02.webp"
     ],
     "description": [
       {
@@ -7793,9 +7786,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/02.webp"
     ],
     "description": [
       {
@@ -7836,9 +7829,9 @@
     "colorsAvailable": ["black", "silver", "glacier", "burgundy"],
     "color": "burgundy",
     "images": [
-      "img/phones/apple-iphone-18-pro/burgundy/00.png",
-      "img/phones/apple-iphone-18-pro/burgundy/01.png",
-      "img/phones/apple-iphone-18-pro/burgundy/02.png"
+      "img/phones/apple-iphone-18-pro/burgundy/00.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/01.webp",
+      "img/phones/apple-iphone-18-pro/burgundy/02.webp"
     ],
     "description": [
       {

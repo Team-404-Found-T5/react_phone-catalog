@@ -4,12 +4,15 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem/CartItem';
 import { CheckoutModal } from '../../components/CheckoutModal/CheckoutModal';
 import { useCart } from '../../context/CartContext';
+import { usePageLoadingDelay } from '../../hooks/usePageLoadingDelay';
 import styles from './CartPage.module.scss';
 import { playClick2Sound } from '../PixelHearts/sounds';
+import { CartSkeleton } from './CartSkeleton';
 
 export const CartPage: React.FC = () => {
   const { items, remove } = useCart();
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const isLoading = usePageLoadingDelay();
 
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
@@ -20,6 +23,16 @@ export const CartPage: React.FC = () => {
   const handleClearCart = () => {
     items.forEach(item => remove(item.product.itemId));
   };
+
+  if (isLoading) {
+    return (
+      <div className={styles.container} aria-busy="true">
+        <BackButton />
+        <h1 className={styles.title}>Cart</h1>
+        <CartSkeleton />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -32,7 +45,7 @@ export const CartPage: React.FC = () => {
           <div className={styles.empty}>
             <img
               className={styles.emptyImage}
-              src="img/cart-is-empty.png"
+              src="img/cart-is-empty.webp"
               alt=""
             />
 

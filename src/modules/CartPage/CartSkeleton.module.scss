@@ -1,0 +1,93 @@
+@use '../../styles/mixins' as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.item {
+  display: grid;
+  grid-template-areas:
+    'remove image name'
+    'quantity quantity price';
+  grid-template-columns: 16px 80px 1fr;
+  gap: 16px;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: 129.6px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+
+  @include tablet {
+    grid-template-areas: 'remove image name quantity price';
+    grid-template-columns: 16px 96px 1fr 90px 96px;
+    width: 100%;
+    padding: 24px;
+  }
+
+  @include desktop {
+    width: 66.2%;
+  }
+}
+
+.remove {
+  grid-area: remove;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.image {
+  grid-area: image;
+  justify-self: center;
+  width: 80px;
+  height: 80px;
+
+  @include tablet {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.name {
+  display: flex;
+  grid-area: name;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nameLine,
+.nameLineShort {
+  width: 100%;
+  height: 10px;
+}
+
+.nameLineShort {
+  width: 68%;
+}
+
+.quantity {
+  display: flex;
+  grid-area: quantity;
+  align-items: center;
+}
+
+.counterButton {
+  width: 32px;
+  height: 32px;
+}
+
+.quantityCount {
+  width: 32px;
+  height: 10px;
+}
+
+.price {
+  grid-area: price;
+  justify-self: end;
+  width: 64px;
+  height: 24px;
+}
