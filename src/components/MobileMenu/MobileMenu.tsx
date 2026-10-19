@@ -4,13 +4,16 @@ import { Navigation } from '../Navigation';
 import { HeaderAction } from '../HeaderAction';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
+import SwitchBgButtons from '../SwitchBgButtons/SwitchBgButtons';
 
 interface Prop {
+  theme: string;
+  setTheme: (param: string) => void;
   show: boolean;
   closeModal: () => void;
 }
 
-export const MobileMenu: React.FC<Prop> = ({ show, closeModal }) => {
+export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }) => {
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
 
@@ -32,6 +35,7 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal }) => {
   return (
     <div className={`${styles.container} ${show ? styles.show : ''}`}>
       <Navigation varinant="modal" handleCloseModal={closeModal} />
+      <SwitchBgButtons variant='modal' theme={theme} setTheme={setTheme}/>
       <div className={styles.ordersgroup}>
         <HeaderAction
           closeModal={closeModal}

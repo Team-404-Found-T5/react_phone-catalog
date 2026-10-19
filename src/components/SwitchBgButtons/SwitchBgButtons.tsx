@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './SwitchBgButtons.module.scss';
 
-export const SwitchBgButtons: React.FC = () => {
-  {
-    /*перемикання теми*/
-  }
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
+type Prop = {
+  theme: string;
+  setTheme: (param: string) => void;
+  variant?: 'modal';
+}
 
-    if (savedTheme === 'dark') {
-      return 'dark';
-    }
-
-    return 'light';
-  });
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+export const SwitchBgButtons: React.FC<Prop> = ({ variant, theme, setTheme  }) => {
 
   return (
-    <label className={styles.themeSwitch}>
+    <label className={variant ? `${styles.do} ${styles.themeSwitch}` : styles.themeSwitch}>
       <input
         className={styles.input}
         type="checkbox"
