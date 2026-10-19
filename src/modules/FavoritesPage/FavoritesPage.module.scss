@@ -20,25 +20,45 @@
 }
 
 .count {
-  margin: 8px 0 32px;
+  margin-top: 8px;
   font-size: 14px;
   line-height: 21px;
   color: $color-secondary;
-
-  @include tablet {
-    margin-bottom: 40px;
-  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 272px);
   gap: 40px 16px;
-  justify-content: center;
+  justify-content: flex-start;
+
+  padding-top: 16px;
+
+  @include tablet {
+    padding-top: 40px;
+  }
 }
 
 .empty {
-  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+  margin-top: 32px;
+}
+
+.emptyImage {
+  align-self: center;
+
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+
+  filter: var(--icon-filter);
+}
+
+.emptyText {
   font-size: 22px;
   font-weight: 800;
   line-height: 31px;

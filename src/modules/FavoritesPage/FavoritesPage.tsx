@@ -22,7 +22,15 @@ export const FavoritesPage: React.FC = () => {
           ))}
         </div>
       ) : (
-        <p className={styles.empty}>You have no favorite products yet.</p>
+        <div className={styles.empty}>
+          <img
+            className={styles.emptyImage}
+            src="img/favourites-is-empty.png"
+            alt=""
+          />
+
+          <p className={styles.emptyText}>You have no favorite products yet.</p>
+        </div>
       )}
     </div>
   );

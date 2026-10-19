@@ -27,6 +27,40 @@
   @include section-title;
 }
 
+.notFound {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+  text-align: center;
+}
+
+.notFoundImage {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  filter: var(--icon-filter);
+}
+
+.notFoundText {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+}
+
+.notFoundLink {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: $color-secondary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr;

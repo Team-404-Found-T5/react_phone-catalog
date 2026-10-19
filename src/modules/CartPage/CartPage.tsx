@@ -30,9 +30,15 @@ export const CartPage: React.FC = () => {
 
         {items.length === 0 ? (
           <div className={styles.empty}>
+            <img
+              className={styles.emptyImage}
+              src="img/cart-is-empty.png"
+              alt=""
+            />
+
             <p className={styles.emptyText}>Your cart is empty</p>
 
-            <NavLink to="/phones" className={styles.emptyLink}>
+            <NavLink to="/catalog" className={styles.emptyLink}>
               Go shopping
             </NavLink>
           </div>
