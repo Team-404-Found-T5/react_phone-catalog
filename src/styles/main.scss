@@ -29,4 +29,7 @@ body {
   font-family: $font-family;
   color: var(--color-text);
   background-color: var(--color-background);
+  transition:
+  background-color 0.3ms ease,
+  color 0.3ms ease;
 }
