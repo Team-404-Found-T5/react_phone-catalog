@@ -1,0 +1,156 @@
+.list {
+  display: contents;
+}
+
+.card {
+  display: flex;
+  flex: 0 0 272px;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 272px;
+  height: 506px;
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+
+  background: var(--color-surface);
+}
+
+.shimmer {
+  background-color: color-mix(
+    in srgb,
+    var(--color-border) 58%,
+    var(--color-surface)
+  );
+  background-image: linear-gradient(
+    100deg,
+    transparent 20%,
+    color-mix(in srgb, var(--color-surface) 88%, white) 50%,
+    transparent 80%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.image {
+  width: 100%;
+  height: 196px;
+  border-radius: 4px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  width: 100%;
+  height: 42px;
+  margin-top: 16px;
+}
+
+.nameLine,
+.nameLineShort {
+  height: 10px;
+  border-radius: 6px;
+}
+
+.nameLine {
+  width: 100%;
+}
+
+.nameLineShort {
+  width: 62%;
+}
+
+.prices {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 31px;
+}
+
+.price {
+  width: 78px;
+  height: 26px;
+  border-radius: 6px;
+}
+
+.oldPrice {
+  width: 64px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.divider {
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  padding: 8px 0;
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 12px;
+}
+
+.specLabel,
+.specValue {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.specLabel {
+  width: 48px;
+}
+
+.specValue {
+  width: 64px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cartButton {
+  flex: 1;
+  height: 40px;
+  border-radius: 2px;
+}
+
+.favoriteButton {
+  flex: 0 0 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+  }
+}

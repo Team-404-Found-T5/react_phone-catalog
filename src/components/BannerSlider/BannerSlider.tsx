@@ -8,6 +8,7 @@ import styles from './BannerSlider.module.scss';
 type Banner = {
   id: string;
   image: string;
+  mobileImage: string;
   alt: string;
   to: string;
   showUntil?: Date;
@@ -16,26 +17,37 @@ type Banner = {
 const banners: Banner[] = [
   {
     id: 'halloween',
-    image: 'img/banner-halloween.png',
+    image: 'img/banner-halloween.webp',
+    mobileImage: 'img/banner-halloween-square.webp',
     alt: 'Halloween sale',
-    to: '/phones',
+    to: '/catalog',
     showUntil: new Date(2026, 9, 31, 23, 59, 59),
   },
   {
+    id: 'iphone18pro',
+    image: 'img/banner-iphone18pro.webp',
+    mobileImage: 'img/banner-iphone18pro-square.webp',
+    alt: 'iPhone 18 Pro',
+    to: '/phones/apple-iphone-18-pro-256gb-burgundy',
+  },
+  {
     id: 'phones',
-    image: 'img/banner-phones.png',
+    image: 'img/banner-phones.webp',
+    mobileImage: 'img/banner-phones-square.webp',
     alt: 'Phones',
     to: '/phones',
   },
   {
     id: 'tablets',
-    image: 'img/banner-tablets.png',
+    image: 'img/banner-tablets.webp',
+    mobileImage: 'img/banner-tablets-square.webp',
     alt: 'Tablets',
     to: '/tablets',
   },
   {
     id: 'accessories',
-    image: 'img/banner-accessories.png',
+    image: 'img/banner-accessories.webp',
+    mobileImage: 'img/banner-accessories-square.webp',
     alt: 'Accessories',
     to: '/accessories',
   },
@@ -82,11 +94,18 @@ export const BannerSlider: React.FC = () => {
           {activeBanners.map(banner => (
             <SwiperSlide key={banner.id}>
               <NavLink to={banner.to} className={styles.link}>
-                <img
-                  className={styles.image}
-                  src={banner.image}
-                  alt={banner.alt}
-                />
+                <picture>
+                  <source
+                    media="(max-width: 639px)"
+                    srcSet={banner.mobileImage}
+                  />
+                  <img
+                    className={styles.image}
+                    src={banner.image}
+                    alt={banner.alt}
+                    loading={banner.id === activeBanners[0]?.id ? 'eager' : 'lazy'}
+                  />
+                </picture>
               </NavLink>
             </SwiperSlide>
           ))}

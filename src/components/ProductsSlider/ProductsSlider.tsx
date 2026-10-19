@@ -2,15 +2,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './ProductsSlider.module.scss';
 import type { Product } from '../../types/product';
 import { ProductCard } from '../ProductCard/ProductCard';
+import { ProductCardSkeleton } from '../ProductCardSkeleton';
 
 const PRODUCTS_PER_SLIDE = 4;
 
 type Props = {
   title: string;
   products: Product[];
+  isLoading?: boolean;
 };
 
-export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
+export const ProductsSlider: React.FC<Props> = ({
+  title,
+  products,
+  isLoading = false,
+}) => {
   const productsListRef = useRef<HTMLDivElement>(null);
   const pendingScrolls = useRef(0);
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_SLIDE);
@@ -105,7 +111,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             className={styles.nextButton}
             type="button"
             aria-label="Next products"
-            disabled={visibleCount >= products.length}
+            disabled={isLoading || visibleCount >= products.length}
             onClick={showNextProducts}
           >
             <img
@@ -121,10 +127,15 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
         className={styles.productsList}
         ref={productsListRef}
         onScroll={updateScrollState}
+        aria-busy={isLoading}
       >
-        {products.slice(0, visibleCount).map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {isLoading ? (
+          <ProductCardSkeleton count={PRODUCTS_PER_SLIDE} />
+        ) : (
+          products.slice(0, visibleCount).map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        )}
       </div>
     </div>
   );

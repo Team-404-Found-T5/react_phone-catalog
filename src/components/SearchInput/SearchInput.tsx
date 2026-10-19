@@ -137,20 +137,48 @@ export const SearchInput: React.FC = () => {
             }}
           />
         </div>
-      </div>
-
-      <SearchModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        searchBy={searchBy}
-        setSearchBy={setSearchBy}
-        isSearching={isSearching}
-        dataSearched={dataSearched}
-        onSubmit={submitSearch}
-        onSearchAll={executeSearch}
-        modalInputRef={modalInputRef}
-      />
-    </>
+      </form>
+      {isFocused && searchBy.trim() && (
+        <ul className={styles.listOfSearches}>
+          {isSearching ? (
+            <li className={styles.searchStatus} role="status">
+              Searching products...
+            </li>
+          ) : (
+            dataSearched.map(product => (
+              <li className={styles.searchedItem} key={product.itemId}>
+                <NavLink
+                  className={styles.linkToProduct}
+                  to={`/${product.category}/${product.itemId}`}
+                  onMouseDown={event => event.preventDefault()}
+                >
+                  <img
+                    className={styles.SearchedProductImage}
+                    src={product.image}
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span>{product.name}</span>
+                </NavLink>
+              </li>
+            ))
+          )}
+          <li className={styles.searchAllItem}>
+            <button
+              type="button"
+              className={styles.searchAllButton}
+              onMouseDown={event => event.preventDefault()}
+              onClick={() => {
+                setIsFocused(false);
+                navigate(`/catalog?q=${encodeURIComponent(searchBy.trim())}`);
+              }}
+            >
+              Search all products for “{searchBy.trim()}”
+            </button>
+          </li>
+        </ul>
+      )}
+    </div>
   );
 };
 

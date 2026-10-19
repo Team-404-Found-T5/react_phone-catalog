@@ -29,7 +29,12 @@ export const CartItem: React.FC<Props> = ({ item }) => {
       </button>
 
       <NavLink to={link} className={styles.imageLink}>
-        <img className={styles.image} src={product.image} alt={product.name} />
+        <img
+          className={styles.image}
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+        />
       </NavLink>
 
       <NavLink to={link} className={styles.name}>
