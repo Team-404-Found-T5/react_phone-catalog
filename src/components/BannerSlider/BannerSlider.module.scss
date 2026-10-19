@@ -8,14 +8,10 @@
 }
 
 .main {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
-
-  @include tablet {
-    grid-template-columns: 32px minmax(0, 1fr) 32px;
-    column-gap: 16px;
-  }
 }
 
 .swiper {
@@ -26,7 +22,11 @@
 
 .link {
   display: block;
-  aspect-ratio: 1040 / 400;
+  aspect-ratio: 1 / 1;
+
+  @include tablet {
+    aspect-ratio: 1040 / 400;
+  }
 }
 
 .image {
@@ -38,37 +38,57 @@
 .arrow {
   cursor: pointer;
 
-  contain: size;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+
   display: none;
   align-items: center;
-  align-self: stretch;
   justify-content: center;
 
-  border: 1px solid var(--color-border);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
 
-  line-height: 1;
-  color: var(--color-text);
+  color: #fff;
 
-  background: var(--color-surface);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
 
-  transition: border-color 0.2s;
+  transition:
+    opacity 0.2s,
 
-  &:hover {
-    border-color: var(--color-text);
-  }
+    background 0.2s;
 
   @include tablet {
     display: flex;
   }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .main:hover & {
+    opacity: 1;
+  }
+
 }
 
 .arrow img {
-  filter: var(--icon-filter);
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
 }
 
-.prev,
+.prev {
+  left: 12px;
+}
+
 .next {
-  font-family: inherit;
+  right: 12px;
 }
 
 .dashes {
