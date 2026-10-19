@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { getProductsPage } from '../../api/products';
+import { getProductsPage, type SortType } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { Loader } from '../../components/Loader';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { Sort } from '../../components/Sort/Sort';
 import { NotFoundPage } from '../NotFoundPage';
 import type { Product, ProductCategory } from '../../types/product';
 import styles from './CatalogPage.module.scss';
@@ -24,12 +25,23 @@ const isProductCategory = (
 ): category is ProductCategory =>
   category === 'phones' || category === 'tablets' || category === 'accessories';
 
-const PRODUCTS_PER_PAGE = 16;
-
 export const CatalogPage: React.FC = () => {
   const { category: categoryParam } = useParams();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const searchTerm = searchParams.get('q')?.trim() ?? '';
+  const sort = (searchParams.get('sort') as SortType) || 'age';
+  const perPageParam = searchParams.get('perPage') || '16';
+  const capacityFilter = searchParams.get('capacity') || '';
+  const colorFilter = searchParams.get('color') || '';
+  const minPriceFilter = searchParams.get('minPrice')
+    ? Number(searchParams.get('minPrice'))
+    : undefined;
+  const maxPriceFilter = searchParams.get('maxPrice')
+    ? Number(searchParams.get('maxPrice'))
+    : undefined;
+  const pageParam = Number(searchParams.get('page')) || 1;
+
   const [products, setProducts] = useState<Product[]>([]);
   const [pageSelection, setPageSelection] = useState<{
     category: string | null;
@@ -47,10 +59,10 @@ export const CatalogPage: React.FC = () => {
       : isProductCategory(categoryParam)
         ? categoryParam
         : null;
+
+  const pageKey = `${category}:${searchTerm}:${sort}:${perPageParam}:${capacityFilter}:${colorFilter}:${minPriceFilter}:${maxPriceFilter}`;
   const currentPage =
-    pageSelection.category === `${category}:${searchTerm}`
-      ? pageSelection.page
-      : 1;
+    pageSelection.category === pageKey ? pageSelection.page : pageParam;
 
   useEffect(() => {
     if (!category) {
@@ -61,7 +73,14 @@ export const CatalogPage: React.FC = () => {
     setIsLoading(true);
     setError('');
 
-    getProductsPage(category, currentPage, PRODUCTS_PER_PAGE, searchTerm)
+    const perPageValue = perPageParam === 'all' ? 'all' : Number(perPageParam);
+
+    getProductsPage(category, currentPage, perPageValue, searchTerm, sort, {
+      capacity: capacityFilter,
+      color: colorFilter,
+      minPrice: minPriceFilter,
+      maxPrice: maxPriceFilter,
+    })
       .then(({ products: pageProducts, total, totalPages: pages }) => {
         if (isActive) {
           setProducts(pageProducts);
@@ -87,7 +106,17 @@ export const CatalogPage: React.FC = () => {
     return () => {
       isActive = false;
     };
-  }, [category, currentPage, searchTerm]);
+  }, [
+    category,
+    currentPage,
+    perPageParam,
+    searchTerm,
+    sort,
+    capacityFilter,
+    colorFilter,
+    minPriceFilter,
+    maxPriceFilter,
+  ]);
 
   useLayoutEffect(() => {
     if (isLoading || paginationTop.current === null) {
@@ -132,14 +161,20 @@ export const CatalogPage: React.FC = () => {
         items={[{ label: category === 'all' ? 'Catalog' : title }]}
       />
 
-      <h1 className={styles.title}>
-        {category === 'phones' ? 'Mobile phones' : title}
-      </h1>
-      <p className={styles.count}>
-        {searchTerm
-          ? `${totalProducts} ${plural} found for “${searchTerm}”`
-          : `${totalProducts} ${plural}`}
-      </p>
+      <div className={styles.topSection}>
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.title}>
+            {category === 'phones' ? 'Mobile phones' : title}
+          </h1>
+          <p className={styles.count}>
+            {searchTerm
+              ? `${totalProducts} ${plural} found for “${searchTerm}”`
+              : `${totalProducts} ${plural}`}
+          </p>
+        </div>
+
+        <Sort disabled={isLoading} />
+      </div>
 
       {error && (
         <p className={styles.error} role="alert">
@@ -161,19 +196,26 @@ export const CatalogPage: React.FC = () => {
         ))}
       </div>
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={page => {
-          paginationTop.current =
-            document
-              .querySelector('nav[aria-label="Pagination"]')
-              ?.getBoundingClientRect().top ?? null;
-          setIsLoading(true);
-          setPageSelection({ category: `${category}:${searchTerm}`, page });
-        }}
-        disabled={isLoading}
-      />
+      {perPageParam !== 'all' && totalPages > 1 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={page => {
+            paginationTop.current =
+              document
+                .querySelector('nav[aria-label="Pagination"]')
+                ?.getBoundingClientRect().top ?? null;
+            setIsLoading(true);
+            setPageSelection({ category: pageKey, page });
+            setSearchParams(prev => {
+              const next = new URLSearchParams(prev);
+              next.set('page', page.toString());
+              return next;
+            });
+          }}
+          disabled={isLoading}
+        />
+      )}
     </section>
   );
 };

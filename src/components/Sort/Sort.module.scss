@@ -1,0 +1,299 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 16px;
+
+  @include tablet {
+    width: auto;
+    align-items: flex-end;
+    margin-top: 0;
+  }
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 600;
+  color: $color-primary;
+
+  background-color: var(--color-background, #ffffff);
+  border: 1px solid $color-icons;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @include tablet {
+    width: 160px;
+    margin-bottom: 16px;
+  }
+}
+
+.container {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  &.open {
+    display: flex;
+  }
+}
+
+.sortGroup,
+.filterGroup {
+  width: 100%;
+
+  @include desktop {
+    flex: 1;
+    min-width: 110px;
+  }
+}
+
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  @include desktop {
+    flex: 1.2;
+    min-width: 140px;
+  }
+}
+
+.perPageGroup {
+  width: 100%;
+
+  @include desktop {
+    flex: 0.8;
+    min-width: 80px;
+  }
+}
+
+.applyGroup {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+
+  @include desktop {
+    width: auto;
+  }
+}
+
+.applyBtn {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+
+  background-color: $color-primary;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+
+  @include desktop {
+    width: auto;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.priceInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include desktop {
+    gap: 4px;
+  }
+}
+
+.priceInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 600;
+  color: $color-primary;
+
+  background-color: var(--color-background, #ffffff);
+  border: 1px solid $color-icons;
+  border-radius: 8px;
+
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    font-weight: 400;
+    color: $color-secondary;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-secondary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.priceSeparator {
+  font-size: 12px;
+  color: $color-secondary;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  color: $color-secondary;
+  white-space: nowrap;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $color-primary;
+
+  background-color: var(--color-background, #ffffff);
+  border: 1px solid $color-icons;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    border-color: $color-secondary;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &.triggerActive {
+    border-color: $color-primary;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23313237'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.29289 5.79289C4.68342 5.40237 5.31658 5.40237 5.70711 5.79289L8 8.08579L10.2929 5.79289C10.6834 5.40237 11.3166 5.40237 11.7071 5.79289C12.0976 6.18342 12.0976 6.81658 11.7071 7.20711L8.70711 10.2071C8.31658 10.5976 7.68342 10.5976 7.29289 10.2071L4.29289 7.20711C3.90237 6.81658 3.90237 6.18342 4.29289 5.79289Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.2s ease;
+
+  &.arrowUp {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+
+  background-color: var(--color-background, #ffffff);
+  border: 1px solid $color-elements;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.option {
+  padding: 8px 12px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 21px;
+  color: $color-secondary;
+
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: $color-elements;
+    color: $color-primary;
+  }
+
+  &.optionSelected {
+    font-weight: 600;
+    color: $color-primary;
+  }
+}

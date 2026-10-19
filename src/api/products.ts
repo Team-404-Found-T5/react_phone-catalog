@@ -19,6 +19,22 @@ export type VariantChange = {
   capacity?: string;
 };
 
+export type SortType =
+  | 'age'
+  | 'title'
+  | 'price'
+  | 'price-desc'
+  | 'screen'
+  | 'capacity'
+  | 'ram';
+
+export type FilterOptions = {
+  capacity?: string;
+  color?: string;
+  minPrice?: number;
+  maxPrice?: number;
+};
+
 const visibleProducts = new Map<string, Product>();
 const productDetails = new Map<ProductCategory, Promise<ProductDetails[]>>();
 const suggestedProducts = new Map<string, Promise<Product[]>>();
@@ -59,6 +75,47 @@ const mixCategories = (products: Product[]): Product[] => {
   }
 
   return mixedProducts;
+};
+
+const parseNumericValue = (value: string | undefined): number => {
+  if (!value) return 0;
+  const match = value.match(/[\d.]+/);
+  return match ? parseFloat(match[0]) : 0;
+};
+
+const parseCapacityValue = (capacity: string | undefined): number => {
+  if (!capacity) return 0;
+  const num = parseNumericValue(capacity);
+  return capacity.toUpperCase().includes('TB') ? num * 1024 : num;
+};
+
+const sortProducts = (products: Product[], sort: SortType): Product[] => {
+  const sorted = [...products];
+
+  switch (sort) {
+    case 'title':
+      return sorted.sort((a, b) => a.name.localeCompare(b.name));
+    case 'price':
+      return sorted.sort((a, b) => a.price - b.price);
+    case 'price-desc':
+      return sorted.sort((a, b) => b.price - a.price);
+    case 'screen':
+      return sorted.sort(
+        (a, b) => parseNumericValue(b.screen) - parseNumericValue(a.screen),
+      );
+    case 'capacity':
+      return sorted.sort(
+        (a, b) =>
+          parseCapacityValue(b.capacity) - parseCapacityValue(a.capacity),
+      );
+    case 'ram':
+      return sorted.sort(
+        (a, b) => parseCapacityValue(b.ram) - parseCapacityValue(a.ram),
+      );
+    case 'age':
+    default:
+      return sorted.sort((a, b) => b.year - a.year);
+  }
 };
 
 export const getProducts = (): Promise<Product[]> => {
@@ -116,8 +173,10 @@ export const cacheVisibleProducts = (products: Product[]): void => {
 export const getProductsPage = (
   category: string,
   page: number,
-  perPage = 8,
+  perPage: number | 'all' = 8,
   searchTerm = '',
+  sort: SortType = 'age',
+  filters: FilterOptions = {},
 ): Promise<ProductsPage> => {
   if (!category) {
     return Promise.reject(new Error('Category is required'));
@@ -127,30 +186,54 @@ export const getProductsPage = (
     return Promise.reject(new Error('Page must be a positive integer'));
   }
 
-  if (!Number.isInteger(perPage) || perPage < 1) {
-    return Promise.reject(
-      new Error('Per-page value must be a positive integer'),
-    );
-  }
-
   const productsPromise = searchTerm.trim()
     ? searchProducts(searchTerm)
     : getProducts();
 
   return productsPromise.then(products => {
-    const filteredProducts =
+    let filteredProducts =
       category === 'all'
         ? mixCategories(products)
         : products.filter(product => product.category === category);
-    const start = (page - 1) * perPage;
-    const pageProducts = filteredProducts.slice(start, start + perPage);
+
+    if (filters.capacity) {
+      filteredProducts = filteredProducts.filter(
+        product => product.capacity === filters.capacity,
+      );
+    }
+
+    if (filters.color) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.itemId.toLowerCase().includes(filters.color!.toLowerCase()),
+      );
+    }
+
+    if (filters.minPrice !== undefined) {
+      filteredProducts = filteredProducts.filter(
+        product => product.price >= filters.minPrice!,
+      );
+    }
+
+    if (filters.maxPrice !== undefined) {
+      filteredProducts = filteredProducts.filter(
+        product => product.price <= filters.maxPrice!,
+      );
+    }
+
+    const sortedProducts = sortProducts(filteredProducts, sort);
+
+    const itemsPerPage =
+      perPage === 'all' ? sortedProducts.length || 1 : Number(perPage);
+
+    const start = (page - 1) * itemsPerPage;
+    const pageProducts = sortedProducts.slice(start, start + itemsPerPage);
 
     cacheVisibleProducts(pageProducts);
 
     return {
       products: pageProducts,
-      total: filteredProducts.length,
-      totalPages: Math.ceil(filteredProducts.length / perPage),
+      total: sortedProducts.length,
+      totalPages: Math.ceil(sortedProducts.length / itemsPerPage) || 1,
     };
   });
 };

@@ -24,9 +24,28 @@
   background-color: var(--color-background);
 }
 
-.title {
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-top: 24px;
+  margin-bottom: 32px;
 
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
   font-size: 32px;
   font-weight: 800;
   line-height: 41px;
@@ -40,14 +59,10 @@
 }
 
 .count {
-  margin: 8px 0 32px;
+  margin: 8px 0 0;
   font-size: 14px;
   line-height: 21px;
   color: $color-secondary;
-
-  @include tablet {
-    margin-bottom: 40px;
-  }
 }
 
 .grid {
