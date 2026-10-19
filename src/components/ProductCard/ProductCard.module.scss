@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,9 @@
   width: 272px;
   height: 506px;
   padding: 32px;
-  border: 1px solid #e2e6e9;
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-surface);
 }
 
 .image {
@@ -23,12 +27,13 @@
   font-weight: 600;
   font-style: normal;
   line-height: 21px;
-  color: #313237;
-  letter-spacing: 0;
+  color: var(--color-text);
   text-decoration: none;
+  letter-spacing: 0;
+
 
   &:hover {
-    color: #89939a;
+    color: var(--color-secondary);
   }
 }
 
@@ -38,7 +43,7 @@
   font-weight: 800;
   font-style: normal;
   line-height: 140%;
-  color: #313237;
+  color: var(--color-text);
   letter-spacing: 0;
 }
 
@@ -54,14 +59,14 @@
   font-weight: 600;
   font-style: normal;
   line-height: 100%;
-  color: #89939a;
+  color: var(--color-secondary);
   text-decoration-line: line-through;
   letter-spacing: 0;
 }
 
 .divider {
   width: 100%;
-  border-top: 1px solid #e2e6e9;
+  border-top: 1px solid var(--color-border);
 }
 
 .specs {
@@ -86,7 +91,7 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  color: #89939a;
+  color: var(--color-secondary);
   letter-spacing: 0;
 }
 
@@ -96,7 +101,7 @@
   font-weight: 700;
   font-style: normal;
   line-height: 100%;
-  color: #313237;
+  color: var(--color-text);
   letter-spacing: 0;
 }
 
@@ -114,12 +119,13 @@
 }
 
 .cartButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 
+  display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+
   height: 40px;
 
   font-family: inherit;
@@ -127,41 +133,44 @@
   font-weight: 700;
   font-style: normal;
   line-height: 21px;
-  color: #fff;
+  color: var(--color-button-text);
   letter-spacing: 0;
 
-  background-color: #313237;
-
-  &:hover {
-    background-color: #4a4d58;
-  }
+  background-color: var(--color-button-background);
 
   &:disabled {
     cursor: default;
   }
+
+  &:hover:not(:disabled) {
+  background-color: var(--color-button-hover);
+  }
 }
 
 .cartButtonAdded {
-  background-color: #27ae60;
+  background-color: $color-green;
 }
 
 .removeFromCart {
+  pointer-events: none;
+  cursor: pointer;
+
+  transform: translateX(-8px);
+
+  overflow: hidden;
   display: flex;
   flex: 0 0 0;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  overflow: hidden;
 
   width: 0;
   height: 24px;
   padding: 0;
   border: 0;
 
-  background-color: #fff;
   opacity: 0;
-  pointer-events: none;
-  transform: translateX(-8px);
+  background-color: var(--color-surface);
+
   transition:
     flex-basis 200ms ease,
     width 200ms ease,
@@ -171,44 +180,53 @@
 
   .cartActions:hover &,
   .cartActions:focus-within & {
-    flex-basis: 24px;
-    width: 24px;
-    border: 1px solid #e2e6e9;
-    opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
-  }
 
-  @media (max-width: 639px) {
-    flex-basis: 24px;
-    width: 24px;
-    border: 1px solid #e2e6e9;
-    opacity: 1;
-    pointer-events: auto;
     transform: translateX(0);
+
+    flex-basis: 24px;
+
+    width: 24px;
+    border: 1px solid var(--color-border);
+
+    opacity: 1;
   }
 
   img {
     width: 12px;
     height: 12px;
   }
+
+  @media (max-width: 639px) {
+    pointer-events: auto;
+
+    transform: translateX(0);
+
+    flex-basis: 24px;
+
+    width: 24px;
+    border: 1px solid var(--color-border);
+
+    opacity: 1;
+  }
 }
 
 .favoriteButton {
+  cursor: pointer;
+
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 
   width: 40px;
   height: 40px;
-  border: 1px solid #e2e6e9;
+  border: 1px solid var(--color-border);
 
-  background-color: #fff;
+  background-color: var(--color-surface);
 
   &:hover {
-    border-color: #313237;
+    border-color: var(--color-text);
   }
 }
 
@@ -216,4 +234,10 @@
   width: 16px;
   height: 16px;
   object-fit: contain;
+}
+
+.favoriteButton[aria-pressed='false']
+.favoriteIcon,
+.removeFromCart img {
+  filter: var(--icon-filter);
 }

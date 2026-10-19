@@ -8,14 +8,10 @@
 }
 
 .main {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
-
-  @include tablet {
-    grid-template-columns: 32px minmax(0, 1fr) 32px;
-    column-gap: 16px;
-  }
 }
 
 .swiper {
@@ -26,7 +22,11 @@
 
 .link {
   display: block;
-  aspect-ratio: 1040 / 400;
+  aspect-ratio: 1 / 1;
+
+  @include tablet {
+    aspect-ratio: 1040 / 400;
+  }
 }
 
 .image {
@@ -36,57 +36,90 @@
 }
 
 .arrow {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+
   display: none;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  contain: size;
-  align-self: stretch;
-  border: 1px solid $color-elements;
-  background: #fff;
-  color: $color-primary;
-  cursor: pointer;
-  transition: border-color 0.2s;
 
-  &:hover {
-    border-color: $color-primary;
-  }
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+
+  color: #fff;
+
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+
+  transition:
+    opacity 0.2s,
+
+    background 0.2s;
 
   @include tablet {
     display: flex;
   }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .main:hover & {
+    opacity: 1;
+  }
+
 }
 
-.prev,
+.arrow img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.prev {
+  left: 12px;
+}
+
 .next {
-  font-family: inherit;
+  right: 12px;
 }
 
 .dashes {
   display: flex;
-  justify-content: center;
   gap: 14px;
+  justify-content: center;
 }
 
 .dash {
+  cursor: pointer;
   position: relative;
   width: 14px;
   height: 16px;
-  cursor: pointer;
 
   &::after {
     content: '';
+
     position: absolute;
-    left: 0;
-    right: 0;
     top: 50%;
-    height: 4px;
+    right: 0;
+    left: 0;
     transform: translateY(-50%);
-    background: $color-elements;
+
+    height: 4px;
+
+    background: var(--color-border);
+
     transition: background 0.2s;
   }
 }
 
 .dashActive::after {
-  background: $color-primary;
+  background: var(--color-text);
 }

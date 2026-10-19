@@ -1,20 +1,19 @@
 @use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  max-width: $container-max;
 
-  max-width: 1136px;
-  margin: 0 auto;
-  padding: 32px 0;
+  @include section-gap(gap);
 }
 
 .title {
   margin: 24px 0;
   font-size: 32px;
-  line-height: 41px;
   font-weight: 800;
+  line-height: 41px;
 
   @include tablet {
     margin: 32px 0;
@@ -25,8 +24,4 @@
   @include desktop {
     margin: 56px 0;
   }
-}
-
-.section {
-  @include section-gap;
 }

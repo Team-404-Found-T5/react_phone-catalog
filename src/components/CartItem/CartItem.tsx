@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { CartItem as CartItemData } from '../../types/cart';
 import styles from './CartItem.module.scss';
+import { playCartRemoveSound, playMinusSound, playPlusSound } from '../../modules/PixelHearts/sounds';
 
 type Props = {
   item: CartItemData;
@@ -19,7 +20,9 @@ export const CartItem: React.FC<Props> = ({ item }) => {
       <button
         type="button"
         className={styles.remove}
-        onClick={() => remove(product.itemId)}
+        onClick={() => {
+          playCartRemoveSound()
+          remove(product.itemId)}}
         aria-label={`Remove ${product.name} from cart`}
       >
         <img src="img/Close.svg" alt="" />
@@ -37,7 +40,9 @@ export const CartItem: React.FC<Props> = ({ item }) => {
         <button
           type="button"
           className={styles.counterButton}
-          onClick={() => updateQuantity(product.itemId, quantity - 1)}
+          onClick={() => {
+            playMinusSound()
+            updateQuantity(product.itemId, quantity - 1)}}
           disabled={quantity <= 1}
           aria-label="Decrease quantity"
         >
@@ -49,7 +54,9 @@ export const CartItem: React.FC<Props> = ({ item }) => {
         <button
           type="button"
           className={styles.counterButton}
-          onClick={() => updateQuantity(product.itemId, quantity + 1)}
+          onClick={() => {
+            playPlusSound()
+            updateQuantity(product.itemId, quantity + 1)}}
           aria-label="Increase quantity"
         >
           <img src="img/Plus.svg" alt="" />

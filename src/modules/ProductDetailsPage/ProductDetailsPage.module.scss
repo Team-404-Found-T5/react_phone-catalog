@@ -1,441 +1,463 @@
 @use '../../styles/variables' as *;
-
-$secondary-color: #89939a;
-$border-color: #e2e6e9;
+@use '../../styles/mixins' as *;
 
 .container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 24px 32px 100px;
-  font-family: $font-family;
-  color: $color-text;
-  box-sizing: border-box;
+  padding-top: 24px;
+}
 
-  @media (min-width: 1440px) {
-    padding: 24px 64px 120px;
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+
+  margin-bottom: 24px;
+
+  @include desktop {
+    margin-bottom: 40px;
   }
 }
 
-.backButton {
-  background: none;
-  border: none;
-  color: $secondary-color;
-  font-size: 12px;
-  cursor: pointer;
-  margin-bottom: 16px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  &:hover {
-    color: $color-primary;
-  }
-
-  .loadError {
-    margin: 16px 0;
-    color: #eb5757;
-  }
+.loadError {
+  margin: 16px 0;
+  color: $color-red;
 }
 
 .title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
+  @include section-title;
 }
 
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
-  margin-bottom: 80px;
 
-  @media (min-width: 768px) {
+  @include section-gap(margin-bottom);
+
+  @include tablet {
     grid-template-columns: 1.2fr 1fr;
   }
 }
 
 .gallery {
   display: flex;
+  flex-direction: column-reverse;
   gap: 16px;
 
-  .thumbnails {
-    display: flex;
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.thumbnails {
+  overflow-x: auto;
+  display: flex;
+  gap: 8px;
+
+  @include tablet {
+    overflow-x: visible;
     flex-direction: column;
     gap: 16px;
+  }
+}
 
-    .thumbBtn {
-      width: 80px;
-      height: 80px;
-      border: 1px solid $border-color;
-      background: #fff;
-      cursor: pointer;
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.thumbBtn {
+  cursor: pointer;
 
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 
-      &.active {
-        border-color: $color-primary;
-      }
-    }
+  width: 56px;
+  height: 56px;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  transition: border-color 0.2s;
+
+  @include tablet {
+    width: 80px;
+    height: 80px;
+    padding: 8px;
   }
 
-  .mainImageWrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-
-    .mainImage {
-      max-width: 100%;
-      max-height: 460px;
-      object-fit: contain;
-    }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
+
+  &:hover {
+    border-color: var(--color-text);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  &[aria-pressed='true'] {
+    border-color: var(--color-text);
+  }
+}
+
+.mainImageWrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 460px;
+  object-fit: contain;
 }
 
 .options {
   display: flex;
   flex-direction: column;
+}
 
-  .headerMeta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+.headerMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: $color-secondary;
+}
+
+.productId {
+  font-size: 12px;
+  color: $color-secondary;
+}
+
+.colorSelector {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $color-elements;
+}
+
+.colorCircle {
+  cursor: pointer;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+
+  outline: 1px solid var(--color-border);
+
+  transition: outline-color 0.2s;
+
+  &:hover {
+    outline-color: var(--color-text);
   }
 
-  .label {
-    font-size: 12px;
-    color: $secondary-color;
-    font-weight: 600;
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
   }
 
-  .productId {
-    font-size: 12px;
-    color: $secondary-color;
+  &[aria-pressed='true'] {
+    outline-color: var(--color-text);
+  }
+}
+
+.capacitySection {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $color-elements;
+}
+
+.capacityList {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.capacityBtn {
+  cursor: pointer;
+
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+
+  font-size: 14px;
+  color: var(--color-text);
+
+  background: var(--color-surface);
+
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background-color 0.2s;
+
+  &:hover {
+    border-color: var(--color-text);
   }
 
-  .colorSelector {
-    display: flex;
-    gap: 8px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 24px;
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
 
-    .colorCircle {
+  &[aria-pressed='true'] {
+    border-color: var(--color-text);
+    color: var(--color-surface);
+    background: var(--color-text);
+  }
+}
+
+.priceRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.currentPrice {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+}
+
+.oldPrice {
+  font-size: 22px;
+  font-weight: 600;
+  color: $color-secondary;
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.cartActions {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.addToCartBtn {
+  cursor: pointer;
+
+  flex: 1;
+
+  height: 48px;
+  border: none;
+
+  font-weight: 700;
+  color: #fff;
+
+  background: $color-primary;
+
+  transition: background-color 0.2s;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color-primary;
+  }
+}
+
+.cartButtonAdded {
+  background: $color-green;
+}
+
+.removeFromCartBtn {
+  cursor: pointer;
+
+  display: flex;
+  flex: 0 0 32px;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid $color-elements;
+
+  background: var(--color-surface);
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+
+  @include tablet {
+    pointer-events: none;
+
+    transform: translateX(-8px);
+
+    overflow: hidden;
+    flex-basis: 0;
+
+    width: 0;
+    border-width: 0;
+
+    opacity: 0;
+
+    transition:
+      flex-basis 0.2s ease,
+      width 0.2s ease,
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      border-color 0.2s ease;
+
+    .cartActions:hover &,
+    .cartActions:focus-within & {
+      pointer-events: auto;
+
+      transform: translateX(0);
+
+      flex-basis: 32px;
+
       width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      outline: 1px solid $border-color;
-      cursor: pointer;
-      padding: 0;
+      border-width: 1px;
 
-      &.active {
-        outline-color: $color-primary;
-      }
+      opacity: 1;
     }
   }
+}
 
-  .capacitySection {
-    padding-bottom: 24px;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 32px;
+.favoriteBtn {
+  cursor: pointer;
 
-    .capacityList {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      .capacityBtn {
-        padding: 8px 12px;
-        border: 1px solid $border-color;
-        background: #fff;
-        font-size: 14px;
-        cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
 
-        &.active {
-          background: $color-primary;
-          color: #fff;
-          border-color: $color-primary;
-        }
-      }
-    }
+  color: var(--color-text);
+
+  background: var(--color-surface);
+
+  transition: border-color 0.2s;
+
+  img {
+    width: 16px;
+    height: 16px;
   }
 
-  .priceRow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-
-    .currentPrice {
-      font-size: 32px;
-      font-weight: 800;
-    }
-
-    .oldPrice {
-      font-size: 22px;
-      color: $secondary-color;
-      text-decoration: line-through;
-    }
+  &:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
   }
 
-  .actions {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 32px;
-
-    .cartActions {
-      display: flex;
-      flex: 1;
-      align-items: center;
-    }
-
-    .addToCartBtn {
-      flex: 1;
-      height: 48px;
-      background: $color-primary;
-      color: #fff;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-
-      &:disabled {
-        cursor: default;
-      }
-    }
-
-    .cartButtonAdded {
-      background: #27ae60;
-    }
-
-    .removeFromCartBtn {
-      display: flex;
-      flex: 0 0 0;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      overflow: hidden;
-
-      width: 0;
-      height: 32px;
-      padding: 0;
-      border: 0;
-      background: #fff;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateX(-8px);
-      transition:
-        flex-basis 200ms ease,
-        width 200ms ease,
-        opacity 200ms ease,
-        transform 200ms ease,
-        border-color 200ms ease;
-
-      .cartActions:hover &,
-      .cartActions:focus-within & {
-        flex-basis: 32px;
-        width: 32px;
-        border: 1px solid $border-color;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateX(0);
-      }
-
-      @media (max-width: 639px) {
-        flex-basis: 32px;
-        width: 32px;
-        border: 1px solid $border-color;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateX(0);
-      }
-
-      img {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    .favoriteBtn {
-      width: 48px;
-      height: 48px;
-      border: 1px solid $border-color;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: $color-primary;
-
-      &:disabled {
-        cursor: default;
-      }
-
-      img {
-        width: 16px;
-        height: 16px;
-      }
-    }
+  &:disabled {
+    cursor: default;
   }
 
-  .shortSpecs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    .specRow {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-
-      .specLabel {
-        color: $secondary-color;
-      }
-
-      .specValue {
-        font-weight: 600;
-      }
-    }
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
   }
+
+  &[aria-pressed='false'] img {
+    filter: var(--icon-filter);
+  }
+}
+
+.shortSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.specLabel {
+  color: $color-secondary;
+}
+
+.specValue {
+  font-weight: 600;
 }
 
 .detailsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 64px;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  @include section-gap(gap);
 
   h2 {
-    font-size: 22px;
-    font-weight: 700;
     margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 31px;
   }
 
-  .divider {
-    border: none;
-    height: 1px;
-    background-color: $border-color;
-    margin-bottom: 32px;
-  }
-
-  .aboutSection {
-    .aboutBlock {
-      margin-bottom: 32px;
-
-      h3 {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 16px;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 1.5;
-        color: $secondary-color;
-        margin-bottom: 12px;
-      }
-    }
-  }
-
-  .specsSection {
-    .fullSpecsList {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-      .fullSpecRow {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-
-        .specLabel {
-          color: $secondary-color;
-        }
-
-        .specValue {
-          font-weight: 600;
-        }
-      }
-    }
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
   }
 }
 
+.divider {
+  height: 1px;
+  margin-bottom: 32px;
+  border: none;
+  background-color: $color-elements;
+}
+
+.aboutBlock {
+  margin-bottom: 32px;
+
+  h3 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $color-secondary;
+  }
+}
+
+.fullSpecsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fullSpecRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
 .youMayAlsoLike {
-  margin-top: 80px;
-
-  .ymalHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-
-    h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: $color-primary;
-      margin: 0;
-    }
-
-    .ymalArrows {
-      display: flex;
-      gap: 8px;
-
-      .arrowBtn {
-        width: 32px;
-        height: 32px;
-        border: 1px solid $border-color;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-weight: bold;
-        color: $color-primary;
-
-        &:hover {
-          border-color: $color-primary;
-        }
-      }
-    }
-  }
-
-  .ymalGrid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
-
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .productCardPlaceholder {
-      min-height: 440px;
-      background-color: #e3f2fd;
-      border: 1px solid #b3e5fc;
-      border-radius: 4px;
-
-      @media (max-width: 639px) {
-        min-height: 380px;
-      }
-    }
-  }
+  @include section-gap;
 }

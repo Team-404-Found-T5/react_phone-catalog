@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductDetailsById } from '../../api/products';
+import { useParams, useNavigate } from 'react-router-dom';
+import {
+  getProductDetailsById,
+  getRelatedProducts,
+  getAvailableColors,
+  findProductVariant,
+  getAvailableCapacities,
+  getProductByItemId,
+  getSuggestedProducts,
+} from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
+import { Loader } from '../../components/Loader';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import type {
@@ -9,11 +18,41 @@ import type {
   ProductCategory,
   ProductDetails,
 } from '../../types/product';
+import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import styles from './ProductDetailsPage.module.scss';
+import { PixelHearts } from '../PixelHearts/PixelHearts';
+import { playCartAddSound, playCartRemoveSound } from '../PixelHearts/sounds';
+import { BackButton } from '../../components/BackButton';
 
-const arrowLeft = 'img/ArrowLeft-disabled.svg';
-const arrowRight = 'img/ArrowRight-disabled.svg';
-const productImage = 'img/phones/apple-iphone-7/black/00.webp';
+const colorMap: Record<string, string> = {
+  black: '#313237',
+  white: '#FFFFFF',
+  gold: '#F0E2D0',
+  yellow: '#FFE681',
+  green: '#AEE1CD',
+  midnightgreen: '#53605B',
+  silver: '#F5F5F0',
+  spacegray: '#4C4C4D',
+  red: '#D32132',
+  purple: '#D1CDDA',
+  coral: '#FF6E5A',
+  rosegold: '#E6C7C2',
+  'rose gold': '#E6C7C2',
+  midnight: '#171E27',
+  spaceblack: '#3B3B3C',
+  blue: '#6C9BC2',
+  pink: '#FADDD7',
+  sierrablue: '#A7C1D9',
+  graphite: '#5C5B57',
+  'space-gray': '#4C4C4D',
+  'space gray': '#4C4C4D',
+  'sky blue': '#B8C9DC',
+  starlight: '#F4E8CE',
+  'cosmic-orange': '#EF7B35',
+  'deep-blue': '#30405A',
+  glacier: '#C9DDE5',
+  burgundy: '#6B2438',
+};
 
 const isProductCategory = (
   category: string | undefined,
@@ -23,12 +62,21 @@ const isProductCategory = (
 const getCategoryTitle = (category: ProductCategory) =>
   category.charAt(0).toUpperCase() + category.slice(1);
 
+const getCapacityValue = (capacity: string) =>
+  parseInt(capacity) * (capacity.toUpperCase().includes('TB') ? 1024 : 1);
+
 export const ProductDetailsPage: React.FC = () => {
   const { category: categoryParam, productId } = useParams();
+  const navigate = useNavigate();
   const { items: cartItems, add, remove } = useCart();
   const { items: favoriteItems, toggle } = useFavorites();
   const [product, setProduct] = useState<ProductDetails>();
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [variants, setVariants] = useState<ProductDetails[]>([]);
   const [loadError, setLoadError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [displayId, setDisplayId] = useState('');
+  const [suggestedProducts, setSuggestedProducts] = useState<Product[]>([]);
   const category = isProductCategory(categoryParam) ? categoryParam : null;
   const actionProduct: Product | undefined = product
     ? {
@@ -53,15 +101,28 @@ export const ProductDetailsPage: React.FC = () => {
     favoriteItems.some(item => item.itemId === actionProduct.itemId),
   );
 
+  const availableColors = getAvailableColors(variants);
+  const availableCapacities = [
+    ...getAvailableCapacities(variants).sort(
+      (a, b) => getCapacityValue(a) - getCapacityValue(b),
+    ),
+  ];
+
   useEffect(() => {
     if (!category || !productId) {
       setLoadError('Product not found');
+      setIsLoading(false);
       return;
     }
 
     let isActive = true;
 
+    setIsLoading(true);
     setProduct(undefined);
+    setDisplayId('');
+    setSelectedImageIndex(0);
+    setVariants([]);
+    setSuggestedProducts([]);
     setLoadError('');
 
     getProductDetailsById(category, productId)
@@ -76,12 +137,29 @@ export const ProductDetailsPage: React.FC = () => {
         }
 
         setProduct(result);
+
+        return Promise.all([
+          getRelatedProducts(result),
+          getProductByItemId(result.id),
+          getSuggestedProducts(result.id).catch(() => []),
+        ]).then(([relatedVariants, catalogProduct, suggestions]) => {
+          if (isActive) {
+            setVariants(relatedVariants);
+            setDisplayId(catalogProduct ? String(catalogProduct.id) : '');
+            setSuggestedProducts(suggestions);
+          }
+        });
       })
       .catch((error: unknown) => {
         if (isActive) {
           setLoadError(
             error instanceof Error ? error.message : 'Failed to load product',
           );
+        }
+      })
+      .finally(() => {
+        if (isActive) {
+          setIsLoading(false);
         }
       });
 
@@ -90,53 +168,59 @@ export const ProductDetailsPage: React.FC = () => {
     };
   }, [category, productId]);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <div className={styles.container}>
-      {category && (
-        <Breadcrumbs
-          items={[
-            { label: getCategoryTitle(category), to: `/${category}` },
-            { label: product?.name ?? productId ?? 'Loading product...' },
-          ]}
-        />
-      )}
+      <div className={styles.header}>
+        {category && (
+          <Breadcrumbs
+            items={[
+              { label: getCategoryTitle(category), to: `/${category}` },
+              { label: product?.name ?? productId ?? 'Loading product...' },
+            ]}
+          />
+        )}
 
-      {loadError && (
-        <p className={styles.loadError} role="alert">
-          {loadError}
-        </p>
-      )}
+        <BackButton />
 
-      <h1 className={styles.title}>
-        {product?.name ??
-          (loadError ? 'Product not found' : 'Loading product...')}
-      </h1>
+        {loadError && (
+          <p className={styles.loadError} role="alert">
+            {loadError}
+          </p>
+        )}
+
+        <h1 className={styles.title}>
+          {product?.name ??
+            (loadError ? 'Product not found' : 'Loading product...')}
+        </h1>
+      </div>
 
       {/* верхній блок */}
       <div className={styles.mainGrid}>
-        {/* фотки */}
         <div className={styles.gallery}>
           <div className={styles.thumbnails}>
-            <button className={`${styles.thumbBtn} ${styles.active}`}>
-              <img src={productImage} alt="ФОТКА 1" />
-            </button>
-            <button className={styles.thumbBtn}>
-              <img src={productImage} alt="ФОТКА 2" />
-            </button>
-            <button className={styles.thumbBtn}>
-              <img src={productImage} alt="ФОТКА 3" />
-            </button>
-            <button className={styles.thumbBtn}>
-              <img src={productImage} alt="ФОТКА 4" />
-            </button>
-            <button className={styles.thumbBtn}>
-              <img src={productImage} alt="ФОТКА 5" />
-            </button>
+            {product?.images.map((image, index) => {
+              return (
+                <button
+                  key={image}
+                  type="button"
+                  className={styles.thumbBtn}
+                  aria-label={`Show image ${index + 1}`}
+                  aria-pressed={index === selectedImageIndex}
+                  onClick={() => setSelectedImageIndex(index)}
+                >
+                  <img src={image} alt=""></img>
+                </button>
+              );
+            })}
           </div>
           <div className={styles.mainImageWrapper}>
             <img
-              src={productImage}
-              alt="ВЕЛИКАФОТКА"
+              src={product?.images[selectedImageIndex]}
+              alt={product?.name}
               className={styles.mainImage}
             />
           </div>
@@ -146,42 +230,74 @@ export const ProductDetailsPage: React.FC = () => {
         <div className={styles.options}>
           <div className={styles.headerMeta}>
             <span className={styles.label}>Available colors</span>
-            <span className={styles.productId}>ID: 802390</span>
+            <span className={styles.productId}>ID: {displayId}</span>
           </div>
 
           <div className={styles.colorSelector}>
-            <button
-              className={`${styles.colorCircle} ${styles.active}`}
-              style={{ backgroundColor: '#F0E2D0' }}
-            />
-            <button
-              className={styles.colorCircle}
-              style={{ backgroundColor: '#53605B' }}
-            />
-            <button
-              className={styles.colorCircle}
-              style={{ backgroundColor: '#4C4C4D' }}
-            />
-            <button
-              className={styles.colorCircle}
-              style={{ backgroundColor: '#F5F5F0' }}
-            />
+            {availableColors.map(color => {
+              return (
+                <button
+                  key={color}
+                  type="button"
+                  className={styles.colorCircle}
+                  aria-label={color}
+                  aria-pressed={product?.color === color}
+                  style={{ backgroundColor: colorMap[color] }}
+                  onClick={() => {
+                    if (!product) {
+                      return;
+                    }
+                    const nextVariant = findProductVariant(variants, product, {
+                      color,
+                    });
+                    if (nextVariant) {
+                      navigate(`/${nextVariant.category}/${nextVariant.id}`);
+                    }
+                  }}
+                />
+              );
+            })}
           </div>
 
           <div className={styles.capacitySection}>
             <span className={styles.label}>Select capacity</span>
             <div className={styles.capacityList}>
-              <button className={`${styles.capacityBtn} ${styles.active}`}>
-                64 GB
-              </button>
-              <button className={styles.capacityBtn}>256 GB</button>
-              <button className={styles.capacityBtn}>512 GB</button>
+              {availableCapacities.map(capacity => {
+                return (
+                  <button
+                    key={capacity}
+                    type="button"
+                    className={styles.capacityBtn}
+                    aria-label={capacity}
+                    aria-pressed={product?.capacity === capacity}
+                    onClick={() => {
+                      if (!product) {
+                        return;
+                      }
+                      const nextVariant = findProductVariant(
+                        variants,
+                        product,
+                        {
+                          capacity,
+                        },
+                      );
+                      if (nextVariant) {
+                        navigate(`/${nextVariant.category}/${nextVariant.id}`);
+                      }
+                    }}
+                  >
+                    {capacity}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           <div className={styles.priceRow}>
-            <span className={styles.currentPrice}>$799</span>
-            <span className={styles.oldPrice}>$1199</span>
+            <span className={styles.currentPrice}>
+              ${product?.priceDiscount}
+            </span>
+            <span className={styles.oldPrice}>${product?.priceRegular}</span>
           </div>
 
           <div className={styles.actions}>
@@ -193,6 +309,7 @@ export const ProductDetailsPage: React.FC = () => {
                 type="button"
                 disabled={!actionProduct || isInCart}
                 onClick={() => {
+                  playCartAddSound();
                   if (actionProduct) {
                     add({ product: actionProduct, quantity: 1 });
                   }
@@ -205,7 +322,10 @@ export const ProductDetailsPage: React.FC = () => {
                   className={styles.removeFromCartBtn}
                   type="button"
                   aria-label={`Remove ${actionProduct.name} from cart`}
-                  onClick={() => remove(actionProduct.itemId)}
+                  onClick={() => {
+                    playCartRemoveSound();
+                    remove(actionProduct.itemId);
+                  }}
                 >
                   <img
                     src={`${import.meta.env.BASE_URL}img/Close.svg`}
@@ -222,7 +342,8 @@ export const ProductDetailsPage: React.FC = () => {
                 isFavorite ? 'Remove from favorites' : 'Add to favorites'
               }
               aria-pressed={isFavorite}
-              onClick={() => {
+              onClick={e => {
+                PixelHearts(e);
                 if (actionProduct) {
                   toggle(actionProduct);
                 }
@@ -240,70 +361,38 @@ export const ProductDetailsPage: React.FC = () => {
           <div className={styles.shortSpecs}>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Screen</span>
-              <span className={styles.specValue}>6.5&quot; OLED</span>
+              <span className={styles.specValue}>{product?.screen}</span>
             </div>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Resolution</span>
-              <span className={styles.specValue}>2688x1242</span>
+              <span className={styles.specValue}>{product?.resolution}</span>
             </div>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Processor</span>
-              <span className={styles.specValue}>Apple A13 Bionic</span>
+              <span className={styles.specValue}>{product?.processor}</span>
             </div>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>RAM</span>
-              <span className={styles.specValue}>4 GB</span>
+              <span className={styles.specValue}>{product?.ram}</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* нижній блок */}
       <div className={styles.detailsGrid}>
         <section className={styles.aboutSection}>
           <h2>About</h2>
           <hr className={styles.divider} />
-
-          <article className={styles.aboutBlock}>
-            <h3>And then there was Pro</h3>
-            <p>
-              A transformative triple-camera system that adds tons of capability
-              without complexity.
-            </p>
-            <p>
-              An unprecedented leap in battery life. And a mind-blowing chip
-              that doubles down on machine learning and pushes the boundaries of
-              what a smartphone can do. Welcome to the first iPhone powerful
-              enough to be called Pro.
-            </p>
-          </article>
-
-          <article className={styles.aboutBlock}>
-            <h3>Camera</h3>
-            <p>
-              Meet the first triple-camera system to combine cutting-edge
-              technology with the legendary simplicity of iPhone. Capture up to
-              four times more scene. Get beautiful images in drastically lower
-              light. Shoot the highest-quality video in a smartphone — then edit
-              with the same tools you love for photos. You&apos;ve never shot
-              with anything like it.
-            </p>
-          </article>
-
-          <article className={styles.aboutBlock}>
-            <h3>
-              Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it.
-              Love it.
-            </h3>
-            <p>
-              iPhone 11 Pro lets you capture videos that are beautifully true to
-              life, with greater detail and smoother motion. Epic processing
-              power means it can shoot 4K video with extended dynamic range and
-              cinematic video stabilization — all at 60 fps. You get more
-              creative control, too, with four times more scene and powerful new
-              editing tools to play with.
-            </p>
-          </article>
+          {product?.description.map(block => {
+            return (
+              <article key={block.title} className={styles.aboutBlock}>
+                <h3>{block.title}</h3>
+                {block.text.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </article>
+            );
+          })}
         </section>
 
         <section className={styles.specsSection}>
@@ -313,63 +402,56 @@ export const ProductDetailsPage: React.FC = () => {
           <div className={styles.fullSpecsList}>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Screen</span>
-              <span className={styles.specValue}>6.5&quot; OLED</span>
+              <span className={styles.specValue}>{product?.screen}</span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Resolution</span>
-              <span className={styles.specValue}>2688x1242</span>
+              <span className={styles.specValue}>{product?.resolution}</span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Processor</span>
-              <span className={styles.specValue}>Apple A13 Bionic</span>
+              <span className={styles.specValue}>{product?.processor}</span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>RAM</span>
-              <span className={styles.specValue}>4 GB</span>
+              <span className={styles.specValue}>{product?.ram}</span>
             </div>
             <div className={styles.fullSpecRow}>
               <span className={styles.specLabel}>Built in memory</span>
-              <span className={styles.specValue}>64 GB</span>
+              <span className={styles.specValue}>{product?.capacity}</span>
             </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Camera</span>
-              <span className={styles.specValue}>
-                12 Mp + 12 Mp + 12 Mp (Triple)
-              </span>
-            </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Zoom</span>
-              <span className={styles.specValue}>Optical, 2x</span>
-            </div>
-            <div className={styles.fullSpecRow}>
-              <span className={styles.specLabel}>Cell</span>
-              <span className={styles.specValue}>GSM, LTE, UMTS</span>
-            </div>
+            {product?.camera && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Camera</span>
+                <span className={styles.specValue}>{product?.camera}</span>
+              </div>
+            )}
+            {product?.zoom && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Zoom</span>
+                <span className={styles.specValue}>{product?.zoom}</span>
+              </div>
+            )}
+            {product?.cell && product.cell.length > 0 && (
+              <div className={styles.fullSpecRow}>
+                <span className={styles.specLabel}>Cell</span>
+                <span className={styles.specValue}>
+                  {product?.cell?.join(', ')}
+                </span>
+              </div>
+            )}
           </div>
         </section>
       </div>
       {/*о You may also like */}
-      <section className={styles.youMayAlsoLike}>
-        <div className={styles.ymalHeader}>
-          <h2>You may also like</h2>
-          <div className={styles.ymalArrows}>
-            <button className={styles.arrowBtn} aria-label="Previous" disabled>
-              <img src={arrowLeft} alt="" />
-            </button>
-            <button className={styles.arrowBtn} aria-label="Next" disabled>
-              <img src={arrowRight} alt="" />
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.ymalGrid}>
-          {/* голубі квадрати замість card компонента*/}
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-          <div className={styles.productCardPlaceholder} />
-        </div>
-      </section>
+      {suggestedProducts.length > 0 && (
+        <section className={styles.youMayAlsoLike}>
+          <ProductsSlider
+            title="You may also like"
+            products={suggestedProducts}
+          />
+        </section>
+      )}
     </div>
   );
 };

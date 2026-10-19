@@ -17,24 +17,32 @@
 .link {
   display: flex;
   align-items: center;
+
   font-size: 12px;
   font-weight: 600;
   line-height: 15px;
   color: $color-secondary;
+
   transition: color 0.2s;
 
   &:hover {
-    color: $color-primary;
+    color: var(--color-text);
   }
+}
+
+.link img {
+  filter: var(--icon-filter);
 }
 
 .current {
   overflow: hidden;
+
   max-width: 100%;
+
   font-size: 12px;
   font-weight: 600;
   line-height: 15px;
+  color: $color-secondary;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: $color-secondary;
 }

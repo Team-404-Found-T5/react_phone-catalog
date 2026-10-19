@@ -1,79 +1,89 @@
+@use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
 .title {
   @include section-title;
 
-  margin : 0;
+  margin: 0;
 
-  font-family : inherit;
-  font-size : 32px;
-  font-weight : 800;
-  line-height : 41px;
-  color : #313237;
-  letter-spacing : 0;
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+  color: var(--color-text);
+  letter-spacing: 0;
 }
 
 .container {
-  display : flex;
-  flex-direction : column;
-  gap : 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-  width : 100%;
-  max-width : 1136px;
+  width: 100%;
+  max-width: 1136px;
 }
 
 .header {
-  display : flex;
-  flex-direction : row;
-  gap : 8px;
-  align-items : center;
-  justify-content : space-between;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .controls {
-  display : flex;
-  flex-direction : row;
-  gap : 8px;
-  align-items : center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 
-  padding : 0;
+  padding: 0;
 }
 
 .prevButton,
 .nextButton {
-  display : flex;
-  align-items : center;
-  justify-content : center;
+  cursor: pointer;
 
-  width : 32px;
-  height : 32px;
-  border : 1px solid #b4bdc4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background-color : #fff;
-}
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
 
-.arrowIcon {
-  width : 16px;
-  height : 16px;
-}
-
-.productsList {
-  scroll-behavior : smooth;
-  scrollbar-width : none;
-
-  overflow-x : auto;
-  display : flex;
-  gap : 16px;
-
-  &::-webkit-scrollbar {
-    display : none;
-  }
-
-  > * {
-    flex-shrink : 0;
-  }
+  background-color: var(--color-surface);
 }
 
 .prevButton {
-  border-color : #E2E6E9;
+  border-color: var(--color-border);
+}
+
+.prevButton:disabled,
+.nextButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  filter: var(--icon-filter);
+}
+
+.productsList {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  overflow-x: auto;
+  display: flex;
+  gap: 16px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > * {
+    flex-shrink: 0;
+  }
 }

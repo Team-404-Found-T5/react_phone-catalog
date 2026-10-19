@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Pagination.module.scss';
-
-type PageItem = number | 'ellipsis';
+import { playClickSound } from '../../modules/PixelHearts/sounds';
 
 type Props = {
   currentPage: number;
@@ -10,38 +9,40 @@ type Props = {
   disabled?: boolean;
 };
 
-const getPageItems = (currentPage: number, totalPages: number): PageItem[] => {
+const getPageItems = (currentPage: number, totalPages: number): number[] => {
   if (totalPages <= 7) {
     return Array.from({ length: totalPages }, (_, index) => index + 1);
   }
 
-  if (currentPage <= 3) {
-    return [1, 2, 3, 4, 5, 'ellipsis', totalPages - 1, totalPages];
-  }
+  let pages: number[];
 
-  if (currentPage >= totalPages - 3) {
-    return [
+  if (currentPage <= 3) {
+    pages = [1, 2, 3, 4, 5, totalPages - 1, totalPages];
+  } else if (currentPage >= totalPages - 3) {
+    pages = [
       1,
       2,
-      'ellipsis',
       totalPages - 4,
       totalPages - 3,
       totalPages - 2,
       totalPages - 1,
       totalPages,
     ];
+  } else {
+    pages = [
+      1,
+      2,
+      currentPage - 2,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      currentPage + 2,
+      totalPages - 1,
+      totalPages,
+    ];
   }
 
-  return [
-    currentPage - 2,
-    currentPage - 1,
-    currentPage,
-    currentPage + 1,
-    currentPage + 2,
-    'ellipsis',
-    totalPages - 1,
-    totalPages,
-  ];
+  return [...new Set(pages)];
 };
 
 export const Pagination: React.FC<Props> = ({
@@ -64,44 +65,43 @@ export const Pagination: React.FC<Props> = ({
         className={styles.arrow}
         aria-label="Previous page"
         disabled={disabled || safeCurrentPage === 1}
-        onClick={() => onPageChange(safeCurrentPage - 1)}
+        onClick={() => {
+          playClickSound();
+          onPageChange(safeCurrentPage - 1);
+        }}
       >
         ‹
       </button>
 
-      {pageItems.map((item, index) =>
-        item === 'ellipsis' ? (
-          <button
-            type="button"
-            className={styles.page}
-            key={`ellipsis-${index}`}
-            disabled
-            aria-hidden="true"
-          >
-            ...
-          </button>
-        ) : (
+      <div className={styles.pages}>
+        {pageItems.map(page => (
           <button
             type="button"
             className={`${styles.page} ${
-              item === safeCurrentPage ? styles.active : ''
+              page === safeCurrentPage ? styles.active : ''
             }`}
-            key={item}
-            aria-current={item === safeCurrentPage ? 'page' : undefined}
+            key={page}
+            aria-current={page === safeCurrentPage ? 'page' : undefined}
             disabled={disabled}
-            onClick={() => onPageChange(item)}
+            onClick={() => {
+              playClickSound();
+              onPageChange(page);
+            }}
           >
-            {item}
+            {page}
           </button>
-        ),
-      )}
+        ))}
+      </div>
 
       <button
         type="button"
         className={styles.arrow}
         aria-label="Next page"
         disabled={disabled || safeCurrentPage === totalPages}
-        onClick={() => onPageChange(safeCurrentPage + 1)}
+        onClick={() => {
+          playClickSound();
+          onPageChange(safeCurrentPage + 1);
+        }}
       >
         ›
       </button>

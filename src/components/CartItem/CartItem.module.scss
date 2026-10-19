@@ -9,8 +9,9 @@
   grid-template-columns: 16px 80px 1fr;
   gap: 16px;
   align-items: center;
+
   padding: 16px;
-  border: 1px solid $color-elements;
+  border: 1px solid var(--color-border);
 
   @include tablet {
     grid-template-areas: 'remove image name quantity price';
@@ -20,15 +21,23 @@
 }
 
 .remove {
+  cursor: pointer;
+
   display: flex;
   grid-area: remove;
-  cursor: pointer;
+
   opacity: 0.7;
+
   transition: opacity 0.2s;
 
   &:hover {
     opacity: 1;
   }
+}
+
+.remove img,
+.counterButton img {
+  filter: var(--icon-filter);
 }
 
 .imageLink {
@@ -55,29 +64,36 @@
 }
 
 .counterButton {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 32px;
   height: 32px;
-  border: 1px solid #b4bdc3;
-  color: $color-primary;
-  cursor: pointer;
+  border: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  background-color: var(--color-surface);
+
   transition: border-color 0.2s;
 
-  &:hover:not(:disabled) {
-    border-color: $color-primary;
+  &:disabled {
+    cursor: default;
+    border-color: var(--color-border);
+    opacity: 0.4;
   }
 
-  &:disabled {
-    border-color: $color-elements;
-    cursor: default;
-    opacity: 0.4;
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
   }
 }
 
 .count {
   width: 32px;
+
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
@@ -87,6 +103,7 @@
 .price {
   grid-area: price;
   justify-self: end;
+
   font-size: 22px;
   font-weight: 700;
   line-height: 31px;

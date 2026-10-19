@@ -1,3 +1,113 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.FooterFooter {
+  outline: 1px solid var(--color-border);
+}
+
 .container {
-  // Styles will be added here.
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  height: 257px;
+  padding-top: 32px;
+
+  @include container;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 96px;
+    padding-top: 0;
+  }
+}
+
+.footerListLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    width: 33%;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    width: 33%;
+  }
+}
+
+.footerLinks {
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 92%;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-text);
+  }
+}
+
+.arrowBorder {
+  transform: rotate(-90deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  outline: 1px solid var(--color-border);
+
+  transition: all 0.3s;
+
+}
+
+.arrowBorder img {
+  filter: var(--icon-filter);
+}
+
+.fromFooterToTop {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  margin: 0 auto;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-secondary);
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-text);
+
+    .arrowBorder {
+      outline: 1px solid var(--color-text);
+    }
+  }
+
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    margin: 0;
+  }
 }
