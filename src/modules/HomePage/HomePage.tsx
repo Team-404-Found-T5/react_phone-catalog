@@ -115,7 +115,9 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
+      <h1 className={styles.title}>
+        Welcome to <span className={styles.accent}>404</span> Gadgets store!
+      </h1>
       <div className={styles.container}>
         <BannerSlider />
 
