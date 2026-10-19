@@ -9,7 +9,7 @@ export const Logo: React.FC<Prop> = ({ variant }) => {
   return (
     <div className={styles.container}>
       <div className={`${styles.logoGroup} ${styles[`logo-${variant}`]}`}>
-        {/* <img
+        <img
           className={styles.logoText}
           src={`${import.meta.env.BASE_URL}img/logo.svg`}
           alt="nice gadges logo"
