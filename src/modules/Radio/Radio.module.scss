@@ -1,0 +1,83 @@
+.container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 99999;
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px) scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              visibility 0.3s ease;
+
+  &:hover {
+    transform: translateX(0) scale(1.1) !important;
+  }
+
+  &:active {
+    transform: translateX(0) scale(0.95) !important;
+  }
+}
+
+
+.button.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+}
+
+
+.container:hover {
+  .button {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+}
+
+
+.button.playing {
+  animation: floatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
