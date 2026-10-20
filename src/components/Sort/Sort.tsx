@@ -104,11 +104,18 @@ const CustomSelect = <T extends string>({
                 className={`${styles.option} ${
                   option.value === value ? styles.optionSelected : ''
                 }`}
+                role="option"
+                tabIndex={0}
                 onClick={() => {
                   onChange(option.value);
                   setIsOpen(false);
                 }}
-                role="option"
+                onKeyDown={event => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    onChange(option.value);
+                    setIsOpen(false);
+                  }
+                }}
                 aria-selected={option.value === value}
               >
                 {option.label}
@@ -151,9 +158,7 @@ export const Sort: React.FC<SortProps> = ({ disabled = false }) => {
   const [draftCapacity, setDraftCapacity] = useState(
     searchParams.get('capacity') || '',
   );
-  const [draftColor, setDraftColor] = useState(
-    searchParams.get('color') || '',
-  );
+  const [draftColor, setDraftColor] = useState(searchParams.get('color') || '');
   const [draftMinPrice, setDraftMinPrice] = useState(
     searchParams.get('minPrice') || '',
   );
@@ -243,24 +248,40 @@ export const Sort: React.FC<SortProps> = ({ disabled = false }) => {
         </div>
 
         <div className={styles.priceGroup}>
-          <label className={styles.label}>Price range ($)</label>
+          <span className={styles.label}>Price range ($)</span>
           <div className={styles.priceInputs}>
             <input
+              aria-label="Minimum price"
               type="number"
               className={styles.priceInput}
               placeholder="from"
+              min="0"
               value={draftMinPrice}
               disabled={disabled}
-              onChange={e => setDraftMinPrice(e.target.value)}
+              onChange={e =>
+                setDraftMinPrice(
+                  e.target.value === ''
+                    ? ''
+                    : String(Math.max(0, Number(e.target.value))),
+                )
+              }
             />
             <span className={styles.priceSeparator}>—</span>
             <input
+              aria-label="Maximum price"
               type="number"
               className={styles.priceInput}
               placeholder="to"
+              min="0"
               value={draftMaxPrice}
               disabled={disabled}
-              onChange={e => setDraftMaxPrice(e.target.value)}
+              onChange={e =>
+                setDraftMaxPrice(
+                  e.target.value === ''
+                    ? ''
+                    : String(Math.max(0, Number(e.target.value))),
+                )
+              }
             />
           </div>
         </div>

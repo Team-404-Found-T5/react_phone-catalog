@@ -13,9 +13,7 @@
 }
 
 :root[data-theme='dark'] .breadcrumbs {
-  padding: 0;
-  border: 0;
-
+  border-color: transparent;
   background-color: transparent;
   backdrop-filter: none;
   box-shadow: none;

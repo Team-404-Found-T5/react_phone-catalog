@@ -21,11 +21,28 @@ export const Header: React.FC = () => {
   const favoritesCount = favoriteItems.length;
 
   const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen(prev => {
+      const next = !prev;
+      window.dispatchEvent(
+        new CustomEvent('mobile-menu-visibility', {
+          detail: { isOpen: next },
+        }),
+      );
+      return next;
+    });
   };
 
   const closeMenu = () => {
-    setIsMenuOpen(false);
+    setIsMenuOpen(prev => {
+      if (prev) {
+        window.dispatchEvent(
+          new CustomEvent('mobile-menu-visibility', {
+            detail: { isOpen: false },
+          }),
+        );
+      }
+      return false;
+    });
   };
 
   const [theme, setTheme] = useState(() => {
@@ -68,7 +85,7 @@ export const Header: React.FC = () => {
               icon={
                 <img
                   src={
-                    isCartPage ? 'img/Chest-opened.svg' : 'img/Сhest-closed.svg'
+                    isCartPage ? 'img/Chest-opened.svg' : 'img/Chest-closed.svg'
                   }
                   width="24"
                   height="24"

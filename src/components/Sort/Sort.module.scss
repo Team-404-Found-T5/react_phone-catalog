@@ -8,31 +8,32 @@
   margin-top: 16px;
 
   @include tablet {
-    width: auto;
     align-items: flex-end;
+    width: auto;
     margin-top: 0;
   }
 }
 
 .toggleBtn {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   width: 100%;
   height: 44px;
-  padding: 0 16px;
   margin-bottom: 16px;
+  padding: 0 16px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
 
   font-family: $font-family;
   font-size: 14px;
   font-weight: 600;
-  color: $color-primary;
+  color: var(--color-text);
 
-  background-color: var(--color-background, #ffffff);
-  border: 1px solid $color-icons;
-  border-radius: 8px;
-  cursor: pointer;
+  background-color: var(--color-chrome-control);
 
   @include tablet {
     width: 160px;
@@ -44,12 +45,12 @@
   display: none;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 24px;
+
   width: 100%;
+  margin-bottom: 24px;
 
   @include desktop {
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     gap: 12px;
     align-items: flex-end;
   }
@@ -101,19 +102,20 @@
 }
 
 .applyBtn {
+  cursor: pointer;
+
   width: 100%;
   height: 40px;
   padding: 0 16px;
+  border: none;
+  border-radius: 8px;
 
   font-family: $font-family;
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #fff;
 
   background-color: $color-primary;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 
   transition: opacity 0.2s ease;
 
@@ -121,20 +123,20 @@
     width: auto;
   }
 
-  &:hover:not(:disabled) {
-    opacity: 0.85;
-  }
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
   }
 }
 
 .priceInputs {
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
 
   @include desktop {
     gap: 4px;
@@ -145,41 +147,41 @@
   width: 100%;
   height: 40px;
   padding: 0 8px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
 
   font-family: $font-family;
   font-size: 13px;
   font-weight: 600;
-  color: $color-primary;
+  color: var(--color-text);
 
-  background-color: var(--color-background, #ffffff);
-  border: 1px solid $color-icons;
-  border-radius: 8px;
+  background-color: var(--color-chrome-control);
 
   transition: border-color 0.2s ease;
 
   &::placeholder {
     font-weight: 400;
-    color: $color-secondary;
-  }
-
-  &:hover:not(:disabled) {
-    border-color: $color-secondary;
+    color: var(--color-text);
   }
 
   &:focus {
+    border-color: var(--color-text);
     outline: none;
-    border-color: $color-primary;
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
   }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
+  }
 }
 
 .priceSeparator {
   font-size: 12px;
-  color: $color-secondary;
+  color: var(--color-text);
 }
 
 .field {
@@ -193,7 +195,7 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 15px;
-  color: $color-secondary;
+  color: var(--color-text);
   white-space: nowrap;
 }
 
@@ -203,6 +205,8 @@
 }
 
 .trigger {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -210,36 +214,35 @@
   width: 100%;
   height: 40px;
   padding: 0 10px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
 
   font-family: $font-family;
   font-size: 13px;
   font-weight: 600;
   line-height: 21px;
-  color: $color-primary;
+  color: var(--color-text);
 
-  background-color: var(--color-background, #ffffff);
-  border: 1px solid $color-icons;
-  border-radius: 8px;
-  cursor: pointer;
+  background-color: var(--color-chrome-control);
 
   transition: border-color 0.2s ease;
 
-  &:hover:not(:disabled) {
-    border-color: $color-secondary;
-  }
-
   &:focus-visible {
+    border-color: var(--color-text);
     outline: none;
-    border-color: $color-primary;
   }
 
   &.triggerActive {
-    border-color: $color-primary;
+    border-color: var(--color-text);
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
   }
 }
 
@@ -260,40 +263,42 @@
 
 .dropdown {
   position: absolute;
+  z-index: 10;
   top: calc(100% + 4px);
   left: 0;
-  z-index: 10;
 
   width: 100%;
   margin: 0;
   padding: 8px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
   list-style: none;
 
-  background-color: var(--color-background, #ffffff);
-  border: 1px solid $color-elements;
-  border-radius: 8px;
+  background-color: var(--color-chrome-control);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .option {
+  cursor: pointer;
+
   padding: 8px 12px;
 
   font-family: $font-family;
   font-size: 13px;
   font-weight: 500;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-text);
 
-  cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 
   &:hover {
-    background-color: $color-elements;
-    color: $color-primary;
+    color: var(--color-text);
+    background-color: var(--color-chrome);
   }
 
   &.optionSelected {
     font-weight: 600;
-    color: $color-primary;
+    color: var(--color-text);
   }
 }

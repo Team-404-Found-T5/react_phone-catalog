@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Radio.module.scss';
 import musicBoxIcon from './musicbox.svg';
 import noteIcon from './note.png';
@@ -11,14 +11,108 @@ import minecraft3Audio from './minecraft3.mp3';
 import { playClickSound } from '../PixelHearts/sounds';
 
 export const Radio = () => {
+  const defaultTrackIndex = 2;
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const [isHidden, setIsHidden] = useState(false);
 
   const radioAudioRef = useRef<HTMLAudioElement | null>(null);
   const local1AudioRef = useRef<HTMLAudioElement | null>(null);
   const local2AudioRef = useRef<HTMLAudioElement | null>(null);
   const local3AudioRef = useRef<HTMLAudioElement | null>(null);
 
-  const audioRefs = [radioAudioRef, local1AudioRef, local2AudioRef, local3AudioRef];
+  const audioRefs = useMemo(
+    () => [radioAudioRef, local1AudioRef, local2AudioRef, local3AudioRef],
+    [],
+  );
+
+  useEffect(() => {
+    const handleMenuVisibility = (event: Event) => {
+      const { isOpen } = (event as CustomEvent<{ isOpen: boolean }>).detail;
+
+      if (isOpen) {
+        audioRefs.forEach(ref => ref.current?.pause());
+        setPlayingIndex(null);
+      }
+
+      setIsHidden(isOpen);
+    };
+
+    window.addEventListener('mobile-menu-visibility', handleMenuVisibility);
+
+    return () =>
+      window.removeEventListener(
+        'mobile-menu-visibility',
+        handleMenuVisibility,
+      );
+  }, [audioRefs]);
+
+  const stopAllExcept = useCallback(
+    (targetIndex: number) => {
+      audioRefs.forEach((ref, index) => {
+        if (index !== targetIndex && ref.current) {
+          ref.current.pause();
+        }
+      });
+    },
+    [audioRefs],
+  );
+
+  const playTrack = useCallback(
+    (index: number) => {
+      const currentAudio = audioRefs[index].current;
+
+      if (!currentAudio) {
+        return;
+      }
+
+      stopAllExcept(index);
+
+      if (index === 0) {
+        currentAudio.load();
+      }
+
+      currentAudio
+        .play()
+        .then(() => setPlayingIndex(index))
+        .catch((error: unknown) => {
+          console.error(`Playback error on track ${index}:`, error);
+          setPlayingIndex(null);
+        });
+    },
+    [audioRefs, stopAllExcept],
+  );
+
+  useEffect(() => {
+    const startDefaultTrackAfterInteraction = (event: Event) => {
+      const target = event.target;
+
+      if (
+        target instanceof Element &&
+        target.closest('[data-radio-control="true"]')
+      ) {
+        return;
+      }
+
+      if (playingIndex === null && !isHidden) {
+        playTrack(defaultTrackIndex);
+      }
+    };
+
+    window.addEventListener('pointerdown', startDefaultTrackAfterInteraction, {
+      once: true,
+    });
+    window.addEventListener('keydown', startDefaultTrackAfterInteraction, {
+      once: true,
+    });
+
+    return () => {
+      window.removeEventListener(
+        'pointerdown',
+        startDefaultTrackAfterInteraction,
+      );
+      window.removeEventListener('keydown', startDefaultTrackAfterInteraction);
+    };
+  }, [isHidden, playTrack, playingIndex]);
 
   const tracks = [
     { icon: musicBoxIcon, alt: 'Radio Stream' },
@@ -26,14 +120,6 @@ export const Radio = () => {
     { icon: note2Icon, alt: 'Local Track 2' },
     { icon: note3Icon, alt: 'Local Track 3' },
   ];
-
-  const stopAllExcept = (targetIndex: number) => {
-    audioRefs.forEach((ref, index) => {
-      if (index !== targetIndex && ref.current) {
-        ref.current.pause();
-      }
-    });
-  };
 
   const toggleTrack = (index: number) => {
     const currentRef = audioRefs[index].current;
@@ -43,35 +129,31 @@ export const Radio = () => {
       currentRef.pause();
       setPlayingIndex(null);
     } else {
-      stopAllExcept(index);
-
-      if (index === 0) {
-        currentRef.load();
-      }
-
-      currentRef
-        .play()
-        .then(() => setPlayingIndex(index))
-        .catch((error) => {
-          console.error(`Playback error on track ${index}:`, error);
-          setPlayingIndex(null);
-        });
+      playTrack(index);
     }
   };
 
-
-  const activeIndex = playingIndex !== null ? playingIndex : 0;
+  const activeIndex = playingIndex !== null ? playingIndex : defaultTrackIndex;
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      aria-hidden={isHidden}
+      data-radio-control="true"
+    >
+      {/* These audio tracks are decorative music controls and have no spoken content. */}
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio
         ref={radioAudioRef}
         src="https://stream.zeno.fm/f3wvbbqmdg8uv"
         preload="none"
         crossOrigin="anonymous"
       />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio ref={local1AudioRef} src={minecraftAudio} preload="auto" loop />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio ref={local2AudioRef} src={minecraft2Audio} preload="auto" loop />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio ref={local3AudioRef} src={minecraft3Audio} preload="auto" loop />
 
       <div className={styles.wrapper}>
@@ -83,14 +165,11 @@ export const Radio = () => {
             <button
               key={index}
               type="button"
-              className={`
-                ${styles.button}
-                ${isPlaying ? styles.playing : ''}
-                ${isActive ? styles.active : ''}
-              `}
+              className={` ${styles.button} ${isPlaying ? styles.playing : ''} ${isActive ? styles.active : ''} `}
               onClick={() => {
-                playClickSound()
-                toggleTrack(index)}}
+                playClickSound();
+                toggleTrack(index);
+              }}
               aria-label={track.alt}
             >
               <img src={track.icon} alt={track.alt} className={styles.icon} />

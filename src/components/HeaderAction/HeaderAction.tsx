@@ -38,8 +38,10 @@ export const HeaderAction: React.FC<HeaderActionProps> = ({
         )
       }
     >
-      {icon}
-      {count > 0 && <span className={styles.counter}>{count}</span>}
+      <span className={styles.iconWrapper}>
+        {icon}
+        {count > 0 && <span className={styles.counter}>{count}</span>}
+      </span>
     </NavLink>
   );
 };
