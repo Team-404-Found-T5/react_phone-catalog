@@ -8,6 +8,7 @@ import note3Icon from './note3.png';
 import minecraftAudio from './minecraft.mp3';
 import minecraft2Audio from './minecraft2.mp3';
 import minecraft3Audio from './minecraft3.mp3';
+import { playClickSound } from '../PixelHearts/sounds';
 
 export const Radio = () => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
@@ -87,7 +88,9 @@ export const Radio = () => {
                 ${isPlaying ? styles.playing : ''}
                 ${isActive ? styles.active : ''}
               `}
-              onClick={() => toggleTrack(index)}
+              onClick={() => {
+                playClickSound()
+                toggleTrack(index)}}
               aria-label={track.alt}
             >
               <img src={track.icon} alt={track.alt} className={styles.icon} />
