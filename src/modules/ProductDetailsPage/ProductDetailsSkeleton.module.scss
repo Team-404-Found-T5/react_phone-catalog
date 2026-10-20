@@ -1,0 +1,89 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  padding-top: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+
+  margin-bottom: 24px;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.title {
+  width: min(70%, 560px);
+  height: 41px;
+  border-radius: 8px;
+
+  @include tablet {
+    height: 41px;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.thumbnail {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-border);
+
+  @include tablet {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.mainImageWrapper {
+  display: flex;
+  flex: 1;
+  padding: 16px;
+
+  @include tablet {
+    min-height: 460px;
+  }
+
+  @include desktop {
+    margin-left: 46px;
+  }
+}
+
+.mainImage {
+  width: min(100%, 420px);
+  border-radius: 8px;
+
+  @include tablet {
+    width: min(45%, 420px);
+    height: 280px;
+    margin-top: 70px;
+  }
+
+  @include desktop {
+    height: 420px;
+    margin-top: 0;
+  }
+}

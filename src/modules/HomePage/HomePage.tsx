@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { getProducts } from '../../api/products';
 import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
-import { Loader } from '../../components/Loader';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
@@ -121,23 +120,26 @@ export const HomePage: React.FC = () => {
       <div className={styles.container}>
         <BannerSlider />
 
-        {isLoading && <Loader />}
-
         {error && (
           <p role="alert">Failed to load home page products: {error}</p>
         )}
 
-        {!isLoading && !error && (
+        {!error && (
           <ProductsSlider
             title="Brand new models"
             products={brandNewProducts}
+            isLoading={isLoading}
           />
         )}
 
         <ShopByCategory />
 
-        {!isLoading && !error && (
-          <ProductsSlider title="Hot prices" products={hotPricesProducts} />
+        {!error && (
+          <ProductsSlider
+            title="Hot prices"
+            products={hotPricesProducts}
+            isLoading={isLoading}
+          />
         )}
       </div>
     </>

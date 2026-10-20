@@ -1,11 +1,23 @@
-.themeSwitch {
-  position: relative;
+@use '../../styles/mixins' as *;
 
-  display: inline-flex;
+.themeSwitch {
+  display: none;
   flex-shrink: 0;
+  position: relative;
 
   width: 56px;
   height: 32px;
+
+  @include tablet {
+    display: inline-flex;
+  }
+}
+
+.do {
+  display: inline-flex;
+  margin-top: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .input {
@@ -51,11 +63,11 @@
   transition: transform 0.2s ease;
 }
 
-.input:checked + .track .thumb {
+.input:checked+.track .thumb {
   transform: translateX(24px);
 }
 
-.input:focus-visible + .track {
+.input:focus-visible+.track {
   outline: 2px solid var(--color-text);
   outline-offset: 3px;
 }
