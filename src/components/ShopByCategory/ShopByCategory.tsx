@@ -65,6 +65,7 @@ export const ShopByCategory: React.FC = () => {
                   className={styles.image}
                   src={category.image}
                   alt={category.title}
+                  loading="lazy"
                 />
               </div>
 

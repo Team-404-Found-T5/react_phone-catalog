@@ -100,9 +100,16 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
 
   margin-top: 32px;
+}
+
+.emptyImage {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: var(--icon-filter);
 }
 
 .emptyText {

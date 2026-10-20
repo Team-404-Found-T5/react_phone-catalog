@@ -79,6 +79,9 @@
   display: flex;
   gap: 16px;
 
+  margin: -16px;
+  padding: 16px;
+
   &::-webkit-scrollbar {
     display: none;
   }

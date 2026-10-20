@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { SwitchBgButtons } from '../SwitchBgButtons/SwitchBgButtons';
 import { useCart } from '../../context/CartContext';
@@ -27,6 +27,21 @@ export const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+    const [theme, setTheme] = useState(() => {
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme === 'dark') {
+        return 'dark';
+      }
+
+      return 'light';
+    });
+
+    useEffect(() => {
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('theme', theme);
+    }, [theme]);
+
   return (
     <header className={styles.headerHeader}>
       <div className={styles.container}>
@@ -44,7 +59,7 @@ export const Header: React.FC = () => {
 
         <div>
           <div className={styles.rightSectionCartAndFav}>
-            <SwitchBgButtons />
+            <SwitchBgButtons theme={theme} setTheme={setTheme}/>
             <HeaderAction
               playBoxOpenSound={playBoxOpenSound}
               to="/cart"
@@ -64,8 +79,7 @@ export const Header: React.FC = () => {
 
           <BurgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
-
-        <MobileMenu show={isMenuOpen} closeModal={closeMenu} />
+        <MobileMenu show={isMenuOpen} closeModal={closeMenu} theme={theme} setTheme={setTheme} />
       </div>
     </header>
   );

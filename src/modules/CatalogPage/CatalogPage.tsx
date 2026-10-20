@@ -2,9 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { getProductsPage } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
-import { Loader } from '../../components/Loader';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { ProductCardSkeleton } from '../../components/ProductCardSkeleton';
 import { NotFoundPage } from '../NotFoundPage';
 import type { Product, ProductCategory } from '../../types/product';
 import styles from './CatalogPage.module.scss';
@@ -110,24 +110,10 @@ export const CatalogPage: React.FC = () => {
     return <NotFoundPage />;
   }
 
-  if (isLoading && products.length === 0) {
-    return (
-      <section className={styles.container}>
-        <Loader />
-      </section>
-    );
-  }
-
   const { title, plural } = categories[category];
 
   return (
     <section className={styles.container} aria-busy={isLoading}>
-      {isLoading && (
-        <div className={styles.loadingOverlay}>
-          <Loader />
-        </div>
-      )}
-
       <Breadcrumbs
         items={[{ label: category === 'all' ? 'Catalog' : title }]}
       />
@@ -136,9 +122,11 @@ export const CatalogPage: React.FC = () => {
         {category === 'phones' ? 'Mobile phones' : title}
       </h1>
       <p className={styles.count}>
-        {searchTerm
-          ? `${totalProducts} ${plural} found for “${searchTerm}”`
-          : `${totalProducts} ${plural}`}
+        {isLoading
+          ? <span className={styles.countSkeleton} aria-label="Loading products" />
+          : searchTerm
+            ? `${totalProducts} ${plural} found for “${searchTerm}”`
+            : `${totalProducts} ${plural}`}
       </p>
 
       {error && (
@@ -156,9 +144,13 @@ export const CatalogPage: React.FC = () => {
       )}
 
       <div className={styles.grid}>
-        {products.map(product => (
-          <ProductCard key={product.itemId} product={product} />
-        ))}
+        {isLoading ? (
+          <ProductCardSkeleton count={PRODUCTS_PER_PAGE} />
+        ) : (
+          products.map(product => (
+            <ProductCard key={product.itemId} product={product} />
+          ))
+        )}
       </div>
 
       <Pagination

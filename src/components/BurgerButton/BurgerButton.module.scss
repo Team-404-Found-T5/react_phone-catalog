@@ -6,7 +6,7 @@
   height: 2px;
   border-radius: 1px;
 
-  background-color: $color-text;
+  background-color: var(--color-text);
 
   transition: all 0.3s;
 }
@@ -22,7 +22,7 @@
 
   padding: 16px;
 
-  outline: 1px $color-elements solid;
+  outline: solid var(--color-border) 1px;
 
   transition: all 0.3s;
 
@@ -31,7 +31,7 @@
   }
 
   &:hover {
-    outline: 1px $color-text solid;
+    outline: solid var(--color-text) 1px;
 
     .firstLine {
       width: 10px;
