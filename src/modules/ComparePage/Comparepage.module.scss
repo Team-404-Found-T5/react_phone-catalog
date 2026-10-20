@@ -1,0 +1,30 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.title {
+  margin-top: 24px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+
+  @include tablet {
+    margin-top: 16px;
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+.productsCompareList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  overflow-x: auto;
+  height: 638px;
+  padding-inline: 15px;
+}

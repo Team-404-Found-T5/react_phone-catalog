@@ -10,6 +10,7 @@ import { HomePage } from './modules/HomePage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
 import { TestPage } from './modules/TestPage';
+import { ComparePage } from './modules/ComparePage';
 
 export const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ export const App = () => {
         <Route path="cart" element={<CartPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
         <Route path="test" element={<TestPage />} />
+        <Route path="compare" element={<ComparePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

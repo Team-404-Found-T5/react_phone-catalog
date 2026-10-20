@@ -75,10 +75,31 @@
   transition: color 0.3s ease;
 }
 
+.priceAndCompareBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
 .prices {
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.compare-btn {
+  padding: 6px 7px;
+  cursor: pointer;
+  outline: solid 1px $color-secondary;
+  transition: all, .2s;
+
+  &:hover {
+
+    outline: solid 1px rgb(180, 136, 12);
+  }
+}
+
+.btn-active {
+  outline: solid 1px $color-green;
 }
 
 .oldPrice {
