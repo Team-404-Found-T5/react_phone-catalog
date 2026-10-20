@@ -296,7 +296,11 @@ export const ProductDetailsPage: React.FC = () => {
           </div>
 
           <div className={styles.capacitySection}>
-            <span className={styles.label}>Select capacity</span>
+            <span className={styles.label}>
+              {product?.category === 'accessories'
+                ? 'Select case size'
+                : 'Select capacity'}
+            </span>
             <div className={styles.capacityList}>
               {availableCapacities.map(capacity => {
                 return (
