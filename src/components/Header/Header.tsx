@@ -10,10 +10,11 @@ import { BurgerButton } from '../BurgerButton';
 import { playBoxOpenSound } from '../../modules/PixelHearts/sounds';
 import { MobileMenu } from '../MobileMenu';
 import { SearchInput } from '../SearchInput';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useMatch } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isCartPage = useMatch({ path: '/cart', end: true }) !== null;
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -27,20 +28,20 @@ export const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-    const [theme, setTheme] = useState(() => {
-      const savedTheme = localStorage.getItem('theme');
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
 
-      if (savedTheme === 'dark') {
-        return 'dark';
-      }
+    if (savedTheme === 'dark') {
+      return 'dark';
+    }
 
-      return 'light';
-    });
+    return 'light';
+  });
 
-    useEffect(() => {
-      document.documentElement.dataset.theme = theme;
-      localStorage.setItem('theme', theme);
-    }, [theme]);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <header className={styles.headerHeader}>
@@ -59,27 +60,47 @@ export const Header: React.FC = () => {
 
         <div>
           <div className={styles.rightSectionCartAndFav}>
-            <SwitchBgButtons theme={theme} setTheme={setTheme}/>
+            <SwitchBgButtons theme={theme} setTheme={setTheme} />
             <HeaderAction
               playBoxOpenSound={playBoxOpenSound}
               to="/cart"
               label="Cart"
-              icon={<img src="img/Cart.svg" alt="cartSvg" />}
+              icon={
+                <img
+                  src={
+                    isCartPage ? 'img/Chest-opened.svg' : 'img/Сhest-closed.svg'
+                  }
+                  width="24"
+                  height="24"
+                  alt="cartSvg"
+                />
+              }
               count={cartCount}
             />
 
             <HeaderAction
-              playBoxOpenSound={playBoxOpenSound}
               to="/favorites"
               label="Favorites"
-              icon={<img src="img/Favorites.svg" alt="FavoritedSvg" />}
+              icon={
+                <img
+                  src="img/Heart.svg"
+                  width="24"
+                  height="24"
+                  alt="FavoritedSvg"
+                />
+              }
               count={favoritesCount}
             />
           </div>
 
           <BurgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
-        <MobileMenu show={isMenuOpen} closeModal={closeMenu} theme={theme} setTheme={setTheme} />
+        <MobileMenu
+          show={isMenuOpen}
+          closeModal={closeMenu}
+          theme={theme}
+          setTheme={setTheme}
+        />
       </div>
     </header>
   );

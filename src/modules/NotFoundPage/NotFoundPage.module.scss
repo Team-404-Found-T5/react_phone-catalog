@@ -28,7 +28,7 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
   text-decoration: underline;
 
   &:hover {

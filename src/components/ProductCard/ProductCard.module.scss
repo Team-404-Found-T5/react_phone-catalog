@@ -274,6 +274,14 @@
   width: 16px;
   height: 16px;
   object-fit: contain;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+.favoriteButton[aria-pressed='true'] .favoriteIcon {
+  width: 20px;
+  height: 20px;
 }
 
 .favoriteButton[aria-pressed='false'] .favoriteIcon,

@@ -28,10 +28,18 @@
 }
 
 .count {
+  display: table;
+
+  width: fit-content;
   margin: 8px 0 32px;
+  padding: 3px 8px;
+  border-radius: 5px;
+
   font-size: 14px;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
+
+  background-color: var(--color-text-backdrop);
 
   @include tablet {
     margin-bottom: 40px;

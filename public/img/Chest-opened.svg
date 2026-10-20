@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="64" height="64" viewBox="0 0 64 64"
+     shape-rendering="crispEdges">
+
+  <!-- Внутрішня частина відкритого сундука -->
+  <rect x="9" y="24" width="46" height="14" fill="#302018"/>
+  <rect x="12" y="26" width="40" height="9" fill="#4B2D19"/>
+  <rect x="15" y="27" width="34" height="6" fill="#241810"/>
+
+  <!-- Кришка: зовнішня рамка -->
+  <rect x="7" y="3" width="50" height="22" fill="#392719"/>
+  <rect x="10" y="6" width="44" height="16" fill="#A56822"/>
+
+  <!-- Дерев'яна текстура кришки -->
+  <rect x="10" y="6" width="44" height="4" fill="#C68A32"/>
+  <rect x="10" y="10" width="44" height="4" fill="#AD711F"/>
+  <rect x="10" y="14" width="44" height="4" fill="#8A541C"/>
+  <rect x="10" y="18" width="44" height="4" fill="#A56822"/>
+
+  <!-- Темні краї кришки -->
+  <rect x="7" y="3" width="50" height="3" fill="#30251C"/>
+  <rect x="7" y="22" width="50" height="3" fill="#30251C"/>
+  <rect x="7" y="6" width="3" height="16" fill="#53351D"/>
+  <rect x="54" y="6" width="3" height="16" fill="#53351D"/>
+
+  <!-- Задня стінка -->
+  <rect x="9" y="24" width="46" height="4" fill="#53351D"/>
+
+  <!-- Основний корпус -->
+  <rect x="4" y="29" width="56" height="30" fill="#392719"/>
+  <rect x="8" y="32" width="48" height="23" fill="#A56822"/>
+
+  <!-- Текстура деревини корпусу -->
+  <rect x="8" y="32" width="48" height="5" fill="#C68A32"/>
+  <rect x="8" y="37" width="48" height="5" fill="#AD711F"/>
+  <rect x="8" y="42" width="48" height="4" fill="#80501B"/>
+  <rect x="8" y="46" width="48" height="5" fill="#A96B20"/>
+  <rect x="8" y="51" width="48" height="4" fill="#99601E"/>
+
+  <!-- Темні металеві/дерев'яні обручі -->
+  <rect x="4" y="29" width="56" height="4" fill="#30251C"/>
+  <rect x="4" y="39" width="56" height="3" fill="#30251C"/>
+  <rect x="4" y="55" width="56" height="4" fill="#30251C"/>
+
+  <!-- Бічні грані -->
+  <rect x="4" y="33" width="4" height="22" fill="#53351D"/>
+  <rect x="56" y="33" width="4" height="22" fill="#53351D"/>
+
+  <!-- Застібка на кришці -->
+  <rect x="28" y="10" width="8" height="9" fill="#777777"/>
+  <rect x="28" y="10" width="8" height="3" fill="#D6D6D6"/>
+  <rect x="28" y="13" width="4" height="9" fill="#B5B5B5"/>
+  <rect x="32" y="13" width="4" height="10" fill="#858585"/>
+
+  <!-- Застібка на передній частині -->
+  <rect x="28" y="31" width="8" height="4" fill="#777777"/>
+  <rect x="28" y="31" width="8" height="4" fill="#D6D6D6"/>
+  <rect x="28" y="34" width="4" height="4" fill="#B5B5B5"/>
+  <rect x="32" y="34" width="4" height="4" fill="#858585"/>
+
+</svg>

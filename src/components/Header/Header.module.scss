@@ -13,7 +13,7 @@
     padding-left: 24px;
   }
 
-  background-color: var(--color-surface);
+  background-color: var(--color-chrome);
   outline: 1px solid var(--color-border);
 
   transition:
@@ -66,6 +66,12 @@
   align-items: center;
 }
 
+.headerHeader button,
+.headerHeader input {
+  border-color: var(--color-control-border);
+  background-color: var(--color-chrome-control);
+}
+
 .mobileMenu {
   position: fixed;
   top: 64px;
@@ -76,7 +82,7 @@
   height: calc(100vh - 64px);
   padding: 24px;
 
-  background-color: #fff;
+  background-color: var(--color-chrome);
 
   transition: transform 0.3s ease-in-out;
 

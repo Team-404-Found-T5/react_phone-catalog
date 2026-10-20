@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16">
+
+  <!-- Основна форма (Темно-сіра обводка) -->
+  <path fill="#263234" d="
+    M 4,2 h 3 v 1 h 2 v -1 h 3 v 1 
+    h 1 v 1 h 1 v 1 h 1 v 4 h -1 
+    v 1 h -1 v 1 h -1 v 1 h -1 v 1 
+    h -1 v 1 h -2 v -1 h -1 v -1 h -1 
+    v -1 h -1 v -1 h -1 v -1 h -1 v -4 
+    h 1 v -1 h 1 v -1 h 1 v -1 Z
+  " />
+
+  <!-- Червона основа (заповнення) -->
+  <path fill="#F21F2D" d="
+    M 4,3 h 3 v 1 h 2 v -1 h 3 v 1 
+    h 1 v 1 h 1 v 3 h -1 v 1 h -1 v 1 
+    h -1 v 1 h -1 v 1 h -2 v -1 h -1 
+    v -1 h -1 v -1 h -1 v -1 h -1 v -3 
+    h 1 v -1 h 1 v -1 Z
+  " />
+
+  <!-- Білий відблиск (відцентрований на новому місці) -->
+  <rect x="4" y="4" width="1" height="1" fill="#263234" />
+  <rect x="3" y="5" width="1" height="2" fill="#263234" />
+  <rect x="7" y="2" width="1" height="1" fill="#263234" />
+  <rect x="7" y="3" width="1" height="1" fill="#F21F2D" />
+  <rect x="9" y="3" width="1" height="1" fill="#263234" />  	
+
+  <rect x="6" y="4" width="1" height="1" fill="#FFFFFF" />
+  <rect x="5" y="5" width="1" height="2" fill="#FFFFFF" />
+</svg>

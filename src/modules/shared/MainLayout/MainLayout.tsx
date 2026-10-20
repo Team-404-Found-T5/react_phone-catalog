@@ -14,11 +14,9 @@ export const MainLayout: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      {pathname === '/' && (
-        <div className={styles.cursorBackground} aria-hidden="true">
-          <CursorGrid color="#4ade80" edgeFade={0} />
-        </div>
-      )}
+      <div className={styles.cursorBackground} aria-hidden="true">
+        <CursorGrid color="#4ade80" edgeFade={0} />
+      </div>
 
       <Header />
 

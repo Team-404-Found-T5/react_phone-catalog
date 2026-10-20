@@ -5,7 +5,11 @@ import { useFavorites } from '../../context/FavoritesContext';
 import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
 import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
-import { playCartAddSound, playCartRemoveSound } from '../../modules/PixelHearts/sounds';
+import {
+  playCartAddSound,
+  playCartRemoveSound,
+} from '../../modules/PixelHearts/sounds';
+import SpecularButton from '../SpecularButton/SpecularButton';
 
 type Props = {
   product: Product;
@@ -14,7 +18,9 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const { items: cartItems, add, remove } = useCart();
   const { items: favoriteItems, toggle } = useFavorites();
-  const isInCart = cartItems.some(item => item.product.itemId === product.itemId);
+  const isInCart = cartItems.some(
+    item => item.product.itemId === product.itemId,
+  );
   const isFavorite = favoriteItems.some(item => item.itemId === product.itemId);
 
   return (
@@ -58,26 +64,44 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
       <div className={styles.actions}>
         <div className={styles.cartActions}>
-          <button
-            className={`${styles.cartButton} ${
-              isInCart ? styles.cartButtonAdded : ''
-            }`}
-            type="button"
-            disabled={isInCart}
-            onClick={() => {
-              playCartAddSound()
-              add({ product, quantity: 1 })}}
-          >
-            {isInCart ? 'Added to cart' : 'Add to cart'}
-          </button>
+          {isInCart ? (
+            <button
+              className={`${styles.cartButton} ${styles.cartButtonAdded}`}
+              type="button"
+              disabled
+            >
+              Added to cart
+            </button>
+          ) : (
+            <SpecularButton
+              className={styles.cartButton}
+              type="button"
+              size="sm"
+              radius={0}
+              tintOpacity={0}
+              textColor="var(--color-button-text)"
+              lineColor="#ffffff"
+              baseColor="#ffffff"
+              idleIntensity={0}
+              proximity={120}
+              style={{ backgroundColor: 'var(--color-button-background)' }}
+              onClick={() => {
+                playCartAddSound();
+                add({ product, quantity: 1 });
+              }}
+            >
+              Add to cart
+            </SpecularButton>
+          )}
           {isInCart && (
             <button
               className={styles.removeFromCart}
               type="button"
               aria-label={`Remove ${product.name} from cart`}
               onClick={() => {
-                playCartRemoveSound()
-                remove(product.itemId)}}
+                playCartRemoveSound();
+                remove(product.itemId);
+              }}
             >
               <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
             </button>
@@ -88,13 +112,14 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           type="button"
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           aria-pressed={isFavorite}
-          onClick={(e) => {
+          onClick={e => {
             PixelHearts(e);
-            toggle(product)}}
+            toggle(product);
+          }}
         >
           <img
             src={`${import.meta.env.BASE_URL}img/${
-              isFavorite ? 'Like-active.svg' : 'Like.svg'
+              isFavorite ? 'Heart.svg' : 'Like.svg'
             }`}
             alt=""
             className={styles.favoriteIcon}
