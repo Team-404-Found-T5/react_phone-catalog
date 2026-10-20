@@ -5,8 +5,7 @@
   position: relative;
   z-index: 111;
   margin-top: 12px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
