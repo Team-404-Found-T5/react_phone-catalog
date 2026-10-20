@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import {
   getProductDetailsById,
   getRelatedProducts,
@@ -10,7 +10,6 @@ import {
   getSuggestedProducts,
 } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
-import { Loader } from '../../components/Loader';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import type {
@@ -23,6 +22,8 @@ import styles from './ProductDetailsPage.module.scss';
 import { PixelHearts } from '../PixelHearts/PixelHearts';
 import { playCartAddSound, playCartRemoveSound } from '../PixelHearts/sounds';
 import { BackButton } from '../../components/BackButton';
+import { ProductDetailsSkeleton } from './ProductDetailsSkeleton';
+import SpecularButton from '../../components/SpecularButton/SpecularButton';
 
 const colorMap: Record<string, string> = {
   black: '#313237',
@@ -77,6 +78,7 @@ export const ProductDetailsPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [displayId, setDisplayId] = useState('');
   const [suggestedProducts, setSuggestedProducts] = useState<Product[]>([]);
+  const variantsRef = useRef<ProductDetails[]>([]);
   const category = isProductCategory(categoryParam) ? categoryParam : null;
   const actionProduct: Product | undefined = product
     ? {
@@ -116,16 +118,20 @@ export const ProductDetailsPage: React.FC = () => {
     }
 
     let isActive = true;
+    const isVariantNavigation = variantsRef.current.some(
+      variant => variant.category === category && variant.id === productId,
+    );
 
     setIsLoading(true);
     setProduct(undefined);
     setDisplayId('');
     setSelectedImageIndex(0);
     setVariants([]);
+    variantsRef.current = isVariantNavigation ? variantsRef.current : [];
     setSuggestedProducts([]);
     setLoadError('');
 
-    getProductDetailsById(category, productId)
+    getProductDetailsById(category, productId, isVariantNavigation)
       .then(result => {
         if (!isActive) {
           return;
@@ -144,6 +150,7 @@ export const ProductDetailsPage: React.FC = () => {
           getSuggestedProducts(result.id).catch(() => []),
         ]).then(([relatedVariants, catalogProduct, suggestions]) => {
           if (isActive) {
+            variantsRef.current = relatedVariants;
             setVariants(relatedVariants);
             setDisplayId(catalogProduct ? String(catalogProduct.id) : '');
             setSuggestedProducts(suggestions);
@@ -169,7 +176,36 @@ export const ProductDetailsPage: React.FC = () => {
   }, [category, productId]);
 
   if (isLoading) {
-    return <Loader />;
+    return <ProductDetailsSkeleton category={category} />;
+  }
+
+  if (!product) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <BackButton />
+        </div>
+
+        <div className={styles.notFound}>
+          <p className={styles.notFoundText}>
+            {loadError || 'Product not found'}
+          </p>
+
+          <NavLink
+            to={category ? `/${category}` : '/catalog'}
+            className={styles.notFoundLink}
+          >
+            Back to catalog
+          </NavLink>
+
+          <img
+            className={styles.notFoundImage}
+            src="img/product-not-found.webp"
+            alt=""
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -212,7 +248,7 @@ export const ProductDetailsPage: React.FC = () => {
                   aria-pressed={index === selectedImageIndex}
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                  <img src={image} alt=""></img>
+                  <img src={image} alt="" loading="lazy" />
                 </button>
               );
             })}
@@ -222,6 +258,7 @@ export const ProductDetailsPage: React.FC = () => {
               src={product?.images[selectedImageIndex]}
               alt={product?.name}
               className={styles.mainImage}
+              loading="eager"
             />
           </div>
         </div>
@@ -302,21 +339,27 @@ export const ProductDetailsPage: React.FC = () => {
 
           <div className={styles.actions}>
             <div className={styles.cartActions}>
-              <button
+              <SpecularButton
                 className={`${styles.addToCartBtn} ${
                   isInCart ? styles.cartButtonAdded : ''
                 }`}
                 type="button"
+                size="sm"
+                radius={8}
+                tint={isInCart ? '#27ae60' : '#313237'}
+                tintOpacity={1}
+                textColor="#fff"
                 disabled={!actionProduct || isInCart}
                 onClick={() => {
                   playCartAddSound();
+
                   if (actionProduct) {
                     add({ product: actionProduct, quantity: 1 });
                   }
                 }}
               >
                 {isInCart ? 'Added to cart' : 'Add to cart'}
-              </button>
+              </SpecularButton>
               {isInCart && actionProduct && (
                 <button
                   className={styles.removeFromCartBtn}

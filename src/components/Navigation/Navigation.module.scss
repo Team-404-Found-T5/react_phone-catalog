@@ -5,7 +5,6 @@
   display: flex;
   gap: 32px;
   justify-content: space-between;
-  height: 48px;
 
   @include tablet {
     height: 48px;
@@ -64,9 +63,6 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
-
-  // justify-content: start;
-  // justify-content: start;
   margin-top: 24px;
 
   .item {
@@ -120,7 +116,6 @@
   font-weight: 800;
   line-height: 92%;
 
-  // color: $color-text;
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;

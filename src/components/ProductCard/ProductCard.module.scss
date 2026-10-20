@@ -11,6 +11,31 @@
   border: 1px solid var(--color-border);
 
   background-color: var(--color-surface);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.2s ease,
+    border-radius 0.25s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.03);
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px rgb(219 219 255 / 70%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
 .image {
@@ -31,6 +56,7 @@
   text-decoration: none;
   letter-spacing: 0;
 
+  transition: color 0.3s ease;
 
   &:hover {
     color: var(--color-secondary);
@@ -45,6 +71,8 @@
   line-height: 140%;
   color: var(--color-text);
   letter-spacing: 0;
+
+  transition: color 0.3s ease;
 }
 
 .prices {
@@ -103,6 +131,8 @@
   line-height: 100%;
   color: var(--color-text);
   letter-spacing: 0;
+
+  transition: color 0.3s ease;
 }
 
 .actions {
@@ -138,12 +168,17 @@
 
   background-color: var(--color-button-background);
 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
   &:disabled {
     cursor: default;
   }
 
   &:hover:not(:disabled) {
-  background-color: var(--color-button-hover);
+    background-color: var(--color-button-hover);
   }
 }
 
@@ -225,6 +260,11 @@
 
   background-color: var(--color-surface);
 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
   &:hover {
     border-color: var(--color-text);
   }
@@ -234,10 +274,17 @@
   width: 16px;
   height: 16px;
   object-fit: contain;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
-.favoriteButton[aria-pressed='false']
-.favoriteIcon,
+.favoriteButton[aria-pressed='true'] .favoriteIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.favoriteButton[aria-pressed='false'] .favoriteIcon,
 .removeFromCart img {
   filter: var(--icon-filter);
 }

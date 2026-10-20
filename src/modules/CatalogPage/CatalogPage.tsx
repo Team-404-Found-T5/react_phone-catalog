@@ -2,9 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { getProductsPage, type SortType } from '../../api/products';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
-import { Loader } from '../../components/Loader';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { ProductCardSkeleton } from '../../components/ProductCardSkeleton';
 import { Sort } from '../../components/Sort/Sort';
 import { NotFoundPage } from '../NotFoundPage';
 import type { Product, ProductCategory } from '../../types/product';
@@ -139,24 +139,14 @@ export const CatalogPage: React.FC = () => {
     return <NotFoundPage />;
   }
 
-  if (isLoading && products.length === 0) {
-    return (
-      <section className={styles.container}>
-        <Loader />
-      </section>
-    );
-  }
-
   const { title, plural } = categories[category];
+  const skeletonCount =
+    perPageParam === 'all'
+      ? 16
+      : Math.min(Math.max(Number(perPageParam) || 16, 1), 16);
 
   return (
     <section className={styles.container} aria-busy={isLoading}>
-      {isLoading && (
-        <div className={styles.loadingOverlay}>
-          <Loader />
-        </div>
-      )}
-
       <Breadcrumbs
         items={[{ label: category === 'all' ? 'Catalog' : title }]}
       />
@@ -167,9 +157,16 @@ export const CatalogPage: React.FC = () => {
             {category === 'phones' ? 'Mobile phones' : title}
           </h1>
           <p className={styles.count}>
-            {searchTerm
-              ? `${totalProducts} ${plural} found for “${searchTerm}”`
-              : `${totalProducts} ${plural}`}
+            {isLoading ? (
+              <span
+                className={styles.countSkeleton}
+                aria-label="Loading products"
+              />
+            ) : searchTerm ? (
+              `${totalProducts} ${plural} found for “${searchTerm}”`
+            ) : (
+              `${totalProducts} ${plural}`
+            )}
           </p>
         </div>
 
@@ -191,9 +188,13 @@ export const CatalogPage: React.FC = () => {
       )}
 
       <div className={styles.grid}>
-        {products.map(product => (
-          <ProductCard key={product.itemId} product={product} />
-        ))}
+        {isLoading ? (
+          <ProductCardSkeleton count={skeletonCount} />
+        ) : (
+          products.map(product => (
+            <ProductCard key={product.itemId} product={product} />
+          ))
+        )}
       </div>
 
       {perPageParam !== 'all' && totalPages > 1 && (
