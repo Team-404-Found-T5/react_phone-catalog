@@ -30,3 +30,15 @@
   width: 100%;
   height: auto;
 }
+
+.logoDark {
+  display: none;
+}
+
+:root[data-theme='dark'] .logoLight {
+  display: none;
+}
+
+:root[data-theme='dark'] .logoDark {
+  display: block;
+}
