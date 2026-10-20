@@ -10,6 +10,7 @@ import { HomePage } from './modules/HomePage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
 import { TestPage } from './modules/TestPage';
+import Radio from './modules/Radio/Radio';
 
 export const App = () => {
   useEffect(() => {
@@ -19,17 +20,21 @@ export const App = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="home" element={<Navigate to="/" replace />} />
-        <Route path=":category" element={<CatalogPage />} />
-        <Route path=":category/:productId" element={<ProductDetailsPage />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="favorites" element={<FavoritesPage />} />
-        <Route path="test" element={<TestPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path=":category" element={<CatalogPage />} />
+          <Route path=":category/:productId" element={<ProductDetailsPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="test" element={<TestPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+      <Radio />
+    </>
+
   );
 };
