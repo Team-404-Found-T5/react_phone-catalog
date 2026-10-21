@@ -3,34 +3,40 @@
 
 @font-face {
   font-family: Montserrat;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
   src: url('/fonts/Mont-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: Montserrat;
-  font-style: normal;
   font-weight: 600;
+  font-style: normal;
   font-display: swap;
   src: url('/fonts/Mont-SemiBold.otf') format('opentype');
 }
 
 @font-face {
   font-family: Montserrat;
-  font-style: normal;
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
   src: url('/fonts/Mont-Bold.otf') format('opentype');
 }
 
 :root {
-  --color-background: #fff;
-  --color-surface: #fff;
-  --color-text: #313237;
-  --color-secondary: #89939a;
-  --color-border: #e2e6e9;
+  --color-background: #f4f3ec;
+  --color-surface: #e8e5d9;
+  --color-chrome: #d4d8cf;
+  --color-chrome-control: #fbfaf4;
+  --color-control-border: #899187;
+  --color-switch-track: #a7afa4;
+  --color-neutral-surface: #e7e9e8;
+  --color-text-backdrop: rgb(244 243 236 / 88%);
+  --color-text: #25272a;
+  --color-secondary: #5f686d;
+  --color-border: #d8d6cc;
   --color-button-background: #313237;
   --color-button-text: #fff;
   --color-button-hover: #4a4d58;
@@ -62,6 +68,12 @@
 :root[data-theme='dark'] {
   --color-background: #191a1e;
   --color-surface: #202328;
+  --color-chrome: #24262b;
+  --color-chrome-control: #30333a;
+  --color-control-border: #626975;
+  --color-switch-track: #3b3e45;
+  --color-neutral-surface: #292c32;
+  --color-text-backdrop: rgb(32 35 40 / 94%);
   --color-text: #f1f2f4;
   --color-secondary: #89939a;
   --color-border: #3b3e45;

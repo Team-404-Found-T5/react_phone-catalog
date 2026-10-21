@@ -6,7 +6,10 @@ import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
 import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
 import { useCompare } from '../../context/CompareContext';
-import { playCartAddSound, playCartRemoveSound } from '../../modules/PixelHearts/sounds';
+import {
+  playCartAddSound,
+  playCartRemoveSound,
+} from '../../modules/PixelHearts/sounds';
 
 type Props = {
   product: Product;
@@ -16,7 +19,9 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ product, compare }) => {
   const { items: cartItems, add, remove } = useCart();
   const { items: favoriteItems, toggle } = useFavorites();
-  const isInCart = cartItems.some(item => item.product.itemId === product.itemId);
+  const isInCart = cartItems.some(
+    item => item.product.itemId === product.itemId,
+  );
   const isFavorite = favoriteItems.some(item => item.itemId === product.itemId);
 
   const { addToCompare, removeFromCompare, isInCompare } = useCompare();
@@ -111,8 +116,8 @@ export const ProductCard: React.FC<Props> = ({ product, compare }) => {
               type="button"
               aria-label={`Remove ${product.name} from cart`}
               onClick={() => {
-                playCartRemoveSound()
-                remove(product.itemId)
+                playCartRemoveSound();
+                remove(product.itemId);
               }}
             >
               <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
@@ -124,14 +129,15 @@ export const ProductCard: React.FC<Props> = ({ product, compare }) => {
           type="button"
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           aria-pressed={isFavorite}
-          onClick={(e) => {
+          onClick={e => {
             PixelHearts(e);
-            toggle(product)
+            toggle(product);
           }}
         >
           <img
-            src={`${import.meta.env.BASE_URL}img/${isFavorite ? 'Like-active.svg' : 'Like.svg'
-              }`}
+            src={`${import.meta.env.BASE_URL}img/${
+              isFavorite ? 'Heart.svg' : 'Like.svg'
+            }`}
             alt=""
             className={styles.favoriteIcon}
           />

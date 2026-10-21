@@ -3,6 +3,15 @@
 
 .title {
   @include section-title;
+
+  display: table;
+
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px 10px;
+  border-radius: 6px;
+
+  background-color: var(--color-text-backdrop);
 }
 
 .list {
@@ -44,19 +53,34 @@
 }
 
 .name {
+  display: table;
+
+  max-width: 100%;
   margin-top: 24px;
+  padding: 4px 8px;
+  border-radius: 5px;
+
   font-size: 22px;
   font-weight: 600;
   line-height: 31px;
+
+  background-color: var(--color-text-backdrop);
 }
 
 .count {
+  display: table;
+
+  width: fit-content;
   margin-top: 4px;
+  padding: 3px 8px;
+  border-radius: 5px;
 
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
+
+  background-color: var(--color-text-backdrop);
 }
 
 @media (prefers-reduced-motion: reduce) {

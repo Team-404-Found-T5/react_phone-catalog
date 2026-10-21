@@ -11,6 +11,7 @@ import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
 import { TestPage } from './modules/TestPage';
 import { ComparePage } from './modules/ComparePage';
+import Radio from './modules/Radio/Radio';
 
 export const App = () => {
   useEffect(() => {

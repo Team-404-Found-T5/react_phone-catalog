@@ -146,7 +146,7 @@ body:has(dialog[open]) {
   margin-bottom: 12px;
   font-size: 14px;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
 }
 
 .links {

@@ -12,9 +12,30 @@
   padding-top: 24px;
 }
 
-.title {
-  margin-top: 24px;
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
+  margin-top: 24px;
+  margin-bottom: 32px;
+
+  @include desktop {
+    flex-direction: row;
+    gap: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
   font-size: 32px;
   font-weight: 800;
   line-height: 41px;
@@ -28,14 +49,18 @@
 }
 
 .count {
-  margin: 8px 0 32px;
+  display: table;
+
+  width: fit-content;
+  margin: 8px 0 0;
+  padding: 3px 8px;
+  border-radius: 5px;
+
   font-size: 14px;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
 
-  @include tablet {
-    margin-bottom: 40px;
-  }
+  background-color: var(--color-text-backdrop);
 }
 
 .countSkeleton {

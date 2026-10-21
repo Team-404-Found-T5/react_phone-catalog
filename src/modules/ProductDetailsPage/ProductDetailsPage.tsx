@@ -23,6 +23,7 @@ import { PixelHearts } from '../PixelHearts/PixelHearts';
 import { playCartAddSound, playCartRemoveSound } from '../PixelHearts/sounds';
 import { BackButton } from '../../components/BackButton';
 import { ProductDetailsSkeleton } from './ProductDetailsSkeleton';
+import SpecularButton from '../../components/SpecularButton/SpecularButton';
 
 const colorMap: Record<string, string> = {
   black: '#313237',
@@ -296,7 +297,11 @@ export const ProductDetailsPage: React.FC = () => {
           </div>
 
           <div className={styles.capacitySection}>
-            <span className={styles.label}>Select capacity</span>
+            <span className={styles.label}>
+              {product?.category === 'accessories'
+                ? 'Select case size'
+                : 'Select capacity'}
+            </span>
             <div className={styles.capacityList}>
               {availableCapacities.map(capacity => {
                 return (
@@ -338,21 +343,27 @@ export const ProductDetailsPage: React.FC = () => {
 
           <div className={styles.actions}>
             <div className={styles.cartActions}>
-              <button
+              <SpecularButton
                 className={`${styles.addToCartBtn} ${
                   isInCart ? styles.cartButtonAdded : ''
                 }`}
                 type="button"
+                size="sm"
+                radius={8}
+                tint={isInCart ? '#27ae60' : '#313237'}
+                tintOpacity={1}
+                textColor="#fff"
                 disabled={!actionProduct || isInCart}
                 onClick={() => {
                   playCartAddSound();
+
                   if (actionProduct) {
                     add({ product: actionProduct, quantity: 1 });
                   }
                 }}
               >
                 {isInCart ? 'Added to cart' : 'Add to cart'}
-              </button>
+              </SpecularButton>
               {isInCart && actionProduct && (
                 <button
                   className={styles.removeFromCartBtn}

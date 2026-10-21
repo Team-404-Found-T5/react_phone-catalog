@@ -1,0 +1,173 @@
+.container {
+  position: fixed;
+  z-index: 99999;
+  right: 15px;
+  bottom: 15px;
+
+  padding: 10px;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.container[aria-hidden='true'] {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  width: 56px;
+  height: 56px;
+
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button {
+  cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(20px) scale(0.8);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  visibility: hidden;
+  opacity: 0;
+  background: none;
+  outline: none;
+
+  transition:
+    right 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &:hover {
+    transform: translateX(0) scale(1.1) !important;
+  }
+
+  &:active {
+    transform: translateX(0) scale(0.95) !important;
+  }
+}
+
+.button.active {
+  transform: translateX(0) scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+
+.container:hover,
+.container:focus-within {
+  .wrapper {
+    width: 254px;
+  }
+
+  .button {
+    transform: translateX(0) scale(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .button:nth-child(1) {
+    right: 0;
+  }
+
+  .button:nth-child(2) {
+    right: 66px;
+  }
+
+  .button:nth-child(3) {
+    right: 132px;
+  }
+
+  .button:nth-child(4) {
+    right: 198px;
+  }
+}
+
+.icon {
+  user-select: none;
+
+  display: block;
+
+  width: 56px;
+  height: 56px;
+
+  object-fit: contain;
+}
+
+@media (max-width: 639px) {
+  .icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .container:hover,
+  .container:focus-within {
+    .wrapper {
+      width: 190px;
+    }
+
+    .button:nth-child(2) {
+      right: 50px;
+    }
+
+    .button:nth-child(3) {
+      right: 100px;
+    }
+
+    .button:nth-child(4) {
+      right: 150px;
+    }
+  }
+}
+
+.button.playing {
+  animation: float-animation 2s ease-in-out infinite;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper,
+  .button {
+    transition: none;
+  }
+
+  .button.playing {
+    animation: none;
+  }
+}

@@ -1,12 +1,14 @@
 @use '../../styles/mixins' as *;
 
 .themeSwitch {
+  position: relative;
+
   display: none;
   flex-shrink: 0;
-  position: relative;
 
   width: 56px;
   height: 32px;
+  margin-right: 16px;
 
   @include tablet {
     display: inline-flex;
@@ -14,10 +16,10 @@
 }
 
 .do {
+  transform: translateX(-50%);
   display: inline-flex;
   margin-top: 50px;
   margin-left: 50%;
-  transform: translateX(-50%);
 }
 
 .input {
@@ -37,10 +39,10 @@
   position: absolute;
   inset: 0;
 
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-control-border);
   border-radius: 16px;
 
-  background-color: var(--color-border);
+  background-color: var(--color-switch-track);
 }
 
 .thumb {
@@ -63,11 +65,11 @@
   transition: transform 0.2s ease;
 }
 
-.input:checked+.track .thumb {
+.input:checked + .track .thumb {
   transform: translateX(24px);
 }
 
-.input:focus-visible+.track {
+.input:focus-visible + .track {
   outline: 2px solid var(--color-text);
   outline-offset: 3px;
 }

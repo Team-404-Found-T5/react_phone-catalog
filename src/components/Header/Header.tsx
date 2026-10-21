@@ -11,10 +11,11 @@ import { BurgerButton } from '../BurgerButton';
 import { playBoxOpenSound } from '../../modules/PixelHearts/sounds';
 import { MobileMenu } from '../MobileMenu';
 import { SearchInput } from '../SearchInput';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useMatch } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isCartPage = useMatch({ path: '/cart', end: true }) !== null;
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
   const { comparedProducts } = useCompare();
@@ -24,11 +25,28 @@ export const Header: React.FC = () => {
   const compareCount = comparedProducts.length;
 
   const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen(prev => {
+      const next = !prev;
+      window.dispatchEvent(
+        new CustomEvent('mobile-menu-visibility', {
+          detail: { isOpen: next },
+        }),
+      );
+      return next;
+    });
   };
 
   const closeMenu = () => {
-    setIsMenuOpen(false);
+    setIsMenuOpen(prev => {
+      if (prev) {
+        window.dispatchEvent(
+          new CustomEvent('mobile-menu-visibility', {
+            detail: { isOpen: false },
+          }),
+        );
+      }
+      return false;
+    });
   };
 
   const [theme, setTheme] = useState(() => {

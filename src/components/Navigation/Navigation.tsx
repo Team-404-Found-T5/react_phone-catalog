@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import { playClickSound } from '../../modules/PixelHearts/sounds';
@@ -9,8 +9,11 @@ interface Prop {
 }
 
 export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
+  const [isSubmenuClosed, setIsSubmenuClosed] = useState(false);
+
   const handleClick = () => {
     playClickSound();
+    setIsSubmenuClosed(true);
     handleCloseModal?.();
   };
 
@@ -28,7 +31,12 @@ export const Navigation: React.FC<Prop> = ({ varinant, handleCloseModal }) => {
             Home
           </NavLink>
         </li>
-        <li className={`${styles.item} ${styles.catalogItem}`}>
+        <li
+          className={`${styles.item} ${styles.catalogItem} ${
+            isSubmenuClosed ? styles.closed : ''
+          }`}
+          onMouseEnter={() => setIsSubmenuClosed(false)}
+        >
           <NavLink
             onClick={handleClick}
             to="/catalog"

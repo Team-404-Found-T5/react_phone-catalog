@@ -1,0 +1,24 @@
+.cursor-grid {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-grid__canvas {
+  pointer-events: none;
+
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-grid__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

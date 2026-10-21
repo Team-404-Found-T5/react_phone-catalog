@@ -4,7 +4,13 @@
 .title {
   @include section-title;
 
+  display: table;
+
+  width: fit-content;
+  max-width: 100%;
   margin: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
 
   font-family: inherit;
   font-size: 32px;
@@ -12,6 +18,10 @@
   line-height: 41px;
   color: var(--color-text);
   letter-spacing: 0;
+
+  background-color: var(--color-text-backdrop);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .container {

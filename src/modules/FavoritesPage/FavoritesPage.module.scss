@@ -20,10 +20,18 @@
 }
 
 .count {
+  display: table;
+
+  width: fit-content;
   margin-top: 8px;
+  padding: 3px 8px;
+  border-radius: 5px;
+
   font-size: 14px;
   line-height: 21px;
-  color: $color-secondary;
+  color: var(--color-secondary);
+
+  background-color: var(--color-text-backdrop);
 }
 
 .grid {

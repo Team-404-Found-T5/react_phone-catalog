@@ -6,6 +6,7 @@ import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
 import { useCompare } from '../../context/CompareContext';
 import SwitchBgButtons from '../SwitchBgButtons/SwitchBgButtons';
+import { useMatch } from 'react-router-dom';
 
 interface Prop {
   theme: string;
@@ -21,6 +22,7 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
 
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   const favoritesCount = favoriteItems.length;
+  const isCartPage = useMatch({ path: '/cart', end: true }) !== null;
   const compareCount = comparedProducts.length;
 
   useEffect(() => {
@@ -38,7 +40,7 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
   return (
     <div className={`${styles.container} ${show ? styles.show : ''}`}>
       <Navigation varinant="modal" handleCloseModal={closeModal} />
-      <SwitchBgButtons variant='modal' theme={theme} setTheme={setTheme} />
+      <SwitchBgButtons variant="modal" theme={theme} setTheme={setTheme} />
       <div className={styles.ordersgroup}>
         <HeaderAction
           closeModal={closeModal}
@@ -52,7 +54,16 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
           closeModal={closeModal}
           to="/cart"
           label="Cart"
-          icon={<img src="img/Cart.svg" alt="cartSvg" />}
+          icon={
+            <img
+              src={
+                isCartPage ? 'img/Chest-opened.svg' : 'img/Chest-closed.svg'
+              }
+              width="24"
+              height="24"
+              alt="Cart"
+            />
+          }
           count={cartCount}
           variant="modal"
         />
@@ -60,7 +71,14 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
           closeModal={closeModal}
           to="/favorites"
           label="Favorites"
-          icon={<img src="img/Favorites.svg" alt="FavoritedSvg" />}
+          icon={
+            <img
+              src="img/Heart.svg"
+              width="24"
+              height="24"
+              alt="Favorites"
+            />
+          }
           count={favoritesCount}
           variant="modal"
         />
