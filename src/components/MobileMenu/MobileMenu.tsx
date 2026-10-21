@@ -15,7 +15,12 @@ interface Prop {
   closeModal: () => void;
 }
 
-export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }) => {
+export const MobileMenu: React.FC<Prop> = ({
+  show,
+  closeModal,
+  theme,
+  setTheme,
+}) => {
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
   const { comparedProducts } = useCompare();
@@ -46,7 +51,13 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
           closeModal={closeModal}
           to="/compare"
           label="compare"
-          icon={<img src="img/compareSvg.svg" alt="compareSvg" />}
+          icon={
+            <img
+              className={styles.compareIcon}
+              src="img/compareSvg.svg"
+              alt="compareSvg"
+            />
+          }
           count={compareCount}
           variant="modal"
         />
@@ -56,9 +67,7 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
           label="Cart"
           icon={
             <img
-              src={
-                isCartPage ? 'img/Chest-opened.svg' : 'img/Chest-closed.svg'
-              }
+              src={isCartPage ? 'img/Chest-opened.svg' : 'img/Chest-closed.svg'}
               width="24"
               height="24"
               alt="Cart"
@@ -72,12 +81,7 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
           to="/favorites"
           label="Favorites"
           icon={
-            <img
-              src="img/Heart.svg"
-              width="24"
-              height="24"
-              alt="Favorites"
-            />
+            <img src="img/Heart.svg" width="24" height="24" alt="Favorites" />
           }
           count={favoritesCount}
           variant="modal"

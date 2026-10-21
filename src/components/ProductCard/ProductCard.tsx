@@ -52,7 +52,6 @@ export const ProductCard: React.FC<Props> = ({ product, compare }) => {
         {product.name}
       </Link>
       <div className={styles.priceAndCompareBlock}>
-
         <div className={styles.prices}>
           <p className={styles.price}>${product.price}</p>
           {product.oldPrice !== undefined && (
@@ -64,7 +63,13 @@ export const ProductCard: React.FC<Props> = ({ product, compare }) => {
           onClick={handleCompareClick}
           className={`${styles['compare-btn']} ${isCompared ? styles['btn-active'] : ''}`}
           aria-label="Add to compare"
-        ><img src="public/img/compareSvg.svg" alt="compareSvg" /></button>
+        >
+          <img
+            className={styles.compareIcon}
+            src="public/img/compareSvg.svg"
+            alt="compareSvg"
+          />
+        </button>
       </div>
 
       <div className={styles.divider}></div>
@@ -82,30 +87,30 @@ export const ProductCard: React.FC<Props> = ({ product, compare }) => {
           <span className={styles.specLabel}>RAM</span>
           <span className={styles.specValue}>{product.ram}</span>
         </p>
-        {compare &&<>
-        <p className={styles.ram}>
-          <span className={styles.specLabel}>Category</span>
-          <span className={styles.specValue}>{product.category}</span>
-        </p>
-        <p className={styles.ram}>
-          <span className={styles.specLabel}>Year</span>
-          <span className={styles.specValue}>{product.year}</span>
-        </p>
-        </>
-
-
-        }
+        {compare && (
+          <>
+            <p className={styles.ram}>
+              <span className={styles.specLabel}>Category</span>
+              <span className={styles.specValue}>{product.category}</span>
+            </p>
+            <p className={styles.ram}>
+              <span className={styles.specLabel}>Year</span>
+              <span className={styles.specValue}>{product.year}</span>
+            </p>
+          </>
+        )}
       </div>
       <div className={styles.actions}>
         <div className={styles.cartActions}>
           <button
-            className={`${styles.cartButton} ${isInCart ? styles.cartButtonAdded : ''
-              }`}
+            className={`${styles.cartButton} ${
+              isInCart ? styles.cartButtonAdded : ''
+            }`}
             type="button"
             disabled={isInCart}
             onClick={() => {
-              playCartAddSound()
-              add({ product, quantity: 1 })
+              playCartAddSound();
+              add({ product, quantity: 1 });
             }}
           >
             {isInCart ? 'Added to cart' : 'Add to cart'}

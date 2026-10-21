@@ -1,9 +1,10 @@
 .controls {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+
   margin: 24px 0 32px;
 }
 
@@ -14,15 +15,19 @@
 }
 
 .filterBtn {
+  cursor: pointer;
+
   padding: 10px 18px;
   border: 1px solid var(--cmp-border);
   border-radius: 999px;
-  background: var(--cmp-surface);
-  color: var(--cmp-text);
+
   font: inherit;
   font-size: 14px;
   font-weight: 700;
-  cursor: pointer;
+  color: var(--cmp-text);
+
+  background: var(--cmp-surface);
+
   transition:
     border-color 0.2s,
     background 0.2s,
@@ -35,30 +40,32 @@
 
 .filterBtnActive {
   border-color: var(--cmp-text);
-  background: var(--cmp-text);
   color: var(--cmp-bg);
+  background: var(--cmp-text);
 }
 
 .diffToggle {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--cmp-text);
-  font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
   user-select: none;
 
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cmp-text);
+
   input {
+    cursor: pointer;
     width: 18px;
     height: 18px;
     accent-color: var(--cmp-accent);
-    cursor: pointer;
   }
 
   &:has(input:disabled) {
-    opacity: 0.4;
     cursor: not-allowed;
+    opacity: 0.4;
 
     input {
       cursor: not-allowed;

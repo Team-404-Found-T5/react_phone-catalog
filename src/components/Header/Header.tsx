@@ -88,21 +88,45 @@ export const Header: React.FC = () => {
                 playBoxOpenSound={playBoxOpenSound}
                 to="/compare"
                 label="compare"
-                icon={<img src="img/compareSvg.svg" alt="compareSvg" />}
+                icon={
+                  <img
+                    className={styles.compareIcon}
+                    src="img/compareSvg.svg"
+                    alt="compareSvg"
+                  />
+                }
                 count={compareCount}
               />
               <HeaderAction
                 playBoxOpenSound={playBoxOpenSound}
                 to="/cart"
                 label="Cart"
-                icon={<img src="img/Cart.svg" alt="cartSvg" />}
+                icon={
+                  <img
+                    src={
+                      isCartPage
+                        ? 'img/Chest-opened.svg'
+                        : 'img/Chest-closed.svg'
+                    }
+                    width="24"
+                    height="24"
+                    alt="Cart"
+                  />
+                }
                 count={cartCount}
               />
               <HeaderAction
                 playBoxOpenSound={playBoxOpenSound}
                 to="/favorites"
                 label="Favorites"
-                icon={<img src="img/Favorites.svg" alt="FavoritedSvg" />}
+                icon={
+                  <img
+                    src="img/Heart.svg"
+                    width="24"
+                    height="24"
+                    alt="Favorites"
+                  />
+                }
                 count={favoritesCount}
               />
             </div>
