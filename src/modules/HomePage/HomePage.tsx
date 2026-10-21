@@ -6,6 +6,8 @@ import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
 import styles from './HomePage.module.scss';
 
+const SLIDER_LIMIT = 12;
+
 const TITLE_WORDS = [
   { text: 'Welcome' },
   { text: 'to' },
@@ -102,7 +104,7 @@ export const HomePage: React.FC = () => {
             getIphoneGeneration(second) - getIphoneGeneration(first) ||
             getModelPriority(second) - getModelPriority(first),
         ),
-      ),
+      ).slice(0, SLIDER_LIMIT),
     [products],
   );
 
@@ -115,7 +117,7 @@ export const HomePage: React.FC = () => {
             second.price -
             ((first.fullPrice ?? first.price) - first.price),
         ),
-      ),
+      ).slice(0, SLIDER_LIMIT),
     [products],
   );
 
