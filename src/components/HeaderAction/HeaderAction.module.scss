@@ -5,6 +5,7 @@
   position: relative;
 
   display: none;
+  flex-shrink: 1;
   align-items: center;
   justify-content: center;
 
@@ -15,7 +16,6 @@
   outline: 2.5px solid var(--color-control-border);
 
   transition: all, 0.3s;
-  flex-shrink: 1;
 
   &:hover {
     background-color: var(--color-surface);
@@ -23,7 +23,7 @@
   }
 
   @media (max-width: 1000px) {
-    background-color: #191a1e;
+    background-color: var(--color-chrome-control);
   }
 
   @include tablet {

@@ -87,13 +87,12 @@
 }
 
 .compare-btn {
-  padding: 6px 7px;
   cursor: pointer;
+  padding: 6px 7px;
   outline: solid 1px $color-secondary;
   transition: all, .2s;
 
   &:hover {
-
     outline: solid 1px rgb(180, 136, 12);
   }
 }
@@ -334,5 +333,10 @@
 
 .favoriteButton[aria-pressed='false'] .favoriteIcon,
 .removeFromCart img {
+  filter: var(--icon-filter);
+}
+
+.compareIcon {
+  opacity: 0.9;
   filter: var(--icon-filter);
 }
