@@ -1,0 +1,67 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterBtn {
+  padding: 10px 18px;
+  border: 1px solid var(--cmp-border);
+  border-radius: 999px;
+  background: var(--cmp-surface);
+  color: var(--cmp-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+
+  &:hover {
+    border-color: var(--cmp-text);
+  }
+}
+
+.filterBtnActive {
+  border-color: var(--cmp-text);
+  background: var(--cmp-text);
+  color: var(--cmp-bg);
+}
+
+.diffToggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cmp-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cmp-accent);
+    cursor: pointer;
+  }
+
+  &:has(input:disabled) {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    input {
+      cursor: not-allowed;
+    }
+  }
+}

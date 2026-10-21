@@ -11,6 +11,7 @@ export interface Product {
   oldPrice?: number;
   fullPrice?: number;
   year?: number;
+  color?: string;
 }
 
 export type ProductCategory = 'phones' | 'tablets' | 'accessories';

@@ -3,6 +3,7 @@ import styles from './Header.module.scss';
 import { SwitchBgButtons } from '../SwitchBgButtons/SwitchBgButtons';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
+import { useCompare } from '../../context/CompareContext';
 import { HeaderAction } from '../HeaderAction';
 import { Logo } from '../Logo';
 import { Navigation } from '../Navigation';
@@ -17,8 +18,11 @@ export const Header: React.FC = () => {
   const isCartPage = useMatch({ path: '/cart', end: true }) !== null;
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
+  const { comparedProducts } = useCompare();
+
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   const favoritesCount = favoriteItems.length;
+  const compareCount = comparedProducts.length;
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => {
@@ -78,36 +82,30 @@ export const Header: React.FC = () => {
         <div>
           <div className={styles.rightSectionCartAndFav}>
             <SwitchBgButtons theme={theme} setTheme={setTheme} />
-            <HeaderAction
-              playBoxOpenSound={playBoxOpenSound}
-              to="/cart"
-              label="Cart"
-              icon={
-                <img
-                  src={
-                    isCartPage ? 'img/Chest-opened.svg' : 'img/Chest-closed.svg'
-                  }
-                  width="24"
-                  height="24"
-                  alt="cartSvg"
-                />
-              }
-              count={cartCount}
-            />
-
-            <HeaderAction
-              to="/favorites"
-              label="Favorites"
-              icon={
-                <img
-                  src="img/Heart.svg"
-                  width="24"
-                  height="24"
-                  alt="FavoritedSvg"
-                />
-              }
-              count={favoritesCount}
-            />
+            <div className={styles.navlinksHeader}>
+              <div className={styles.dots}>. . . </div>
+              <HeaderAction
+                playBoxOpenSound={playBoxOpenSound}
+                to="/compare"
+                label="compare"
+                icon={<img src="img/compareSvg.svg" alt="compareSvg" />}
+                count={compareCount}
+              />
+              <HeaderAction
+                playBoxOpenSound={playBoxOpenSound}
+                to="/cart"
+                label="Cart"
+                icon={<img src="img/Cart.svg" alt="cartSvg" />}
+                count={cartCount}
+              />
+              <HeaderAction
+                playBoxOpenSound={playBoxOpenSound}
+                to="/favorites"
+                label="Favorites"
+                icon={<img src="img/Favorites.svg" alt="FavoritedSvg" />}
+                count={favoritesCount}
+              />
+            </div>
           </div>
 
           <BurgerButton isOpen={isMenuOpen} onClick={toggleMenu} />

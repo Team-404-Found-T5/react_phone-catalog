@@ -75,6 +75,50 @@
   background-color: var(--color-chrome-control);
 }
 
+.navlinksHeader {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    transition: all .3s;
+  }
+
+  @media (max-width: 1000px) {
+    overflow-y: hidden;
+    flex-direction: column;
+    height: 48px;
+
+    &:hover {
+      margin-top: 190px;
+      height: auto;
+      overflow-y: visible;
+    }
+  }
+}
+
+.dots {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  outline: solid 1px $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  z-index: 200;
+
+  &:hover {
+    outline: solid 1px white;
+  }
+
+  @media (min-width: 1000px) {
+
+    display: none;
+  }
+}
+
 .mobileMenu {
   position: fixed;
   top: 64px;

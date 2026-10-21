@@ -5,6 +5,7 @@ import { useFavorites } from '../../context/FavoritesContext';
 import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
 import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
+import { useCompare } from '../../context/CompareContext';
 import {
   playCartAddSound,
   playCartRemoveSound,
@@ -12,15 +13,27 @@ import {
 
 type Props = {
   product: Product;
+  compare?: boolean;
 };
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+export const ProductCard: React.FC<Props> = ({ product, compare }) => {
   const { items: cartItems, add, remove } = useCart();
   const { items: favoriteItems, toggle } = useFavorites();
   const isInCart = cartItems.some(
     item => item.product.itemId === product.itemId,
   );
   const isFavorite = favoriteItems.some(item => item.itemId === product.itemId);
+
+  const { addToCompare, removeFromCompare, isInCompare } = useCompare();
+  const isCompared = isInCompare(product.id);
+
+  const handleCompareClick = () => {
+    if (isCompared) {
+      removeFromCompare(product.id);
+    } else {
+      addToCompare(product);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -38,11 +51,20 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       >
         {product.name}
       </Link>
-      <div className={styles.prices}>
-        <p className={styles.price}>${product.price}</p>
-        {product.oldPrice !== undefined && (
-          <p className={styles.oldPrice}>${product.oldPrice}</p>
-        )}
+      <div className={styles.priceAndCompareBlock}>
+
+        <div className={styles.prices}>
+          <p className={styles.price}>${product.price}</p>
+          {product.oldPrice !== undefined && (
+            <p className={styles.oldPrice}>${product.oldPrice}</p>
+          )}
+        </div>
+        <button
+          type="button"
+          onClick={handleCompareClick}
+          className={`${styles['compare-btn']} ${isCompared ? styles['btn-active'] : ''}`}
+          aria-label="Add to compare"
+        ><img src="public/img/compareSvg.svg" alt="compareSvg" /></button>
       </div>
 
       <div className={styles.divider}></div>
@@ -60,29 +82,34 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           <span className={styles.specLabel}>RAM</span>
           <span className={styles.specValue}>{product.ram}</span>
         </p>
+        {compare &&<>
+        <p className={styles.ram}>
+          <span className={styles.specLabel}>Category</span>
+          <span className={styles.specValue}>{product.category}</span>
+        </p>
+        <p className={styles.ram}>
+          <span className={styles.specLabel}>Year</span>
+          <span className={styles.specValue}>{product.year}</span>
+        </p>
+        </>
+
+
+        }
       </div>
       <div className={styles.actions}>
         <div className={styles.cartActions}>
-          {isInCart ? (
-            <button
-              className={`${styles.cartButton} ${styles.cartButtonAdded}`}
-              type="button"
-              disabled
-            >
-              Added to cart
-            </button>
-          ) : (
-            <button
-              className={styles.cartButton}
-              type="button"
-              onClick={() => {
-                playCartAddSound();
-                add({ product, quantity: 1 });
-              }}
-            >
-              Add to cart
-            </button>
-          )}
+          <button
+            className={`${styles.cartButton} ${isInCart ? styles.cartButtonAdded : ''
+              }`}
+            type="button"
+            disabled={isInCart}
+            onClick={() => {
+              playCartAddSound()
+              add({ product, quantity: 1 })
+            }}
+          >
+            {isInCart ? 'Added to cart' : 'Add to cart'}
+          </button>
           {isInCart && (
             <button
               className={styles.removeFromCart}

@@ -4,6 +4,7 @@ import { Navigation } from '../Navigation';
 import { HeaderAction } from '../HeaderAction';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
+import { useCompare } from '../../context/CompareContext';
 import SwitchBgButtons from '../SwitchBgButtons/SwitchBgButtons';
 import { useMatch } from 'react-router-dom';
 
@@ -17,10 +18,12 @@ interface Prop {
 export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }) => {
   const { items: cartItems } = useCart();
   const { items: favoriteItems } = useFavorites();
+  const { comparedProducts } = useCompare();
 
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   const favoritesCount = favoriteItems.length;
   const isCartPage = useMatch({ path: '/cart', end: true }) !== null;
+  const compareCount = comparedProducts.length;
 
   useEffect(() => {
     if (show) {
@@ -39,6 +42,14 @@ export const MobileMenu: React.FC<Prop> = ({ show, closeModal, theme, setTheme }
       <Navigation varinant="modal" handleCloseModal={closeModal} />
       <SwitchBgButtons variant="modal" theme={theme} setTheme={setTheme} />
       <div className={styles.ordersgroup}>
+        <HeaderAction
+          closeModal={closeModal}
+          to="/compare"
+          label="compare"
+          icon={<img src="img/compareSvg.svg" alt="compareSvg" />}
+          count={compareCount}
+          variant="modal"
+        />
         <HeaderAction
           closeModal={closeModal}
           to="/cart"

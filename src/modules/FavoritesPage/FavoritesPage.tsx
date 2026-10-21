@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { ProductCard } from '../../components/ProductCard';
 import { ProductCardSkeleton } from '../../components/ProductCardSkeleton';
+import { ClearAllbtn } from '../../components/ClearAllbtn';
 import { useFavorites } from '../../context/FavoritesContext';
 import { usePageLoadingDelay } from '../../hooks/usePageLoadingDelay';
 import styles from './FavoritesPage.module.scss';
@@ -23,13 +24,9 @@ export const FavoritesPage: React.FC = () => {
       <p className={styles.count}>{items.length} products</p>
 
       {!isLoading && items.length > 0 && (
-        <button
-          type="button"
-          className={styles.clearBtn}
-          onClick={handleClearFavorites}
-        >
-          Clear all
-        </button>
+        <ClearAllbtn
+          onClear={handleClearFavorites}
+        />
       )}
 
       {items.length > 0 ? (
