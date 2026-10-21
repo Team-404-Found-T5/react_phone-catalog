@@ -21,18 +21,22 @@ export const App = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="home" element={<Navigate to="/" replace />} />
-        <Route path=":category" element={<CatalogPage />} />
-        <Route path=":category/:productId" element={<ProductDetailsPage />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="favorites" element={<FavoritesPage />} />
-        <Route path="test" element={<TestPage />} />
-        <Route path="compare" element={<ComparePage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path=":category" element={<CatalogPage />} />
+          <Route path=":category/:productId" element={<ProductDetailsPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="test" element={<TestPage />} />
+          <Route path="compare" element={<ComparePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+
+      <Radio />
+    </>
   );
 };
