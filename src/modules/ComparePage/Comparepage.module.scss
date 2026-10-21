@@ -1,9 +1,20 @@
 @use '../../styles/mixins' as *;
 
 .container {
+  // Цвета страницы. Подставь вместо fallback-значений переменные вашей темы.
+  --cmp-bg: var(--color-bg, #0f1121);
+  --cmp-surface: var(--color-surface, #161827);
+  --cmp-border: var(--color-border, #2d2f3f);
+  --cmp-text: var(--color-text, #f1f2f9);
+  --cmp-muted: var(--color-muted, #75767f);
+  --cmp-accent: var(--color-accent, #27ae60);
+  --cmp-good: #3ccf7e;
+  --cmp-bad: #ff6b6b;
+
   display: flex;
   flex-direction: column;
   padding-top: 24px;
+  padding-bottom: 64px;
 }
 
 .title {
@@ -19,12 +30,23 @@
   }
 }
 
-.productsCompareList {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  overflow-x: auto;
-  height: 638px;
-  padding-inline: 15px;
+.empty {
+  margin-top: 32px;
+  color: var(--cmp-muted);
+}
+
+.hint {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--cmp-muted);
+}
+
+.legendBest {
+  color: var(--cmp-good);
+  font-weight: 700;
+}
+
+.legendWorst {
+  color: var(--cmp-bad);
+  font-weight: 700;
 }

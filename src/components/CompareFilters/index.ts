@@ -1,0 +1,1 @@
+export { CompareFilters } from './CompareFilters';

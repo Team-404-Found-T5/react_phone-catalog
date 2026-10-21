@@ -1,9 +1,11 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Product } from '../types/product';
 
+export const MAX_COMPARE = 5;
+
 interface CompareContextType {
   comparedProducts: Product[];
-  addToCompare: (product: Product) => void;
+  addToCompare: (product: Product) => boolean;
   removeFromCompare: (productId: string) => void;
   isInCompare: (productId: string) => boolean;
   clearCompare: () => void;
@@ -21,11 +23,12 @@ export const CompareProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('compare', JSON.stringify(comparedProducts));
   }, [comparedProducts]);
 
-  const addToCompare = (product: Product) => {
-    setComparedProducts(prev => {
-      if (prev.some(p => p.id === product.id)) return prev;
-      return [...prev, product];
-    });
+  const addToCompare = (product: Product): boolean => {
+    if (comparedProducts.some(p => p.id === product.id)) return true;
+    if (comparedProducts.length >= MAX_COMPARE) return false;
+
+    setComparedProducts(prev => [...prev, product]);
+    return true;
   };
 
   const removeFromCompare = (productId: string) => {
