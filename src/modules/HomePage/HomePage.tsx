@@ -96,17 +96,16 @@ export const HomePage: React.FC = () => {
   const brandNewProducts = useMemo(
     () =>
       getUniqueModels(
-        products
-          .filter(product => product.category === 'phones')
-          .sort(
-            (first, second) =>
-              (second.year ?? 0) - (first.year ?? 0) ||
-              getIphoneGeneration(second) - getIphoneGeneration(first) ||
-              getModelPriority(second) - getModelPriority(first),
-          ),
+        [...products].sort(
+          (first, second) =>
+            (second.year ?? 0) - (first.year ?? 0) ||
+            getIphoneGeneration(second) - getIphoneGeneration(first) ||
+            getModelPriority(second) - getModelPriority(first),
+        ),
       ),
     [products],
   );
+
   const hotPricesProducts = useMemo(
     () =>
       getUniqueModels(
