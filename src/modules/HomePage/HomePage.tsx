@@ -6,6 +6,14 @@ import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
 import styles from './HomePage.module.scss';
 
+const TITLE_WORDS = [
+  { text: 'Welcome' },
+  { text: 'to' },
+  { text: '404', accent: true },
+  { text: 'Gadgets' },
+  { text: 'store!' },
+];
+
 const getModelKey = (product: Product): string => {
   const variantStart = product.itemId.search(/-(?:\d+(?:gb|tb)|\d+mm)-/i);
   const modelId =
@@ -114,9 +122,19 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <h1 className={styles.title}>
-        Welcome to <span className={styles.accent}>404</span> Gadgets store!
+      <h1 className={styles.title} aria-label="Welcome to 404 Gadgets store!">
+        {TITLE_WORDS.map((word, index) => (
+          <span
+            key={word.text}
+            className={`${styles.word} ${word.accent ? styles.accent : ''}`}
+            style={{ animationDelay: `${index * 0.12}s` }}
+            aria-hidden="true"
+          >
+            {word.text}
+          </span>
+        ))}
       </h1>
+
       <div className={styles.container}>
         <BannerSlider />
 

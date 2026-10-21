@@ -9,7 +9,6 @@ import {
   playCartAddSound,
   playCartRemoveSound,
 } from '../../modules/PixelHearts/sounds';
-import SpecularButton from '../SpecularButton/SpecularButton';
 
 type Props = {
   product: Product;
@@ -73,25 +72,16 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               Added to cart
             </button>
           ) : (
-            <SpecularButton
+            <button
               className={styles.cartButton}
               type="button"
-              size="sm"
-              radius={0}
-              tintOpacity={0}
-              textColor="var(--color-button-text)"
-              lineColor="#ffffff"
-              baseColor="#ffffff"
-              idleIntensity={0}
-              proximity={120}
-              style={{ backgroundColor: 'var(--color-button-background)' }}
               onClick={() => {
                 playCartAddSound();
                 add({ product, quantity: 1 });
               }}
             >
               Add to cart
-            </SpecularButton>
+            </button>
           )}
           {isInCart && (
             <button
