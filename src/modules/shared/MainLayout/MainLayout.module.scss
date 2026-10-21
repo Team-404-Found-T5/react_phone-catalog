@@ -62,7 +62,8 @@
   transition: opacity 0.2s ease;
 }
 
-.container > :not(.cursorBackground) {
+.container > main,
+.container > footer {
   position: relative;
   z-index: 1;
 }

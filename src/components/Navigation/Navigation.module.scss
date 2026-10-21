@@ -101,8 +101,12 @@
 }
 
 .catalogItem:hover .submenu,
-.catalogItem:focus-within .submenu {
+.catalogItem:has(:focus-visible) .submenu {
   display: flex;
+}
+
+.navLinks:not(.navList-modal) .catalogItem.closed .submenu {
+  display: none;
 }
 
 .links {
@@ -115,7 +119,6 @@
   font-size: 12px;
   font-weight: 800;
   line-height: 92%;
-
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;

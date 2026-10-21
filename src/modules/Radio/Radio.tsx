@@ -10,8 +10,9 @@ import minecraft2Audio from './minecraft2.mp3';
 import minecraft3Audio from './minecraft3.mp3';
 import { playClickSound } from '../PixelHearts/sounds';
 
+const DEFAULT_TRACK_INDEX = 2;
+
 export const Radio = () => {
-  const defaultTrackIndex = 2;
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -82,38 +83,6 @@ export const Radio = () => {
     [audioRefs, stopAllExcept],
   );
 
-  useEffect(() => {
-    const startDefaultTrackAfterInteraction = (event: Event) => {
-      const target = event.target;
-
-      if (
-        target instanceof Element &&
-        target.closest('[data-radio-control="true"]')
-      ) {
-        return;
-      }
-
-      if (playingIndex === null && !isHidden) {
-        playTrack(defaultTrackIndex);
-      }
-    };
-
-    window.addEventListener('pointerdown', startDefaultTrackAfterInteraction, {
-      once: true,
-    });
-    window.addEventListener('keydown', startDefaultTrackAfterInteraction, {
-      once: true,
-    });
-
-    return () => {
-      window.removeEventListener(
-        'pointerdown',
-        startDefaultTrackAfterInteraction,
-      );
-      window.removeEventListener('keydown', startDefaultTrackAfterInteraction);
-    };
-  }, [isHidden, playTrack, playingIndex]);
-
   const tracks = [
     { icon: musicBoxIcon, alt: 'Radio Stream' },
     { icon: noteIcon, alt: 'Local Track 1' },
@@ -123,7 +92,10 @@ export const Radio = () => {
 
   const toggleTrack = (index: number) => {
     const currentRef = audioRefs[index].current;
-    if (!currentRef) return;
+
+    if (!currentRef) {
+      return;
+    }
 
     if (playingIndex === index) {
       currentRef.pause();
@@ -133,7 +105,8 @@ export const Radio = () => {
     }
   };
 
-  const activeIndex = playingIndex !== null ? playingIndex : defaultTrackIndex;
+  const activeIndex =
+    playingIndex !== null ? playingIndex : DEFAULT_TRACK_INDEX;
 
   return (
     <div
