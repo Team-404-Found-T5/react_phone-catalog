@@ -1,4 +1,5 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .container {
   position: fixed;
@@ -16,6 +17,10 @@
   left 0.4s ease,
   background-color 0.3s ease,
   outline-color 0.3s ease;
+
+  @include tablet {
+    display: none;
+  }
 }
 
 .show {

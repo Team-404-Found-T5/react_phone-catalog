@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { SwitchBgButtons } from '../SwitchBgButtons/SwitchBgButtons';
 import { useCart } from '../../context/CartContext';
@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
     });
   };
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setIsMenuOpen(prev => {
       if (prev) {
         window.dispatchEvent(
@@ -47,7 +47,21 @@ export const Header: React.FC = () => {
       }
       return false;
     });
-  };
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 640px)');
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        closeMenu();
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [closeMenu]);
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
