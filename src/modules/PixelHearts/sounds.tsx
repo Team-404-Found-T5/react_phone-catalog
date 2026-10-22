@@ -9,11 +9,13 @@ import minus from './Minus.mp3';
 import cancel from './CANCEL.mp3';
 import victory from './VICTORY.mp3';
 import portal from './PORTAL.mp3';
+import click3 from './CLICK3.wav'
+import click4 from './CLICK4.wav'
 
 export const playClickSound = () => {
   try {
     const audio = new Audio(click);
-    audio.volume = 0.8;
+    audio.volume = 0.7;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -25,7 +27,7 @@ export const playClickSound = () => {
 export const playBoxOpenSound = () => {
   try {
     const audio = new Audio(open);
-    audio.volume = 0.4;
+    audio.volume = 0.3;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -37,7 +39,7 @@ export const playBoxOpenSound = () => {
 export const playBoxCloseSound = () => {
   try {
     const audio = new Audio(close);
-    audio.volume = 0.4;
+    audio.volume = 0.3;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -48,7 +50,7 @@ export const playBoxCloseSound = () => {
 export const playClick2Sound = () => {
   try {
     const audio = new Audio(click2);
-    audio.volume = 0.4;
+    audio.volume = 0.3;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -59,7 +61,7 @@ export const playClick2Sound = () => {
 export const playCartAddSound = () => {
   try {
     const audio = new Audio(cart);
-    audio.volume = 0.4;
+    audio.volume = 0.2;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -70,7 +72,7 @@ export const playCartAddSound = () => {
 export const playCartRemoveSound = () => {
   try {
     const audio = new Audio(cartremove);
-    audio.volume = 0.4;
+    audio.volume = 0.2;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -81,7 +83,7 @@ export const playCartRemoveSound = () => {
 export const playPlusSound = () => {
   try {
     const audio = new Audio(plus);
-    audio.volume = 0.25;
+    audio.volume = 0.1;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -92,7 +94,7 @@ export const playPlusSound = () => {
 export const playMinusSound = () => {
   try {
     const audio = new Audio(minus);
-    audio.volume = 0.25;
+    audio.volume = 0.2;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -114,7 +116,7 @@ export const playCancelSound = () => {
 export const playVictorySound = () => {
   try {
     const audio = new Audio(victory);
-    audio.volume = 0.25;
+    audio.volume = 0.1;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });
@@ -122,21 +124,33 @@ export const playVictorySound = () => {
     console.error('Audio error!!!!!', e);
   }
 };
-export const playFshuhSound = () => {
-  try {
-    const audio = new Audio(fshuh);
-    audio.volume = 0.4;
-    audio.play().catch(e => {
-      console.warn('Audio play blocked or failed!!!!!', e);
-    });
-  } catch (e) {
-    console.error('Audio error!!!!!', e);
-  }
-};
+
 export const playPortalSound = () => {
   try {
     const audio = new Audio(portal);
-    audio.volume = 0.4;
+    audio.volume = 0.2;
+    audio.play().catch(e => {
+      console.warn('Audio play blocked or failed!!!!!', e);
+    });
+  } catch (e) {
+    console.error('Audio error!!!!!', e);
+  }
+};
+export const playClick3Sound = () => {
+  try {
+    const audio = new Audio(click3);
+    audio.volume = 0.3;
+    audio.play().catch(e => {
+      console.warn('Audio play blocked or failed!!!!!', e);
+    });
+  } catch (e) {
+    console.error('Audio error!!!!!', e);
+  }
+};
+export const playClick4Sound = () => {
+  try {
+    const audio = new Audio(click4);
+    audio.volume = 0.3;
     audio.play().catch(e => {
       console.warn('Audio play blocked or failed!!!!!', e);
     });

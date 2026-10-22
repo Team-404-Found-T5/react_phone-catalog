@@ -3,6 +3,7 @@ import styles from './ProductsSlider.module.scss';
 import type { Product } from '../../types/product';
 import { ProductCard } from '../ProductCard/ProductCard';
 import { ProductCardSkeleton } from '../ProductCardSkeleton';
+import { playClick4Sound } from '../../modules/PixelHearts/sounds';
 
 const PRODUCTS_PER_SLIDE = 4;
 
@@ -111,7 +112,9 @@ export const ProductsSlider: React.FC<Props> = ({
             type="button"
             aria-label="Previous products"
             disabled={!canScrollBack}
-            onClick={showPreviousProducts}
+            onClick={() => {
+              playClick4Sound()
+              showPreviousProducts()}}
           >
             <img
               src="img/ArrowLeft-active.svg"
@@ -124,7 +127,9 @@ export const ProductsSlider: React.FC<Props> = ({
             type="button"
             aria-label="Next products"
             disabled={isLoading || (!hasMoreToLoad && !canScrollForward)}
-            onClick={showNextProducts}
+            onClick={() => {
+              playClick4Sound()
+              showNextProducts()}}
           >
             <img
               src="img/ArrowRight-active.svg"

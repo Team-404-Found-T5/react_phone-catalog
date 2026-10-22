@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { SortType } from '../../api/products';
 import styles from './Sort.module.scss';
+import { playClickSound } from '../../modules/PixelHearts/sounds';
 
 interface Option<T extends string> {
   value: T;
@@ -89,7 +90,12 @@ const CustomSelect = <T extends string>({
         <button
           type="button"
           className={`${styles.trigger} ${isOpen ? styles.triggerActive : ''}`}
-          onClick={() => !disabled && setIsOpen(prev => !prev)}
+          onClick={() => {
+            if (!disabled) {
+              playClickSound(); // Звук при відкритті/закритті селекта
+              setIsOpen(prev => !prev);
+            }
+          }}
           disabled={disabled}
         >
           <span>{selectedOption.label}</span>
@@ -107,11 +113,13 @@ const CustomSelect = <T extends string>({
                 role="option"
                 tabIndex={0}
                 onClick={() => {
+                  playClickSound(); // Звук при виборі опції
                   onChange(option.value);
                   setIsOpen(false);
                 }}
                 onKeyDown={event => {
                   if (event.key === 'Enter' || event.key === ' ') {
+                    playClickSound(); // Звук при виборі з клавіатури
                     onChange(option.value);
                     setIsOpen(false);
                   }
@@ -138,6 +146,7 @@ export const Sort: React.FC<SortProps> = ({ disabled = false }) => {
   const isOpen = searchParams.get('filtersOpen') === 'true';
 
   const setIsOpen = (open: boolean) => {
+    playClickSound(); // Звук при кліку на головну кнопку фільтрів
     setSearchParams(prev => {
       const next = new URLSearchParams(prev);
       if (open) {
@@ -176,6 +185,7 @@ export const Sort: React.FC<SortProps> = ({ disabled = false }) => {
   }, [searchParams]);
 
   const handleApply = () => {
+    playClickSound(); // Звук при натисканні Apply
     setSearchParams(prev => {
       const next = new URLSearchParams(prev);
 
