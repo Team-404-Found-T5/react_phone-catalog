@@ -2,11 +2,11 @@
 
 .container {
   // Цвета страницы. Подставь вместо fallback-значений переменные вашей темы.
-  --cmp-bg: var(--color-bg, #0f1121);
+  --cmp-bg: var(--color-background);
   --cmp-surface: var(--color-surface, #161827);
   --cmp-border: var(--color-border, #2d2f3f);
   --cmp-text: var(--color-text, #f1f2f9);
-  --cmp-muted: var(--color-muted, #75767f);
+  --cmp-muted: var(--color-secondary);
   --cmp-accent: var(--color-accent, #27ae60);
   --cmp-good: #3ccf7e;
   --cmp-bad: #ff6b6b;
@@ -36,9 +36,15 @@
 }
 
 .hint {
+  width: fit-content;
   margin: 16px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+
   font-size: 14px;
-  color: var(--cmp-muted);
+  color: var(--cmp-text);
+
+  background-color: var(--color-text-backdrop);
 }
 
 .legendBest {
