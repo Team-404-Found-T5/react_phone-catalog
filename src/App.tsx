@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './App.scss';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { preloadProductData } from './api/products';
+import { getProducts } from './api/products';
 import { MainLayout } from './modules/shared/MainLayout';
 import { CartPage } from './modules/CartPage';
 import { CatalogPage } from './modules/CatalogPage';
@@ -15,8 +15,8 @@ import Radio from './modules/Radio/Radio';
 
 export const App = () => {
   useEffect(() => {
-    preloadProductData().catch((error: unknown) => {
-      console.error('Failed to preload product data:', error);
+    getProducts().catch((error: unknown) => {
+      console.error('Failed to preload product list:', error);
     });
   }, []);
 

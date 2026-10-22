@@ -48,6 +48,12 @@
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 639px) {
+  .inView .image {
+    transform: scale(1.04);
+  }
+}
+
 .card:hover .image {
   transform: scale(1.04);
 }
@@ -86,6 +92,10 @@
 @media (prefers-reduced-motion: reduce) {
   .image {
     transition: none;
+  }
+
+  .inView .image {
+    transform: none;
   }
 
   .card:hover .image {

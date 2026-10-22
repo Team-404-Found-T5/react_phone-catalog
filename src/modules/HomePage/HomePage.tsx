@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { getProducts } from '../../api/products';
+import React, { useMemo } from 'react';
 import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
+import type { ProductCategory } from '../../types/product';
+import { useProducts } from '../../hooks/useProducts';
 import styles from './HomePage.module.scss';
 
 const SLIDER_LIMIT = 12;
@@ -62,38 +63,7 @@ const getModelPriority = (product: Product): number => {
 };
 
 export const HomePage: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    let isActive = true;
-
-    getProducts()
-      .then(loadedProducts => {
-        if (isActive) {
-          setProducts(loadedProducts);
-        }
-      })
-      .catch((loadError: unknown) => {
-        if (isActive) {
-          setError(
-            loadError instanceof Error
-              ? loadError.message
-              : 'Failed to load products',
-          );
-        }
-      })
-      .finally(() => {
-        if (isActive) {
-          setIsLoading(false);
-        }
-      });
-
-    return () => {
-      isActive = false;
-    };
-  }, []);
+  const { products, isLoading, error } = useProducts();
 
   const brandNewProducts = useMemo(
     () =>
@@ -105,6 +75,21 @@ export const HomePage: React.FC = () => {
             getModelPriority(second) - getModelPriority(first),
         ),
       ).slice(0, SLIDER_LIMIT),
+    [products],
+  );
+
+  const categoryCounts = useMemo(
+    () =>
+      products.reduce<Record<ProductCategory, number>>(
+        (counts, product) => {
+          if (product.category in counts) {
+            counts[product.category as ProductCategory] += 1;
+          }
+
+          return counts;
+        },
+        { phones: 0, tablets: 0, accessories: 0 },
+      ),
     [products],
   );
 
@@ -140,7 +125,7 @@ export const HomePage: React.FC = () => {
         <BannerSlider />
 
         {error && (
-          <p role="alert">Failed to load home page products: {error}</p>
+          <p role="alert">Failed to load home page products: {error.message}</p>
         )}
 
         {!error && (
@@ -151,7 +136,7 @@ export const HomePage: React.FC = () => {
           />
         )}
 
-        <ShopByCategory />
+        <ShopByCategory categoryCounts={categoryCounts} />
 
         {!error && (
           <ProductsSlider

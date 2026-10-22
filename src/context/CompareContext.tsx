@@ -1,59 +1,70 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, PropsWithChildren, useContext } from 'react';
 import { Product } from '../types/product';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const MAX_COMPARE = 5;
 
-interface CompareContextType {
+type CompareContextValue = {
   comparedProducts: Product[];
   addToCompare: (product: Product) => boolean;
   removeFromCompare: (productId: string) => void;
   isInCompare: (productId: string) => boolean;
   clearCompare: () => void;
-}
+};
 
-const CompareContext = createContext<CompareContextType | undefined>(undefined);
+const CompareContext = createContext<CompareContextValue | null>(null);
 
-export const CompareProvider = ({ children }: { children: ReactNode }) => {
-  const [comparedProducts, setComparedProducts] = useState<Product[]>(() => {
-    const saved = localStorage.getItem('compare');
-    return saved ? JSON.parse(saved) : [];
-  });
+export const CompareProvider: React.FC<PropsWithChildren> = ({ children }) => {
+  const [comparedProducts, setComparedProducts] = useLocalStorage<Product[]>(
+    'compare',
+    [],
+  );
 
-  useEffect(() => {
-    localStorage.setItem('compare', JSON.stringify(comparedProducts));
-  }, [comparedProducts]);
+  const addToCompare = (product: Product) => {
+    if (comparedProducts.some(item => item.id === product.id)) {
+      return true;
+    }
 
-  const addToCompare = (product: Product): boolean => {
-    if (comparedProducts.some(p => p.id === product.id)) return true;
-    if (comparedProducts.length >= MAX_COMPARE) return false;
+    if (comparedProducts.length >= MAX_COMPARE) {
+      return false;
+    }
 
-    setComparedProducts(prev => [...prev, product]);
+    setComparedProducts(current => [...current, product]);
     return true;
   };
 
   const removeFromCompare = (productId: string) => {
-    setComparedProducts(prev => prev.filter(p => p.id !== productId));
+    setComparedProducts(current =>
+      current.filter(product => product.id !== productId),
+    );
   };
 
-  const isInCompare = (productId: string) => {
-    return comparedProducts.some(p => p.id === productId);
-  };
+  const isInCompare = (productId: string) =>
+    comparedProducts.some(product => product.id === productId);
 
-  const clearCompare = () => {
-    setComparedProducts([]);
-  };
+  const clearCompare = () => setComparedProducts([]);
 
   return (
     <CompareContext.Provider
-      value={{ comparedProducts, addToCompare, removeFromCompare, isInCompare, clearCompare }}
+      value={{
+        comparedProducts,
+        addToCompare,
+        removeFromCompare,
+        isInCompare,
+        clearCompare,
+      }}
     >
       {children}
     </CompareContext.Provider>
   );
 };
 
-export const useCompare = () => {
+export const useCompare = (): CompareContextValue => {
   const context = useContext(CompareContext);
-  if (!context) throw new Error('useCompare must be used within a CompareProvider');
+
+  if (!context) {
+    throw new Error('useCompare must be used within CompareProvider');
+  }
+
   return context;
 };

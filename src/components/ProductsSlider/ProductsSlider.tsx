@@ -19,6 +19,9 @@ export const ProductsSlider: React.FC<Props> = ({
 }) => {
   const productsListRef = useRef<HTMLDivElement>(null);
   const pendingScrolls = useRef(0);
+  const [visibleProductIds, setVisibleProductIds] = useState<Set<string>>(
+    new Set(),
+  );
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_SLIDE);
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(false);
@@ -48,6 +51,7 @@ export const ProductsSlider: React.FC<Props> = ({
   useEffect(() => {
     setVisibleCount(PRODUCTS_PER_SLIDE);
     pendingScrolls.current = 0;
+    setVisibleProductIds(new Set());
 
     if (productsListRef.current) {
       productsListRef.current.scrollLeft = 0;
@@ -69,6 +73,46 @@ export const ProductsSlider: React.FC<Props> = ({
 
     updateScrollState();
   }, [visibleCount, products, isLoading, updateScrollState]);
+
+  useEffect(() => {
+    const list = productsListRef.current;
+
+    if (!list || isLoading || !('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        setVisibleProductIds(current => {
+          const next = new Set(current);
+
+          entries.forEach(entry => {
+            const productId = (entry.target as HTMLElement).dataset.productId;
+
+            if (!productId) {
+              return;
+            }
+
+            if (entry.isIntersecting) {
+              next.add(productId);
+            } else {
+              next.delete(productId);
+            }
+          });
+
+          return next;
+        });
+      },
+      {
+        root: list,
+        threshold: 0.6,
+      },
+    );
+
+    Array.from(list.children).forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [isLoading, products, visibleCount]);
 
   const showNextProducts = () => {
     const list = productsListRef.current;
@@ -146,7 +190,14 @@ export const ProductsSlider: React.FC<Props> = ({
         ) : (
           products
             .slice(0, visibleCount)
-            .map(product => <ProductCard key={product.id} product={product} />)
+            .map(product => (
+              <div key={product.id} data-product-id={product.id}>
+                <ProductCard
+                  product={product}
+                  isInView={visibleProductIds.has(product.id)}
+                />
+              </div>
+            ))
         )}
       </div>
     </div>

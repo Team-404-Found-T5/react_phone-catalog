@@ -4,6 +4,8 @@ import type {
   ProductDetails,
 } from '../types/product';
 import { delayResult } from '../utils/loadingDelay';
+import { fetchJson } from './httpClient';
+import { mixCategories, sortProducts } from './catalogTransformers';
 
 const API_URL = `${import.meta.env.BASE_URL}api`;
 const CATEGORIES: ProductCategory[] = ['phones', 'tablets', 'accessories'];
@@ -41,79 +43,6 @@ const productDetailsData = new Map<ProductCategory, ProductDetails[]>();
 const suggestedProducts = new Map<string, Promise<Product[]>>();
 let productsPromise: Promise<Product[]> | undefined;
 let productsData: Product[] | undefined;
-
-const fetchJson = <T>(url: string): Promise<T> => {
-  return delayResult(fetch(url)).then(result => {
-    if (!result.ok) {
-      throw new Error(`Failed to fetch ${url}: ${result.status}`);
-    }
-
-    return result.json() as Promise<T>;
-  });
-};
-
-const mixCategories = (products: Product[]): Product[] => {
-  const productsByCategory = CATEGORIES.map(category =>
-    products.filter(product => product.category === category),
-  );
-  const mixedProducts: Product[] = [];
-  const longestList = Math.max(
-    ...productsByCategory.map(categoryProducts => categoryProducts.length),
-  );
-
-  for (let index = 0; index < longestList; index++) {
-    productsByCategory.forEach(categoryProducts => {
-      const product = categoryProducts[index];
-
-      if (product) {
-        mixedProducts.push(product);
-      }
-    });
-  }
-
-  return mixedProducts;
-};
-
-const parseNumericValue = (value: string | undefined): number => {
-  if (!value) return 0;
-  const match = value.match(/[\d.]+/);
-  return match ? parseFloat(match[0]) : 0;
-};
-
-const parseCapacityValue = (capacity: string | undefined): number => {
-  if (!capacity) return 0;
-  const num = parseNumericValue(capacity);
-  return capacity.toUpperCase().includes('TB') ? num * 1024 : num;
-};
-
-const sortProducts = (products: Product[], sort: SortType): Product[] => {
-  const sorted = [...products];
-
-  switch (sort) {
-    case 'title':
-      return sorted.sort((a, b) => a.name.localeCompare(b.name));
-    case 'price':
-      return sorted.sort((a, b) => a.price - b.price);
-    case 'price-desc':
-      return sorted.sort((a, b) => b.price - a.price);
-    case 'screen':
-      return sorted.sort(
-        (a, b) => parseNumericValue(b.screen) - parseNumericValue(a.screen),
-      );
-    case 'capacity':
-      return sorted.sort(
-        (a, b) =>
-          parseCapacityValue(b.capacity) - parseCapacityValue(a.capacity),
-      );
-    case 'ram':
-      return sorted.sort(
-        (a, b) => parseCapacityValue(b.ram) - parseCapacityValue(a.ram),
-      );
-    case 'age':
-    default:
-      return sorted.sort((a, b) => b.year - a.year);
-  }
-};
 
 const getProductsData = (): Promise<Product[]> => {
   if (!productsPromise) {

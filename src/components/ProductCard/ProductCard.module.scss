@@ -29,11 +29,29 @@
     box-shadow: 0 0 10px rgb(219 219 255 / 70%);
   }
 
+  @media (max-width: 639px) {
+    &.inView {
+      position: relative;
+      z-index: 1;
+      transform: scale(1.03);
+
+      border-radius: 12px;
+
+      box-shadow: 0 0 10px rgb(219 219 255 / 70%);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     transition: box-shadow 0.2s ease;
 
     &:hover {
       transform: none;
+    }
+
+    @media (max-width: 639px) {
+      &.inView {
+        transform: none;
+      }
     }
   }
 }
@@ -90,7 +108,7 @@
   cursor: pointer;
   padding: 6px 7px;
   outline: solid 1px $color-secondary;
-  transition: all, .2s;
+  transition: all, 0.2s;
 
   &:hover {
     outline: solid 1px rgb(180, 136, 12);
