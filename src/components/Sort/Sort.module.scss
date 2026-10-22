@@ -1,0 +1,304 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 16px;
+
+  @include tablet {
+    align-items: flex-end;
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.toggleBtn {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 44px;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
+
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+
+  background-color: var(--color-chrome-control);
+
+  @include tablet {
+    width: 160px;
+    margin-bottom: 16px;
+  }
+}
+
+.container {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 100%;
+  margin-bottom: 24px;
+
+  @include desktop {
+    flex-flow: row nowrap;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  &.open {
+    display: flex;
+  }
+}
+
+.sortGroup,
+.filterGroup {
+  width: 100%;
+
+  @include desktop {
+    flex: 1;
+    min-width: 110px;
+  }
+}
+
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  @include desktop {
+    flex: 1.2;
+    min-width: 140px;
+  }
+}
+
+.perPageGroup {
+  width: 100%;
+
+  @include desktop {
+    flex: 0.8;
+    min-width: 80px;
+  }
+}
+
+.applyGroup {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+
+  @include desktop {
+    width: auto;
+  }
+}
+
+.applyBtn {
+  cursor: pointer;
+
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+
+  background-color: $color-primary;
+
+  transition: opacity 0.2s ease;
+
+  @include desktop {
+    width: auto;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+}
+
+.priceInputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @include desktop {
+    gap: 4px;
+  }
+}
+
+.priceInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+
+  background-color: var(--color-chrome-control);
+
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    font-weight: 400;
+    color: var(--color-text);
+  }
+
+  &:focus {
+    border-color: var(--color-text);
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
+  }
+}
+
+.priceSeparator {
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--color-control-border);
+  border-radius: 8px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 21px;
+  color: var(--color-text);
+
+  background-color: var(--color-chrome-control);
+
+  transition: border-color 0.2s ease;
+
+  &:focus-visible {
+    border-color: var(--color-text);
+    outline: none;
+  }
+
+  &.triggerActive {
+    border-color: var(--color-text);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
+  }
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.2s ease;
+
+  &.arrowUp {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  list-style: none;
+
+  background-color: var(--color-chrome-control);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.option {
+  cursor: pointer;
+
+  padding: 8px 12px;
+
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 21px;
+  color: var(--color-text);
+
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    color: var(--color-text);
+    background-color: var(--color-chrome);
+  }
+
+  &.optionSelected {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+}

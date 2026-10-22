@@ -13,7 +13,7 @@ type Props = {
 
 export const Breadcrumbs: React.FC<Props> = ({ items }) => {
   return (
-    <nav aria-label="Breadcrumb">
+    <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
       <ol className={styles.list}>
         <li className={styles.item}>
           <NavLink to="/" className={styles.link} aria-label="Home">

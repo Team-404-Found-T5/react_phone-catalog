@@ -17,37 +17,37 @@ type Banner = {
 const banners: Banner[] = [
   {
     id: 'halloween',
-    image: 'img/banner-halloween.png',
-    mobileImage: 'img/banner-halloween-square.png',
+    image: 'img/banners/banner-halloween.webp',
+    mobileImage: 'img/banners/banner-halloween-square.webp',
     alt: 'Halloween sale',
     to: '/catalog',
     showUntil: new Date(2026, 9, 31, 23, 59, 59),
   },
   {
     id: 'iphone18pro',
-    image: 'img/banner-iphone18pro.png',
-    mobileImage: 'img/banner-iphone18pro-square.png',
+    image: 'img/banners/banner-iphone-18-pro.webp',
+    mobileImage: 'img/banners/banner-iphone-18-pro-square.webp',
     alt: 'iPhone 18 Pro',
     to: '/phones/apple-iphone-18-pro-256gb-burgundy',
   },
   {
     id: 'phones',
-    image: 'img/banner-phones.png',
-    mobileImage: 'img/banner-phones-square.png',
+    image: 'img/banners/banner-phones.webp',
+    mobileImage: 'img/banners/banner-phones-square.webp',
     alt: 'Phones',
     to: '/phones',
   },
   {
     id: 'tablets',
-    image: 'img/banner-tablets.png',
-    mobileImage: 'img/banner-tablets-square.png',
+    image: 'img/banners/banner-tablets.webp',
+    mobileImage: 'img/banners/banner-tablets-square.webp',
     alt: 'Tablets',
     to: '/tablets',
   },
   {
     id: 'accessories',
-    image: 'img/banner-accessories.png',
-    mobileImage: 'img/banner-accessories-square.png',
+    image: 'img/banners/banner-accessories.webp',
+    mobileImage: 'img/banners/banner-accessories-square.webp',
     alt: 'Accessories',
     to: '/accessories',
   },
@@ -103,6 +103,7 @@ export const BannerSlider: React.FC = () => {
                     className={styles.image}
                     src={banner.image}
                     alt={banner.alt}
+                    loading={banner.id === activeBanners[0]?.id ? 'eager' : 'lazy'}
                   />
                 </picture>
               </NavLink>

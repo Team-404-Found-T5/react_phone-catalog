@@ -1,38 +1,42 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
-import { useFavorites } from '../../context/FavoritesContext';
 import styles from './ProductCard.module.scss';
 import type { Product } from '../../types/product';
-import { PixelHearts } from '../../modules/PixelHearts/PixelHearts';
-import { playCartAddSound, playCartRemoveSound } from '../../modules/PixelHearts/sounds';
+import { ProductCardActions } from './ProductCardActions';
 
-type Props = {
+interface ProductCardProps {
   product: Product;
-};
+  compare?: boolean;
+  isInView?: boolean;
+}
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
-  const { items: cartItems, add, remove } = useCart();
-  const { items: favoriteItems, toggle } = useFavorites();
-  const isInCart = cartItems.some(item => item.product.itemId === product.itemId);
-  const isFavorite = favoriteItems.some(item => item.itemId === product.itemId);
+export const ProductCard = ({
+  product,
+  compare = false,
+  isInView = false,
+}: ProductCardProps) => {
+  const productLink = `/${product.category}/${product.itemId}`;
+  const cardClassName = `${styles.container} ${isInView ? styles.inView : ''}`;
 
   return (
-    <div className={styles.container}>
-      <Link to={`/${product.category}/${product.itemId}`}>
-        <img src={product.image} alt={product.name} className={styles.image} />
+    <div className={cardClassName}>
+      <Link to={productLink}>
+        <img
+          src={product.image}
+          alt={product.name}
+          className={styles.image}
+          loading="lazy"
+        />
       </Link>
-      <Link
-        to={`/${product.category}/${product.itemId}`}
-        className={styles.name}
-      >
+      <Link to={productLink} className={styles.name}>
         {product.name}
       </Link>
-      <div className={styles.prices}>
-        <p className={styles.price}>${product.price}</p>
-        {product.oldPrice !== undefined && (
-          <p className={styles.oldPrice}>${product.oldPrice}</p>
-        )}
+      <div className={styles.priceAndCompareBlock}>
+        <div className={styles.prices}>
+          <p className={styles.price}>${product.price}</p>
+          {product.oldPrice !== undefined && (
+            <p className={styles.oldPrice}>${product.oldPrice}</p>
+          )}
+        </div>
       </div>
 
       <div className={styles.divider}></div>
@@ -50,52 +54,20 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           <span className={styles.specLabel}>RAM</span>
           <span className={styles.specValue}>{product.ram}</span>
         </p>
+        {compare && (
+          <>
+            <p className={styles.ram}>
+              <span className={styles.specLabel}>Category</span>
+              <span className={styles.specValue}>{product.category}</span>
+            </p>
+            <p className={styles.ram}>
+              <span className={styles.specLabel}>Year</span>
+              <span className={styles.specValue}>{product.year}</span>
+            </p>
+          </>
+        )}
       </div>
-      <div className={styles.actions}>
-        <div className={styles.cartActions}>
-          <button
-            className={`${styles.cartButton} ${
-              isInCart ? styles.cartButtonAdded : ''
-            }`}
-            type="button"
-            disabled={isInCart}
-            onClick={() => {
-              playCartAddSound()
-              add({ product, quantity: 1 })}}
-          >
-            {isInCart ? 'Added to cart' : 'Add to cart'}
-          </button>
-          {isInCart && (
-            <button
-              className={styles.removeFromCart}
-              type="button"
-              aria-label={`Remove ${product.name} from cart`}
-              onClick={() => {
-                playCartRemoveSound()
-                remove(product.itemId)}}
-            >
-              <img src={`${import.meta.env.BASE_URL}img/Close.svg`} alt="" />
-            </button>
-          )}
-        </div>
-        <button
-          className={styles.favoriteButton}
-          type="button"
-          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-          aria-pressed={isFavorite}
-          onClick={(e) => {
-            PixelHearts(e);
-            toggle(product)}}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}img/${
-              isFavorite ? 'Like-active.svg' : 'Like.svg'
-            }`}
-            alt=""
-            className={styles.favoriteIcon}
-          />
-        </button>
-      </div>
+      <ProductCardActions product={product} />
     </div>
   );
 };

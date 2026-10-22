@@ -4,12 +4,16 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem/CartItem';
 import { CheckoutModal } from '../../components/CheckoutModal/CheckoutModal';
 import { useCart } from '../../context/CartContext';
+import { usePageLoadingDelay } from '../../hooks/usePageLoadingDelay';
 import styles from './CartPage.module.scss';
 import { playClick2Sound } from '../PixelHearts/sounds';
+import { CartSkeleton } from './CartSkeleton';
+import SpecularButton from '../../components/SpecularButton/SpecularButton';
 
 export const CartPage: React.FC = () => {
   const { items, remove } = useCart();
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const isLoading = usePageLoadingDelay();
 
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
@@ -21,6 +25,16 @@ export const CartPage: React.FC = () => {
     items.forEach(item => remove(item.product.itemId));
   };
 
+  if (isLoading) {
+    return (
+      <div className={styles.container} aria-busy="true">
+        <BackButton />
+        <h1 className={styles.title}>Cart</h1>
+        <CartSkeleton />
+      </div>
+    );
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -30,9 +44,15 @@ export const CartPage: React.FC = () => {
 
         {items.length === 0 ? (
           <div className={styles.empty}>
+            <img
+              className={styles.emptyImage}
+              src="img/cart-is-empty.webp"
+              alt=""
+            />
+
             <p className={styles.emptyText}>Your cart is empty</p>
 
-            <NavLink to="/phones" className={styles.emptyLink}>
+            <NavLink to="/catalog" className={styles.emptyLink}>
               Go shopping
             </NavLink>
           </div>
@@ -55,16 +75,25 @@ export const CartPage: React.FC = () => {
 
               <hr className={styles.divider} />
 
-              <button
-                type="button"
+              <SpecularButton
                 className={styles.checkout}
+                type="button"
+                size="lg"
+                radius={0}
+                tintOpacity={0}
+                textColor="var(--color-button-text)"
+                lineColor="#ffffff"
+                baseColor="#ffffff"
+                idleIntensity={0}
+                proximity={120}
+                style={{ backgroundColor: 'var(--color-button-background)' }}
                 onClick={() => {
                   playClick2Sound();
                   setIsCheckoutOpen(true);
                 }}
               >
                 Checkout
-              </button>
+              </SpecularButton>
             </section>
           </div>
         )}

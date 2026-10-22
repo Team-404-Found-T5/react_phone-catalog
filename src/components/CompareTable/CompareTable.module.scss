@@ -1,0 +1,177 @@
+@use '../../styles/mixins' as *;
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid var(--cmp-border);
+  border-radius: 16px;
+  background: var(--cmp-surface);
+}
+
+.table {
+  border-spacing: 0;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.labelCell {
+  position: sticky;
+  z-index: 1;
+  left: 0;
+
+  min-width: 96px;
+  padding: 16px;
+  border-right: 1px solid var(--cmp-border);
+
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cmp-muted);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+
+  background: var(--cmp-surface);
+
+  @include tablet {
+    min-width: 140px;
+  }
+}
+
+.productCell {
+  position: relative;
+
+  min-width: 200px;
+  max-width: 260px;
+  padding: 40px 16px 20px;
+  border-bottom: 1px solid var(--cmp-border);
+
+  text-align: center;
+  vertical-align: top;
+}
+
+.prodImage {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.productName {
+  margin: 16px 0 0;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.valueCell {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--cmp-border);
+
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--cmp-text);
+  text-align: center;
+  vertical-align: middle;
+
+  transition: background 0.2s;
+}
+
+.tableBody tr:last-child {
+  .labelCell,
+  .valueCell {
+    border-bottom: none;
+  }
+}
+
+.tableBody tr:hover .valueCell {
+  background: rgb(128 128 128 / 8%);
+}
+
+.best,
+.tableBody tr:hover .best {
+  font-weight: 700;
+  color: var(--cmp-good);
+  background: rgb(60 207 126 / 14%);
+}
+
+.worst,
+.tableBody tr:hover .worst {
+  font-weight: 700;
+  color: var(--cmp-bad);
+  background: rgb(255 107 107 / 14%);
+}
+
+.removeBtn {
+  cursor: pointer;
+
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--cmp-border);
+  border-radius: 50%;
+
+  font-size: 18px;
+  line-height: 1;
+  color: var(--cmp-text);
+
+  background: var(--cmp-bg);
+
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    border-color: var(--cmp-bad);
+    color: var(--cmp-bad);
+  }
+}
+
+.moreBtn {
+  cursor: pointer;
+
+  display: block;
+
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cmp-accent);
+  text-transform: none;
+  letter-spacing: 0;
+
+  background: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.descriptionCell {
+  min-width: 200px;
+
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--cmp-muted);
+  text-align: left;
+  vertical-align: top;
+}
+
+.descriptionClamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}

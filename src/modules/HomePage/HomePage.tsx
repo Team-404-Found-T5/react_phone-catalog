@@ -1,11 +1,21 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { getProducts } from '../../api/products';
+import React, { useMemo } from 'react';
 import { BannerSlider } from '../../components/BannerSlider/BannerSlider';
-import { Loader } from '../../components/Loader';
 import { ProductsSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { ShopByCategory } from '../../components/ShopByCategory/ShopByCategory';
 import type { Product } from '../../types/product';
+import type { ProductCategory } from '../../types/product';
+import { useProducts } from '../../hooks/useProducts';
 import styles from './HomePage.module.scss';
+
+const SLIDER_LIMIT = 12;
+
+const TITLE_WORDS = [
+  { text: 'Welcome' },
+  { text: 'to' },
+  { text: '404', accent: true },
+  { text: 'Gadgets' },
+  { text: 'store!' },
+];
 
 const getModelKey = (product: Product): string => {
   const variantStart = product.itemId.search(/-(?:\d+(?:gb|tb)|\d+mm)-/i);
@@ -53,53 +63,36 @@ const getModelPriority = (product: Product): number => {
 };
 
 export const HomePage: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    let isActive = true;
-
-    getProducts()
-      .then(loadedProducts => {
-        if (isActive) {
-          setProducts(loadedProducts);
-        }
-      })
-      .catch((loadError: unknown) => {
-        if (isActive) {
-          setError(
-            loadError instanceof Error
-              ? loadError.message
-              : 'Failed to load products',
-          );
-        }
-      })
-      .finally(() => {
-        if (isActive) {
-          setIsLoading(false);
-        }
-      });
-
-    return () => {
-      isActive = false;
-    };
-  }, []);
+  const { products, isLoading, error } = useProducts();
 
   const brandNewProducts = useMemo(
     () =>
       getUniqueModels(
-        products
-          .filter(product => product.category === 'phones')
-          .sort(
-            (first, second) =>
-              (second.year ?? 0) - (first.year ?? 0) ||
-              getIphoneGeneration(second) - getIphoneGeneration(first) ||
-              getModelPriority(second) - getModelPriority(first),
-          ),
+        [...products].sort(
+          (first, second) =>
+            (second.year ?? 0) - (first.year ?? 0) ||
+            getIphoneGeneration(second) - getIphoneGeneration(first) ||
+            getModelPriority(second) - getModelPriority(first),
+        ),
+      ).slice(0, SLIDER_LIMIT),
+    [products],
+  );
+
+  const categoryCounts = useMemo(
+    () =>
+      products.reduce<Record<ProductCategory, number>>(
+        (counts, product) => {
+          if (product.category in counts) {
+            counts[product.category as ProductCategory] += 1;
+          }
+
+          return counts;
+        },
+        { phones: 0, tablets: 0, accessories: 0 },
       ),
     [products],
   );
+
   const hotPricesProducts = useMemo(
     () =>
       getUniqueModels(
@@ -109,33 +102,48 @@ export const HomePage: React.FC = () => {
             second.price -
             ((first.fullPrice ?? first.price) - first.price),
         ),
-      ),
+      ).slice(0, SLIDER_LIMIT),
     [products],
   );
 
   return (
     <>
-      <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
+      <h1 className={styles.title} aria-label="Welcome to 404 Gadgets store!">
+        {TITLE_WORDS.map((word, index) => (
+          <span
+            key={word.text}
+            className={`${styles.word} ${word.accent ? styles.accent : ''}`}
+            style={{ animationDelay: `${index * 0.12}s` }}
+            aria-hidden="true"
+          >
+            {word.text}
+          </span>
+        ))}
+      </h1>
+
       <div className={styles.container}>
         <BannerSlider />
 
-        {isLoading && <Loader />}
-
         {error && (
-          <p role="alert">Failed to load home page products: {error}</p>
+          <p role="alert">Failed to load home page products: {error.message}</p>
         )}
 
-        {!isLoading && !error && (
+        {!error && (
           <ProductsSlider
             title="Brand new models"
             products={brandNewProducts}
+            isLoading={isLoading}
           />
         )}
 
-        <ShopByCategory />
+        <ShopByCategory categoryCounts={categoryCounts} />
 
-        {!isLoading && !error && (
-          <ProductsSlider title="Hot prices" products={hotPricesProducts} />
+        {!error && (
+          <ProductsSlider
+            title="Hot prices"
+            products={hotPricesProducts}
+            isLoading={isLoading}
+          />
         )}
       </div>
     </>

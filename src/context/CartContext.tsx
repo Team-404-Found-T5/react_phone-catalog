@@ -1,13 +1,6 @@
-import {
-  createContext,
-  PropsWithChildren,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext, PropsWithChildren, useContext } from 'react';
 import { CartItem } from '../types/cart';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export interface CartContextValue {
   items: CartItem[];
@@ -18,38 +11,10 @@ export interface CartContextValue {
 
 export const CartContext = createContext<CartContextValue | null>(null);
 
-const CART_STORAGE_KEY = 'cart';
-
-function readCart(): CartItem[] {
-  const storedCart = localStorage.getItem(CART_STORAGE_KEY);
-
-  if (!storedCart) {
-    return [];
-  }
-
-  try {
-    const parsedCart: unknown = JSON.parse(storedCart);
-
-    if (!Array.isArray(parsedCart)) {
-      throw new Error('Cart data must be an array');
-    }
-
-    return parsedCart as CartItem[];
-  } catch {
-    localStorage.removeItem(CART_STORAGE_KEY);
-
-    return [];
-  }
-}
-
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>(readCart);
+  const [items, setItems] = useLocalStorage<CartItem[]>('cart', []);
 
-  useEffect(() => {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-  }, [items]);
-
-  const add = useCallback((item: CartItem) => {
+  const add = (item: CartItem) => {
     setItems(currentItems => {
       const existingItem = currentItems.find(
         currentItem => currentItem.product.itemId === item.product.itemId,
@@ -65,38 +30,31 @@ export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
           : currentItem,
       );
     });
-  }, []);
+  };
 
-  const remove = useCallback((itemId: string) => {
+  const remove = (itemId: string) => {
     setItems(currentItems =>
       currentItems.filter(item => item.product.itemId !== itemId),
     );
-  }, []);
+  };
 
-  const updateQuantity = useCallback(
-    (itemId: string, quantity: number) => {
-      if (quantity < 1) {
-        remove(itemId);
+  const updateQuantity = (itemId: string, quantity: number) => {
+    if (quantity < 1) {
+      remove(itemId);
+      return;
+    }
 
-        return;
-      }
-
-      setItems(currentItems =>
-        currentItems.map(item =>
-          item.product.itemId === itemId ? { ...item, quantity } : item,
-        ),
-      );
-    },
-    [remove],
-  );
-
-  const contextValue = useMemo(
-    () => ({ items, add, remove, updateQuantity }),
-    [items, add, remove, updateQuantity],
-  );
+    setItems(currentItems =>
+      currentItems.map(item =>
+        item.product.itemId === itemId ? { ...item, quantity } : item,
+      ),
+    );
+  };
 
   return (
-    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ items, add, remove, updateQuantity }}>
+      {children}
+    </CartContext.Provider>
   );
 };
 

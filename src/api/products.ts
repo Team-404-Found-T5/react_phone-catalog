@@ -3,9 +3,11 @@ import type {
   ProductCategory,
   ProductDetails,
 } from '../types/product';
+import { delayResult } from '../utils/loadingDelay';
+import { fetchJson } from './httpClient';
+import { mixCategories, sortProducts } from './catalogTransformers';
 
 const API_URL = `${import.meta.env.BASE_URL}api`;
-const RESPONSE_DELAY_MS = 500;
 const CATEGORIES: ProductCategory[] = ['phones', 'tablets', 'accessories'];
 
 export type ProductsPage = {
@@ -19,64 +21,55 @@ export type VariantChange = {
   capacity?: string;
 };
 
+export type SortType =
+  | 'age'
+  | 'title'
+  | 'price'
+  | 'price-desc'
+  | 'screen'
+  | 'capacity'
+  | 'ram';
+
+export type FilterOptions = {
+  capacity?: string;
+  color?: string;
+  minPrice?: number;
+  maxPrice?: number;
+};
+
 const visibleProducts = new Map<string, Product>();
 const productDetails = new Map<ProductCategory, Promise<ProductDetails[]>>();
+const productDetailsData = new Map<ProductCategory, ProductDetails[]>();
 const suggestedProducts = new Map<string, Promise<Product[]>>();
 let productsPromise: Promise<Product[]> | undefined;
+let productsData: Product[] | undefined;
 
-const fetchJson = <T>(url: string): Promise<T> => {
-  const response = fetch(url);
-  const responseDelay = new Promise<void>(resolve => {
-    setTimeout(resolve, RESPONSE_DELAY_MS);
-  });
-
-  return Promise.all([response, responseDelay]).then(([result]) => {
-    if (!result.ok) {
-      throw new Error(`Failed to fetch ${url}: ${result.status}`);
-    }
-
-    return result.json() as Promise<T>;
-  });
-};
-
-const mixCategories = (products: Product[]): Product[] => {
-  const productsByCategory = CATEGORIES.map(category =>
-    products.filter(product => product.category === category),
-  );
-  const mixedProducts: Product[] = [];
-  const longestList = Math.max(
-    ...productsByCategory.map(categoryProducts => categoryProducts.length),
-  );
-
-  for (let index = 0; index < longestList; index++) {
-    productsByCategory.forEach(categoryProducts => {
-      const product = categoryProducts[index];
-
-      if (product) {
-        mixedProducts.push(product);
-      }
-    });
-  }
-
-  return mixedProducts;
-};
-
-export const getProducts = (): Promise<Product[]> => {
+const getProductsData = (): Promise<Product[]> => {
   if (!productsPromise) {
     productsPromise = fetchJson<Product[]>(`${API_URL}/products.json`)
-      .then(products =>
-        products.map(product => ({
+      .then(products => {
+        productsData = products.map(product => ({
           ...product,
           oldPrice: product.fullPrice,
-        })),
-      )
+        }));
+
+        return productsData;
+      })
       .catch(error => {
         productsPromise = undefined;
+        productsData = undefined;
         throw error;
       });
   }
 
   return productsPromise;
+};
+
+export const getProducts = (): Promise<Product[]> => {
+  const wasCached = productsData !== undefined;
+  const request = getProductsData();
+
+  return wasCached ? delayResult(request) : request;
 };
 
 export const searchProducts = (
@@ -89,7 +82,7 @@ export const searchProducts = (
     return Promise.resolve([]);
   }
 
-  return getProducts().then(products =>
+  return getProductsData().then(products =>
     products
       .filter(product => {
         const productText =
@@ -103,7 +96,7 @@ export const searchProducts = (
 
 export const preloadProductData = (): Promise<void> =>
   Promise.all([
-    getProducts(),
+    getProductsData(),
     ...CATEGORIES.map(category => getProductDetails(category)),
   ]).then(() => undefined);
 
@@ -116,8 +109,10 @@ export const cacheVisibleProducts = (products: Product[]): void => {
 export const getProductsPage = (
   category: string,
   page: number,
-  perPage = 8,
+  perPage: number | 'all' = 8,
   searchTerm = '',
+  sort: SortType = 'age',
+  filters: FilterOptions = {},
 ): Promise<ProductsPage> => {
   if (!category) {
     return Promise.reject(new Error('Category is required'));
@@ -127,32 +122,68 @@ export const getProductsPage = (
     return Promise.reject(new Error('Page must be a positive integer'));
   }
 
-  if (!Number.isInteger(perPage) || perPage < 1) {
+  if (
+    perPage !== 'all' &&
+    (!Number.isInteger(perPage) || perPage < 1)
+  ) {
     return Promise.reject(
       new Error('Per-page value must be a positive integer'),
     );
   }
 
-  const productsPromise = searchTerm.trim()
+  const wasCached = productsData !== undefined;
+  const request = searchTerm.trim()
     ? searchProducts(searchTerm)
-    : getProducts();
+    : getProductsData();
 
-  return productsPromise.then(products => {
-    const filteredProducts =
+  const pageResult = request.then(products => {
+    let filteredProducts =
       category === 'all'
         ? mixCategories(products)
         : products.filter(product => product.category === category);
-    const start = (page - 1) * perPage;
-    const pageProducts = filteredProducts.slice(start, start + perPage);
+
+    if (filters.capacity) {
+      filteredProducts = filteredProducts.filter(
+        product => product.capacity === filters.capacity,
+      );
+    }
+
+    if (filters.color) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.itemId.toLowerCase().includes(filters.color!.toLowerCase()),
+      );
+    }
+
+    if (filters.minPrice !== undefined) {
+      filteredProducts = filteredProducts.filter(
+        product => product.price >= filters.minPrice!,
+      );
+    }
+
+    if (filters.maxPrice !== undefined) {
+      filteredProducts = filteredProducts.filter(
+        product => product.price <= filters.maxPrice!,
+      );
+    }
+
+    const sortedProducts = sortProducts(filteredProducts, sort);
+
+    const itemsPerPage =
+      perPage === 'all' ? sortedProducts.length || 1 : Number(perPage);
+
+    const start = (page - 1) * itemsPerPage;
+    const pageProducts = sortedProducts.slice(start, start + itemsPerPage);
 
     cacheVisibleProducts(pageProducts);
 
     return {
       products: pageProducts,
-      total: filteredProducts.length,
-      totalPages: Math.ceil(filteredProducts.length / perPage),
+      total: sortedProducts.length,
+      totalPages: Math.ceil(sortedProducts.length / itemsPerPage) || 1,
     };
   });
+
+  return wasCached ? delayResult(pageResult) : pageResult;
 };
 
 export const getProductByItemId = (
@@ -164,7 +195,7 @@ export const getProductByItemId = (
     return Promise.resolve(cachedProduct);
   }
 
-  return getProducts().then(products =>
+  return getProductsData().then(products =>
     products.find(product => product.itemId === itemId),
   );
 };
@@ -180,10 +211,17 @@ const getProductDetails = (
 
   const request = fetchJson<ProductDetails[]>(
     `${API_URL}/${category}.json`,
-  ).catch(error => {
-    productDetails.delete(category);
-    throw error;
-  });
+  )
+    .then(products => {
+      productDetailsData.set(category, products);
+
+      return products;
+    })
+    .catch(error => {
+      productDetails.delete(category);
+      productDetailsData.delete(category);
+      throw error;
+    });
 
   productDetails.set(category, request);
 
@@ -202,10 +240,15 @@ export const getAccessories = (): Promise<ProductDetails[]> =>
 export const getProductDetailsById = (
   category: ProductCategory,
   productId: string,
-): Promise<ProductDetails | undefined> =>
-  getProductDetails(category).then(products =>
+  skipCachedDelay = false,
+): Promise<ProductDetails | undefined> => {
+  const wasCached = productDetailsData.has(category);
+  const request = getProductDetails(category).then(products =>
     products.find(product => product.id === productId),
   );
+
+  return wasCached && !skipCachedDelay ? delayResult(request) : request;
+};
 
 export const getRelatedProducts = (
   product: ProductDetails,
@@ -254,7 +297,7 @@ export const getSuggestedProducts = (currentId: string): Promise<Product[]> => {
     return cachedRequest;
   }
 
-  const request = getProducts()
+  const request = getProductsData()
     .then(products =>
       products
         .filter(product => product.itemId !== currentId)

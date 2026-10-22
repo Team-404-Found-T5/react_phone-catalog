@@ -1,0 +1,90 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.searchGroup2 {
+  position: relative;
+  z-index: 110;
+
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.modalOverlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalOverlayOpen {
+  visibility: visible;
+  opacity: 1;
+}
+
+.searchModalDiv {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+
+  overflow: hidden auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+
+  background-color: var(--color-surface, #fff);
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.searchModalOpen {
+  transform: translateX(0);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.closeModalBtn {
+  cursor: pointer;
+
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+
+  font-size: 20px;
+  color: var(--color-text, #333);
+
+  background: none;
+
+  &:hover {
+    background-color: var(--color-background, #f5f5f5);
+  }
+}

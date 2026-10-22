@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { getProducts } from '../../api/products';
-import { Product, ProductCategory } from '../../types/product';
+import { ProductCategory } from '../../types/product';
 import styles from './ShopByCategory.module.scss';
 import { playPortalSound } from '../../modules/PixelHearts/sounds';
 
@@ -37,26 +36,68 @@ const categories: Category[] = [
   },
 ];
 
-export const ShopByCategory: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+type Props = {
+  categoryCounts: Record<ProductCategory, number>;
+};
+
+export const ShopByCategory: React.FC<Props> = ({ categoryCounts }) => {
+  const [visibleCategories, setVisibleCategories] = useState<
+    Set<ProductCategory>
+  >(new Set());
+  const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    getProducts()
-      .then(setProducts)
-      .catch(() => setProducts([]));
-  }, []);
+    const list = listRef.current;
 
-  const getCount = (category: ProductCategory) =>
-    products.filter(product => product.category === category).length;
+    if (!list || !('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        setVisibleCategories(current => {
+          const next = new Set(current);
+
+          entries.forEach(entry => {
+            const category = (entry.target as HTMLElement).dataset.category as
+              ProductCategory | undefined;
+
+            if (!category) {
+              return;
+            }
+
+            if (entry.isIntersecting) {
+              next.add(category);
+            } else {
+              next.delete(category);
+            }
+          });
+
+          return next;
+        });
+      },
+      { threshold: 0.6 },
+    );
+
+    Array.from(list.children).forEach(category => observer.observe(category));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div>
       <h2 className={styles.title}>Shop by category</h2>
 
-      <ul className={styles.list}>
+      <ul className={styles.list} ref={listRef}>
         {categories.map(category => (
-          <li key={category.id}>
-            <NavLink onClick={() => playPortalSound()}to={category.to} className={styles.card}>
+          <li key={category.id} data-category={category.id}>
+            <NavLink
+              onClick={() => playPortalSound()}
+              to={category.to}
+              className={`${styles.card} ${
+                visibleCategories.has(category.id) ? styles.inView : ''
+              }`}
+            >
               <div
                 className={styles.imageWrapper}
                 style={{ backgroundColor: category.background }}
@@ -65,14 +106,15 @@ export const ShopByCategory: React.FC = () => {
                   className={styles.image}
                   src={category.image}
                   alt={category.title}
+                  loading="lazy"
                 />
               </div>
 
               <h3 className={styles.name}>{category.title}</h3>
 
-              {products.length > 0 && (
-                <p className={styles.count}>{getCount(category.id)} models</p>
-              )}
+              <p className={styles.count}>
+                {categoryCounts[category.id]} models
+              </p>
             </NavLink>
           </li>
         ))}
