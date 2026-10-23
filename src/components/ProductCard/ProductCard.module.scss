@@ -107,6 +107,7 @@
 .compare-btn {
   cursor: pointer;
   padding: 6px 7px;
+  border-radius: 8px;
   outline: solid 1px $color-secondary;
   transition: all, 0.2s;
 
@@ -116,7 +117,9 @@
 }
 
 .btn-active {
+  // background-color: rgb(1, 66, 34);
   outline: solid 1px $color-green;
+  box-shadow: 0px 0px 10px $color-green;;
 }
 
 .oldPrice {
@@ -198,6 +201,7 @@
   justify-content: center;
 
   height: 40px;
+  border-radius: 8px;
 
   font-family: inherit;
   font-size: 14px;
@@ -322,6 +326,7 @@
   width: 40px;
   height: 40px;
   border: 1px solid var(--color-border);
+  border-radius: 8px;
 
   background-color: var(--color-surface);
 
@@ -355,6 +360,7 @@
 }
 
 .compareIcon {
+  width: 24px;
   opacity: 0.9;
-  filter: var(--icon-filter);
+  // filter: var(--icon-filter);
 }

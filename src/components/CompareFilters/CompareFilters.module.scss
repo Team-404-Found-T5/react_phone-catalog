@@ -56,6 +56,10 @@
   font-weight: 600;
   color: var(--cmp-text);
 
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--color-text-backdrop);
+
   input {
     cursor: pointer;
     width: 18px;
@@ -65,7 +69,7 @@
 
   &:has(input:disabled) {
     cursor: not-allowed;
-    opacity: 0.4;
+    color: var(--cmp-muted);
 
     input {
       cursor: not-allowed;
