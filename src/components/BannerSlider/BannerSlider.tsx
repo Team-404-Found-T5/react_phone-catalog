@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import styles from './BannerSlider.module.scss';
+import { playClick3Sound } from '../../modules/PixelHearts/sounds';
 
 type Banner = {
   id: string;
@@ -64,6 +65,7 @@ export const BannerSlider: React.FC = () => {
       <div className={styles.main}>
         <button
           onClick={e => {
+            playClick3Sound()
             e.stopPropagation();
           }}
           type="button"
@@ -113,6 +115,7 @@ export const BannerSlider: React.FC = () => {
 
         <button
           onClick={e => {
+            playClick3Sound()
             e.stopPropagation();
           }}
           type="button"
